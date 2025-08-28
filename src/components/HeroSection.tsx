@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone } from "lucide-react";
@@ -51,9 +52,9 @@ const HeroSection = () => {
                 Get Free Quote Today
               </Button>
               <Button 
-                variant="outline" 
+                variant="hero" 
                 size="lg" 
-                className="text-lg px-8 border-accent bg-accent/10 text-accent hover:bg-accent hover:text-white backdrop-blur-sm"
+                className="text-lg px-8"
                 asChild
               >
                 <a 
