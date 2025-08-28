@@ -137,7 +137,7 @@ const SteelBuildingExtensionsKent = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/residential-extension.jpg" 
                 alt="Modern steel frame extension to Kent property showing large glass openings and contemporary design" 
                 className="rounded-lg shadow-2xl"
               />
@@ -276,7 +276,7 @@ const SteelBuildingExtensionsKent = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/rear-extension-steel-frame.jpg" 
                 alt="Completed steel frame extension in Kent showing integration with existing property" 
                 className="rounded-lg shadow-xl"
               />

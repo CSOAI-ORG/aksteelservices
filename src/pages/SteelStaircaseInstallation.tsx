@@ -137,7 +137,7 @@ const SteelStaircaseInstallation = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/large-steel-framework-1.jpg" 
                 alt="Modern steel staircase with glass balustrade in contemporary residential setting" 
                 className="rounded-lg shadow-2xl"
               />
@@ -301,7 +301,7 @@ const SteelStaircaseInstallation = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/large-steel-framework-2.jpg" 
                 alt="Steel staircase installation showing precise measurements and building regulations compliance" 
                 className="rounded-lg shadow-xl"
               />

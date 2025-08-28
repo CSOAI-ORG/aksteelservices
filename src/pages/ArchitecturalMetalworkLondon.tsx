@@ -137,7 +137,7 @@ const ArchitecturalMetalworkLondon = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/interior-structural-work.jpg" 
                 alt="Elegant ornamental metalwork gate with intricate decorative patterns for London property" 
                 className="rounded-lg shadow-2xl"
               />
@@ -276,7 +276,7 @@ const ArchitecturalMetalworkLondon = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/large-steel-framework-4.jpg" 
                 alt="Luxury architectural metalwork balustrade installed in prestigious London development" 
                 className="rounded-lg shadow-xl"
               />

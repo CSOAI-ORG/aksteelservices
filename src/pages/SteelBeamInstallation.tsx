@@ -131,7 +131,7 @@ const SteelBeamInstallation = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/structural-steel-construction.jpg" 
                 alt="Steel beam installation in progress showing crane lifting I-beam into position" 
                 className="rounded-lg shadow-2xl"
               />
@@ -266,7 +266,7 @@ const SteelBeamInstallation = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/interior-structural-work.jpg" 
                 alt="Completed steel beam installation in residential loft conversion showing exposed beams" 
                 className="rounded-lg shadow-xl"
               />

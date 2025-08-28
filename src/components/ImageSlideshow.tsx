@@ -61,7 +61,7 @@ const ImageSlideshow = ({ className }: ImageSlideshowProps) => {
   }, [api]);
 
   return (
-    <div className={cn("relative h-screen w-full overflow-hidden", className)}>
+    <div className={cn("relative h-[100svh] w-full overflow-hidden", className)}>
       <Carousel
         setApi={setApi}
         className="w-full h-full"
@@ -81,10 +81,11 @@ const ImageSlideshow = ({ className }: ImageSlideshowProps) => {
           {slideImages.map((slide, index) => (
             <CarouselItem key={index} className="h-full relative">
               <div className="relative h-full w-full">
-                <LazyImage
+                <img
                   src={slide.src}
                   alt={slide.alt}
                   className="absolute inset-0 w-full h-full object-cover"
+                  loading="eager"
                 />
                 
                 {/* Dark overlay for better text readability */}

@@ -137,7 +137,7 @@ const IndustrialSteelPlatforms = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/industrial-warehouse-1.jpg" 
                 alt="Industrial steel mezzanine platform in warehouse facility with heavy-duty construction" 
                 className="rounded-lg shadow-2xl"
               />
@@ -276,7 +276,7 @@ const IndustrialSteelPlatforms = () => {
             
             <div className="relative">
               <img 
-                src="/api/placeholder/600/500" 
+                src="/src/assets/industrial-warehouse-2.jpg" 
                 alt="Industrial steel access platform with safety railings in manufacturing facility" 
                 className="rounded-lg shadow-xl"
               />
