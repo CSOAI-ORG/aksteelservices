@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logoSvg from "@/assets/ak-steel-logo.svg";
 
 interface BrandLogoProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   width?: number;
@@ -19,7 +20,7 @@ const BrandLogo: React.FC<BrandLogoProps> = ({ width = 160, height = 40, classNa
 
   return (
     <img
-      src="/lovable-uploads/c4f0e49b-33a3-413a-8c0c-19ec3eb40e59.png"
+      src={logoSvg}
       alt="AK Steel Services logo"
       width={width}
       height={height}

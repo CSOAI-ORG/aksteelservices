@@ -18,6 +18,15 @@ const Footer = () => {
     "Crane Hire & Hiab"
   ];
 
+  const serviceRoutes: Record<string, string> = {
+    "Steel Fabrication": "/steel-fabrication-kent",
+    "Structural Steel": "/structural-steel-london",
+    "Welding Services": "/welding-services",
+    "Onsite Fabrication": "/onsite-steel-fabrication",
+    "Steel Construction": "/steel-construction-gravesend",
+    "Crane Hire & Hiab": "/crane-hire-services",
+  };
+
   return (
     <footer className="bg-secondary text-secondary-foreground">
       <div className="container mx-auto px-4 py-12">
@@ -32,8 +41,8 @@ const Footer = () => {
               structural steel, and welding services across Kent, London, and South East England.
             </p>
             <div className="flex flex-col gap-2">
-              <Button variant="hero" size="sm" className="w-fit">
-                Get Free Quote Today
+              <Button variant="hero" size="sm" className="w-fit" asChild>
+                <Link to="/contact">Get Free Quote Today</Link>
               </Button>
             </div>
           </div>
@@ -78,7 +87,7 @@ const Footer = () => {
               {services.map((service) => (
                 <li key={service}>
                   <Link 
-                    to={`/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                    to={serviceRoutes[service]}
                     className="text-sm hover:text-accent transition-colors"
                   >
                     {service}

@@ -180,8 +180,8 @@ const Header = () => {
             <Button variant="outline" size="sm" className="hidden md:flex" asChild>
               <a href="tel:01474550531">Call Now</a>
             </Button>
-            <Button variant="hero" size="sm">
-              Get Quote
+            <Button variant="hero" size="sm" asChild>
+              <Link to="/contact">Get Quote</Link>
             </Button>
 
             {/* Mobile menu button */}
@@ -232,8 +232,8 @@ const Header = () => {
                 <Button variant="outline" size="sm" asChild>
                   <a href="tel:01474550531">Call 01474 550531</a>
                 </Button>
-                <Button variant="hero" size="sm">
-                  Get Free Quote
+                <Button variant="hero" size="sm" asChild>
+                  <Link to="/contact">Get Free Quote</Link>
                 </Button>
               </div>
             </nav>

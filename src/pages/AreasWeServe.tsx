@@ -78,13 +78,17 @@ const AreasWeServe = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg">
-                <MapPin className="h-5 w-5 mr-2" />
-                Find Your Area
+              <Button variant="secondary" size="lg" asChild>
+                <a href="#service-areas">
+                  <MapPin className="h-5 w-5 mr-2" />
+                  Find Your Area
+                </a>
               </Button>
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10">
-                <Phone className="h-5 w-5 mr-2" />
-                Call: 01474 550531
+              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+                <a href="tel:01474550531">
+                  <Phone className="h-5 w-5 mr-2" />
+                  Call: 01474 550531
+                </a>
               </Button>
             </div>
           </div>
@@ -92,7 +96,7 @@ const AreasWeServe = () => {
       </section>
 
       {/* Main Service Areas */}
-      <section className="py-20 bg-background">
+      <section id="service-areas" className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -153,9 +157,11 @@ const AreasWeServe = () => {
             <p className="text-muted-foreground mb-6">
               Contact us to discuss your project - we often work outside our main areas for the right projects
             </p>
-            <Button size="lg">
-              Contact Us Today
-              <ArrowRight className="h-4 w-4 ml-2" />
+            <Button size="lg" asChild>
+              <a href="/contact">
+                Contact Us Today
+                <ArrowRight className="h-4 w-4 ml-2" />
+              </a>
             </Button>
           </div>
         </div>

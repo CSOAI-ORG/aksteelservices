@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="80" viewBox="0 0 320 80" role="img" aria-label="AK Steel Services logo">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="hsl(222, 89%, 56%)" />
+      <stop offset="100%" stop-color="hsl(200, 89%, 56%)" />
+    </linearGradient>
+  </defs>
+  <rect width="320" height="80" rx="10" fill="transparent" />
+  <!-- Monogram -->
+  <g transform="translate(8,10)">
+    <path d="M0 60 L12 0 L24 0 L36 60 L28 60 L26 48 L10 48 L8 60 Z M13 40 L23 40 L18 16 Z" fill="url(#g)" />
+    <path d="M48 0 L48 60 L60 60 L60 38 L78 60 L92 60 L72 36 L92 16 L78 16 L60 34 L60 0 Z" fill="hsl(35, 95%, 55%)" />
+  </g>
+  <!-- Wordmark -->
+  <g transform="translate(110,18)">
+    <text x="0" y="22" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'" font-size="24" font-weight="800" fill="hsl(222, 14%, 15%)">AK</text>
+    <text x="42" y="22" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'" font-size="24" font-weight="700" fill="hsl(35, 95%, 45%)">Steel</text>
+    <text x="100" y="22" font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'" font-size="24" font-weight="700" fill="hsl(222, 14%, 15%)">Services</text>
+    <rect x="0" y="32" width="160" height="6" rx="3" fill="url(#g)" opacity="0.15" />
+  </g>
+</svg>

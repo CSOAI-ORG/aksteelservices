@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
         asChild
         variant="accent"
         size="lg"
-        className="rounded-full shadow-lg hover:shadow-xl animate-pulse hover:animate-none"
+        className="rounded-full shadow-lg hover:shadow-xl animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite] hover:animate-none"
       >
         <a 
           href={whatsappUrl}
