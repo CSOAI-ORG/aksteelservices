@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -113,7 +115,13 @@ const ProjectGallery = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Project Gallery - Steel Fabrication Portfolio | AK Steel Services"
+        description="Explore our extensive portfolio of steel fabrication projects across Kent and London. 1000+ completed projects including commercial buildings, heritage restorations, and industrial platforms."
+        keywords="steel fabrication portfolio, structural steel projects Kent, commercial steel construction, heritage restoration steelwork, industrial platform installation"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-primary to-secondary py-20 lg:py-32">

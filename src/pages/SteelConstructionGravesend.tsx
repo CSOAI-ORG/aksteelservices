@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -22,7 +24,13 @@ const SteelConstructionGravesend = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Steel Construction Gravesend - Local Expert Builders | AK Steel Services"
+        description="Premier steel construction company in Gravesend, Kent. Complete steel building solutions from planning to completion. Local expertise, fast response, 30+ years experience."
+        keywords="steel construction Gravesend, Gravesend steel builders, Kent steel construction, commercial steel buildings Gravesend, industrial steel construction"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">

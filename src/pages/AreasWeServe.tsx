@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -50,7 +52,13 @@ const AreasWeServe = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Areas We Serve - Steel Fabrication Kent, London & South East | AK Steel Services"
+        description="Professional steel fabrication services across Kent, London & South East England. Fast response times, local expertise, 500+ completed projects. Same day response within 30 miles of Kent."
+        keywords="steel fabrication Kent, structural steel London, steel services South East, Gravesend steel fabrication, Canterbury steel work, Maidstone structural steel"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-primary to-secondary py-20 lg:py-32">

@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -38,7 +40,13 @@ const StructuralSteelLondon = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Structural Steel Contractor London - All Boroughs | AK Steel Services"
+        description="Professional structural steel contractor serving all London boroughs. Residential extensions, commercial buildings, heritage restorations. London building regulations compliance & planning support."
+        keywords="structural steel London, London steel contractor, steel frame construction London, residential steel extension London, commercial steel construction"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">

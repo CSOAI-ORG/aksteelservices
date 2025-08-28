@@ -384,17 +384,18 @@ const Contact = () => {
             </p>
           </div>
           
-          <div className="bg-muted/50 rounded-lg p-12 text-center">
-            <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">Interactive Map Coming Soon</h3>
-            <p className="text-muted-foreground mb-6">
-              We'll be adding an interactive map to show our location and service areas.
-            </p>
-            <Button variant="outline" asChild>
-              <a href="https://maps.google.com/maps?q=Kent,UK" target="_blank" rel="noopener noreferrer">
-                View on Google Maps
-              </a>
-            </Button>
+          {/* Google Maps Embed */}
+          <div className="rounded-lg overflow-hidden h-64">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.9999999999995!2d0.3703!3d51.4419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI2JzMwLjgiTiAwwrAyMicxMy4xIkU!5e0!3m2!1sen!2suk!4v1234567890123"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="AK Steel Services Location"
+            ></iframe>
           </div>
         </div>
       </section>

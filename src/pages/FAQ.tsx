@@ -2,6 +2,8 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
   Accordion,
@@ -109,7 +111,13 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Frequently Asked Questions - Steel Fabrication | AK Steel Services"
+        description="Get answers to common questions about steel fabrication services, pricing, timelines, and quality standards. Expert advice from 30+ years experience in Kent and London."
+        keywords="steel fabrication FAQ, structural steel questions, welding services information, steel construction costs, Kent steel services"
+      />
       <Header />
+      <Breadcrumbs />
       
       <main>
         {/* Hero Section */}
