@@ -3,66 +3,50 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { cn } from "@/lib/utils";
 
 import Autoplay from "embla-carousel-autoplay";
-// Import all unique real images directly
-import industrialWarehouse1 from "@/assets/industrial-warehouse-1.jpg";
-import industrialWarehouse2 from "@/assets/industrial-warehouse-2.jpg";
-import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
-import largeFramework1 from "@/assets/large-steel-framework-1.jpg";
-import largeFramework2 from "@/assets/large-steel-framework-2.jpg";
-import largeFramework3 from "@/assets/large-steel-framework-3.jpg";
-import largeFramework4 from "@/assets/large-steel-framework-4.jpg";
-import residentialExtension from "@/assets/residential-extension.jpg";
-import rearExtensionFrame from "@/assets/rear-extension-steel-frame.jpg";
-import heroSteelFab from "@/assets/hero-steel-fabrication.jpg";
+// Import YOUR REAL IMAGES (replace these with your uploaded files)
+import heroImage1 from "@/assets/hero-image-1.jpg";
+import heroImage2 from "@/assets/hero-image-2.jpg";
+import heroImage3 from "@/assets/hero-image-3.jpg";
+import heroImage4 from "@/assets/hero-image-4.jpg";
+import heroImage5 from "@/assets/hero-image-5.jpg";
+import heroImage6 from "@/assets/hero-image-6.jpg";
 
 const slideImages = [
   {
-    src: industrialWarehouse2,
-    alt: "AK Steel Services — Commercial interior steel frame installation",
+    src: heroImage1,
+    alt: "AK Steel Services — Professional steel fabrication work",
     title: "Expert Steel Fabrication",
     subtitle: "30+ years of excellence in Kent & London",
   },
   {
-    src: largeFramework1,
-    alt: "AK Steel Services — Roof structure steel rafters under scaffold",
+    src: heroImage2,
+    alt: "AK Steel Services — Structural steel construction project",
     title: "Structural Steel Solutions",
     subtitle: "Professional installation & certification",
   },
   {
-    src: interiorStructuralWork,
-    alt: "AK Steel Services — Industrial interior steel platform and mezzanine",
+    src: heroImage3,
+    alt: "AK Steel Services — Industrial steel construction",
     title: "Industrial Projects",
     subtitle: "Heavy-duty steel construction across the South East",
   },
   {
-    src: largeFramework2,
-    alt: "AK Steel Services — Roof structure steelwork close-up",
-    title: "Complex Roof Structures",
-    subtitle: "Precision roof steelwork and rafters",
+    src: heroImage4,
+    alt: "AK Steel Services — Commercial steel framework",
+    title: "Commercial Steel Work",
+    subtitle: "Precision commercial steelwork solutions",
   },
   {
-    src: residentialExtension,
-    alt: "AK Steel Services — Residential extension steel frame, Kent",
+    src: heroImage5,
+    alt: "AK Steel Services — Residential steel extensions",
     title: "Residential Extensions",
     subtitle: "Quality steel solutions for homes",
   },
   {
-    src: rearExtensionFrame,
-    alt: "AK Steel Services — Rear extension steel frame installation",
-    title: "Building Extensions",
-    subtitle: "Seamless residential steel installations",
-  },
-  {
-    src: heroSteelFab,
-    alt: "AK Steel Services — Hero steel fabrication workspace",
+    src: heroImage6,
+    alt: "AK Steel Services — Professional welding services",
     title: "Professional Welding",
     subtitle: "Certified welding and steel fabrication services",
-  },
-  {
-    src: largeFramework3,
-    alt: "AK Steel Services — Large steel framework construction",
-    title: "Large Scale Projects",
-    subtitle: "Industrial and commercial steel construction",
   },
 ];
 
