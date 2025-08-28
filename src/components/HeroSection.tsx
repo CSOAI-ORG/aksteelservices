@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone } from "lucide-react";
-import heroImage from "@/assets/hero-steel-fabrication.jpg";
-import LazyImage from "@/components/LazyImage";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
 const HeroSection = () => {
