@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
+import NewHeroSection from "@/components/NewHeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -9,7 +9,7 @@ import GoogleReviews from "@/components/GoogleReviews";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
-import ImageSlideshow from "@/components/ImageSlideshow";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -122,12 +122,8 @@ const Index = () => {
       <Header />
       <Breadcrumbs />
       
-      {/* Fullscreen Image Slideshow */}
-      <ImageSlideshow />
-      
-      {/* Hero Section */}
-      <HeroSection />
-
+      {/* New Hero Section */}
+      <NewHeroSection />
       {/* Stats Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
@@ -267,7 +263,7 @@ const Index = () => {
       </section>
 
       {/* Quote Form Section */}
-      <section className="py-20 bg-muted/50">
+      <section id="get-quote" className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
           <QuoteForm />
         </div>
