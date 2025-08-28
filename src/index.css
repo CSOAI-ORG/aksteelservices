@@ -2,39 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* AK Steel Services Design System - Industrial & Professional */
 
 @layer base {
   :root {
+    /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 210 11% 15%;
 
+    /* Industrial Blue Primary */
+    --primary: 221 83% 32%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 221 83% 25%;
+
+    /* Steel Grey Secondary */
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 215 25% 20%;
+
+    /* Orange Accent for CTAs */
+    --accent: 22 96% 54%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 22 96% 47%;
+
+    /* Industrial Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 32%), hsl(221 83% 25%));
+    --gradient-steel: linear-gradient(135deg, hsl(215 25% 27%), hsl(215 25% 20%));
+    --gradient-hero: linear-gradient(135deg, hsl(221 83% 32%) 0%, hsl(215 25% 27%) 100%);
+
+    /* Subtle backgrounds */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 11% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 11% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 32%;
 
     --radius: 0.5rem;
 

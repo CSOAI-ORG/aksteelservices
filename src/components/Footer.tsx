@@ -1,0 +1,129 @@
+import { Button } from "@/components/ui/button";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const Footer = () => {
+  const serviceAreas = [
+    "Gravesend", "Canterbury", "Maidstone", "Dartford", "Medway",
+    "London", "Surrey", "Essex", "Sussex", "Kent"
+  ];
+
+  const services = [
+    "Steel Fabrication",
+    "Structural Steel",
+    "Welding Services",
+    "Onsite Fabrication",
+    "Steel Construction",
+    "Crane Hire & Hiab"
+  ];
+
+  return (
+    <footer className="bg-secondary text-secondary-foreground">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          {/* Company Info */}
+          <div className="space-y-4">
+            <h3 className="text-xl font-bold text-accent">AK Steel Services</h3>
+            <p className="text-sm opacity-90">
+              The UK's #1 Steel Manufacturer with over 30 years of experience in steel fabrication, 
+              structural steel, and welding services across Kent, London, and South East England.
+            </p>
+            <div className="flex flex-col gap-2">
+              <Button variant="hero" size="sm" className="w-fit">
+                Get Free Quote Today
+              </Button>
+            </div>
+          </div>
+
+          {/* Contact Information */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold">Contact Us</h4>
+            <div className="space-y-3">
+              <a 
+                href="tel:01474550531" 
+                className="flex items-center gap-3 hover:text-accent transition-colors"
+              >
+                <Phone className="h-4 w-4" />
+                <span>01474 550531</span>
+              </a>
+              <a 
+                href="mailto:info@aksteelservices.com" 
+                className="flex items-center gap-3 hover:text-accent transition-colors"
+              >
+                <Mail className="h-4 w-4" />
+                <span>info@aksteelservices.com</span>
+              </a>
+              <div className="flex items-start gap-3">
+                <MapPin className="h-4 w-4 mt-1" />
+                <span className="text-sm">Gravesend, Kent, UK</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="h-4 w-4 mt-1" />
+                <div className="text-sm">
+                  <div>Mon-Fri: 7:30 - 17:00</div>
+                  <div>Saturday: 7:00 - 13:00</div>
+                  <div>Sunday: Closed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold">Our Services</h4>
+            <ul className="space-y-2">
+              {services.map((service) => (
+                <li key={service}>
+                  <Link 
+                    to={`/${service.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="text-sm hover:text-accent transition-colors"
+                  >
+                    {service}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Service Areas */}
+          <div className="space-y-4">
+            <h4 className="text-lg font-semibold">Service Areas</h4>
+            <div className="grid grid-cols-2 gap-1">
+              {serviceAreas.map((area) => (
+                <span key={area} className="text-sm opacity-90">
+                  {area}
+                </span>
+              ))}
+            </div>
+            <div className="pt-4">
+              <p className="text-sm font-medium text-accent">Emergency Services Available 24/7</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-secondary-hover mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm opacity-90">
+              © 2024 A K Steel Services Limited. All rights reserved.
+            </p>
+            <div className="flex gap-6 text-sm">
+              <Link to="/privacy" className="hover:text-accent transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-accent transition-colors">
+                Terms of Service
+              </Link>
+              <Link to="/sitemap" className="hover:text-accent transition-colors">
+                Sitemap
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

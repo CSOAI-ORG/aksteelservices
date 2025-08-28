@@ -1,0 +1,156 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useToast } from "@/hooks/use-toast";
+
+const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    toast({
+      title: "Quote Request Sent!",
+      description: "We'll contact you within 24 hours with your free quote.",
+    });
+    
+    setIsSubmitting(false);
+  };
+
+  return (
+    <Card className="w-full max-w-2xl mx-auto">
+      <CardHeader className="text-center">
+        <CardTitle className="text-2xl">{title}</CardTitle>
+        <CardDescription>
+          Fill out the form below and we'll provide a free, no-obligation quote within 24 hours.
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="name">Full Name *</Label>
+              <Input id="name" placeholder="Your full name" required />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone">Phone Number *</Label>
+              <Input id="phone" type="tel" placeholder="01474 550531" required />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="email">Email Address *</Label>
+            <Input id="email" type="email" placeholder="your@email.com" required />
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="space-y-2">
+              <Label htmlFor="service">Service Type *</Label>
+              <Select required>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select service" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="steel-fabrication">Steel Fabrication</SelectItem>
+                  <SelectItem value="structural-steel">Structural Steel</SelectItem>
+                  <SelectItem value="welding">Welding Services</SelectItem>
+                  <SelectItem value="onsite-fabrication">Onsite Fabrication</SelectItem>
+                  <SelectItem value="crane-hire">Crane Hire & Hiab</SelectItem>
+                  <SelectItem value="emergency">Emergency Services</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="location">Project Location *</Label>
+              <Select required>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select location" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="gravesend">Gravesend</SelectItem>
+                  <SelectItem value="kent">Other Kent</SelectItem>
+                  <SelectItem value="london">London</SelectItem>
+                  <SelectItem value="surrey">Surrey</SelectItem>
+                  <SelectItem value="essex">Essex</SelectItem>
+                  <SelectItem value="sussex">Sussex</SelectItem>
+                  <SelectItem value="other">Other</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="description">Project Description *</Label>
+            <Textarea 
+              id="description" 
+              placeholder="Please describe your steel fabrication project in detail..."
+              className="min-h-[100px]"
+              required 
+            />
+          </div>
+
+          <div className="space-y-3">
+            <Label>Preferred Contact Method</Label>
+            <RadioGroup defaultValue="phone" className="flex flex-wrap gap-6">
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="phone" id="contact-phone" />
+                <Label htmlFor="contact-phone">Phone Call</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="email" id="contact-email" />
+                <Label htmlFor="contact-email">Email</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="whatsapp" id="contact-whatsapp" />
+                <Label htmlFor="contact-whatsapp">WhatsApp</Label>
+              </div>
+            </RadioGroup>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="timeline">Project Timeline</Label>
+            <Select>
+              <SelectTrigger>
+                <SelectValue placeholder="When do you need this completed?" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="asap">As soon as possible</SelectItem>
+                <SelectItem value="1-month">Within 1 month</SelectItem>
+                <SelectItem value="3-months">Within 3 months</SelectItem>
+                <SelectItem value="6-months">Within 6 months</SelectItem>
+                <SelectItem value="flexible">Flexible timeline</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+
+          <Button 
+            type="submit" 
+            variant="hero" 
+            size="lg" 
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending Quote Request..." : "Get My Free Quote"}
+          </Button>
+
+          <p className="text-sm text-muted-foreground text-center">
+            By submitting this form, you agree to our privacy policy. We'll never spam you or share your details.
+          </p>
+        </form>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default QuoteForm;
