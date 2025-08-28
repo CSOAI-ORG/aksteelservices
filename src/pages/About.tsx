@@ -144,42 +144,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Meet Our <span className="text-primary">Expert Team</span>
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Our experienced professionals bring decades of expertise to every project.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="text-xl">{member.name}</CardTitle>
-                  <p className="text-primary font-semibold">{member.role}</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-muted-foreground" />
-                      <span className="text-sm">{member.experience} experience</span>
-                    </div>
-                    <div className="flex items-start gap-2">
-                      <Wrench className="h-4 w-4 text-muted-foreground mt-0.5" />
-                      <span className="text-sm">{member.specialization}</span>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Certifications */}
       <section className="py-20">
