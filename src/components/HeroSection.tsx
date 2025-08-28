@@ -16,16 +16,7 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-primary via-secondary to-primary">
-      {/* Background Image Overlay */}
-      <div className="absolute inset-0 opacity-20">
-        <LazyImage
-          src={heroImage}
-          alt="Steel fabrication workshop showing structural steel work"
-          className="w-full h-full object-cover"
-        />
-      </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/80" />
+    <section className="relative min-h-[70vh] flex items-center bg-primary">
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
