@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone } from "lucide-react";
 import heroImage from "@/assets/hero-steel-fabrication.jpg";
+import LazyImage from "@/components/LazyImage";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const HeroSection = () => {
+  const { trackPhoneCall } = useAnalytics();
+  
   const benefits = [
     "30+ Years Experience",
     "Free Quotes",
@@ -14,10 +18,13 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-[70vh] flex items-center bg-gradient-to-br from-primary via-secondary to-primary">
       {/* Background Image Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center opacity-20"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
+      <div className="absolute inset-0 opacity-20">
+        <LazyImage
+          src={heroImage}
+          alt="Steel fabrication workshop showing structural steel work"
+          className="w-full h-full object-cover"
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-secondary/80" />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -60,7 +67,11 @@ const HeroSection = () => {
                 className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary"
                 asChild
               >
-                <a href="tel:01474550531" className="flex items-center gap-2">
+                <a 
+                  href="tel:01474550531" 
+                  className="flex items-center gap-2"
+                  onClick={() => trackPhoneCall('01474550531')}
+                >
                   <Phone className="h-5 w-5" />
                   Call 01474 550531
                 </a>

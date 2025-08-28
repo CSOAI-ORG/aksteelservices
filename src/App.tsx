@@ -28,7 +28,8 @@ import TermsOfService from "./pages/TermsOfService";
 import Sitemap from "./pages/Sitemap";
 import ServiceCalculatorPage from "./pages/ServiceCalculator";
 import NotFound from "./pages/NotFound";
-import Breadcrumbs from "./components/Breadcrumbs";
+import ThankYou from "./pages/ThankYou";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +41,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
         <div className="min-h-screen bg-background">
+          <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
@@ -64,6 +66,7 @@ const App = () => (
             <Route path="/industrial-steel-platforms" element={<IndustrialSteelPlatforms />} />
             <Route path="/steel-staircase-installation" element={<SteelStaircaseInstallation />} />
             <Route path="/steel-building-extensions-kent" element={<SteelBuildingExtensionsKent />} />
+            <Route path="/thank-you" element={<ThankYou />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

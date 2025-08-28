@@ -1,7 +1,9 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const WhatsAppButton = () => {
+  const { trackWhatsAppClick } = useAnalytics();
   const phoneNumber = "4401474550531"; // UK format for WhatsApp
   const message = "Hello! I'm interested in your steel fabrication services. Could you please provide more information?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -19,6 +21,7 @@ const WhatsAppButton = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2"
+          onClick={trackWhatsAppClick}
         >
           <MessageCircle className="h-5 w-5" />
           <span className="hidden sm:inline">WhatsApp</span>

@@ -5,7 +5,10 @@ import ServicesSection from "@/components/ServicesSection";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEOHead from "@/components/SEOHead";
+import GoogleReviews from "@/components/GoogleReviews";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import LazyImage from "@/components/LazyImage";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +17,8 @@ import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
 import weldingImage from "@/assets/welding-services.jpg";
 
 const Index = () => {
+  useAnalytics(); // Initialize analytics tracking
+  
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -139,6 +144,9 @@ const Index = () => {
 
       {/* Services Section */}
       <ServicesSection />
+      
+      {/* Customer Reviews Section */}
+      <GoogleReviews />
 
       {/* About/Why Choose Us Section */}
       <section className="py-20 bg-muted/30">
@@ -189,16 +197,16 @@ const Index = () => {
 
             {/* Images */}
             <div className="grid gap-4">
-              <img 
+              <LazyImage 
                 src={structuralSteelImage} 
                 alt="Structural steel construction project in London"
-                className="rounded-lg shadow-lg"
+                className="rounded-lg shadow-lg w-full h-auto"
               />
               <div className="grid grid-cols-2 gap-4">
-                <img 
+                <LazyImage 
                   src={weldingImage} 
                   alt="Professional welding services"
-                  className="rounded-lg shadow-lg"
+                  className="rounded-lg shadow-lg w-full h-auto"
                 />
                 <div className="bg-primary rounded-lg p-6 text-white flex flex-col justify-center">
                   <div className="text-2xl font-bold mb-2">Free Quotes</div>

@@ -7,24 +7,48 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
+import { useAnalytics } from "@/hooks/useAnalytics";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { trackFormSubmission, trackQuoteRequest } = useAnalytics();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setIsLoading(true);
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    const formData = new FormData(e.target as HTMLFormElement);
+    const serviceType = formData.get('service') as string;
     
-    toast({
-      title: "Quote Request Sent!",
-      description: "We'll contact you within 24 hours with your free quote.",
-    });
-    
-    setIsSubmitting(false);
+    try {
+      // Track the form submission
+      trackFormSubmission('quote_request');
+      trackQuoteRequest(serviceType || 'general');
+      
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      toast({
+        title: "Quote Request Sent!",
+        description: "We'll get back to you within 24 hours with a detailed quote.",
+      });
+      
+      // Redirect to thank you page
+      window.location.href = '/thank-you';
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your request. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -35,28 +59,37 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
           Fill out the form below and we'll provide a free, no-obligation quote within 24 hours.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="relative">
         <form onSubmit={handleSubmit} className="space-y-6">
+          {isLoading && (
+            <div className="absolute inset-0 bg-background/50 flex items-center justify-center z-10">
+              <div className="space-y-3">
+                <Skeleton className="h-4 w-48 mx-auto" />
+                <Skeleton className="h-4 w-32 mx-auto" />
+              </div>
+            </div>
+          )}
+          
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name *</Label>
-              <Input id="name" placeholder="Your full name" required />
+              <Input id="name" name="name" placeholder="Your full name" required />
             </div>
             <div className="space-y-2">
               <Label htmlFor="phone">Phone Number *</Label>
-              <Input id="phone" type="tel" placeholder="01474 550531" required />
+              <Input id="phone" name="phone" type="tel" placeholder="01474 550531" required />
             </div>
           </div>
 
           <div className="space-y-2">
             <Label htmlFor="email">Email Address *</Label>
-            <Input id="email" type="email" placeholder="your@email.com" required />
+            <Input id="email" name="email" type="email" placeholder="your@email.com" required />
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="service">Service Type *</Label>
-              <Select required>
+              <Select name="service" required>
                 <SelectTrigger>
                   <SelectValue placeholder="Select service" />
                 </SelectTrigger>
