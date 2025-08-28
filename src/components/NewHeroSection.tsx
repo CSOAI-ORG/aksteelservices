@@ -85,28 +85,28 @@ const NewHeroSection = () => {
 
           {/* Right image grid */}
           <div className="grid grid-cols-2 gap-4 animate-enter">
-            <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
                 src={img1}
                 alt="AK Steel Services — Large steel framework installation"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
                 src={img2}
                 alt="AK Steel Services — Residential extension steelworks"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
                 src={img3}
                 alt="AK Steel Services — Interior structural steel work"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
+            <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
                 src={img4}
                 alt="AK Steel Services — Rear extension steel frame installation"
