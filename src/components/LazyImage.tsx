@@ -1,5 +1,7 @@
+
 import { useState, useRef, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
+import { cn } from "@/lib/utils";
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -42,9 +44,12 @@ const LazyImage = ({ src, alt, className, fallback, ...props }: LazyImageProps) 
   };
 
   return (
-    <div ref={imgRef} className={className}>
+    <div ref={imgRef} className={cn("relative", className)}>
       {!isLoaded && (
-        <Skeleton className="w-full h-full absolute inset-0" />
+        <Skeleton
+          className="w-full h-full absolute inset-0 animate-none pointer-events-none"
+          aria-hidden="true"
+        />
       )}
       
       {isInView && (
