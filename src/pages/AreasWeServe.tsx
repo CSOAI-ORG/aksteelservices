@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Phone, CheckCircle, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AreasWeServe = () => {
   const serviceAreas = [
@@ -158,10 +159,10 @@ const AreasWeServe = () => {
               Contact us to discuss your project - we often work outside our main areas for the right projects
             </p>
             <Button size="lg" asChild>
-              <a href="/contact">
+              <Link to="/contact">
                 Contact Us Today
                 <ArrowRight className="h-4 w-4 ml-2" />
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

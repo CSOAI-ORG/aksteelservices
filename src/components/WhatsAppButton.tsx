@@ -4,7 +4,7 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 
 const WhatsAppButton = () => {
   const { trackWhatsAppClick } = useAnalytics();
-  const phoneNumber = "4401474550531"; // UK format for WhatsApp
+  const phoneNumber = "441474550531"; // UK format for WhatsApp
   const message = "Hello! I'm interested in your steel fabrication services. Could you please provide more information?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
         asChild
         variant="accent"
         size="lg"
-        className="rounded-full shadow-lg hover:shadow-xl animate-[pulse_4s_cubic-bezier(0.4,0,0.6,1)_infinite] hover:animate-none"
+        className="rounded-full shadow-lg hover:shadow-xl animate-[pulse_8s_cubic-bezier(0.4,0,0.6,1)_infinite] hover:animate-none motion-reduce:animate-none"
       >
         <a 
           href={whatsappUrl}
