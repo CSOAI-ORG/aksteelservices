@@ -3,52 +3,39 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { cn } from "@/lib/utils";
 
 import Autoplay from "embla-carousel-autoplay";
-// Import YOUR REAL IMAGES (replace these with your uploaded files)
-import heroImage1 from "@/assets/hero-image-1.jpg";
-import heroImage2 from "@/assets/hero-image-2.jpg";
-import heroImage3 from "@/assets/hero-image-3.jpg";
-import heroImage4 from "@/assets/hero-image-4.jpg";
-import heroImage5 from "@/assets/hero-image-5.jpg";
-import heroImage6 from "@/assets/hero-image-6.jpg";
+// Use centralized mapping of your real uploaded photos
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
-const slideImages = [
-  {
-    src: heroImage1,
-    alt: "AK Steel Services — Professional steel fabrication work",
-    title: "Expert Steel Fabrication",
-    subtitle: "30+ years of excellence in Kent & London",
-  },
-  {
-    src: heroImage2,
-    alt: "AK Steel Services — Structural steel construction project",
-    title: "Structural Steel Solutions",
-    subtitle: "Professional installation & certification",
-  },
-  {
-    src: heroImage3,
-    alt: "AK Steel Services — Industrial steel construction",
-    title: "Industrial Projects",
-    subtitle: "Heavy-duty steel construction across the South East",
-  },
-  {
-    src: heroImage4,
-    alt: "AK Steel Services — Commercial steel framework",
-    title: "Commercial Steel Work",
-    subtitle: "Precision commercial steelwork solutions",
-  },
-  {
-    src: heroImage5,
-    alt: "AK Steel Services — Residential steel extensions",
-    title: "Residential Extensions",
-    subtitle: "Quality steel solutions for homes",
-  },
-  {
-    src: heroImage6,
-    alt: "AK Steel Services — Professional welding services",
-    title: "Professional Welding",
-    subtitle: "Certified welding and steel fabrication services",
-  },
-];
+
+const orderedPhotos = [
+  REAL_PHOTOS.industrialInterior1,
+  REAL_PHOTOS.residentialExtension1,
+  REAL_PHOTOS.roofStructure1,
+  REAL_PHOTOS.roofStructure2,
+  REAL_PHOTOS.commercialInterior1,
+  REAL_PHOTOS.residentialExtension2,
+] as const;
+
+const slideImages = orderedPhotos.map((p, idx) => ({
+  src: p.src,
+  alt: p.alt,
+  title: [
+    "Expert Steel Fabrication",
+    "Structural Steel Solutions",
+    "Industrial Projects",
+    "Commercial Steel Work",
+    "Residential Extensions",
+    "Professional Welding",
+  ][idx],
+  subtitle: [
+    "30+ years of excellence in Kent & London",
+    "Professional installation & certification",
+    "Heavy-duty steel construction across the South East",
+    "Precision commercial steelwork solutions",
+    "Quality steel solutions for homes",
+    "Certified welding and steel fabrication services",
+  ][idx],
+}));
 
 interface ImageSlideshowProps {
   className?: string;
