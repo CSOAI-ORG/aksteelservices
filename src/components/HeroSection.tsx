@@ -8,7 +8,7 @@ const HeroSection = () => {
   
   const benefits = [
     "30+ Years Experience",
-    "Free Quotes",
+    "Free Quotes", 
     "Emergency Services 24/7",
     "Fully Insured & Certified"
   ];
@@ -53,7 +53,7 @@ const HeroSection = () => {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="text-lg px-8 border-white text-white hover:bg-white hover:text-primary"
+                className="text-lg px-8 border-accent bg-accent/10 text-accent hover:bg-accent hover:text-white backdrop-blur-sm"
                 asChild
               >
                 <a 
@@ -62,7 +62,7 @@ const HeroSection = () => {
                   onClick={() => trackPhoneCall('01474550531')}
                 >
                   <Phone className="h-5 w-5" />
-                  Call 01474 550531
+                  <span className="font-bold">Call 01474 550531</span>
                 </a>
               </Button>
             </div>
