@@ -21,7 +21,11 @@ import AreasWeServe from "./pages/AreasWeServe";
 import ProjectGallery from "./pages/ProjectGallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import FAQ from "./pages/FAQ";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
 import NotFound from "./pages/NotFound";
+import Breadcrumbs from "./components/Breadcrumbs";
 
 const queryClient = new QueryClient();
 
@@ -31,28 +35,34 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/steel-fabrication-kent" element={<SteelFabricationKent />} />
-          <Route path="/structural-steel-london" element={<StructuralSteelLondon />} />
-          <Route path="/welding-services" element={<WeldingServices />} />
-          <Route path="/steel-construction-gravesend" element={<SteelConstructionGravesend />} />
-          <Route path="/onsite-steel-fabrication" element={<OnsiteSteelFabrication />} />
-          <Route path="/crane-hire-services" element={<CraneHireServices />} />
-          <Route path="/3d-modeling-services" element={<ThreeDModelingServices />} />
-          <Route path="/emergency-steel-repair" element={<EmergencySteelRepair />} />
-          <Route path="/steel-beam-installation" element={<SteelBeamInstallation />} />
-          <Route path="/architectural-metalwork-london" element={<ArchitecturalMetalworkLondon />} />
-          <Route path="/industrial-steel-platforms" element={<IndustrialSteelPlatforms />} />
-          <Route path="/steel-staircase-installation" element={<SteelStaircaseInstallation />} />
-          <Route path="/steel-building-extensions-kent" element={<SteelBuildingExtensionsKent />} />
-          <Route path="/areas-we-serve" element={<AreasWeServe />} />
-          <Route path="/project-gallery" element={<ProjectGallery />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div className="min-h-screen bg-background">
+          <Breadcrumbs />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/areas-we-serve" element={<AreasWeServe />} />
+            <Route path="/project-gallery" element={<ProjectGallery />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/steel-fabrication-kent" element={<SteelFabricationKent />} />
+            <Route path="/structural-steel-london" element={<StructuralSteelLondon />} />
+            <Route path="/welding-services" element={<WeldingServices />} />
+            <Route path="/steel-construction-gravesend" element={<SteelConstructionGravesend />} />
+            <Route path="/onsite-steel-fabrication" element={<OnsiteSteelFabrication />} />
+            <Route path="/crane-hire-services" element={<CraneHireServices />} />
+            <Route path="/3d-modeling-services" element={<ThreeDModelingServices />} />
+            <Route path="/emergency-steel-repair" element={<EmergencySteelRepair />} />
+            <Route path="/steel-beam-installation" element={<SteelBeamInstallation />} />
+            <Route path="/architectural-metalwork-london" element={<ArchitecturalMetalworkLondon />} />
+            <Route path="/industrial-steel-platforms" element={<IndustrialSteelPlatforms />} />
+            <Route path="/steel-staircase-installation" element={<SteelStaircaseInstallation />} />
+            <Route path="/steel-building-extensions-kent" element={<SteelBuildingExtensionsKent />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
