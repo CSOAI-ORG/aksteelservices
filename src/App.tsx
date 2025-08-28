@@ -12,6 +12,11 @@ import OnsiteSteelFabrication from "./pages/OnsiteSteelFabrication";
 import CraneHireServices from "./pages/CraneHireServices";
 import ThreeDModelingServices from "./pages/ThreeDModelingServices";
 import EmergencySteelRepair from "./pages/EmergencySteelRepair";
+import SteelBeamInstallation from "./pages/SteelBeamInstallation";
+import ArchitecturalMetalworkLondon from "./pages/ArchitecturalMetalworkLondon";
+import IndustrialSteelPlatforms from "./pages/IndustrialSteelPlatforms";
+import SteelStaircaseInstallation from "./pages/SteelStaircaseInstallation";
+import SteelBuildingExtensionsKent from "./pages/SteelBuildingExtensionsKent";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +37,11 @@ const App = () => (
           <Route path="/crane-hire-services" element={<CraneHireServices />} />
           <Route path="/3d-modeling-services" element={<ThreeDModelingServices />} />
           <Route path="/emergency-steel-repair" element={<EmergencySteelRepair />} />
+          <Route path="/steel-beam-installation" element={<SteelBeamInstallation />} />
+          <Route path="/architectural-metalwork-london" element={<ArchitecturalMetalworkLondon />} />
+          <Route path="/industrial-steel-platforms" element={<IndustrialSteelPlatforms />} />
+          <Route path="/steel-staircase-installation" element={<SteelStaircaseInstallation />} />
+          <Route path="/steel-building-extensions-kent" element={<SteelBuildingExtensionsKent />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
