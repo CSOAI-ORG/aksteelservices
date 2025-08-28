@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Monitor, Layers, FileText } from "lucide-react";
-import structuralSteelImage from "@/assets/industrial-warehouse-2.jpg";
+import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
 
 const ThreeDModelingServices = () => {
   const software = [

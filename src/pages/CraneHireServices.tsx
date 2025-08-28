@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Truck, Award, Users } from "lucide-react";
-import structuralSteelImage from "@/assets/industrial-warehouse-1.jpg";
+import structuralSteelImage from "@/assets/large-steel-framework-1.jpg";
 
 const CraneHireServices = () => {
   const equipment = [

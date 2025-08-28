@@ -9,7 +9,12 @@ import heroSteelFabrication from "@/assets/hero-steel-fabrication.jpg";
 import structuralSteelConstruction from "@/assets/structural-steel-construction.jpg";
 import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
 import industrialWarehouse1 from "@/assets/industrial-warehouse-1.jpg";
+import industrialWarehouse2 from "@/assets/industrial-warehouse-2.jpg";
+import largeFramework1 from "@/assets/large-steel-framework-1.jpg";
+import largeFramework2 from "@/assets/large-steel-framework-2.jpg";
+import residentialExtension from "@/assets/residential-extension.jpg";
 import rearExtensionSteel from "@/assets/rear-extension-steel-frame.jpg";
+import weldingServices from "@/assets/welding-services.jpg";
 
 const slideImages = [
   {
@@ -37,10 +42,40 @@ const slideImages = [
     subtitle: "Heavy-duty steel construction across the South East"
   },
   {
+    src: industrialWarehouse2,
+    alt: "AK Steel Services - Large industrial warehouse steel construction project",
+    title: "Large Scale Projects",
+    subtitle: "Complex steel structures for industrial clients"
+  },
+  {
+    src: largeFramework1,
+    alt: "AK Steel Services - Large steel framework construction with multiple levels",
+    title: "Multi-Level Construction",
+    subtitle: "Advanced steel framework solutions"
+  },
+  {
+    src: residentialExtension,
+    alt: "AK Steel Services - Residential extension steel framework in Kent",
+    title: "Home Extensions",
+    subtitle: "Quality steel solutions for residential projects"
+  },
+  {
     src: rearExtensionSteel,
     alt: "AK Steel Services - Rear extension steel frame installation in Kent",
     title: "Building Extensions",
     subtitle: "Steel frame extensions for homes & businesses"
+  },
+  {
+    src: weldingServices,
+    alt: "AK Steel Services - Professional welding work on steel components",
+    title: "Welding Services",
+    subtitle: "Expert welding for all steel projects"
+  },
+  {
+    src: largeFramework2,
+    alt: "AK Steel Services - Large scale steel framework under construction",
+    title: "Heavy Construction",
+    subtitle: "Robust steel solutions for major projects"
   }
 ];
 

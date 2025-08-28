@@ -14,7 +14,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, CheckCircle, ArrowRight, Award, Users, Clock } from "lucide-react";
-import structuralSteelImage from "@/assets/interior-structural-work.jpg";
+import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
 import weldingImage from "@/assets/welding-services.jpg";
 import residentialExtension from "@/assets/residential-extension.jpg";
 
