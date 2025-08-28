@@ -9,13 +9,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, MapPin, Users, ArrowRight, Star, Award } from "lucide-react";
-import heroSteelImage from "@/assets/large-steel-framework-1.jpg";
-import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
-import weldingImage from "@/assets/welding-services.jpg";
+import heroSteelFabrication from "@/assets/hero-steel-fabrication.jpg";
+import structuralSteelConstruction from "@/assets/structural-steel-construction.jpg";
+import weldingServices from "@/assets/welding-services.jpg";
 import residentialExtension from "@/assets/residential-extension.jpg";
-import interiorStructural from "@/assets/interior-structural-work.jpg";
-import industrialWarehouse from "@/assets/industrial-warehouse-1.jpg";
-import rearExtension from "@/assets/rear-extension-steel-frame.jpg";
+import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
+import industrialWarehouse1 from "@/assets/industrial-warehouse-1.jpg";
+import rearExtensionSteel from "@/assets/rear-extension-steel-frame.jpg";
 
 const ProjectGallery = () => {
   const projectCategories = [
@@ -38,7 +38,7 @@ const ProjectGallery = () => {
       client: "Canterbury Business Park",
       duration: "6 weeks",
       teamSize: 8,
-      image: structuralSteelImage,
+      image: structuralSteelConstruction,
       description: "Complete structural steel framework for a 3-story office extension including fire-resistant coatings and architectural features.",
       highlights: [
         "500 tonnes of structural steel",
@@ -57,7 +57,7 @@ const ProjectGallery = () => {
       client: "Historic Buildings Trust",
       duration: "12 weeks",
       teamSize: 6,
-      image: heroSteelImage,
+      image: heroSteelFabrication,
       description: "Restoration and reinforcement of Victorian-era ironwork while maintaining historical authenticity and meeting modern safety standards.",
       highlights: [
         "Heritage-compliant materials",
@@ -76,7 +76,7 @@ const ProjectGallery = () => {
       client: "Kent Manufacturing Ltd",
       duration: "8 weeks",
       teamSize: 10,
-      image: weldingImage,
+      image: weldingServices,
       description: "Multi-level industrial platform system with integrated safety features for heavy machinery installation.",
       highlights: [
         "50-tonne load capacity design",
