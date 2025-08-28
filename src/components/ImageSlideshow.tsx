@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { cn } from "@/lib/utils";
 
 import Autoplay from "embla-carousel-autoplay";
+import fallbackImage from "@/assets/structural-steel-construction.jpg";
 
 // Import real project images from AK Steel Services
 import { REAL_PHOTOS } from "@/assets/real-photos";
@@ -88,6 +89,10 @@ const ImageSlideshow = ({ className }: ImageSlideshowProps) => {
                   alt={slide.alt}
                   className="absolute inset-0 w-full h-full object-cover"
                   loading={index === 0 ? "eager" : "lazy"}
+                  onError={(e) => {
+                    e.currentTarget.src = fallbackImage;
+                    e.currentTarget.alt = "AK Steel Services — structural steel construction";
+                  }}
                 />
                 
                 {/* Dark overlay for better text readability */}

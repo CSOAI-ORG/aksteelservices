@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Clock, AlertTriangle, Shield, Zap } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import fallbackImage from "@/assets/structural-steel-construction.jpg";
 
 const EmergencySteelRepair = () => {
   const emergencyTypes = [

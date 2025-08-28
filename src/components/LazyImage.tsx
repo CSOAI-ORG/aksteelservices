@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
+import defaultFallback from "@/assets/structural-steel-construction.jpg";
 
 interface LazyImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
@@ -54,7 +55,7 @@ const LazyImage = ({ src, alt, className, fallback, ...props }: LazyImageProps) 
       
       {isInView && (
         <img
-          src={hasError && fallback ? fallback : src}
+          src={hasError ? (fallback || defaultFallback) : src}
           alt={alt}
           onLoad={handleLoad}
           onError={handleError}
