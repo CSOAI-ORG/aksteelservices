@@ -17,6 +17,8 @@ import ArchitecturalMetalworkLondon from "./pages/ArchitecturalMetalworkLondon";
 import IndustrialSteelPlatforms from "./pages/IndustrialSteelPlatforms";
 import SteelStaircaseInstallation from "./pages/SteelStaircaseInstallation";
 import SteelBuildingExtensionsKent from "./pages/SteelBuildingExtensionsKent";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +31,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/steel-fabrication-kent" element={<SteelFabricationKent />} />
           <Route path="/structural-steel-london" element={<StructuralSteelLondon />} />
           <Route path="/welding-services" element={<WeldingServices />} />
