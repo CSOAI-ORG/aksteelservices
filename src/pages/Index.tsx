@@ -4,6 +4,8 @@ import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,6 +14,67 @@ import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
 import weldingImage from "@/assets/welding-services.jpg";
 
 const Index = () => {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "AK Steel Services",
+    "description": "Professional steel fabrication, structural steel, and welding services across Kent, London, and South East England. 30+ years experience.",
+    "url": "https://aksteelservices.com",
+    "telephone": "01474550531",
+    "email": "info@aksteelservices.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gravesend",
+      "addressRegion": "Kent",
+      "addressCountry": "UK"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "51.4416",
+      "longitude": "0.3706"
+    },
+    "openingHours": [
+      "Mo-Fr 07:30-17:00",
+      "Sa 07:00-13:00"
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.4416",
+        "longitude": "0.3706"
+      },
+      "geoRadius": "50000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Steel Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Steel Fabrication"
+          }
+        },
+        {
+          "@type": "Offer", 
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Structural Steel"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service", 
+            "name": "Welding Services"
+          }
+        }
+      ]
+    }
+  };
+
   const testimonials = [
     {
       name: "John Mitchell",
@@ -45,7 +108,14 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Steel Fabrication Services | AK Steel Services Kent & London"
+        description="Professional steel fabrication, structural steel & welding services across Kent & London. 30+ years experience, free quotes, 24/7 emergency service. Call 01474 550531"
+        keywords="steel fabrication, structural steel, welding services, Kent, London, steel construction, metal fabrication"
+        schemaData={localBusinessSchema}
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <HeroSection />

@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -38,7 +40,13 @@ const WeldingServices = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Professional Welding Services | MIG, TIG, ARC Welding | Kent & London"
+        description="Expert welding services across Kent & London. MIG, TIG, ARC welding. Certified welders, 24/7 emergency service, mobile welding units. Call 01474 550531"
+        keywords="welding services, MIG welding, TIG welding, ARC welding, Kent welding, London welding, emergency welding, mobile welding"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">

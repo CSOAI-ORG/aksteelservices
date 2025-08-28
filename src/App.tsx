@@ -24,6 +24,8 @@ import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfService from "./pages/TermsOfService";
+import Sitemap from "./pages/Sitemap";
+import ServiceCalculatorPage from "./pages/ServiceCalculator";
 import NotFound from "./pages/NotFound";
 import Breadcrumbs from "./components/Breadcrumbs";
 
@@ -36,7 +38,6 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="min-h-screen bg-background">
-          <Breadcrumbs />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
@@ -46,6 +47,8 @@ const App = () => (
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/sitemap" element={<Sitemap />} />
+            <Route path="/calculator" element={<ServiceCalculatorPage />} />
             <Route path="/steel-fabrication-kent" element={<SteelFabricationKent />} />
             <Route path="/structural-steel-london" element={<StructuralSteelLondon />} />
             <Route path="/welding-services" element={<WeldingServices />} />

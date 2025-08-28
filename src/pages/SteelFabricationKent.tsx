@@ -2,6 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -27,7 +29,13 @@ const SteelFabricationKent = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Steel Fabrication Kent | Expert Metal Fabrication Services"
+        description="Professional steel fabrication services in Kent. Custom metalwork, structural steel, industrial components. 30+ years experience in Gravesend, Canterbury, Maidstone."
+        keywords="steel fabrication Kent, metal fabrication Kent, custom steel work, Gravesend steel fabrication, Canterbury metalwork"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">

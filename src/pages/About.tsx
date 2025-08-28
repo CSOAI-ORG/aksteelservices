@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -49,7 +51,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="About AK Steel Services | 30+ Years Steel Fabrication Experience"
+        description="Learn about AK Steel Services - 30+ years of steel fabrication expertise. Meet our team, view certifications, and discover why we're Kent & London's trusted steel specialists."
+        keywords="about AK Steel Services, steel fabrication company, Kent steel fabricators, experienced welders, steel construction team"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">

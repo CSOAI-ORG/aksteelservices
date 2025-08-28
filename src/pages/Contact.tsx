@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -86,7 +88,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Contact AK Steel Services | Get Free Quote | 01474 550531"
+        description="Contact AK Steel Services for steel fabrication quotes. Call 01474 550531, email info@aksteelservices.com or use our contact form. Serving Kent, London & South East."
+        keywords="contact steel fabrication, free steel quote, AK Steel Services contact, steel fabrication Kent contact, emergency steel repair"
+      />
       <Header />
+      <Breadcrumbs />
       
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
