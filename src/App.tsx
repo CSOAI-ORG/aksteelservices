@@ -17,6 +17,8 @@ import ArchitecturalMetalworkLondon from "./pages/ArchitecturalMetalworkLondon";
 import IndustrialSteelPlatforms from "./pages/IndustrialSteelPlatforms";
 import SteelStaircaseInstallation from "./pages/SteelStaircaseInstallation";
 import SteelBuildingExtensionsKent from "./pages/SteelBuildingExtensionsKent";
+import AreasWeServe from "./pages/AreasWeServe";
+import ProjectGallery from "./pages/ProjectGallery";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -46,6 +48,8 @@ const App = () => (
           <Route path="/industrial-steel-platforms" element={<IndustrialSteelPlatforms />} />
           <Route path="/steel-staircase-installation" element={<SteelStaircaseInstallation />} />
           <Route path="/steel-building-extensions-kent" element={<SteelBuildingExtensionsKent />} />
+          <Route path="/areas-we-serve" element={<AreasWeServe />} />
+          <Route path="/project-gallery" element={<ProjectGallery />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
