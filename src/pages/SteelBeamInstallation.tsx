@@ -17,6 +17,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LazyImage from "@/components/LazyImage";
+import structuralSteelConstruction from "@/assets/structural-steel-construction.jpg";
+import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
 
 const beamTypes = [
   {
@@ -130,9 +133,9 @@ const SteelBeamInstallation = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="/src/assets/structural-steel-construction.jpg" 
-                alt="Steel beam installation in progress showing crane lifting I-beam into position" 
+              <LazyImage 
+                src={structuralSteelConstruction} 
+                alt="AK Steel Services - Professional steel beam installation showing precision construction techniques" 
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
@@ -265,9 +268,9 @@ const SteelBeamInstallation = () => {
             </div>
             
             <div className="relative">
-              <img 
-                src="/src/assets/interior-structural-work.jpg" 
-                alt="Completed steel beam installation in residential loft conversion showing exposed beams" 
+              <LazyImage 
+                src={interiorStructuralWork} 
+                alt="AK Steel Services - Completed structural steel installation showing quality craftsmanship in residential project" 
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg border border-border">

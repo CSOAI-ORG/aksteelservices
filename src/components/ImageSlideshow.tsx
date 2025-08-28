@@ -4,43 +4,43 @@ import { cn } from "@/lib/utils";
 
 import Autoplay from "embla-carousel-autoplay";
 
-// Import real project images
-import largeFramework1 from "@/assets/large-steel-framework-1.jpg";
-import largeFramework2 from "@/assets/large-steel-framework-2.jpg";
-import largeFramework3 from "@/assets/large-steel-framework-3.jpg";
-import largeFramework4 from "@/assets/large-steel-framework-4.jpg";
+// Import real project images from AK Steel Services
+import heroSteelFabrication from "@/assets/hero-steel-fabrication.jpg";
+import structuralSteelConstruction from "@/assets/structural-steel-construction.jpg";
+import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
 import industrialWarehouse1 from "@/assets/industrial-warehouse-1.jpg";
+import rearExtensionSteel from "@/assets/rear-extension-steel-frame.jpg";
 
 const slideImages = [
   {
-    src: largeFramework1,
-    alt: "Large steel framework construction project",
-    title: "Industrial Steel Construction",
-    subtitle: "Expert steel fabrication for commercial projects"
+    src: heroSteelFabrication,
+    alt: "AK Steel Services - Professional steel fabrication workshop with advanced equipment",
+    title: "Expert Steel Fabrication",
+    subtitle: "30+ years of excellence in Kent & London"
   },
   {
-    src: largeFramework2,
-    alt: "Steel beam installation for commercial building",
-    title: "Commercial Steel Installation",
-    subtitle: "Professional structural steel services"
+    src: structuralSteelConstruction,
+    alt: "AK Steel Services - Structural steel construction showing beam installation",
+    title: "Structural Steel Solutions",
+    subtitle: "Professional installation & certification"
   },
   {
-    src: largeFramework3,
-    alt: "Large scale steel fabrication project",
-    title: "Structural Steel Fabrication",
+    src: interiorStructuralWork,
+    alt: "AK Steel Services - Interior structural steel work with exposed beams",
+    title: "Residential & Commercial",
     subtitle: "Custom steel solutions for every project"
   },
   {
-    src: largeFramework4,
-    alt: "Industrial steel construction framework",
-    title: "Heavy Industrial Projects",
-    subtitle: "Reliable steel construction across Kent & London"
+    src: industrialWarehouse1,
+    alt: "AK Steel Services - Industrial warehouse steel framework construction",
+    title: "Industrial Projects",
+    subtitle: "Heavy-duty steel construction across the South East"
   },
   {
-    src: industrialWarehouse1,
-    alt: "Industrial warehouse steel construction",
-    title: "Warehouse & Industrial",
-    subtitle: "Complete steel fabrication and installation"
+    src: rearExtensionSteel,
+    alt: "AK Steel Services - Rear extension steel frame installation in Kent",
+    title: "Building Extensions",
+    subtitle: "Steel frame extensions for homes & businesses"
   }
 ];
 
