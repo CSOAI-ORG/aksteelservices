@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Building, Home, Factory } from "lucide-react";
-import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
+import structuralSteelImage from "@/assets/large-steel-framework-4.jpg";
 
 const StructuralSteelLondon = () => {
   const projects = [

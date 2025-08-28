@@ -9,9 +9,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Calendar, MapPin, Users, ArrowRight, Star, Award } from "lucide-react";
-import heroSteelImage from "@/assets/hero-steel-fabrication.jpg";
+import heroSteelImage from "@/assets/large-steel-framework-1.jpg";
 import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
 import weldingImage from "@/assets/welding-services.jpg";
+import residentialExtension from "@/assets/residential-extension.jpg";
+import interiorStructural from "@/assets/interior-structural-work.jpg";
+import industrialWarehouse from "@/assets/industrial-warehouse-1.jpg";
+import rearExtension from "@/assets/rear-extension-steel-frame.jpg";
 
 const ProjectGallery = () => {
   const projectCategories = [

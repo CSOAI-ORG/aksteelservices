@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone } from "lucide-react";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import heroBackground from "@/assets/large-steel-framework-2.jpg";
 
 const HeroSection = () => {
   const { trackPhoneCall } = useAnalytics();
@@ -15,7 +16,14 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-[70vh] flex items-center bg-primary">
+    <section className="relative min-h-[70vh] flex items-center">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50" />
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">

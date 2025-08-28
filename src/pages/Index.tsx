@@ -9,12 +9,14 @@ import GoogleReviews from "@/components/GoogleReviews";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
+import ImageSlideshow from "@/components/ImageSlideshow";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, CheckCircle, ArrowRight, Award, Users, Clock } from "lucide-react";
-import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
+import structuralSteelImage from "@/assets/interior-structural-work.jpg";
 import weldingImage from "@/assets/welding-services.jpg";
+import residentialExtension from "@/assets/residential-extension.jpg";
 
 const Index = () => {
   useAnalytics(); // Initialize analytics tracking
@@ -122,6 +124,9 @@ const Index = () => {
       <Header />
       <Breadcrumbs />
       
+      {/* Fullscreen Image Slideshow */}
+      <ImageSlideshow />
+      
       {/* Hero Section */}
       <HeroSection />
 
@@ -199,13 +204,13 @@ const Index = () => {
             <div className="grid gap-4">
               <LazyImage 
                 src={structuralSteelImage} 
-                alt="Structural steel construction project in London"
+                alt="Interior structural steel work showing exposed steel beams and framework"
                 className="rounded-lg shadow-lg w-full h-auto"
               />
               <div className="grid grid-cols-2 gap-4">
                 <LazyImage 
-                  src={weldingImage} 
-                  alt="Professional welding services"
+                  src={residentialExtension} 
+                  alt="Residential house extension with steel beam installation"
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
                 <div className="bg-primary rounded-lg p-6 text-white flex flex-col justify-center">

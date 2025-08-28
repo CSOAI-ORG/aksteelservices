@@ -92,8 +92,13 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out'
+			},
+			textShadow: {
+				'sm': '0 1px 2px rgba(0, 0, 0, 0.5)',
+				'DEFAULT': '0 2px 4px rgba(0, 0, 0, 0.6)',
+				'lg': '0 8px 16px rgba(0, 0, 0, 0.8)',
 			}
 		}
 	},
-	plugins: [require("tailwindcss-animate")],
+	plugins: [require("tailwindcss-animate"), require("tailwindcss-textshadow")],
 } satisfies Config;
