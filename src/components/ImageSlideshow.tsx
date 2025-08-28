@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
-import LazyImage from "@/components/LazyImage";
+
 import Autoplay from "embla-carousel-autoplay";
 
 // Import real project images
@@ -79,8 +79,8 @@ const ImageSlideshow = ({ className }: ImageSlideshowProps) => {
       >
         <CarouselContent className="h-full">
           {slideImages.map((slide, index) => (
-            <CarouselItem key={index} className="h-full relative">
-              <div className="relative h-full w-full">
+            <CarouselItem key={index} className="relative min-h-[100svh]">
+              <div className="relative min-h-[100svh] w-full">
                 <img
                   src={slide.src}
                   alt={slide.alt}
