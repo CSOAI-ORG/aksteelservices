@@ -14,9 +14,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, CheckCircle, ArrowRight, Award, Users, Clock } from "lucide-react";
-import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
-import weldingImage from "@/assets/welding-services.jpg";
-import residentialExtension from "@/assets/residential-extension.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const Index = () => {
   useAnalytics(); // Initialize analytics tracking
@@ -203,14 +201,14 @@ const Index = () => {
             {/* Images */}
             <div className="grid gap-4">
               <LazyImage 
-                src={structuralSteelImage} 
-                alt="Interior structural steel work showing exposed steel beams and framework"
+                src={REAL_PHOTOS.commercialInterior1.src} 
+                alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="rounded-lg shadow-lg w-full h-auto"
               />
               <div className="grid grid-cols-2 gap-4">
                 <LazyImage 
-                  src={residentialExtension} 
-                  alt="Residential house extension with steel beam installation"
+                  src={REAL_PHOTOS.residentialExtension1.src} 
+                  alt={REAL_PHOTOS.residentialExtension1.alt}
                   className="rounded-lg shadow-lg w-full h-auto"
                 />
                 <div className="bg-primary rounded-lg p-6 text-white flex flex-col justify-center">

@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import SteelFabricationKent from "./pages/SteelFabricationKent";
@@ -19,7 +19,7 @@ import IndustrialSteelPlatforms from "./pages/IndustrialSteelPlatforms";
 import SteelStaircaseInstallation from "./pages/SteelStaircaseInstallation";
 import SteelBuildingExtensionsKent from "./pages/SteelBuildingExtensionsKent";
 import AreasWeServe from "./pages/AreasWeServe";
-import ProjectGallery from "./pages/ProjectGallery";
+
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
@@ -47,7 +47,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
-            <Route path="/project-gallery" element={<ProjectGallery />} />
+            <Route path="/project-gallery" element={<Navigate to="/" replace />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />

@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Truck, Shield, Clock } from "lucide-react";
-import structuralSteelImage from "@/assets/hero-steel-fabrication.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const OnsiteSteelFabrication = () => {
   const capabilities = [
@@ -107,8 +107,8 @@ const OnsiteSteelFabrication = () => {
 
             <div className="space-y-6">
               <img 
-                src={structuralSteelImage} 
-                alt="Mobile steel fabrication equipment onsite"
+                src={REAL_PHOTOS.residentialExtension1.src} 
+                alt={REAL_PHOTOS.residentialExtension1.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="grid grid-cols-2 gap-4 text-center">

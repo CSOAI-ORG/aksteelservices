@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Truck, Award, Users } from "lucide-react";
-import structuralSteelImage from "@/assets/large-steel-framework-1.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const CraneHireServices = () => {
   const equipment = [
@@ -107,8 +107,8 @@ const CraneHireServices = () => {
 
             <div className="space-y-6">
               <img 
-                src={structuralSteelImage} 
-                alt="Crane hire services for steel installation"
+                src={REAL_PHOTOS.industrialInterior1.src} 
+                alt={REAL_PHOTOS.industrialInterior1.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="grid grid-cols-3 gap-4 text-center">

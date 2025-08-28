@@ -6,7 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, Users, Clock, CheckCircle, Shield, Wrench, Building } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 const About = () => {
   const teamMembers = [
@@ -66,6 +66,7 @@ const About = () => {
             <Badge variant="secondary" className="mb-6">
               Established 1993
             </Badge>
+            <BrandLogo className="mx-auto mb-4" width={160} height={40} />
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               About <span className="text-primary">AK Steel Services</span>
             </h1>

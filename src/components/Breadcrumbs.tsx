@@ -14,7 +14,7 @@ const pageNames: { [key: string]: string } = {
   "/about": "About Us",
   "/contact": "Contact",
   "/areas-we-serve": "Areas We Serve",
-  "/project-gallery": "Project Gallery",
+  
   "/faq": "FAQ",
   "/privacy-policy": "Privacy Policy",
   "/terms-of-service": "Terms of Service",

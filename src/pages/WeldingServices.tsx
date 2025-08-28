@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Zap, Shield, Clock } from "lucide-react";
-import weldingServices from "@/assets/welding-services.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const WeldingServices = () => {
   const weldingTypes = [
@@ -122,8 +122,8 @@ const WeldingServices = () => {
 
             <div className="space-y-6">
               <img 
-                src={weldingServices} 
-                alt="AK Steel Services - Professional welding services demonstrating expert craftsmanship and quality"
+                src={REAL_PHOTOS.commercialInterior1.src} 
+                alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="grid grid-cols-3 gap-4">

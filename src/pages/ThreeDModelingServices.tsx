@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Monitor, Layers, FileText } from "lucide-react";
-import structuralSteelImage from "@/assets/structural-steel-construction.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const ThreeDModelingServices = () => {
   const software = [
@@ -111,8 +111,8 @@ const ThreeDModelingServices = () => {
 
             <div className="space-y-6">
               <img 
-                src={structuralSteelImage} 
-                alt="3D steel modeling and CAD design services"
+                src={REAL_PHOTOS.roofStructure2.src} 
+                alt={REAL_PHOTOS.roofStructure2.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="grid grid-cols-3 gap-4 text-center">

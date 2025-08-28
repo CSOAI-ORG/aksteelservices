@@ -21,6 +21,7 @@ import {
   Wrench,
   Truck
 } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 
 const Contact = () => {
   const contactMethods = [
@@ -103,6 +104,7 @@ const Contact = () => {
             <Badge variant="secondary" className="mb-6">
               Get In Touch
             </Badge>
+            <BrandLogo className="mx-auto mb-4" width={160} height={40} />
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Contact <span className="text-primary">AK Steel Services</span>
             </h1>

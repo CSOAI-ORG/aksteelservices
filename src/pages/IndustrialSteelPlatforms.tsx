@@ -18,8 +18,7 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
-import industrialWarehouse1 from "@/assets/industrial-warehouse-1.jpg";
-import industrialWarehouse2 from "@/assets/industrial-warehouse-2.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const platformTypes = [
   {
@@ -140,8 +139,8 @@ const IndustrialSteelPlatforms = () => {
             
             <div className="relative">
               <LazyImage 
-                src={industrialWarehouse1} 
-                alt="AK Steel Services - Industrial steel platform and mezzanine construction in warehouse facility" 
+                src={REAL_PHOTOS.industrialInterior1.src} 
+                alt={REAL_PHOTOS.industrialInterior1.alt} 
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
@@ -279,8 +278,8 @@ const IndustrialSteelPlatforms = () => {
             
             <div className="relative">
               <LazyImage 
-                src={industrialWarehouse2} 
-                alt="AK Steel Services - Industrial steel access platform with safety features in manufacturing facility" 
+                src={REAL_PHOTOS.commercialInterior1.src} 
+                alt={REAL_PHOTOS.commercialInterior1.alt} 
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg border border-border">

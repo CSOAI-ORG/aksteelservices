@@ -18,8 +18,7 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
-import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
-import structuralSteelConstruction from "@/assets/structural-steel-construction.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const metalworkServices = [
   {
@@ -140,8 +139,8 @@ const ArchitecturalMetalworkLondon = () => {
             
             <div className="relative">
               <LazyImage 
-                src={interiorStructuralWork} 
-                alt="AK Steel Services - Elegant structural metalwork showing precision craftsmanship for London properties" 
+                src={REAL_PHOTOS.roofStructure2.src} 
+                alt={REAL_PHOTOS.roofStructure2.alt} 
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
@@ -279,8 +278,8 @@ const ArchitecturalMetalworkLondon = () => {
             
             <div className="relative">
               <LazyImage 
-                src={structuralSteelConstruction} 
-                alt="AK Steel Services - Structural steel construction project showcasing precision metalwork for London developments" 
+                src={REAL_PHOTOS.roofStructure1.src} 
+                alt={REAL_PHOTOS.roofStructure1.alt} 
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg border border-border">

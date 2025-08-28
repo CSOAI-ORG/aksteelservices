@@ -18,8 +18,7 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
-import structuralSteelConstruction from "@/assets/structural-steel-construction.jpg";
-import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const beamTypes = [
   {
@@ -134,8 +133,8 @@ const SteelBeamInstallation = () => {
             
             <div className="relative">
               <LazyImage 
-                src={structuralSteelConstruction} 
-                alt="AK Steel Services - Professional steel beam installation showing precision construction techniques" 
+                src={REAL_PHOTOS.residentialExtension1.src} 
+                alt={REAL_PHOTOS.residentialExtension1.alt} 
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
@@ -269,8 +268,8 @@ const SteelBeamInstallation = () => {
             
             <div className="relative">
               <LazyImage 
-                src={interiorStructuralWork} 
-                alt="AK Steel Services - Completed structural steel installation showing quality craftsmanship in residential project" 
+                src={REAL_PHOTOS.residentialExtension2.src} 
+                alt={REAL_PHOTOS.residentialExtension2.alt} 
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg border border-border">

@@ -15,7 +15,7 @@ const Sitemap = () => {
       { title: "Contact", url: "/contact", description: "Get in touch for quotes and consultations" },
       { title: "FAQ", url: "/faq", description: "Frequently asked questions about our services" },
       { title: "Areas We Serve", url: "/areas-we-serve", description: "Service coverage across Kent, London & South East" },
-      { title: "Project Gallery", url: "/gallery", description: "Portfolio of completed steel fabrication projects" }
+      
     ],
     "Steel Fabrication Services": [
       { title: "Steel Fabrication Kent", url: "/steel-fabrication-kent", description: "Custom steel fabrication services in Kent" },
@@ -35,8 +35,8 @@ const Sitemap = () => {
       { title: "Emergency Steel Repair", url: "/emergency-steel-repair", description: "24/7 emergency steel repair services" }
     ],
     "Legal & Information": [
-      { title: "Privacy Policy", url: "/privacy", description: "How we handle your personal information" },
-      { title: "Terms of Service", url: "/terms", description: "Terms and conditions of service" }
+      { title: "Privacy Policy", url: "/privacy-policy", description: "How we handle your personal information" },
+      { title: "Terms of Service", url: "/terms-of-service", description: "Terms and conditions of service" }
     ]
   };
 

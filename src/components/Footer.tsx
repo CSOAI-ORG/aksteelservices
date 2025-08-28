@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import BrandLogo from "@/components/BrandLogo";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -24,6 +25,7 @@ const Footer = () => {
           
           {/* Company Info */}
           <div className="space-y-4">
+            <BrandLogo className="mb-2" width={160} height={40} />
             <h3 className="text-xl font-bold text-accent">AK Steel Services</h3>
             <p className="text-sm opacity-90">
               The UK's #1 Steel Manufacturer with over 30 years of experience in steel fabrication, 
@@ -109,10 +111,10 @@ const Footer = () => {
               © 2024 A K Steel Services Limited. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <Link to="/privacy" className="hover:text-accent transition-colors">
+              <Link to="/privacy-policy" className="hover:text-accent transition-colors">
                 Privacy Policy
               </Link>
-              <Link to="/terms" className="hover:text-accent transition-colors">
+              <Link to="/terms-of-service" className="hover:text-accent transition-colors">
                 Terms of Service
               </Link>
               <Link to="/sitemap" className="hover:text-accent transition-colors">

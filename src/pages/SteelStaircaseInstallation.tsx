@@ -18,8 +18,7 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
-import largeFramework1 from "@/assets/large-steel-framework-1.jpg";
-import largeFramework2 from "@/assets/large-steel-framework-2.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const staircaseTypes = [
   {
@@ -140,8 +139,8 @@ const SteelStaircaseInstallation = () => {
             
             <div className="relative">
               <LazyImage 
-                src={largeFramework1} 
-                alt="AK Steel Services - Custom steel staircase construction showing precision fabrication and installation" 
+                src={REAL_PHOTOS.commercialInterior1.src} 
+                alt={REAL_PHOTOS.commercialInterior1.alt} 
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
@@ -304,8 +303,8 @@ const SteelStaircaseInstallation = () => {
             
             <div className="relative">
               <LazyImage 
-                src={largeFramework2} 
-                alt="AK Steel Services - Steel staircase installation demonstrating building regulations compliance and safety standards" 
+                src={REAL_PHOTOS.roofStructure1.src} 
+                alt={REAL_PHOTOS.roofStructure1.alt} 
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg border border-border">

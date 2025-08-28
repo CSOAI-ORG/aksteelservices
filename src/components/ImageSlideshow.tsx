@@ -5,78 +5,45 @@ import { cn } from "@/lib/utils";
 import Autoplay from "embla-carousel-autoplay";
 
 // Import real project images from AK Steel Services
-import heroSteelFabrication from "@/assets/hero-steel-fabrication.jpg";
-import structuralSteelConstruction from "@/assets/structural-steel-construction.jpg";
-import interiorStructuralWork from "@/assets/interior-structural-work.jpg";
-import industrialWarehouse1 from "@/assets/industrial-warehouse-1.jpg";
-import industrialWarehouse2 from "@/assets/industrial-warehouse-2.jpg";
-import largeFramework1 from "@/assets/large-steel-framework-1.jpg";
-import largeFramework2 from "@/assets/large-steel-framework-2.jpg";
-import residentialExtension from "@/assets/residential-extension.jpg";
-import rearExtensionSteel from "@/assets/rear-extension-steel-frame.jpg";
-import weldingServices from "@/assets/welding-services.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const slideImages = [
   {
-    src: heroSteelFabrication,
-    alt: "AK Steel Services - Professional steel fabrication workshop with advanced equipment",
+    src: REAL_PHOTOS.commercialInterior1.src,
+    alt: REAL_PHOTOS.commercialInterior1.alt,
     title: "Expert Steel Fabrication",
-    subtitle: "30+ years of excellence in Kent & London"
+    subtitle: "30+ years of excellence in Kent & London",
   },
   {
-    src: structuralSteelConstruction,
-    alt: "AK Steel Services - Structural steel construction showing beam installation",
+    src: REAL_PHOTOS.roofStructure1.src,
+    alt: REAL_PHOTOS.roofStructure1.alt,
     title: "Structural Steel Solutions",
-    subtitle: "Professional installation & certification"
+    subtitle: "Professional installation & certification",
   },
   {
-    src: interiorStructuralWork,
-    alt: "AK Steel Services - Interior structural steel work with exposed beams",
-    title: "Residential & Commercial",
-    subtitle: "Custom steel solutions for every project"
-  },
-  {
-    src: industrialWarehouse1,
-    alt: "AK Steel Services - Industrial warehouse steel framework construction",
+    src: REAL_PHOTOS.industrialInterior1.src,
+    alt: REAL_PHOTOS.industrialInterior1.alt,
     title: "Industrial Projects",
-    subtitle: "Heavy-duty steel construction across the South East"
+    subtitle: "Heavy-duty steel construction across the South East",
   },
   {
-    src: industrialWarehouse2,
-    alt: "AK Steel Services - Large industrial warehouse steel construction project",
-    title: "Large Scale Projects",
-    subtitle: "Complex steel structures for industrial clients"
+    src: REAL_PHOTOS.roofStructure2.src,
+    alt: REAL_PHOTOS.roofStructure2.alt,
+    title: "Complex Roof Structures",
+    subtitle: "Precision roof steelwork and rafters",
   },
   {
-    src: largeFramework1,
-    alt: "AK Steel Services - Large steel framework construction with multiple levels",
-    title: "Multi-Level Construction",
-    subtitle: "Advanced steel framework solutions"
+    src: REAL_PHOTOS.residentialExtension1.src,
+    alt: REAL_PHOTOS.residentialExtension1.alt,
+    title: "Residential Extensions",
+    subtitle: "Quality steel solutions for homes",
   },
   {
-    src: residentialExtension,
-    alt: "AK Steel Services - Residential extension steel framework in Kent",
-    title: "Home Extensions",
-    subtitle: "Quality steel solutions for residential projects"
-  },
-  {
-    src: rearExtensionSteel,
-    alt: "AK Steel Services - Rear extension steel frame installation in Kent",
+    src: REAL_PHOTOS.residentialExtension2.src,
+    alt: REAL_PHOTOS.residentialExtension2.alt,
     title: "Building Extensions",
-    subtitle: "Steel frame extensions for homes & businesses"
+    subtitle: "Seamless residential steel installations",
   },
-  {
-    src: weldingServices,
-    alt: "AK Steel Services - Professional welding work on steel components",
-    title: "Welding Services",
-    subtitle: "Expert welding for all steel projects"
-  },
-  {
-    src: largeFramework2,
-    alt: "AK Steel Services - Large scale steel framework under construction",
-    title: "Heavy Construction",
-    subtitle: "Robust steel solutions for major projects"
-  }
 ];
 
 interface ImageSlideshowProps {
@@ -120,7 +87,7 @@ const ImageSlideshow = ({ className }: ImageSlideshowProps) => {
                   src={slide.src}
                   alt={slide.alt}
                   className="absolute inset-0 w-full h-full object-cover"
-                  loading="eager"
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
                 
                 {/* Dark overlay for better text readability */}

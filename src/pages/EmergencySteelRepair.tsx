@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Clock, AlertTriangle, Shield, Zap } from "lucide-react";
-import structuralSteelImage from "@/assets/large-steel-framework-2.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const EmergencySteelRepair = () => {
   const emergencyTypes = [
@@ -111,8 +111,8 @@ const EmergencySteelRepair = () => {
 
             <div className="space-y-6">
               <img 
-                src={structuralSteelImage} 
-                alt="Emergency steel repair services"
+                src={REAL_PHOTOS.commercialInterior1.src} 
+                alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="grid grid-cols-2 gap-4 text-center">

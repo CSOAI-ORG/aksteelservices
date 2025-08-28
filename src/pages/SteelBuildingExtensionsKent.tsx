@@ -18,8 +18,7 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
-import residentialExtension from "@/assets/residential-extension.jpg";
-import rearExtensionSteel from "@/assets/rear-extension-steel-frame.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const extensionTypes = [
   {
@@ -140,8 +139,8 @@ const SteelBuildingExtensionsKent = () => {
             
             <div className="relative">
               <LazyImage 
-                src={residentialExtension} 
-                alt="AK Steel Services - Modern residential extension in Kent showcasing steel frame construction with large openings" 
+                src={REAL_PHOTOS.residentialExtension1.src} 
+                alt={REAL_PHOTOS.residentialExtension1.alt} 
                 className="rounded-lg shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-lg">
@@ -279,8 +278,8 @@ const SteelBuildingExtensionsKent = () => {
             
             <div className="relative">
               <LazyImage 
-                src={rearExtensionSteel} 
-                alt="AK Steel Services - Completed rear extension with steel frame construction in Kent, showing seamless integration" 
+                src={REAL_PHOTOS.residentialExtension2.src} 
+                alt={REAL_PHOTOS.residentialExtension2.alt} 
                 className="rounded-lg shadow-xl"
               />
               <div className="absolute top-6 right-6 bg-background/95 backdrop-blur-sm p-4 rounded-lg border border-border">

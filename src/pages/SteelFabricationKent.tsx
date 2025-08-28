@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Clock, Award, ArrowRight } from "lucide-react";
-import structuralSteelImage from "@/assets/large-steel-framework-4.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const SteelFabricationKent = () => {
   const services = [
@@ -102,8 +102,8 @@ const SteelFabricationKent = () => {
 
             <div className="space-y-6">
               <img 
-                src={structuralSteelImage} 
-                alt="Steel fabrication workshop in Kent"
+                src={REAL_PHOTOS.industrialInterior1.src} 
+                alt={REAL_PHOTOS.industrialInterior1.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="grid grid-cols-3 gap-4 text-center">

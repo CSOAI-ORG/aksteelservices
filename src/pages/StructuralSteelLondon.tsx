@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Building, Home, Factory } from "lucide-react";
-import largeFramework4 from "@/assets/large-steel-framework-4.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const StructuralSteelLondon = () => {
   const projects = [
@@ -122,8 +122,8 @@ const StructuralSteelLondon = () => {
 
             <div className="space-y-6">
               <img 
-                src={largeFramework4} 
-                alt="AK Steel Services - Structural steel construction project in London showing professional expertise"
+                src={REAL_PHOTOS.commercialInterior1.src} 
+                alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="bg-primary rounded-lg p-6 text-white">

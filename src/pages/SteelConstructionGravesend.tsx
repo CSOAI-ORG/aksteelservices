@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, MapPin, Award, Clock } from "lucide-react";
-import structuralSteelImage from "@/assets/large-steel-framework-3.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const SteelConstructionGravesend = () => {
   const projects = [
@@ -93,8 +93,8 @@ const SteelConstructionGravesend = () => {
 
             <div className="space-y-6">
               <img 
-                src={structuralSteelImage} 
-                alt="Steel construction project in Gravesend"
+                src={REAL_PHOTOS.residentialExtension2.src} 
+                alt={REAL_PHOTOS.residentialExtension2.alt}
                 className="rounded-lg shadow-lg"
               />
               <div className="grid grid-cols-3 gap-4 text-center">
