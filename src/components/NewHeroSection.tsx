@@ -41,7 +41,7 @@ const NewHeroSection = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-              30+ years delivering precision steelwork: fabrication, on-site welding, and certified installations
+              20+ years delivering precision steelwork: fabrication, on-site welding, and certified installations
               for residential, commercial, and industrial projects across the South East.
             </p>
 

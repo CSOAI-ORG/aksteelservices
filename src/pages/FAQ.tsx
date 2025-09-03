@@ -113,7 +113,7 @@ const FAQ = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Frequently Asked Questions - Steel Fabrication | AK Steel Services"
-        description="Get answers to common questions about steel fabrication services, pricing, timelines, and quality standards. Expert advice from 30+ years experience in Kent and London."
+        description="Get answers to common questions about steel fabrication services, pricing, timelines, and quality standards. Expert advice from 20+ years experience in Kent and London."
         keywords="steel fabrication FAQ, structural steel questions, welding services information, steel construction costs, Kent steel services"
       />
       <Header />

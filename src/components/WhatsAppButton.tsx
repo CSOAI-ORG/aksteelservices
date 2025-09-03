@@ -4,7 +4,7 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 
 const WhatsAppButton = () => {
   const { trackWhatsAppClick } = useAnalytics();
-  const phoneNumber = "441474550531"; // UK format for WhatsApp
+  const phoneNumber = "447492964836"; // Mobile number for WhatsApp
   const message = "Hello! I'm interested in your steel fabrication services. Could you please provide more information?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 

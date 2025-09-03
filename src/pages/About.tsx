@@ -14,7 +14,7 @@ const About = () => {
     {
       name: "Andrew Knight",
       role: "Founder & Managing Director",
-      experience: "30+ years",
+      experience: "20+ years",
       specialization: "Structural Steel Design & Project Management"
     },
     {
@@ -47,14 +47,14 @@ const About = () => {
     { year: "2010", event: "Completed 500th major project" },
     { year: "2015", event: "Achieved ISO 9001:2015 certification" },
     { year: "2020", event: "Launched emergency steel repair service" },
-    { year: "2023", event: "Celebrating 30 years of excellence" }
+    { year: "2013", event: "Celebrating 20 years of excellence" }
   ];
 
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="About AK Steel Services | 30+ Years Steel Fabrication Experience"
-        description="Learn about AK Steel Services - 30+ years of steel fabrication expertise. Meet our team, view certifications, and discover why we're Kent & London's trusted steel specialists."
+        title="About AK Steel Services | 20+ Years Steel Fabrication Experience"
+        description="Learn about AK Steel Services - 20+ years of steel fabrication expertise. Meet our team, view certifications, and discover why we're Kent & London's trusted steel specialists."
         keywords="about AK Steel Services, steel fabrication company, Kent steel fabricators, experienced welders, steel construction team"
       />
       <Header />
@@ -205,7 +205,7 @@ const About = () => {
             Ready to Work With Us?
           </h2>
           <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Experience the difference that 30 years of expertise makes. Contact us today 
+            Experience the difference that 20 years of expertise makes. Contact us today 
             for your steel fabrication needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

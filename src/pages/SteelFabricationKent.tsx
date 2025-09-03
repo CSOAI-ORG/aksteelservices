@@ -31,7 +31,7 @@ const SteelFabricationKent = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Steel Fabrication Kent | Expert Metal Fabrication Services"
-        description="Professional steel fabrication services in Kent. Custom metalwork, structural steel, industrial components. 30+ years experience in Gravesend, Canterbury, Maidstone."
+        description="Professional steel fabrication services in Kent. Custom metalwork, structural steel, industrial components. 20+ years experience in Gravesend, Canterbury, Maidstone."
         keywords="steel fabrication Kent, metal fabrication Kent, custom steel work, Gravesend steel fabrication, Canterbury metalwork"
       />
       <Header />
@@ -48,7 +48,7 @@ const SteelFabricationKent = () => {
               Expert Steel Fabrication Services in <span className="text-accent">Kent</span>
             </h1>
             <p className="text-xl mb-8 opacity-90 leading-relaxed">
-              Professional steel fabrication with 30+ years of experience serving Kent. 
+              Professional steel fabrication with 20+ years of experience serving Kent. 
               From custom designs to large-scale projects, we deliver precision engineering 
               and quality craftsmanship across the county.
             </p>

@@ -331,7 +331,7 @@ const ServiceCalculator = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3">
                   <Button className="flex-1" asChild>
-                    <a href="tel:01474550531">Call for Detailed Quote</a>
+                    <a href="tel:07492964836">Call for Detailed Quote</a>
                   </Button>
                   <Button variant="outline" className="flex-1">
                     Request Site Visit

@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { trackPhoneCall } = useAnalytics();
   
   const benefits = [
-    "30+ Years Experience",
+    "20+ Years Experience",
     "Free Quotes", 
     "Emergency Services 24/7",
     "Fully Insured & Certified"
@@ -34,7 +34,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-              30+ years of excellence in steel fabrication, structural steel, and welding services. 
+              20+ years of excellence in steel fabrication, structural steel, and welding services. 
               From residential extensions to major commercial projects across Kent, London, and South East England.
             </p>
 

@@ -51,7 +51,7 @@ const ServiceCalculatorPage = () => {
                 Why Use Our Cost Calculator?
               </h2>
               <p className="text-xl text-muted-foreground">
-                Get transparent, accurate pricing based on 30+ years of industry experience
+                Get transparent, accurate pricing based on 20+ years of industry experience
               </p>
             </div>
 
@@ -72,7 +72,7 @@ const ServiceCalculatorPage = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Accurate Pricing</h3>
                 <p className="text-muted-foreground">
-                  Based on real project data and current material costs from our 30+ years experience
+                  Based on real project data and current material costs from our 20+ years experience
                 </p>
               </div>
               
