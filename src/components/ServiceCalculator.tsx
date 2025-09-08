@@ -82,7 +82,7 @@ const ServiceCalculator = () => {
     const timeframe = timeframes.find(t => t.value === formData.timeframe);
     const location = locations.find(l => l.value === formData.location);
 
-    if (!service || !size || !material || !complexity || !timeframe || !location) {
+    if (!service || !size || !material || !complexity || !timeframe || !location || (!contact.email && !contact.phone)) {
       return;
     }
 
@@ -113,6 +113,10 @@ const ServiceCalculator = () => {
     const subject = encodeURIComponent("New Calculator Estimate - AK Steel Services");
     const body = encodeURIComponent(
       `Name: ${contact.name}\nPhone: ${contact.phone}\nEmail: ${contact.email}` +
+      `\n\nService Type: ${formData.serviceType}\nProject Size: ${formData.projectSize}` +
+      `\nMaterial: ${formData.material}\nComplexity: ${formData.complexity}` +
+      `\nTimeframe: ${formData.timeframe}\nLocation: ${formData.location}` +
+      `\nAdditional Details: ${formData.additionalDetails}` +
       `\n\nEstimate Range: ${estimate.priceRange}\nBase Price: £${estimate.basePrice.toLocaleString()}` +
       `\nFactors: ${estimate.factors.join(', ')}` +
       `\n\nSubmitted from: ${window.location.href}`
@@ -131,6 +135,7 @@ const ServiceCalculator = () => {
       additionalDetails: ""
     });
     setEstimate(null);
+    setContact({ name: "", email: "", phone: "" });
   };
 
   return (
@@ -147,6 +152,47 @@ const ServiceCalculator = () => {
           </p>
         </CardHeader>
         <CardContent className="space-y-6">
+          {/* Contact Information Section */}
+          <Card className="bg-primary/5 border-primary/20">
+            <CardHeader>
+              <CardTitle className="text-lg text-primary">Your Contact Information</CardTitle>
+              <p className="text-sm text-muted-foreground">
+                Required to receive your estimate and allow us to contact you with the quote.
+              </p>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-3 gap-4">
+              <div className="space-y-2">
+                <Label htmlFor="contact-name">Your Name *</Label>
+                <Input 
+                  id="contact-name" 
+                  placeholder="Full name" 
+                  value={contact.name} 
+                  onChange={(e) => setContact({...contact, name: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="contact-email">Email *</Label>
+                <Input 
+                  id="contact-email" 
+                  type="email" 
+                  placeholder="you@email.com" 
+                  value={contact.email} 
+                  onChange={(e) => setContact({...contact, email: e.target.value})}
+                />
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="contact-phone">Phone *</Label>
+                <Input 
+                  id="contact-phone" 
+                  type="tel" 
+                  placeholder="01474 550531" 
+                  value={contact.phone} 
+                  onChange={(e) => setContact({...contact, phone: e.target.value})}
+                />
+              </div>
+            </CardContent>
+          </Card>
+
           <div className="grid md:grid-cols-2 gap-6">
             {/* Service Type */}
             <div className="space-y-2">
@@ -273,6 +319,7 @@ const ServiceCalculator = () => {
           <div className="space-y-2">
             <Label htmlFor="additionalDetails">Additional Project Details (Optional)</Label>
             <Textarea
+              name="additionalDetails"
               value={formData.additionalDetails}
               onChange={(e) => setFormData({...formData, additionalDetails: e.target.value})}
               placeholder="Describe any specific requirements, design details, or special considerations..."
@@ -285,7 +332,7 @@ const ServiceCalculator = () => {
             <Button 
               onClick={calculateEstimate}
               className="flex-1"
-              disabled={!formData.serviceType || !formData.projectSize || !formData.material || !formData.complexity || !formData.timeframe || !formData.location}
+              disabled={!formData.serviceType || !formData.projectSize || !formData.material || !formData.complexity || !formData.timeframe || !formData.location || (!contact.email && !contact.phone)}
             >
               <Calculator className="h-4 w-4 mr-2" />
               Calculate Estimate
@@ -351,22 +398,8 @@ const ServiceCalculator = () => {
                   </Button>
                 </div>
 
-                <div className="mt-6 grid md:grid-cols-3 gap-4">
-                  <div>
-                    <Label htmlFor="calc-name">Your Name</Label>
-                    <Input id="calc-name" placeholder="Full name" value={contact.name} onChange={(e) => setContact({...contact, name: e.target.value})} />
-                  </div>
-                  <div>
-                    <Label htmlFor="calc-email">Email</Label>
-                    <Input id="calc-email" type="email" placeholder="you@email.com" value={contact.email} onChange={(e) => setContact({...contact, email: e.target.value})} />
-                  </div>
-                  <div>
-                    <Label htmlFor="calc-phone">Phone</Label>
-                    <Input id="calc-phone" type="tel" placeholder="01474 550531" value={contact.phone} onChange={(e) => setContact({...contact, phone: e.target.value})} />
-                  </div>
-                </div>
                 <div className="flex justify-end mt-4">
-                  <Button onClick={handleSendEstimate} disabled={!contact.email && !contact.phone}>
+                  <Button onClick={handleSendEstimate}>
                     Email This Estimate
                   </Button>
                 </div>
