@@ -1,36 +1,41 @@
-// Import real project photos
-import akSteelTruck from "@/assets/ak-steel-truck.jpg";
-import redOxideBeams from "@/assets/red-oxide-steel-beams.jpg";
-import interiorWork from "@/assets/interior-structural-work.jpg";
-import rearExtension from "@/assets/rear-extension-steel-frame.jpg";
-import steelFramework1 from "@/assets/large-steel-framework-1.jpg";
-import steelFramework2 from "@/assets/large-steel-framework-2.jpg";
+// Centralized mapping of ONLY the client's real photos (no stock images)
+// We reference the uploaded image URLs directly so updates show instantly.
 
 export const REAL_PHOTOS = {
-  // Keep original property names for existing code compatibility
+  // Industrial interior steelwork (warehouse install)
   industrialInterior1: {
-    src: interiorWork,
-    alt: "AK Steel Services — Interior structural steel platform and mezzanine installation",
+    src: "/lovable-uploads/caf1359c-9145-4258-a04f-2b3ced559408.png",
+    alt: "AK Steel Services — Industrial interior steelwork and mezzanine installation in progress",
   },
+  // Red oxide beams (fabrication/finishing)
   residentialExtension1: {
-    src: redOxideBeams,
-    alt: "AK Steel Services — Red oxide steel beam fabrication and finishing",
+    src: "/lovable-uploads/b14c3272-8f2b-422b-a423-477034c82773.png",
+    alt: "AK Steel Services — Red oxide primed steel beams fabricated and ready for installation",
   },
+  // Large framework / roof structure (joists and beams)
   roofStructure1: {
-    src: steelFramework2,
-    alt: "AK Steel Services — Large steel framework construction and assembly",
+    src: "/lovable-uploads/94c1b729-0dfe-49a2-91ee-5eaa0931bd36.png",
+    alt: "AK Steel Services — Roof steel structure with joists under scaffold canopy",
   },
+  // Urban steel framework (multi-storey structure)
   roofStructure2: {
-    src: steelFramework1,
-    alt: "AK Steel Services — Steel structure framework installation",
+    src: "/lovable-uploads/0c4907fe-84b5-4787-b1c0-6a8f07a487d9.png",
+    alt: "AK Steel Services — Urban structural steel frame installation on commercial site",
   },
+  // Company truck at the yard (real photo)
   commercialInterior1: {
-    src: akSteelTruck,
-    alt: "AK Steel Services — Professional delivery truck and mobile fabrication service",
+    src: "/lovable-uploads/b90916f8-ae66-4201-910b-814332a743fe.png",
+    alt: "AK Steel Services — Company DAF truck with Hiab at Gravesend yard",
   },
+  // Residential rear extension steelwork
   residentialExtension2: {
-    src: rearExtension,
-    alt: "AK Steel Services — Rear extension steel frame installation",
+    src: "/lovable-uploads/3be6700d-1395-4281-ab53-8a61dd6a038b.png",
+    alt: "AK Steel Services — Rear extension steel frame installation at residential property",
+  },
+  // Additional rooftop steel frame (spare)
+  rooftopSteel1: {
+    src: "/lovable-uploads/9b70bed0-881c-4df0-9395-733bd7e4d0b4.png",
+    alt: "AK Steel Services — Rooftop structural steel assembly on residential/commercial property",
   },
 } as const;
 

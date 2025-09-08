@@ -80,29 +80,7 @@ const Index = () => {
     }
   };
 
-  const testimonials = [
-    {
-      name: "John Mitchell",
-      company: "Mitchell Construction Ltd",
-      text: "AK Steel Services delivered exceptional quality on our commercial project. Their structural steel work was precise and completed ahead of schedule.",
-      rating: 5,
-      location: "Canterbury, Kent"
-    },
-    {
-      name: "Sarah Thompson",
-      company: "Private Homeowner",
-      text: "Fantastic service for our loft conversion. The team was professional, punctual, and the steel beams were perfectly fitted. Highly recommended!",
-      rating: 5,
-      location: "London"
-    },
-    {
-      name: "David Clarke",
-      company: "Clarke Developments",
-      text: "We've used AK Steel Services for multiple projects. Their welding quality and customer service are unmatched in the Kent area.",
-      rating: 5,
-      location: "Gravesend, Kent"
-    }
-  ];
+// Testimonials removed to show only verified Google reviews
 
   const stats = [
     { number: "30+", label: "Years Experience", icon: <Award className="h-6 w-6" /> },
@@ -217,50 +195,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What Our <span className="text-primary">Customers Say</span>
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Don't just take our word for it. Here's what our satisfied customers across Kent and London have to say.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="h-full">
-                <CardHeader>
-                  <div className="flex gap-1 mb-3">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                    ))}
-                  </div>
-                  <CardDescription className="text-base leading-relaxed">
-                    "{testimonial.text}"
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="border-t pt-4">
-                    <div className="font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.company}</div>
-                    <div className="text-xs text-muted-foreground mt-1">{testimonial.location}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          <div className="text-center">
-            <Button variant="outline" size="lg">
-              View More Reviews
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Button>
-          </div>
-        </div>
-      </section>
 
       {/* Quote Form Section */}
       <section id="get-quote" className="py-20 bg-muted/50">

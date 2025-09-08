@@ -15,6 +15,8 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { trackFormSubmission, trackQuoteRequest } = useAnalytics();
+  const [service, setService] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,18 +27,30 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
     const serviceType = formData.get('service') as string;
     
     try {
+      // Gather form values
+      const name = formData.get('name') as string;
+      const phone = formData.get('phone') as string;
+      const email = formData.get('email') as string;
+      const description = formData.get('description') as string;
+      const service = (formData.get('service') as string) || '';
+      const location = (formData.get('location') as string) || '';
+
       // Track the form submission
       trackFormSubmission('quote_request');
-      trackQuoteRequest(serviceType || 'general');
-      
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      trackQuoteRequest(service || 'general');
+
+      // Send email via mailto (no backend required)
+      const subject = encodeURIComponent('New Quote Request - AK Steel Services');
+      const body = encodeURIComponent(
+        `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nLocation: ${location}\n\nProject Description:\n${description}\n\nSubmitted from: ${window.location.href}`
+      );
+      window.location.href = `mailto:info@aksteelservices.com?subject=${subject}&body=${body}`;
+
       toast({
-        title: "Quote Request Sent!",
-        description: "We'll get back to you within 24 hours with a detailed quote.",
+        title: 'Quote Request Composed',
+        description: "Your email client has opened a new message to info@aksteelservices.com. Please press send to deliver your request.",
       });
-      
+
       // Redirect to thank you page
       window.location.href = '/thank-you';
     } catch (error) {
@@ -89,7 +103,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
           <div className="grid md:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="service">Service Type *</Label>
-              <Select name="service" required>
+              <Select name="service" value={service} onValueChange={setService} required>
                 <SelectTrigger>
                   <SelectValue placeholder="Select service" />
                 </SelectTrigger>
@@ -103,10 +117,11 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
+              <input type="hidden" name="service" value={service} />
             </div>
             <div className="space-y-2">
               <Label htmlFor="location">Project Location *</Label>
-              <Select required>
+              <Select name="location" value={location} onValueChange={setLocation} required>
                 <SelectTrigger>
                   <SelectValue placeholder="Select location" />
                 </SelectTrigger>
@@ -120,6 +135,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
                   <SelectItem value="other">Other</SelectItem>
                 </SelectContent>
               </Select>
+              <input type="hidden" name="location" value={location} />
             </div>
           </div>
 

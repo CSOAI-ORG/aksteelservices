@@ -25,6 +25,7 @@ const ServiceCalculator = () => {
     priceRange: string;
     factors: string[];
   } | null>(null);
+  const [contact, setContact] = useState({ name: "", email: "", phone: "" });
 
   const serviceTypes = [
     { value: "steel-fabrication", label: "Steel Fabrication", baseRate: 50 },
@@ -105,6 +106,18 @@ const ServiceCalculator = () => {
       priceRange: `£${lowRange.toLocaleString()} - £${highRange.toLocaleString()}`,
       factors
     });
+  };
+
+  const handleSendEstimate = () => {
+    if (!estimate) return;
+    const subject = encodeURIComponent("New Calculator Estimate - AK Steel Services");
+    const body = encodeURIComponent(
+      `Name: ${contact.name}\nPhone: ${contact.phone}\nEmail: ${contact.email}` +
+      `\n\nEstimate Range: ${estimate.priceRange}\nBase Price: £${estimate.basePrice.toLocaleString()}` +
+      `\nFactors: ${estimate.factors.join(', ')}` +
+      `\n\nSubmitted from: ${window.location.href}`
+    );
+    window.location.href = `mailto:info@aksteelservices.com?subject=${subject}&body=${body}`;
   };
 
   const resetCalculator = () => {
@@ -335,6 +348,26 @@ const ServiceCalculator = () => {
                   </Button>
                   <Button variant="outline" className="flex-1">
                     Request Site Visit
+                  </Button>
+                </div>
+
+                <div className="mt-6 grid md:grid-cols-3 gap-4">
+                  <div>
+                    <Label htmlFor="calc-name">Your Name</Label>
+                    <Input id="calc-name" placeholder="Full name" value={contact.name} onChange={(e) => setContact({...contact, name: e.target.value})} />
+                  </div>
+                  <div>
+                    <Label htmlFor="calc-email">Email</Label>
+                    <Input id="calc-email" type="email" placeholder="you@email.com" value={contact.email} onChange={(e) => setContact({...contact, email: e.target.value})} />
+                  </div>
+                  <div>
+                    <Label htmlFor="calc-phone">Phone</Label>
+                    <Input id="calc-phone" type="tel" placeholder="01474 550531" value={contact.phone} onChange={(e) => setContact({...contact, phone: e.target.value})} />
+                  </div>
+                </div>
+                <div className="flex justify-end mt-4">
+                  <Button onClick={handleSendEstimate} disabled={!contact.email && !contact.phone}>
+                    Email This Estimate
                   </Button>
                 </div>
               </CardContent>

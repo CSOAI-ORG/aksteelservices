@@ -4,8 +4,7 @@ import { Phone, ArrowRight, ShieldCheck } from "lucide-react";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import LazyImage from "@/components/LazyImage";
 
-// Real, existing assets
-import heroBg from "@/assets/hero-steel-fabrication.jpg";
+// Background uses client's real photo via REAL_PHOTOS
 import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const NewHeroSection = () => {
@@ -17,7 +16,7 @@ const NewHeroSection = () => {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${heroBg})`,
+          backgroundImage: `url(${REAL_PHOTOS.industrialInterior1.src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -100,15 +99,15 @@ const NewHeroSection = () => {
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
-                src={REAL_PHOTOS.industrialInterior1.src}
-                alt={REAL_PHOTOS.industrialInterior1.alt}
+                src={REAL_PHOTOS.roofStructure1.src}
+                alt={REAL_PHOTOS.roofStructure1.alt}
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
-                src={REAL_PHOTOS.residentialExtension2.src}
-                alt={REAL_PHOTOS.residentialExtension2.alt}
+                src={REAL_PHOTOS.rooftopSteel1.src}
+                alt={REAL_PHOTOS.rooftopSteel1.alt}
                 className="w-full h-full object-cover"
               />
             </div>

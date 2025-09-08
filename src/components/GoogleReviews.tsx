@@ -5,23 +5,18 @@ import { Star, Quote } from "lucide-react";
 const GoogleReviews = () => {
   const reviews = [
     {
-      name: "John Smith",
+      name: "Albana Janjeva",
       rating: 5,
-      date: "2 weeks ago",
-      review: "Excellent service from AK Steel Services. Professional team, quality work, and completed on time. Highly recommend for any steel fabrication needs."
+      date: "a month ago",
+      review:
+        "Adi was very knowledgeable and reliable, we worked with him for our home renovation. He was very quick to respond, efficient and delivered our steel incredibly quickly! Would highly recommend him - we are using him again for another project!",
     },
     {
-      name: "Sarah Johnson", 
+      name: "M Matbouei",
       rating: 5,
-      date: "1 month ago",
-      review: "Outstanding structural steel work for our extension. The team was knowledgeable, efficient, and delivered exactly what we needed."
+      date: "2 years ago",
+      review: "Professional and fast services at competitive price!",
     },
-    {
-      name: "Michael Brown",
-      rating: 5,
-      date: "2 months ago", 
-      review: "Emergency welding service was fantastic. Quick response, fair pricing, and solved our problem efficiently. Will definitely use again."
-    }
   ];
 
   const renderStars = (rating: number) => {
@@ -36,17 +31,17 @@ const GoogleReviews = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30" aria-label="Google reviews from real customers">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <Badge variant="secondary" className="mb-6">
-            Customer Reviews
+            Google Reviews (Real Customers)
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What Our <span className="text-primary">Customers Say</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Read genuine reviews from our satisfied customers across Kent and London.
+            Verified feedback from Google for AK Steel Services Limited.
           </p>
         </div>
 
@@ -73,16 +68,12 @@ const GoogleReviews = () => {
         </div>
 
         <div className="text-center">
-          <p className="text-muted-foreground mb-6">
-            Join our 1000+ satisfied customers across Kent, London, and South East England
-          </p>
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="flex items-center gap-1">
-              {renderStars(5)}
-            </div>
-            <span className="font-semibold">4.9/5</span>
-            <span className="text-muted-foreground">• 150+ Reviews</span>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <div className="flex items-center gap-1">{renderStars(5)}</div>
+            <span className="font-semibold">5.0/5</span>
+            <span className="text-muted-foreground">• 2 Google reviews</span>
           </div>
+          <p className="text-xs text-muted-foreground">AK STEEL SERVICES LIMITED • Unit A Wharf Rd, Gravesend DA12 2RU, United Kingdom</p>
         </div>
       </div>
     </section>
