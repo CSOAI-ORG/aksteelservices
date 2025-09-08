@@ -91,7 +91,7 @@ const ThankYou = () => {
                       </a>
                     </Button>
                     <Button variant="outline" className="flex items-center gap-2" asChild>
-                      <a href="https://wa.me/447474550531" target="_blank" rel="noopener noreferrer">
+                      <a href="https://wa.me/447492964836" target="_blank" rel="noopener noreferrer">
                         <MessageSquare className="h-4 w-4" />
                         WhatsApp
                       </a>
@@ -109,7 +109,7 @@ const ThankYou = () => {
                 </Link>
               </Button>
               <Button asChild>
-                <Link to="/services">
+                <Link to="/#services">
                   View Our Services
                 </Link>
               </Button>

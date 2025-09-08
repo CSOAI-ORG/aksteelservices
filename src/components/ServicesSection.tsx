@@ -38,21 +38,21 @@ const ServicesSection = () => {
       title: "Onsite Fabrication",
       description: "Mobile fabrication services bringing our expertise directly to your location for complex installations.",
       features: ["Mobile Service", "Complex Installs", "Rapid Response"],
-      link: "/onsite-fabrication"
+      link: "/onsite-steel-fabrication"
     },
     {
       icon: <Truck className="h-8 w-8" />,
       title: "Crane Hire & Hiab",
       description: "Equipment services for safe steel delivery and installation with qualified operators and modern equipment.",
       features: ["Qualified Operators", "Modern Equipment", "Safe Installation"],
-      link: "/crane-hire"
+      link: "/crane-hire-services"
     },
     {
       icon: <Phone className="h-8 w-8" />,
       title: "Emergency Services",
       description: "24/7 emergency steel repair services for urgent structural issues and equipment breakdowns.",
       features: ["24/7 Available", "Rapid Response", "Temporary Solutions"],
-      link: "/emergency-services"
+      link: "/emergency-steel-repair"
     }
   ];
 
