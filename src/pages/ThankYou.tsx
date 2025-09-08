@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -90,12 +90,6 @@ const ThankYou = () => {
                         Email Us
                       </a>
                     </Button>
-                    <Button variant="outline" className="flex items-center gap-2" asChild>
-                      <a href="https://wa.me/447492964836" target="_blank" rel="noopener noreferrer">
-                        <MessageSquare className="h-4 w-4" />
-                        WhatsApp
-                      </a>
-                    </Button>
                   </div>
                 </div>
               </CardContent>
@@ -119,7 +113,7 @@ const ThankYou = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };

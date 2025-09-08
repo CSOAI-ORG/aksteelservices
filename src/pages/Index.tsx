@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import NewHeroSection from "@/components/NewHeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import QuoteForm from "@/components/QuoteForm";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import SEOHead from "@/components/SEOHead";
 import GoogleReviews from "@/components/GoogleReviews";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -207,7 +207,7 @@ const Index = () => {
       <Footer />
       
       {/* WhatsApp Button */}
-      <WhatsAppButton />
+      
     </div>
   );
 };

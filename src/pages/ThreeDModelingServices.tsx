@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -247,7 +247,7 @@ const ThreeDModelingServices = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };

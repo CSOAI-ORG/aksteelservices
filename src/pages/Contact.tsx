@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Badge } from "@/components/ui/badge";
@@ -403,7 +403,7 @@ const Contact = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };

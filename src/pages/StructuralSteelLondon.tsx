@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -267,7 +267,7 @@ const StructuralSteelLondon = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };

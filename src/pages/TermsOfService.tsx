@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Mail, Phone } from "lucide-react";
 
@@ -249,7 +249,7 @@ const TermsOfService = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };

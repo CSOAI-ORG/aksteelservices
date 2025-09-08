@@ -16,7 +16,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import LazyImage from "@/components/LazyImage";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 
@@ -427,7 +427,7 @@ const IndustrialSteelPlatforms = () => {
       </section>
 
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };

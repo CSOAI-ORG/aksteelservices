@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppButton from "@/components/WhatsAppButton";
+
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent } from "@/components/ui/card";
@@ -208,7 +208,7 @@ const FAQ = () => {
       </main>
 
       <Footer />
-      <WhatsAppButton />
+      
     </div>
   );
 };
