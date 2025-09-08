@@ -93,7 +93,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Steel Fabrication Services | AK Steel Services Kent & London"
-        description="Professional steel fabrication, structural steel & welding services across Kent & London. 20+ years experience, free quotes, 24/7 emergency service. Call 01474 550531"
+        description="Professional steel fabrication, structural steel & welding services across Kent & London. 30+ years experience, free quotes, 24/7 emergency service. Call 01474 550531"
         keywords="steel fabrication, structural steel, welding services, Kent, London, steel construction, metal fabrication"
         schemaData={localBusinessSchema}
       />
@@ -133,7 +133,7 @@ const Index = () => {
             {/* Content */}
             <div className="space-y-6">
               <Badge variant="secondary" className="w-fit">
-                20+ Years of Excellence
+                30+ Years of Excellence
               </Badge>
               
               <h2 className="text-3xl md:text-4xl font-bold">

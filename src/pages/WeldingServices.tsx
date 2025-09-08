@@ -60,7 +60,7 @@ const WeldingServices = () => {
               Expert Welding Services Across <span className="text-accent">South East England</span>
             </h1>
             <p className="text-xl mb-8 opacity-90 leading-relaxed">
-              Professional welding services with 20+ years of experience. From precision workshop welding 
+              Professional welding services with 30+ years of experience. From precision workshop welding 
               to challenging onsite installations, our certified welders deliver quality results across 
               Kent, London, and the South East.
             </p>

@@ -90,7 +90,7 @@ const StructuralSteelLondon = () => {
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 Working in London requires specialized knowledge of building regulations, 
                 planning permissions, and logistical challenges unique to the capital. 
-                Our 20+ years of London experience ensures smooth project delivery.
+                Our 30+ years of London experience ensures smooth project delivery.
               </p>
               
               <div className="space-y-4 mb-8">

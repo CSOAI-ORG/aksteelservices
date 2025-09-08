@@ -28,7 +28,7 @@ const slideImages = orderedPhotos.map((p, idx) => ({
     "Professional Welding",
   ][idx],
   subtitle: [
-    "20+ years of excellence in Kent & London",
+    "30+ years of excellence in Kent & London",
     "Professional installation & certification",
     "Heavy-duty steel construction across the South East",
     "Precision commercial steelwork solutions",

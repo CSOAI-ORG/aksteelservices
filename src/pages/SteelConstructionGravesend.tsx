@@ -27,7 +27,7 @@ const SteelConstructionGravesend = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Steel Construction Gravesend - Local Expert Builders | AK Steel Services"
-        description="Premier steel construction company in Gravesend, Kent. Complete steel building solutions from planning to completion. Local expertise, fast response, 20+ years experience."
+        description="Premier steel construction company in Gravesend, Kent. Complete steel building solutions from planning to completion. Local expertise, fast response, 30+ years experience."
         keywords="steel construction Gravesend, Gravesend steel builders, Kent steel construction, commercial steel buildings Gravesend, industrial steel construction"
       />
       <Header />
@@ -45,7 +45,7 @@ const SteelConstructionGravesend = () => {
             </h1>
             <p className="text-xl mb-8 opacity-90 leading-relaxed">
               Complete steel construction solutions in Gravesend. From concept to completion, 
-              our local team delivers quality steel buildings with 20+ years of expertise 
+              our local team delivers quality steel buildings with 30+ years of expertise 
               right here in Kent.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
