@@ -53,17 +53,24 @@ const LazyImage = ({ src, alt, className, fallback, ...props }: LazyImageProps) 
         />
       )}
       
-      {isInView && (
-        <img
-          src={hasError ? (fallback || defaultFallback) : src}
-          alt={alt}
-          onLoad={handleLoad}
-          onError={handleError}
-          className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
-          loading="lazy"
-          {...props}
-        />
-      )}
+        {isInView && (
+          (() => {
+            const VERSION = '3';
+            const withVersion = (url: string) => (url.includes('?') ? `${url}&v=${VERSION}` : `${url}?v=${VERSION}`);
+            const finalSrc = hasError ? withVersion(fallback || defaultFallback) : withVersion(src);
+            return (
+              <img
+                src={finalSrc}
+                alt={alt}
+                onLoad={handleLoad}
+                onError={handleError}
+                className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
+                loading="lazy"
+                {...props}
+              />
+            );
+          })()
+        )}
     </div>
   );
 };

@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Building, Home, Factory } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import LazyImage from "@/components/LazyImage";
 
 const StructuralSteelLondon = () => {
   const projects = [
@@ -121,7 +122,7 @@ const StructuralSteelLondon = () => {
             </div>
 
             <div className="space-y-6">
-              <img 
+              <LazyImage 
                 src={REAL_PHOTOS.commercialInterior1.src} 
                 alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="rounded-lg shadow-lg"

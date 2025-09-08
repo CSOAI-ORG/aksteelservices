@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Clock, Award, ArrowRight } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import LazyImage from "@/components/LazyImage";
 
 const SteelFabricationKent = () => {
   const services = [
@@ -101,7 +102,7 @@ const SteelFabricationKent = () => {
             </div>
 
             <div className="space-y-6">
-              <img 
+              <LazyImage 
                 src={REAL_PHOTOS.industrialInterior1.src} 
                 alt={REAL_PHOTOS.industrialInterior1.alt}
                 className="rounded-lg shadow-lg"

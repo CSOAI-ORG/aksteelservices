@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Zap, Shield, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import LazyImage from "@/components/LazyImage";
 
 const WeldingServices = () => {
   const weldingTypes = [
@@ -121,7 +122,7 @@ const WeldingServices = () => {
             </div>
 
             <div className="space-y-6">
-              <img 
+              <LazyImage 
                 src={REAL_PHOTOS.commercialInterior1.src} 
                 alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="rounded-lg shadow-lg"

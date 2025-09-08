@@ -6,10 +6,7 @@ import LazyImage from "@/components/LazyImage";
 
 // Real, existing assets
 import heroBg from "@/assets/hero-steel-fabrication.jpg";
-import img1 from "@/assets/ak-steel-truck.jpg";
-import img2 from "@/assets/red-oxide-steel-beams.jpg";
-import img3 from "@/assets/interior-structural-work.jpg";
-import img4 from "@/assets/rear-extension-steel-frame.jpg";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const NewHeroSection = () => {
   const { trackPhoneCall } = useAnalytics();
@@ -87,31 +84,31 @@ const NewHeroSection = () => {
           <div className="grid grid-cols-2 gap-4 animate-enter">
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
-                src={img1}
-                alt="AK Steel Services — Professional delivery truck and mobile fabrication service"
+                src={REAL_PHOTOS.commercialInterior1.src}
+                alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="w-full h-full object-cover"
                 loading="eager"
               />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
-                src={img2}
-                alt="AK Steel Services — Red oxide steel beam fabrication and finishing"
+                src={REAL_PHOTOS.residentialExtension1.src}
+                alt={REAL_PHOTOS.residentialExtension1.alt}
                 className="w-full h-full object-cover"
                 loading="eager"
               />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
-                src={img3}
-                alt="AK Steel Services — Interior structural steel work"
+                src={REAL_PHOTOS.industrialInterior1.src}
+                alt={REAL_PHOTOS.industrialInterior1.alt}
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
-                src={img4}
-                alt="AK Steel Services — Rear extension steel frame installation"
+                src={REAL_PHOTOS.residentialExtension2.src}
+                alt={REAL_PHOTOS.residentialExtension2.alt}
                 className="w-full h-full object-cover"
               />
             </div>

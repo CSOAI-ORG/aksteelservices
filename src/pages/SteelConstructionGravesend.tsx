@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, MapPin, Award, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import LazyImage from "@/components/LazyImage";
 
 const SteelConstructionGravesend = () => {
   const projects = [
@@ -92,7 +93,7 @@ const SteelConstructionGravesend = () => {
             </div>
 
             <div className="space-y-6">
-              <img 
+              <LazyImage 
                 src={REAL_PHOTOS.residentialExtension2.src} 
                 alt={REAL_PHOTOS.residentialExtension2.alt}
                 className="rounded-lg shadow-lg"

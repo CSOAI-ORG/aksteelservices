@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Clock, AlertTriangle, Shield, Zap } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import fallbackImage from "@/assets/structural-steel-construction.jpg";
+import LazyImage from "@/components/LazyImage";
 
 const EmergencySteelRepair = () => {
   const emergencyTypes = [
@@ -111,7 +112,7 @@ const EmergencySteelRepair = () => {
             </div>
 
             <div className="space-y-6">
-              <img 
+              <LazyImage 
                 src={REAL_PHOTOS.commercialInterior1.src} 
                 alt={REAL_PHOTOS.commercialInterior1.alt}
                 className="rounded-lg shadow-lg"

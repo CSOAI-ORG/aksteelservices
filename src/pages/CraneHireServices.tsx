@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Truck, Award, Users } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import fallbackImage from "@/assets/structural-steel-construction.jpg";
+import LazyImage from "@/components/LazyImage";
 
 const CraneHireServices = () => {
   const equipment = [
@@ -107,11 +108,11 @@ const CraneHireServices = () => {
             </div>
 
             <div className="space-y-6">
-              <img 
+              <LazyImage 
                 src={REAL_PHOTOS.industrialInterior1.src} 
                 alt={REAL_PHOTOS.industrialInterior1.alt}
                 className="rounded-lg shadow-lg"
-                onError={(e) => { e.currentTarget.src = fallbackImage; }}
+                fallback={fallbackImage}
               />
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div className="bg-muted rounded-lg p-4">
