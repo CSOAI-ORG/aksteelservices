@@ -83,8 +83,8 @@ const NewHeroSection = () => {
           <div className="grid grid-cols-2 gap-4 animate-enter">
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
-                src={REAL_PHOTOS.commercialInterior1.src}
-                alt={REAL_PHOTOS.commercialInterior1.alt}
+                src={REAL_PHOTOS.roofStructure2.src}
+                alt={REAL_PHOTOS.roofStructure2.alt}
                 className="w-full h-full object-cover"
                 loading="eager"
               />
