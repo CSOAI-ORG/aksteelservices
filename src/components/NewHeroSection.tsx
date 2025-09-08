@@ -6,8 +6,8 @@ import LazyImage from "@/components/LazyImage";
 
 // Real, existing assets
 import heroBg from "@/assets/hero-steel-fabrication.jpg";
-import img1 from "@/assets/large-steel-framework-1.jpg";
-import img2 from "@/assets/residential-extension.jpg";
+import img1 from "@/assets/ak-steel-truck.jpg";
+import img2 from "@/assets/red-oxide-steel-beams.jpg";
 import img3 from "@/assets/interior-structural-work.jpg";
 import img4 from "@/assets/rear-extension-steel-frame.jpg";
 
@@ -88,14 +88,14 @@ const NewHeroSection = () => {
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
                 src={img1}
-                alt="AK Steel Services — Large steel framework installation"
+                alt="AK Steel Services — Professional delivery truck and mobile fabrication service"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
               <LazyImage
                 src={img2}
-                alt="AK Steel Services — Residential extension steelworks"
+                alt="AK Steel Services — Red oxide steel beam fabrication and finishing"
                 className="w-full h-full object-cover"
               />
             </div>
