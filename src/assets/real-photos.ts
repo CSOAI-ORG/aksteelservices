@@ -1,35 +1,35 @@
-// Import YOUR REAL PHOTOS (replace these with your actual uploaded images)
-import heroImage1 from "@/assets/hero-image-1.jpg";
-import heroImage2 from "@/assets/hero-image-2.jpg";
-import heroImage3 from "@/assets/hero-image-3.jpg";
-import heroImage4 from "@/assets/hero-image-4.jpg";
-import heroImage5 from "@/assets/hero-image-5.jpg";
-import heroImage6 from "@/assets/hero-image-6.jpg";
+// Import real project photos
+import akSteelTruck from "@/assets/ak-steel-truck.jpg";
+import redOxideBeams from "@/assets/red-oxide-steel-beams.jpg";
+import interiorWork from "@/assets/interior-structural-work.jpg";
+import rearExtension from "@/assets/rear-extension-steel-frame.jpg";
+import steelFramework1 from "@/assets/large-steel-framework-1.jpg";
+import steelFramework2 from "@/assets/large-steel-framework-2.jpg";
 
 export const REAL_PHOTOS = {
   // Keep original property names for existing code compatibility
   industrialInterior1: {
-    src: heroImage1,
-    alt: "AK Steel Services — Industrial interior steel platform and mezzanine",
+    src: interiorWork,
+    alt: "AK Steel Services — Interior structural steel platform and mezzanine installation",
   },
   residentialExtension1: {
-    src: heroImage2,
-    alt: "AK Steel Services — Residential extension steel frame, Kent",
+    src: redOxideBeams,
+    alt: "AK Steel Services — Red oxide steel beam fabrication and finishing",
   },
   roofStructure1: {
-    src: heroImage3,
-    alt: "AK Steel Services — Roof structure steel rafters under scaffold",
+    src: steelFramework2,
+    alt: "AK Steel Services — Large steel framework construction and assembly",
   },
   roofStructure2: {
-    src: heroImage4,
-    alt: "AK Steel Services — Roof structure steelwork close-up",
+    src: steelFramework1,
+    alt: "AK Steel Services — Steel structure framework installation",
   },
   commercialInterior1: {
-    src: heroImage5,
-    alt: "AK Steel Services — Commercial interior steel frame installation",
+    src: akSteelTruck,
+    alt: "AK Steel Services — Professional delivery truck and mobile fabrication service",
   },
   residentialExtension2: {
-    src: heroImage6,
+    src: rearExtension,
     alt: "AK Steel Services — Rear extension steel frame installation",
   },
 } as const;

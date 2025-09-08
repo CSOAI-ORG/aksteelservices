@@ -90,6 +90,7 @@ const NewHeroSection = () => {
                 src={img1}
                 alt="AK Steel Services — Professional delivery truck and mobile fabrication service"
                 className="w-full h-full object-cover"
+                loading="eager"
               />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
@@ -97,6 +98,7 @@ const NewHeroSection = () => {
                 src={img2}
                 alt="AK Steel Services — Red oxide steel beam fabrication and finishing"
                 className="w-full h-full object-cover"
+                loading="eager"
               />
             </div>
             <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-lg border border-border bg-background/50 backdrop-blur">
