@@ -144,14 +144,40 @@ const Contact = () => {
                   <p className="text-muted-foreground">{method.description}</p>
                 </CardHeader>
                 <CardContent>
-                  <Button 
-                    variant="outline" 
-                    className="w-full"
-                    asChild
-                    onClick={method.title === "WhatsApp" ? trackWhatsAppClick : undefined}
-                  >
-                    <a href={method.action}>{method.details}</a>
-                  </Button>
+                  {method.title === "WhatsApp" ? (
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      onClick={() => {
+                        trackWhatsAppClick();
+                        const whatsappUrl = "https://wa.me/447492964836?text=Hi%20AK%20Steel%20Services,%20I'd%20like%20to%20discuss%20a%20project";
+                        const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                        
+                        if (isMobile) {
+                          // Try app deep link first
+                          const appUrl = `whatsapp://send?phone=447492964836&text=Hi%20AK%20Steel%20Services,%20I'd%20like%20to%20discuss%20a%20project`;
+                          window.location.href = appUrl;
+                          
+                          // Fallback to web version after a short delay
+                          setTimeout(() => {
+                            window.open(whatsappUrl, '_blank');
+                          }, 1000);
+                        } else {
+                          window.open(whatsappUrl, '_blank');
+                        }
+                      }}
+                    >
+                      {method.details}
+                    </Button>
+                  ) : (
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      asChild
+                    >
+                      <a href={method.action}>{method.details}</a>
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
