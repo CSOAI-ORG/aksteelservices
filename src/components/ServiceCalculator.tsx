@@ -145,6 +145,30 @@ const ServiceCalculator = () => {
     window.location.href = `mailto:info@aksteelservices.com?subject=${subject}&body=${body}`;
   };
 
+  const handleRequestSiteVisit = () => {
+    if (!estimate) return;
+    
+    // Track site visit request
+    trackEvent('calculator_site_visit_requested', {
+      service_type: formData.serviceType,
+      estimate_range: estimate.priceRange
+    });
+
+    const subject = encodeURIComponent("Site Visit Request - AK Steel Services");
+    const body = encodeURIComponent(
+      `Name: ${contact.name}\nPhone: ${contact.phone}\nEmail: ${contact.email}` +
+      `\n\nI would like to request a site visit for my project with the following details:` +
+      `\n\nService Type: ${formData.serviceType}\nProject Size: ${formData.projectSize}` +
+      `\nMaterial: ${formData.material}\nComplexity: ${formData.complexity}` +
+      `\nTimeframe: ${formData.timeframe}\nLocation: ${formData.location}` +
+      `\nAdditional Details: ${formData.additionalDetails}` +
+      `\n\nCalculated Estimate Range: ${estimate.priceRange}` +
+      `\n\nPlease contact me to schedule a convenient time for the site visit.` +
+      `\n\nSubmitted from: ${window.location.href}`
+    );
+    window.location.href = `mailto:info@aksteelservices.com?subject=${subject}&body=${body}`;
+  };
+
   const resetCalculator = () => {
     setFormData({
       serviceType: "",
@@ -414,7 +438,7 @@ const ServiceCalculator = () => {
                   <Button className="flex-1" asChild>
                     <a href="tel:07492964836">Call for Detailed Quote</a>
                   </Button>
-                  <Button variant="outline" className="flex-1">
+                  <Button variant="outline" className="flex-1" onClick={handleRequestSiteVisit}>
                     Request Site Visit
                   </Button>
                 </div>
