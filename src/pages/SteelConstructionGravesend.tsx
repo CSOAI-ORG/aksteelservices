@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, MapPin, Award, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const SteelConstructionGravesend = () => {
   const projects = [
@@ -200,6 +201,7 @@ const SteelConstructionGravesend = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

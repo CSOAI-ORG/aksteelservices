@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Monitor, Layers, FileText } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ThreeDModelingServices = () => {
   const software = [
@@ -247,6 +248,7 @@ const ThreeDModelingServices = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Truck, Shield, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const OnsiteSteelFabrication = () => {
   const capabilities = [
@@ -191,6 +192,7 @@ const OnsiteSteelFabrication = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

@@ -23,6 +23,7 @@ import {
   Navigation
 } from "lucide-react";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import BrandLogo from "@/components/BrandLogo";
 
 const Contact = () => {
@@ -444,6 +445,7 @@ const Contact = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

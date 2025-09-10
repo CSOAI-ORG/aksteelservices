@@ -18,6 +18,7 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const metalworkServices = [
@@ -415,6 +416,7 @@ const ArchitecturalMetalworkLondon = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

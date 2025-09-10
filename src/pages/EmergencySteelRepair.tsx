@@ -9,6 +9,7 @@ import { CheckCircle, Phone, Clock, AlertTriangle, Shield, Zap } from "lucide-re
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import fallbackImage from "@/assets/structural-steel-construction.jpg";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const EmergencySteelRepair = () => {
   const emergencyTypes = [
@@ -250,6 +251,7 @@ const EmergencySteelRepair = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

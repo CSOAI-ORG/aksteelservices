@@ -18,6 +18,7 @@ import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
 
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const platformTypes = [
@@ -427,6 +428,7 @@ const IndustrialSteelPlatforms = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

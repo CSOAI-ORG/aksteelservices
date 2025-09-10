@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import BrandLogo from "@/components/BrandLogo";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { Award, Users, Clock, CheckCircle, Shield, Wrench, Building } from "lucide-react";
 
 const About = () => {
@@ -221,6 +222,7 @@ const About = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

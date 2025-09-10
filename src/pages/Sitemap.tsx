@@ -6,6 +6,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Sitemap = () => {
   const sitemapData = {
@@ -126,6 +127,7 @@ const Sitemap = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

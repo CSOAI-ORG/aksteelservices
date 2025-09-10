@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Shield, Mail, Phone } from "lucide-react";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const PrivacyPolicy = () => {
   return (
@@ -178,6 +179,7 @@ const PrivacyPolicy = () => {
       </main>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

@@ -12,6 +12,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { Phone, MessageCircle, HelpCircle } from "lucide-react";
 
 const faqData = [
@@ -208,6 +209,7 @@ const FAQ = () => {
       </main>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

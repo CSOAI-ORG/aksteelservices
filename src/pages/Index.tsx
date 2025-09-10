@@ -9,6 +9,7 @@ import GoogleReviews from "@/components/GoogleReviews";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -205,8 +206,7 @@ const Index = () => {
 
       {/* Footer */}
       <Footer />
-      
-      {/* WhatsApp Button */}
+      <WhatsAppButton />
       
     </div>
   );

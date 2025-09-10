@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Zap, Shield, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const WeldingServices = () => {
   const weldingTypes = [
@@ -263,6 +264,7 @@ const WeldingServices = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

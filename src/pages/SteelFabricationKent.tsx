@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Clock, Award, ArrowRight } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const SteelFabricationKent = () => {
   const services = [
@@ -222,6 +223,7 @@ const SteelFabricationKent = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

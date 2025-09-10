@@ -9,6 +9,7 @@ import { CheckCircle, Phone, Truck, Award, Users } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import fallbackImage from "@/assets/structural-steel-construction.jpg";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const CraneHireServices = () => {
   const equipment = [
@@ -216,6 +217,7 @@ const CraneHireServices = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

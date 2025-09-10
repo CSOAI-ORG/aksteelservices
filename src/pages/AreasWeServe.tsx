@@ -7,6 +7,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { MapPin, Clock, Phone, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 

@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, Building, Home, Factory } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const StructuralSteelLondon = () => {
   const projects = [
@@ -267,6 +268,7 @@ const StructuralSteelLondon = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

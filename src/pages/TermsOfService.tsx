@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Mail, Phone } from "lucide-react";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const TermsOfService = () => {
   return (
@@ -249,6 +250,7 @@ const TermsOfService = () => {
       </main>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

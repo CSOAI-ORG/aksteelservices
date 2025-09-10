@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle, Phone, Mail, MessageSquare, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ThankYou = () => {
   return (
@@ -113,6 +114,7 @@ const ThankYou = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

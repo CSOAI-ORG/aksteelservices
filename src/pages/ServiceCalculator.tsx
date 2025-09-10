@@ -5,6 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ServiceCalculator from "@/components/ServiceCalculator";
 import { Badge } from "@/components/ui/badge";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ServiceCalculatorPage = () => {
   return (
@@ -91,6 +92,7 @@ const ServiceCalculatorPage = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
       
     </div>
   );

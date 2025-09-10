@@ -6,6 +6,7 @@ import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Home, Phone, Search, ArrowLeft } from "lucide-react";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const NotFound = () => {
   const location = useLocation();
@@ -87,6 +88,7 @@ const NotFound = () => {
       </main>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
