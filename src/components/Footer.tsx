@@ -37,7 +37,7 @@ const Footer = () => {
             <BrandLogo className="mb-2" width={160} height={40} />
             <h3 className="text-xl font-bold text-accent">AK Steel Services</h3>
             <p className="text-sm opacity-90">
-              The UK's #1 Steel Manufacturer with over 30+ years of experience in steel fabrication, 
+              The UK's #1 Steel Manufacturer delivering expert steel fabrication, 
               structural steel, and welding services across Kent, London, and South East England.
             </p>
             <div className="flex flex-col gap-2">

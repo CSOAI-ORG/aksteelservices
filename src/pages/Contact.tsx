@@ -19,11 +19,15 @@ import {
   Send,
   Building,
   Wrench,
-  Truck
+  Truck,
+  Navigation
 } from "lucide-react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 import BrandLogo from "@/components/BrandLogo";
 
 const Contact = () => {
+  const { trackEvent, trackWhatsAppClick } = useAnalytics();
+
   const contactMethods = [
     {
       icon: <Phone className="h-6 w-6" />,
@@ -43,8 +47,8 @@ const Contact = () => {
       icon: <MessageSquare className="h-6 w-6" />,
       title: "WhatsApp",
       description: "Quick queries and updates",
-      details: "Message us instantly",
-      action: "https://wa.me/447474550531"
+      details: "07492 964836",
+      action: "https://wa.me/447492964836"
     }
   ];
 
@@ -143,6 +147,7 @@ const Contact = () => {
                     variant="outline" 
                     className="w-full"
                     asChild
+                    onClick={method.title === "WhatsApp" ? trackWhatsAppClick : undefined}
                   >
                     <a href={method.action}>{method.details}</a>
                   </Button>
@@ -386,6 +391,42 @@ const Contact = () => {
             </p>
           </div>
           
+          {/* Get Directions Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Button 
+              variant="outline" 
+              size="lg" 
+              asChild
+              onClick={() => trackEvent('get_directions_click', { provider: 'google' })}
+            >
+              <a 
+                href="https://www.google.com/maps/dir/?api=1&destination=51.4416,0.3706"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Navigation className="h-5 w-5" />
+                Get Directions (Google Maps)
+              </a>
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              asChild
+              onClick={() => trackEvent('get_directions_click', { provider: 'waze' })}
+            >
+              <a 
+                href="https://waze.com/ul?ll=51.4416,0.3706&navigate=yes"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2"
+              >
+                <Navigation className="h-5 w-5" />
+                Get Directions (Waze)
+              </a>
+            </Button>
+          </div>
+
           {/* Google Maps Embed */}
           <div className="rounded-lg overflow-hidden h-64">
             <iframe

@@ -75,7 +75,7 @@ const AreasWeServe = () => {
             
             <p className="text-xl md:text-2xl mb-8 text-white/90 leading-relaxed">
               Professional steel fabrication services across Kent, London, and the South East. 
-              Over 30+ years of local expertise with fast response times and competitive pricing.
+              Local expertise with fast response times and competitive pricing.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

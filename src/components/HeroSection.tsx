@@ -8,7 +8,7 @@ const HeroSection = () => {
   const { trackPhoneCall } = useAnalytics();
   
   const benefits = [
-    "30+ Years Experience",
+    "Trusted Experts",
     "Free Quotes", 
     "Emergency Services 24/7",
     "Fully Insured & Certified"
@@ -34,7 +34,7 @@ const HeroSection = () => {
             </h1>
             
             <p className="text-xl text-white/90 leading-relaxed max-w-xl">
-              30+ years of excellence in steel fabrication, structural steel, and welding services. 
+              Expert steel fabrication, structural steel, and welding services. 
               From residential extensions to major commercial projects across Kent, London, and South East England.
             </p>
 
@@ -93,11 +93,11 @@ const HeroSection = () => {
               <h3 className="text-white text-2xl font-bold mb-6">Why Choose AK Steel Services?</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="bg-accent rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-xl">
-                    30+
+                  <div className="bg-accent rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-sm">
+                    Est. 1993
                   </div>
                   <div className="text-white">
-                    <div className="font-semibold">Years Experience</div>
+                    <div className="font-semibold">Established</div>
                     <div className="text-sm opacity-80">In steel fabrication industry</div>
                   </div>
                 </div>

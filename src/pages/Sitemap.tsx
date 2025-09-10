@@ -11,7 +11,7 @@ const Sitemap = () => {
   const sitemapData = {
     "Main Pages": [
       { title: "Home", url: "/", description: "Steel fabrication services across Kent & London" },
-      { title: "About Us", url: "/about", description: "30+ years of steel fabrication experience" },
+      { title: "About Us", url: "/about", description: "Expert steel fabrication experience" },
       { title: "Contact", url: "/contact", description: "Get in touch for quotes and consultations" },
       { title: "FAQ", url: "/faq", description: "Frequently asked questions about our services" },
       { title: "Areas We Serve", url: "/areas-we-serve", description: "Service coverage across Kent, London & South East" },

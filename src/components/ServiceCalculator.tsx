@@ -7,8 +7,10 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Calculator, Info, CheckCircle } from "lucide-react";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 const ServiceCalculator = () => {
+  const { trackEvent, trackFormSubmission } = useAnalytics();
   const [formData, setFormData] = useState({
     serviceType: "",
     projectSize: "",
@@ -47,7 +49,6 @@ const ServiceCalculator = () => {
 
   const materials = [
     { value: "mild-steel", label: "Mild Steel", multiplier: 1 },
-    { value: "stainless-steel", label: "Stainless Steel", multiplier: 1.8 },
     { value: "galvanized", label: "Galvanized Steel", multiplier: 1.4 },
     { value: "aluminum", label: "Aluminum", multiplier: 2.1 }
   ];
@@ -106,10 +107,30 @@ const ServiceCalculator = () => {
       priceRange: `£${lowRange.toLocaleString()} - £${highRange.toLocaleString()}`,
       factors
     });
+
+    // Track calculator usage
+    trackEvent('calculator_estimate_calculated', {
+      service_type: formData.serviceType,
+      project_size: formData.projectSize,
+      material: formData.material,
+      complexity: formData.complexity,
+      timeframe: formData.timeframe,
+      location: formData.location,
+      has_contact: !!(contact.email || contact.phone),
+      estimate_range: `£${lowRange.toLocaleString()} - £${highRange.toLocaleString()}`
+    });
   };
 
   const handleSendEstimate = () => {
     if (!estimate) return;
+    
+    // Track email click
+    trackFormSubmission('service_calculator');
+    trackEvent('calculator_email_clicked', {
+      service_type: formData.serviceType,
+      estimate_range: estimate.priceRange
+    });
+
     const subject = encodeURIComponent("New Calculator Estimate - AK Steel Services");
     const body = encodeURIComponent(
       `Name: ${contact.name}\nPhone: ${contact.phone}\nEmail: ${contact.email}` +

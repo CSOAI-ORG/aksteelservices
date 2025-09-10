@@ -23,7 +23,7 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "AK Steel Services",
-    "description": "Professional steel fabrication, structural steel, and welding services across Kent, London, and South East England. 30+ years experience.",
+    "description": "Professional steel fabrication, structural steel, and welding services across Kent, London, and South East England.",
     "url": "https://aksteelservices.com",
     "telephone": "01474550531",
     "email": "info@aksteelservices.com",
@@ -83,7 +83,7 @@ const Index = () => {
 // Testimonials removed to show only verified Google reviews
 
   const stats = [
-    { number: "30+", label: "Years Experience", icon: <Award className="h-6 w-6" /> },
+    { number: "Est. 1993", label: "Established", icon: <Award className="h-6 w-6" /> },
     { number: "1000+", label: "Projects Completed", icon: <Users className="h-6 w-6" /> },
     { number: "24/7", label: "Emergency Service", icon: <Clock className="h-6 w-6" /> },
     { number: "100%", label: "Customer Satisfaction", icon: <Star className="h-6 w-6" /> }
@@ -93,7 +93,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SEOHead
         title="Steel Fabrication Services | AK Steel Services Kent & London"
-        description="Professional steel fabrication, structural steel & welding services across Kent & London. 30+ years experience, free quotes, 24/7 emergency service. Call 01474 550531"
+        description="Professional steel fabrication, structural steel & welding services across Kent & London. Free quotes, 24/7 emergency service. Call 01474 550531"
         keywords="steel fabrication, structural steel, welding services, Kent, London, steel construction, metal fabrication"
         schemaData={localBusinessSchema}
       />
@@ -133,7 +133,7 @@ const Index = () => {
             {/* Content */}
             <div className="space-y-6">
               <Badge variant="secondary" className="w-fit">
-                30+ Years of Excellence
+                Proven Excellence
               </Badge>
               
               <h2 className="text-3xl md:text-4xl font-bold">
@@ -141,7 +141,7 @@ const Index = () => {
               </h2>
               
               <p className="text-lg text-muted-foreground leading-relaxed">
-                With over three decades of experience in steel fabrication, we have built a reputation 
+                With years of experience in steel fabrication, we have built a reputation 
                 for excellence across Kent, London, and the South East. Our commitment to quality, 
                 innovation, and customer service sets us apart.
               </p>

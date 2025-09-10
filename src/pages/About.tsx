@@ -48,14 +48,14 @@ const About = () => {
     { year: "2015", event: "Achieved ISO 9001:2015 certification" },
     { year: "2020", event: "Launched emergency steel repair service" },
     { year: "2013", event: "Celebrating 20 years of excellence" },
-    { year: "2024", event: "Celebrating 30+ years of steel fabrication excellence" }
+    { year: "2024", event: "Delivering steel fabrication excellence" }
   ];
 
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="About AK Steel Services | 30+ Years Steel Fabrication Experience"
-        description="Learn about AK Steel Services - 30+ years of steel fabrication expertise. Meet our team, view certifications, and discover why we're Kent & London's trusted steel specialists."
+        title="About AK Steel Services | Established 1993 Steel Fabrication"
+        description="Learn about AK Steel Services - established 1993 steel fabrication expertise. Meet our team, view certifications, and discover why we're Kent & London's trusted steel specialists."
         keywords="about AK Steel Services, steel fabrication company, Kent steel fabricators, experienced welders, steel construction team"
       />
       <Header />
@@ -73,7 +73,7 @@ const About = () => {
               About <span className="text-primary">AK Steel Services</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              For over three decades, we've been the trusted name in steel fabrication across Kent, 
+              Since 1993, we've been the trusted name in steel fabrication across Kent, 
               London, and the South East. Our commitment to excellence, innovation, and customer 
               satisfaction has made us industry leaders.
             </p>
@@ -98,7 +98,7 @@ const About = () => {
                 <p>
                   What started as a one-man operation has grown into a leading steel fabrication 
                   company serving clients across Kent, London, and the South East. Our success 
-                  is built on three decades of experience, continuous innovation, and an 
+                  is built on years of experience, continuous innovation, and an 
                   unwavering commitment to our customers.
                 </p>
                 <p>
@@ -113,10 +113,10 @@ const About = () => {
                 <Card>
                   <CardHeader className="text-center pb-2">
                     <Award className="h-8 w-8 text-primary mx-auto mb-2" />
-                    <CardTitle className="text-2xl">30+</CardTitle>
+                    <CardTitle className="text-lg">Since 1993</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center pt-0">
-                    <p className="text-sm text-muted-foreground">Years Experience</p>
+                    <p className="text-sm text-muted-foreground">Established</p>
                   </CardContent>
                 </Card>
                 <Card>
@@ -177,7 +177,7 @@ const About = () => {
               Our <span className="text-primary">Journey</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Three decades of growth, innovation, and excellence.
+              Years of growth, innovation, and excellence.
             </p>
           </div>
 
@@ -205,10 +205,10 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Work With Us?
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Experience the difference that 30+ years of expertise makes. Contact us today 
-            for your steel fabrication needs.
-          </p>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              Experience the difference our expertise makes. Contact us today 
+              for your steel fabrication needs.
+            </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="secondary" size="lg" asChild>
               <a href="/contact">Get In Touch</a>
