@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const serviceAreas = [
     "Gravesend", "Canterbury", "Maidstone", "Dartford", "Medway",
-    "London", "Surrey", "Essex", "Sussex", "Kent"
+    "London", "Bromley", "Surrey", "Essex", "Sussex", "Kent"
   ];
 
   const services = [
@@ -44,6 +44,26 @@ const Footer = () => {
               <Button variant="hero" size="sm" className="w-fit" asChild>
                 <Link to="/contact">Get Free Quote Today</Link>
               </Button>
+              <div className="flex gap-3 mt-2">
+                <a 
+                  href="https://www.facebook.com/profile.php?id=61577360927185"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary-foreground hover:text-accent transition-colors"
+                  aria-label="Follow us on Facebook"
+                >
+                  <Facebook className="h-5 w-5" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/aksteelservices/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary-foreground hover:text-accent transition-colors"
+                  aria-label="Follow us on Instagram"
+                >
+                  <Instagram className="h-5 w-5" />
+                </a>
+              </div>
             </div>
           </div>
 

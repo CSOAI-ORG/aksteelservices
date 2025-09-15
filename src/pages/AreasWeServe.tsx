@@ -23,7 +23,7 @@ const AreasWeServe = () => {
     },
     {
       region: "London",
-      mainCities: ["Central London", "South London", "East London", "Greenwich", "Croydon"],
+      mainCities: ["Central London", "South London", "East London", "Greenwich", "Croydon", "Bromley"],
       coverage: "All London boroughs with specialist urban project experience",
       responseTime: "24-48 hour response across Greater London",
       description: "Extensive experience in London's complex urban environment, including heritage buildings, modern developments, and commercial projects.",

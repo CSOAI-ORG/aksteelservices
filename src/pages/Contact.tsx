@@ -363,7 +363,7 @@ const Contact = () => {
                         <h4 className="font-semibold mb-2">Primary Areas:</h4>
                         <ul className="text-muted-foreground space-y-1">
                           <li>• Kent (Canterbury, Maidstone, Dover, Ashford)</li>
-                          <li>• London (All boroughs)</li>
+                          <li>• London (All boroughs including Bromley)</li>
                           <li>• Gravesend and surrounding areas</li>
                         </ul>
                       </div>
