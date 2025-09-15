@@ -125,8 +125,8 @@ const CraneHireServices = () => {
                   <div className="text-sm text-muted-foreground">Available</div>
                 </div>
                 <div className="bg-muted rounded-lg p-4">
-                  <div className="text-2xl font-bold text-primary">Est. 1993</div>
-                  <div className="text-sm text-muted-foreground">Established</div>
+                  <div className="text-2xl font-bold text-primary">Experienced</div>
+                  <div className="text-sm text-muted-foreground">Many Years Experience</div>
                 </div>
               </div>
             </div>

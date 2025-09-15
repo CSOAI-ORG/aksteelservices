@@ -94,10 +94,10 @@ const HeroSection = () => {
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="bg-accent rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-sm">
-                    Est. 1993
+                    Exp.
                   </div>
                   <div className="text-white">
-                    <div className="font-semibold">Established</div>
+                    <div className="font-semibold">Many Years Experience</div>
                     <div className="text-sm opacity-80">In steel fabrication industry</div>
                   </div>
                 </div>

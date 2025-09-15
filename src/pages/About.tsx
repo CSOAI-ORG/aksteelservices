@@ -42,21 +42,21 @@ const About = () => {
   ];
 
   const milestones = [
-    { year: "1993", event: "AK Steel Services founded in Kent" },
+    { year: "Early", event: "AK Steel Services founded in Kent" },
     { year: "2000", event: "Expanded operations to London market" },
     { year: "2005", event: "Introduced 3D CAD modeling services" },
     { year: "2010", event: "Completed 500th major project" },
     { year: "2015", event: "Achieved ISO 9001:2015 certification" },
     { year: "2020", event: "Launched emergency steel repair service" },
-    { year: "2013", event: "Celebrating 20 years of excellence" },
+    { year: "Recent", event: "Celebrating years of excellence" },
     { year: "2024", event: "Delivering steel fabrication excellence" }
   ];
 
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="About AK Steel Services | Established 1993 Steel Fabrication"
-        description="Learn about AK Steel Services - established 1993 steel fabrication expertise. Meet our team, view certifications, and discover why we're Kent & London's trusted steel specialists."
+        title="About AK Steel Services | Experienced Steel Fabrication Team"
+        description="Learn about AK Steel Services - experienced steel fabrication expertise. Meet our team, view certifications, and discover why we're Kent & London's trusted steel specialists."
         keywords="about AK Steel Services, steel fabrication company, Kent steel fabricators, experienced welders, steel construction team"
       />
       <Header />
@@ -67,14 +67,14 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <Badge variant="secondary" className="mb-6">
-              Established 1993
+              Experienced Team
             </Badge>
             <BrandLogo className="mx-auto mb-4" width={160} height={40} />
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               About <span className="text-primary">AK Steel Services</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Since 1993, we've been the trusted name in steel fabrication across Kent, 
+              With many years experience, we've been the trusted name in steel fabrication across Kent, 
               London, and the South East. Our commitment to excellence, innovation, and customer 
               satisfaction has made us industry leaders.
             </p>
@@ -92,7 +92,7 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 1993 by Andrew Knight, AK Steel Services began as a small steel 
+                  Founded with expertise by Andrew Knight, AK Steel Services began as a small steel 
                   fabrication workshop in Kent with a simple mission: to deliver exceptional 
                   quality steel solutions with uncompromising attention to detail.
                 </p>
@@ -114,10 +114,10 @@ const About = () => {
                 <Card>
                   <CardHeader className="text-center pb-2">
                     <Award className="h-8 w-8 text-primary mx-auto mb-2" />
-                    <CardTitle className="text-lg">Since 1993</CardTitle>
+                    <CardTitle className="text-lg">Experienced</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center pt-0">
-                    <p className="text-sm text-muted-foreground">Established</p>
+                    <p className="text-sm text-muted-foreground">Many Years Experience</p>
                   </CardContent>
                 </Card>
                 <Card>
