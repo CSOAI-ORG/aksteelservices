@@ -57,7 +57,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Head Office",
-      value: "Kent, United Kingdom"
+      value: "Unit A, Wharf Road, Gravesend, DA12 2RU"
     },
     {
       icon: <Clock className="h-5 w-5" />,

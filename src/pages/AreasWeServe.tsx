@@ -124,20 +124,6 @@ const AreasWeServe = () => {
                 <CardContent className="space-y-4">
                   <div>
                     <h4 className="font-semibold mb-2 flex items-center">
-                      <MapPin className="h-4 w-4 mr-2 text-primary" />
-                      Main Cities & Towns
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {area.mainCities.map((city, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
-                          {city}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold mb-2 flex items-center">
                       <Clock className="h-4 w-4 mr-2 text-primary" />
                       Response Time
                     </h4>

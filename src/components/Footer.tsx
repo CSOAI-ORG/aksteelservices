@@ -87,7 +87,7 @@ const Footer = () => {
               </a>
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 mt-1" />
-                <span className="text-sm">Gravesend, Kent, UK</span>
+                <span className="text-sm">Unit A, Wharf Road, Gravesend, DA12 2RU</span>
               </div>
               <div className="flex items-start gap-3">
                 <Clock className="h-4 w-4 mt-1" />

@@ -13,7 +13,7 @@ import { Award, Users, Clock, CheckCircle, Shield, Wrench, Building } from "luci
 const About = () => {
   const teamMembers = [
     {
-      name: "Andrew Knight",
+      name: "Adi Kraja",
       role: "Founder & Managing Director",
       experience: "20+ years",
       specialization: "Structural Steel Design & Project Management"
@@ -92,7 +92,7 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Founded with expertise by Andrew Knight, AK Steel Services began as a small steel 
+                  Founded with expertise by Adi Kraja, AK Steel Services began as a small steel 
                   fabrication workshop in Kent with a simple mission: to deliver exceptional 
                   quality steel solutions with uncompromising attention to detail.
                 </p>
@@ -117,7 +117,7 @@ const About = () => {
                     <CardTitle className="text-lg">Experienced</CardTitle>
                   </CardHeader>
                   <CardContent className="text-center pt-0">
-                    <p className="text-sm text-muted-foreground">Many Years Experience</p>
+                    <p className="text-sm text-muted-foreground">20+ Years Experience</p>
                   </CardContent>
                 </Card>
                 <Card>

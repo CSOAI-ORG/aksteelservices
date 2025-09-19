@@ -64,7 +64,7 @@ const ServicesSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Comprehensive Steel Services Across{" "}
-            <span className="text-primary">Kent & London</span>
+            <span className="text-primary">London and Southern England</span>
           </h2>
           <p className="text-xl text-muted-foreground leading-relaxed">
             From initial design consultation to final installation, we provide complete steel fabrication 

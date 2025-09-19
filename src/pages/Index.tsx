@@ -84,7 +84,7 @@ const Index = () => {
 // Testimonials removed to show only verified Google reviews
 
   const stats = [
-    { number: "Experienced", label: "Many Years Experience", icon: <Award className="h-6 w-6" /> },
+    { number: "Experienced", label: "20+ Years Experience", icon: <Award className="h-6 w-6" /> },
     { number: "1000+", label: "Projects Completed", icon: <Users className="h-6 w-6" /> },
     { number: "24/7", label: "Emergency Service", icon: <Clock className="h-6 w-6" /> },
     { number: "100%", label: "Customer Satisfaction", icon: <Star className="h-6 w-6" /> }
