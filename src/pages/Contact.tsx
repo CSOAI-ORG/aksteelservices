@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -20,14 +21,63 @@ import {
   Building,
   Wrench,
   Truck,
-  Navigation
+  Navigation,
+  Upload,
+  X,
+  File
 } from "lucide-react";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { useToast } from "@/hooks/use-toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BrandLogo from "@/components/BrandLogo";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
   const { trackEvent, trackWhatsAppClick } = useAnalytics();
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    const validFiles = files.filter(file => {
+      const maxSize = 10 * 1024 * 1024; // 10MB
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      
+      if (file.size > maxSize) {
+        toast({
+          title: "File too large",
+          description: `${file.name} is larger than 10MB. Please choose a smaller file.`,
+          variant: "destructive",
+        });
+        return false;
+      }
+      
+      if (!allowedTypes.includes(file.type)) {
+        toast({
+          title: "File type not supported",
+          description: `${file.name} is not a supported file type. Please upload images (JPG, PNG, WEBP) or documents (PDF, DOC, DOCX).`,
+          variant: "destructive",
+        });
+        return false;
+      }
+      
+      return true;
+    });
+    
+    if (uploadedFiles.length + validFiles.length > 5) {
+      toast({
+        title: "Too many files",
+        description: "You can upload a maximum of 5 files.",
+        variant: "destructive",
+      });
+      return;
+    }
+    
+    setUploadedFiles(prev => [...prev, ...validFiles]);
+  };
+
+  const removeFile = (index: number) => {
+    setUploadedFiles(prev => prev.filter((_, i) => i !== index));
+  };
 
   const contactMethods = [
     {
@@ -313,6 +363,62 @@ const Contact = () => {
                     rows={6}
                     required
                   />
+                </div>
+
+                {/* File Upload Section */}
+                <div className="space-y-3">
+                  <Label>Upload Files (Optional)</Label>
+                  <p className="text-sm text-muted-foreground">
+                    Attach photos, drawings, or documents related to your project (Max 5 files, 10MB each)
+                  </p>
+                  
+                  <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 text-center">
+                    <input
+                      type="file"
+                      id="contact-file-upload"
+                      multiple
+                      accept="image/*,.pdf,.doc,.docx"
+                      onChange={handleFileUpload}
+                      className="hidden"
+                    />
+                    <label
+                      htmlFor="contact-file-upload"
+                      className="cursor-pointer flex flex-col items-center gap-2 hover:text-primary transition-colors"
+                    >
+                      <Upload className="h-8 w-8 text-muted-foreground" />
+                      <span className="text-sm font-medium">Click to upload files</span>
+                      <span className="text-xs text-muted-foreground">
+                        Images (JPG, PNG, WEBP), Documents (PDF, DOC, DOCX)
+                      </span>
+                    </label>
+                  </div>
+
+                  {/* Display uploaded files */}
+                  {uploadedFiles.length > 0 && (
+                    <div className="space-y-2">
+                      <Label className="text-sm">Uploaded Files:</Label>
+                      {uploadedFiles.map((file, index) => (
+                        <div key={index} className="flex items-center justify-between p-2 bg-muted/50 rounded-md">
+                          <div className="flex items-center gap-2">
+                            <File className="h-4 w-4 text-muted-foreground" />
+                            <span className="text-sm truncate">{file.name}</span>
+                            <span className="text-xs text-muted-foreground">
+                              ({(file.size / 1024 / 1024).toFixed(2)}MB)
+                            </span>
+                          </div>
+                          <Button
+                            type="button"
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => removeFile(index)}
+                            className="h-6 w-6 p-0 text-muted-foreground hover:text-destructive"
+                          >
+                            <X className="h-3 w-3" />
+                          </Button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <Button type="submit" size="lg" className="w-full">

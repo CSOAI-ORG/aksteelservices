@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, Info, CheckCircle } from "lucide-react";
+import { Calculator, Info, CheckCircle, Upload, X, File } from "lucide-react";
 import { useAnalytics } from "@/hooks/useAnalytics";
 
 const ServiceCalculator = () => {
@@ -28,6 +28,7 @@ const ServiceCalculator = () => {
     factors: string[];
   } | null>(null);
   const [contact, setContact] = useState({ name: "", email: "", phone: "" });
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
 
   const serviceTypes = [
     { value: "steel-fabrication", label: "Steel Fabrication", baseRate: 50 },
@@ -74,6 +75,16 @@ const ServiceCalculator = () => {
     { value: "surrey", label: "Surrey", multiplier: 1.15 },
     { value: "other", label: "Other South East", multiplier: 1.3 }
   ];
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = Array.from(e.target.files || []);
+    const validFiles = files.filter(file => file.size <= 10 * 1024 * 1024);
+    setUploadedFiles(prev => [...prev, ...validFiles].slice(0, 5));
+  };
+
+  const removeFile = (index: number) => {
+    setUploadedFiles(prev => prev.filter((_, i) => i !== index));
+  };
 
   const calculateEstimate = () => {
     const service = serviceTypes.find(s => s.value === formData.serviceType);
