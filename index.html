@@ -107,5 +107,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Redirect www to root domain
+      if (window.location.hostname === 'www.aksteelservices.com') {
+        window.location.href = 'https://aksteelservices.com' + window.location.pathname + window.location.search + window.location.hash;
+      }
+    </script>
   </body>
 </html>
