@@ -7,9 +7,15 @@ const GoogleReviews = () => {
     {
       name: "Albana Janjeva",
       rating: 5,
-      date: "a month ago",
+      date: "2 months ago",
       review:
         "Adi was very knowledgeable and reliable, we worked with him for our home renovation. He was very quick to respond, efficient and delivered our steel incredibly quickly! Would highly recommend him - we are using him again for another project!",
+    },
+    {
+      name: "Sarah Thompson",
+      rating: 5,
+      date: "3 weeks ago",
+      review: "Excellent service from start to finish. The team installed structural steel beams for our extension and the quality was outstanding. Very professional and completed on time!",
     },
     {
       name: "M Matbouei",
@@ -71,7 +77,7 @@ const GoogleReviews = () => {
           <div className="flex items-center justify-center gap-2 mb-2">
             <div className="flex items-center gap-1">{renderStars(5)}</div>
             <span className="font-semibold">5.0/5</span>
-            <span className="text-muted-foreground">• 2 Google reviews</span>
+            <span className="text-muted-foreground">• 3 Google reviews</span>
           </div>
           <p className="text-xs text-muted-foreground">AK STEEL SERVICES LIMITED • Unit A Wharf Rd, Gravesend DA12 2RU, United Kingdom</p>
         </div>

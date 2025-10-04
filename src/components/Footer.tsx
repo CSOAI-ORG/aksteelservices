@@ -137,7 +137,7 @@ const Footer = () => {
         <div className="border-t border-secondary-hover mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm opacity-90">
-              © 2024 A K Steel Services Limited. All rights reserved.
+              © 2025 A K Steel Services Limited. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <Link to="/privacy-policy" className="hover:text-accent transition-colors">
