@@ -7,10 +7,10 @@ export const REAL_PHOTOS = {
     src: "/lovable-uploads/caf1359c-9145-4258-a04f-2b3ced559408.png",
     alt: "AK Steel Services — Industrial interior steelwork and mezzanine installation in progress",
   },
-  // Red oxide beams (fabrication/finishing)
+  // Red oxide beams on truck (delivery/logistics)
   residentialExtension1: {
-    src: "/lovable-uploads/b14c3272-8f2b-422b-a423-477034c82773.png",
-    alt: "AK Steel Services — Red oxide primed steel beams fabricated and ready for installation",
+    src: "/lovable-uploads/red-steel-beams-truck.jpg",
+    alt: "AK Steel Services — Red oxide steel beams loaded on delivery truck with crane equipment",
   },
   // Large framework / roof structure (joists and beams)
   roofStructure1: {
