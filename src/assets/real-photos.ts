@@ -37,6 +37,39 @@ export const REAL_PHOTOS = {
     src: "/lovable-uploads/9b70bed0-881c-4df0-9395-733bd7e4d0b4.png",
     alt: "AK Steel Services — Rooftop structural steel assembly on residential/commercial property",
   },
+  // New photos - Team and operations
+  craneConstruction1: {
+    src: "/lovable-uploads/crane-steel-lift-construction.jpg",
+    alt: "AK Steel Services — Professional crane operation lifting steel beams on construction site",
+  },
+  companyTruckYard: {
+    src: "/lovable-uploads/ak-steel-truck-yard.jpg",
+    alt: "AK Steel Services — Company DAF truck with Hiab crane at Gravesend facility",
+  },
+  teamScaffolding1: {
+    src: "/lovable-uploads/team-scaffolding-thumbsup.jpg",
+    alt: "AK Steel Services — Professional team member on scaffolding during steel installation",
+  },
+  teamCarryingBeam: {
+    src: "/lovable-uploads/team-carrying-steel-beam.jpg",
+    alt: "AK Steel Services — Team installing red oxide steel beam on residential project",
+  },
+  teamInstallingBeam: {
+    src: "/lovable-uploads/team-installing-beam-scaffolding.jpg",
+    alt: "AK Steel Services — Expert team member installing structural steel beam",
+  },
+  residentialCrane: {
+    src: "/lovable-uploads/residential-crane-operation.jpg",
+    alt: "AK Steel Services — Crane operation for steel delivery in residential area",
+  },
+  teamLoadingTruck: {
+    src: "/lovable-uploads/team-loading-truck-crane.jpg",
+    alt: "AK Steel Services — Team coordinating steel beam loading with crane equipment",
+  },
+  rooftopCraneOp: {
+    src: "/lovable-uploads/rooftop-crane-operation.jpg",
+    alt: "AK Steel Services — Rooftop crane operation for steel installation in London",
+  },
 } as const;
 
 export type RealPhotoKey = keyof typeof REAL_PHOTOS;

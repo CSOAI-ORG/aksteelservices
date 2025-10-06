@@ -3,7 +3,8 @@ import Footer from "@/components/Footer";
 import NewHeroSection from "@/components/NewHeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import QuoteForm from "@/components/QuoteForm";
-
+import TeamSection from "@/components/TeamSection";
+import CraneServicesSection from "@/components/CraneServicesSection";
 import SEOHead from "@/components/SEOHead";
 import GoogleReviews from "@/components/GoogleReviews";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -196,6 +197,11 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Team Section */}
+      <TeamSection />
+
+      {/* Crane Services Section */}
+      <CraneServicesSection />
 
       {/* Quote Form Section */}
       <section id="get-quote" className="py-20 bg-muted/50">

@@ -21,6 +21,7 @@ import SteelBuildingExtensionsKent from "./pages/SteelBuildingExtensionsKent";
 import AreasWeServe from "./pages/AreasWeServe";
 
 import About from "./pages/About";
+import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import FAQ from "./pages/FAQ";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -45,6 +46,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
             <Route path="/project-gallery" element={<Navigate to="/" replace />} />
