@@ -6,6 +6,26 @@ import { Star, Quote, ExternalLink } from "lucide-react";
 const GoogleReviews = () => {
   const reviews = [
     {
+      name: "Edrion Lofataj",
+      rating: 5,
+      date: "15 hours ago",
+      review:
+        "Had a great experience with AK steels. Great communication, very helpful and everything came as per plan. Thanks again guys and definitely recommended.",
+    },
+    {
+      name: "Direct Lofts",
+      rating: 5,
+      date: "3 days ago",
+      review:
+        "I've been using this company for years and the quality they offer is excellent with reasonable prices. Adi and his team always bring the delivery on time.",
+    },
+    {
+      name: "Svetoslav Krastev",
+      rating: 5,
+      date: "4 days ago",
+      review: "Great service, easy to work with people. Strongly recommend.",
+    },
+    {
       name: "Albana Janjeva",
       rating: 5,
       date: "2 months ago",
@@ -57,37 +77,20 @@ const GoogleReviews = () => {
           <p className="text-xl text-muted-foreground mb-6">
             Verified feedback from Google for AK Steel Services Limited.
           </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button 
-              variant="outline" 
-              asChild
-              className="inline-flex items-center gap-2"
+          <Button 
+            variant="default" 
+            asChild
+            className="inline-flex items-center gap-2"
+          >
+            <a 
+              href={reviewUrl}
+              target="_blank" 
+              rel="noopener noreferrer"
             >
-              <a 
-                href={googleBusinessUrl}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <GoogleLogo />
-                View on Google
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button 
-              variant="default" 
-              asChild
-              className="inline-flex items-center gap-2"
-            >
-              <a 
-                href={reviewUrl}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Star className="h-4 w-4" />
-                Leave a Review
-              </a>
-            </Button>
-          </div>
+              <Star className="h-4 w-4" />
+              Leave a Review
+            </a>
+          </Button>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
@@ -123,7 +126,7 @@ const GoogleReviews = () => {
               <GoogleLogo />
               <div className="flex items-center gap-1">{renderStars(5)}</div>
               <span className="font-semibold">5.0/5</span>
-              <span className="text-muted-foreground">• 2 Google reviews</span>
+              <span className="text-muted-foreground">• 5 Google reviews</span>
             </div>
           </a>
           <p className="text-xs text-muted-foreground">AK STEEL SERVICES LIMITED • Unit A Wharf Rd, Gravesend DA12 2RU, United Kingdom</p>
