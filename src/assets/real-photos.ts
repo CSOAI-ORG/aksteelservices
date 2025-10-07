@@ -22,10 +22,10 @@ export const REAL_PHOTOS = {
     src: "/lovable-uploads/0c4907fe-84b5-4787-b1c0-6a8f07a487d9.png",
     alt: "AK Steel Services — Urban structural steel frame installation on commercial site",
   },
-  // Company truck at the yard (real photo)
+  // Interior structural steelwork (real photo)
   commercialInterior1: {
-    src: "/lovable-uploads/b90916f8-ae66-4201-910b-814332a743fe.png",
-    alt: "AK Steel Services — Company DAF truck with Hiab at Gravesend yard",
+    src: "/lovable-uploads/interior-structural-work.jpg",
+    alt: "AK Steel Services — Interior structural steel framework installation by expert team",
   },
   // Residential rear extension steelwork
   residentialExtension2: {

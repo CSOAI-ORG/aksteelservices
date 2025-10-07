@@ -13,12 +13,6 @@ const GoogleReviews = () => {
         "Adi was very knowledgeable and reliable, we worked with him for our home renovation. He was very quick to respond, efficient and delivered our steel incredibly quickly! Would highly recommend him - we are using him again for another project!",
     },
     {
-      name: "Sarah Thompson",
-      rating: 5,
-      date: "3 weeks ago",
-      review: "Excellent service from start to finish. The team installed structural steel beams for our extension and the quality was outstanding. Very professional and completed on time!",
-    },
-    {
       name: "M Matbouei",
       rating: 5,
       date: "2 years ago",
@@ -37,7 +31,7 @@ const GoogleReviews = () => {
     ));
   };
 
-  const googleBusinessUrl = "https://www.google.com/maps/place/AK+STEEL+SERVICES+LIMITED/@51.4416087,0.3703708,17z/data=!3m1!4b1!4m6!3m5!1s0x47d8cb0e0c0c0c0d:0x1234567890abcdef!8m2!3d51.4416087!4d0.3729457!16s%2Fg%2F11c1q1q1q1";
+  const googleBusinessUrl = "https://share.google/OpKJ8vWxyiiAlbKoR";
 
   const GoogleLogo = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -112,7 +106,7 @@ const GoogleReviews = () => {
               <GoogleLogo />
               <div className="flex items-center gap-1">{renderStars(5)}</div>
               <span className="font-semibold">5.0/5</span>
-              <span className="text-muted-foreground">• 3 Google reviews</span>
+              <span className="text-muted-foreground">• 2 Google reviews</span>
             </div>
           </a>
           <p className="text-xs text-muted-foreground">AK STEEL SERVICES LIMITED • Unit A Wharf Rd, Gravesend DA12 2RU, United Kingdom</p>
