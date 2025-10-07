@@ -31,7 +31,8 @@ const GoogleReviews = () => {
     ));
   };
 
-  const googleBusinessUrl = "https://share.google/OpKJ8vWxyiiAlbKoR";
+  const googleBusinessUrl = "https://www.google.com/maps/place/AK+STEEL+SERVICES+LIMITED/@51.4416087,0.3703708,17z";
+  const reviewUrl = "https://g.page/r/CWAvmjJP5ZvWEBM/review";
 
   const GoogleLogo = () => (
     <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -56,21 +57,37 @@ const GoogleReviews = () => {
           <p className="text-xl text-muted-foreground mb-6">
             Verified feedback from Google for AK Steel Services Limited.
           </p>
-          <Button 
-            variant="outline" 
-            asChild
-            className="inline-flex items-center gap-2"
-          >
-            <a 
-              href={googleBusinessUrl}
-              target="_blank" 
-              rel="noopener noreferrer"
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button 
+              variant="outline" 
+              asChild
+              className="inline-flex items-center gap-2"
             >
-              <GoogleLogo />
-              View on Google
-              <ExternalLink className="h-4 w-4" />
-            </a>
-          </Button>
+              <a 
+                href={googleBusinessUrl}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <GoogleLogo />
+                View on Google
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </Button>
+            <Button 
+              variant="default" 
+              asChild
+              className="inline-flex items-center gap-2"
+            >
+              <a 
+                href={reviewUrl}
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <Star className="h-4 w-4" />
+                Leave a Review
+              </a>
+            </Button>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
