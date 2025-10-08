@@ -21,39 +21,6 @@ const TeamSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          <Card className="overflow-hidden">
-            <div className="aspect-[4/3]">
-              <img
-                src={REAL_PHOTOS.teamScaffolding1.src}
-                alt={REAL_PHOTOS.teamScaffolding1.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </Card>
-          <Card className="overflow-hidden">
-            <div className="aspect-[4/3]">
-              <img
-                src={REAL_PHOTOS.teamCarryingBeam.src}
-                alt={REAL_PHOTOS.teamCarryingBeam.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </Card>
-          <Card className="overflow-hidden">
-            <div className="aspect-[4/3]">
-              <img
-                src={REAL_PHOTOS.teamInstallingBeam.src}
-                alt={REAL_PHOTOS.teamInstallingBeam.alt}
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-          </Card>
-        </div>
-
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <Card className="p-6 text-center">
             <ShieldCheck className="h-12 w-12 text-primary mx-auto mb-4" />
