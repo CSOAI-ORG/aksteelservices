@@ -140,6 +140,9 @@ const Footer = () => {
               © 2025 A K Steel Services Limited. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
+              <Link to="/reviews" className="hover:text-accent transition-colors">
+                Reviews
+              </Link>
               <Link to="/privacy-policy" className="hover:text-accent transition-colors">
                 Privacy Policy
               </Link>

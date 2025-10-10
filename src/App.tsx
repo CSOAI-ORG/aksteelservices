@@ -30,6 +30,7 @@ import Sitemap from "./pages/Sitemap";
 import ServiceCalculatorPage from "./pages/ServiceCalculator";
 import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
+import Reviews from "./pages/Reviews";
 import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
@@ -48,6 +49,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/reviews" element={<Reviews />} />
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
             <Route path="/project-gallery" element={<Navigate to="/" replace />} />
             <Route path="/faq" element={<FAQ />} />

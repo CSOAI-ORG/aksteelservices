@@ -2,43 +2,53 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const GoogleReviews = () => {
   const reviews = [
     {
-      name: "Edrion Lofataj",
+      name: "Viktor Mh",
       rating: 5,
-      date: "15 hours ago",
+      date: "Yesterday",
       review:
-        "Had a great experience with AK steels. Great communication, very helpful and everything came as per plan. Thanks again guys and definitely recommended.",
+        "I had a great experience with AK Steel Services Limited. They provided high-quality steel products and were very professional and helpful. The team was easy to work with and delivered everything on time. I highly recommend them for their good service, reliable products and reasonable prices.",
     },
     {
-      name: "Direct Lofts",
+      name: "Festim Bajraktari",
       rating: 5,
-      date: "3 days ago",
+      date: "2 days ago",
       review:
-        "I've been using this company for years and the quality they offer is excellent with reasonable prices. Adi and his team always bring the delivery on time.",
+        "Adi and the team at AK are absolutely amazing, their communication, work and the team are absolutely first class.",
     },
     {
-      name: "Svetoslav Krastev",
+      name: "Andy Gjini",
       rating: 5,
-      date: "4 days ago",
-      review: "Great service, easy to work with people. Strongly recommend.",
+      date: "2 days ago",
+      review: "Excellent service and highly professional team!",
     },
     {
-      name: "Albana Janjeva",
+      name: "Zemrik Dauti",
       rating: 5,
-      date: "2 months ago",
+      date: "2 days ago",
+      review: "The best Steel Company with the best services i will highly recomend!",
+    },
+    {
+      name: "Shkari Anwar",
+      rating: 5,
+      date: "2 days ago",
       review:
-        "Adi was very knowledgeable and reliable, we worked with him for our home renovation. He was very quick to respond, efficient and delivered our steel incredibly quickly! Would highly recommend him - we are using him again for another project!",
+        "AK Steel Services Ltd supplied and fitted a 9-metre box frame for my project, with each beam weighing around 1.5 tonnes.",
     },
     {
-      name: "M Matbouei",
+      name: "Valter Nezaj",
       rating: 5,
-      date: "2 years ago",
-      review: "Professional and fast services at competitive price!",
+      date: "2 days ago",
+      review: "Outstanding quality and service. Highly recommended!",
     },
   ];
+
+  // Show only first 6 reviews on homepage
+  const displayedReviews = reviews.slice(0, 6);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
@@ -93,8 +103,8 @@ const GoogleReviews = () => {
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {reviews.map((review, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+          {displayedReviews.map((review, index) => (
             <Card key={index} className="relative">
               <CardHeader>
                 <div className="flex items-center justify-between mb-4">
@@ -115,6 +125,14 @@ const GoogleReviews = () => {
           ))}
         </div>
 
+        <div className="text-center mb-8">
+          <Button variant="outline" size="lg" asChild>
+            <Link to="/reviews">
+              View All 12 Reviews
+            </Link>
+          </Button>
+        </div>
+
         <div className="text-center">
           <a 
             href={googleBusinessUrl}
@@ -126,7 +144,7 @@ const GoogleReviews = () => {
               <GoogleLogo />
               <div className="flex items-center gap-1">{renderStars(5)}</div>
               <span className="font-semibold">5.0/5</span>
-              <span className="text-muted-foreground">• 5 Google reviews</span>
+              <span className="text-muted-foreground">• 12 Google reviews</span>
             </div>
           </a>
           <p className="text-xs text-muted-foreground">AK STEEL SERVICES LIMITED • Unit A Wharf Rd, Gravesend DA12 2RU, United Kingdom</p>
