@@ -7,42 +7,43 @@ import { Link } from "react-router-dom";
 const GoogleReviews = () => {
   const reviews = [
     {
+      name: "Armando Metaj",
+      rating: 5,
+      date: "6 days ago",
+      review:
+        "Great service with those boys. Amel and Adi are very helpful and taking care of drawing. Thanks for your service",
+    },
+    {
       name: "Viktor Mh",
       rating: 5,
-      date: "Yesterday",
+      date: "2 weeks ago",
       review:
         "I had a great experience with AK Steel Services Limited. They provided high-quality steel products and were very professional and helpful. The team was easy to work with and delivered everything on time. I highly recommend them for their good service, reliable products and reasonable prices.",
     },
     {
       name: "Festim Bajraktari",
       rating: 5,
-      date: "2 days ago",
+      date: "2 weeks ago",
       review:
-        "Adi and the team at AK are absolutely amazing, their communication, work and the team are absolutely first class.",
+        "Adi and the team at AK are absolutely amazing, their communication, work and the team are absolutely first class. Adi is very attentive and very knowledgeable in the field, always helping us with new solutions and ideas how to bring our projects to life and work together. We always use AK steel for our projects as they are competitively priced, very responsive, always on hand to deal with any issues, and quick delivery to site! Thank you to all the team at AK, always a pleasure working with you guys.",
     },
     {
       name: "Andy Gjini",
       rating: 5,
-      date: "2 days ago",
+      date: "2 weeks ago",
       review: "Excellent service and highly professional team!",
-    },
-    {
-      name: "Zemrik Dauti",
-      rating: 5,
-      date: "2 days ago",
-      review: "The best Steel Company with the best services i will highly recomend!",
     },
     {
       name: "Shkari Anwar",
       rating: 5,
-      date: "2 days ago",
+      date: "2 weeks ago",
       review:
-        "AK Steel Services Ltd supplied and fitted a 9-metre box frame for my project, with each beam weighing around 1.5 tonnes.",
+        "AK Steel Services Ltd supplied and fitted a 9-metre box frame for my project, with each beam weighing around 1.5 tonnes. They also supplied over 40 additional beams and posts for the rest of the house — a large and complex order that was delivered accurately and on time. What impressed me the most was their prompt quotation, clear communication, and patience throughout the process. They were easy to work with, kept me updated, and showed real experience handling such a large project smoothly and professionally. Highly recommended for anyone needing reliable steel supply or supply-and-fit services.",
     },
     {
       name: "Valter Nezaj",
       rating: 5,
-      date: "2 days ago",
+      date: "2 weeks ago",
       review: "Outstanding quality and service. Highly recommended!",
     },
   ];
