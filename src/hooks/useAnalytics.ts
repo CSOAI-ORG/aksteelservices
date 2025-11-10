@@ -12,7 +12,7 @@ export const useAnalytics = () => {
 
   useEffect(() => {
     if (typeof window.gtag !== 'undefined') {
-      window.gtag('config', 'G-XXXXXXXXXX', {
+      window.gtag('config', 'AW-17717697220', {
         page_path: location.pathname,
       });
     }
