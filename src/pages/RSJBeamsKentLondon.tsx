@@ -94,7 +94,7 @@ const RSJBeamsKentLondon = () => {
             </div>
             <div className="hidden lg:block">
               <LazyImage
-                src={REAL_PHOTOS.largeFramework1.src}
+                src={REAL_PHOTOS.roofStructure2.src}
                 alt="RSJ beams steel framework construction"
                 className="rounded-lg shadow-2xl"
               />

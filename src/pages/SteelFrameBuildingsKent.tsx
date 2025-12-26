@@ -105,7 +105,7 @@ const SteelFrameBuildingsKent = () => {
             </div>
             <div className="hidden lg:block">
               <LazyImage
-                src={REAL_PHOTOS.largeFramework1.src}
+                src={REAL_PHOTOS.roofStructure2.src}
                 alt="Steel frame building construction"
                 className="rounded-lg shadow-2xl"
               />

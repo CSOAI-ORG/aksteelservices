@@ -203,7 +203,7 @@ const SteelFabricatorsNearMe = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <LazyImage
-              src={REAL_PHOTOS.largeFramework1.src}
+              src={REAL_PHOTOS.roofStructure2.src}
               alt="Steel fabrication work"
               className="rounded-lg shadow-lg"
             />
