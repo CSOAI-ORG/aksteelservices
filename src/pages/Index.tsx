@@ -15,8 +15,9 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, CheckCircle, ArrowRight, Award, Users, Clock } from "lucide-react";
+import { Star, CheckCircle, ArrowRight, Award, Users, Clock, MapPin } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   useAnalytics(); // Initialize analytics tracking
@@ -117,6 +118,158 @@ const Index = () => {
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Projects 2024-2025 Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="mb-4">Recent Work</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Projects Completed in <span className="text-primary">2024-2025</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              A selection of our latest steel fabrication and installation projects across Kent and London.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Project 1 */}
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <LazyImage 
+                  src={REAL_PHOTOS.craneConstruction1.src}
+                  alt={REAL_PHOTOS.craneConstruction1.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>London</span>
+                </div>
+                <CardTitle className="text-lg">Commercial Steel Framework</CardTitle>
+                <CardDescription>
+                  Large-scale structural steel installation with crane lifting for a commercial development.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Project 2 */}
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <LazyImage 
+                  src={REAL_PHOTOS.residentialExtension2.src}
+                  alt={REAL_PHOTOS.residentialExtension2.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Kent</span>
+                </div>
+                <CardTitle className="text-lg">Residential Rear Extension</CardTitle>
+                <CardDescription>
+                  Steel beam installation for a rear extension, creating open-plan living space.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Project 3 */}
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <LazyImage 
+                  src={REAL_PHOTOS.teamInstallingBeam.src}
+                  alt={REAL_PHOTOS.teamInstallingBeam.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Gravesend</span>
+                </div>
+                <CardTitle className="text-lg">RSJ Beam Installation</CardTitle>
+                <CardDescription>
+                  Professional RSJ beam fitting for load-bearing wall removal in a domestic property.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Project 4 */}
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <LazyImage 
+                  src={REAL_PHOTOS.rooftopCraneOp.src}
+                  alt={REAL_PHOTOS.rooftopCraneOp.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>South London</span>
+                </div>
+                <CardTitle className="text-lg">Rooftop Steel Delivery</CardTitle>
+                <CardDescription>
+                  Complex crane operation delivering steel beams to a rooftop construction project.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Project 5 */}
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <LazyImage 
+                  src={REAL_PHOTOS.industrialInterior1.src}
+                  alt={REAL_PHOTOS.industrialInterior1.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Kent</span>
+                </div>
+                <CardTitle className="text-lg">Industrial Mezzanine</CardTitle>
+                <CardDescription>
+                  Warehouse mezzanine floor installation to double usable storage space.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            {/* Project 6 */}
+            <Card className="overflow-hidden group hover:shadow-lg transition-shadow">
+              <div className="aspect-video overflow-hidden">
+                <LazyImage 
+                  src={REAL_PHOTOS.teamCarryingBeam.src}
+                  alt={REAL_PHOTOS.teamCarryingBeam.alt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <CardHeader>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                  <MapPin className="h-4 w-4" />
+                  <span>Dartford</span>
+                </div>
+                <CardTitle className="text-lg">Loft Conversion Steelwork</CardTitle>
+                <CardDescription>
+                  Structural steel beams for a loft conversion with dormer extension.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+
+          <div className="text-center mt-10">
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/gallery">
+                View Full Gallery
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
