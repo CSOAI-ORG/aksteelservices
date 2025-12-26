@@ -30,15 +30,15 @@ const NewHeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           {/* Left content */}
           <div className="space-y-6 animate-fade-in">
-            <Badge variant="secondary" className="w-fit">Trusted Steel Specialists</Badge>
+            <Badge variant="secondary" className="w-fit">🎉 Welcoming 2026 — 20+ Years of Excellence</Badge>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-foreground">
               Steel Fabrication & Structural Steel in <span className="text-primary">Kent & London</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl">
-              Delivering precision steelwork: fabrication, on-site welding, and certified installations
-              for residential, commercial, and industrial projects across the South East.
+              Starting 2026 stronger than ever! Trusted by builders and homeowners across the South East 
+              for precision steelwork, on-site welding, and certified installations.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
