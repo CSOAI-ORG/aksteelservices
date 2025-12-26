@@ -40,7 +40,7 @@ const HouseExtensionSteelwork = () => {
     {
       title: "Wrap-Around Extensions",
       description: "Combine side and rear extensions with steel framework for maximum additional floor space.",
-      image: REAL_PHOTOS.largeFramework1.src
+      image: REAL_PHOTOS.roofStructure2.src
     },
     {
       title: "Structural Alterations",
@@ -210,7 +210,7 @@ const HouseExtensionSteelwork = () => {
             </div>
             <div>
               <LazyImage
-                src={REAL_PHOTOS.largeFramework1.src}
+                src={REAL_PHOTOS.roofStructure2.src}
                 alt="Steel framework for house extension"
                 className="rounded-lg shadow-lg"
               />

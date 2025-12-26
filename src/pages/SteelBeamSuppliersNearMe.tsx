@@ -103,7 +103,7 @@ const SteelBeamSuppliersNearMe = () => {
             </div>
             <div className="hidden lg:block">
               <LazyImage
-                src={REAL_PHOTOS.steelStock1.src}
+                src={REAL_PHOTOS.companyTruckYard.src}
                 alt="Steel beam stock yard"
                 className="rounded-lg shadow-2xl"
               />
@@ -173,7 +173,7 @@ const SteelBeamSuppliersNearMe = () => {
             </div>
             <div>
               <LazyImage
-                src={REAL_PHOTOS.largeFramework1.src}
+                src={REAL_PHOTOS.roofStructure2.src}
                 alt="Steel beams and sections"
                 className="rounded-lg shadow-lg"
               />
