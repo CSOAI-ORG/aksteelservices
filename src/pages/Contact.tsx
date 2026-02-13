@@ -30,6 +30,7 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 import { useToast } from "@/hooks/use-toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BrandLogo from "@/components/BrandLogo";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -425,27 +426,50 @@ const Contact = () => {
                   type="submit" 
                   size="lg" 
                   className="w-full"
-                  onClick={(e) => {
+                  onClick={async (e) => {
                     e.preventDefault();
                     const form = e.currentTarget.closest('form');
                     if (!form) return;
                     const formData = new FormData(form);
-                    const firstName = formData.get('firstName') as string || '';
-                    const lastName = formData.get('lastName') as string || '';
-                    const email = formData.get('email') as string || '';
-                    const phone = formData.get('phone') as string || '';
-                    const company = formData.get('company') as string || '';
-                    const message = formData.get('message') as string || '';
+                    const firstName = (formData.get('firstName') as string || '').trim();
+                    const lastName = (formData.get('lastName') as string || '').trim();
+                    const email = (formData.get('email') as string || '').trim();
+                    const phone = (formData.get('phone') as string || '').trim();
+                    const company = (formData.get('company') as string || '').trim();
+                    const message = (formData.get('message') as string || '').trim();
+                    const location = (formData.get('location') as string || '').trim();
                     
                     if (!firstName || !lastName || !email || !phone || !message) {
+                      toast({ title: "Please fill in all required fields", variant: "destructive" });
                       return;
                     }
                     
-                    const subject = encodeURIComponent('New Quote Request - AK Steel Services');
-                    const body = encodeURIComponent(
-                      `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\nProject Details:\n${message}\n\nSubmitted from: ${window.location.href}`
-                    );
-                    window.open(`mailto:info@aksteelservices.com?subject=${subject}&body=${body}`, '_blank');
+                    try {
+                      const { error } = await supabase.from('contact_submissions').insert({
+                        first_name: firstName,
+                        last_name: lastName,
+                        email,
+                        phone,
+                        company: company || null,
+                        location: location || null,
+                        message,
+                      });
+                      
+                      if (error) throw error;
+                      
+                      toast({
+                        title: "Quote Request Sent!",
+                        description: "Thank you! We'll get back to you within 24 hours.",
+                      });
+                      window.location.href = '/thank-you';
+                    } catch (err) {
+                      console.error('Form error:', err);
+                      toast({
+                        title: "Error",
+                        description: "Something went wrong. Please call us on 01474 550531.",
+                        variant: "destructive",
+                      });
+                    }
                   }}
                 >
                   <Send className="h-4 w-4 mr-2" />
