@@ -362,11 +362,18 @@ const Index = () => {
           <div className="text-center mb-6">
             <h3 className="text-lg font-semibold text-muted-foreground">Accredited & Certified</h3>
           </div>
-          <div className="flex justify-center">
+          <div className="flex flex-wrap justify-center items-center gap-6">
             <div className="bg-white rounded-lg p-6 px-10 shadow-sm">
               <img 
                 src="/images/certification-logos.jpg" 
                 alt="SCCS, UKAS Product Certification, and UKCA certified" 
+                className="h-14 md:h-20 w-auto"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm">
+              <img 
+                src="/images/bs-en-1090-logo.jpg" 
+                alt="BS EN 1090 certified — SCCS and UKAS Product Certification" 
                 className="h-14 md:h-20 w-auto"
               />
             </div>
