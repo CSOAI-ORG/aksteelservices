@@ -456,6 +456,11 @@ const Contact = () => {
                       });
                       
                       if (error) throw error;
+
+                      // Send email notification
+                      await supabase.functions.invoke('send-quote-email', {
+                        body: { firstName, lastName, email, phone, company, location, message },
+                      });
                       
                       toast({
                         title: "Quote Request Sent!",
