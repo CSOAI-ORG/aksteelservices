@@ -356,6 +356,24 @@ const Index = () => {
       {/* Crane Services Section */}
       <CraneServicesSection />
 
+      {/* Certifications Section */}
+      <section className="py-12 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-6">
+            <h3 className="text-lg font-semibold text-muted-foreground">Accredited & Certified</h3>
+          </div>
+          <div className="flex justify-center">
+            <div className="bg-white rounded-lg p-6 px-10 shadow-sm">
+              <img 
+                src="/images/certification-logos.jpg" 
+                alt="SCCS, UKAS Product Certification, and UKCA certified" 
+                className="h-14 md:h-20 w-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quote Form Section */}
       <section id="get-quote" className="py-20 bg-muted/50">
         <div className="container mx-auto px-4">
