@@ -100,12 +100,16 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
 
       if (error) throw error;
 
+      // Send email notification
+      await supabase.functions.invoke('send-quote-email', {
+        body: { firstName, lastName, email, phone, service, location, message: description },
+      });
+
       toast({
         title: 'Quote Request Sent!',
         description: "Thank you! We'll get back to you within 24 hours with a detailed quote.",
       });
 
-      // Redirect to thank you page
       window.location.href = '/thank-you';
     } catch (error) {
       console.error('Form submission error:', error);
