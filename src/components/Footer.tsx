@@ -133,8 +133,21 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+        {/* Certification Logos */}
         <div className="border-t border-secondary-hover mt-12 pt-8">
+          <div className="flex justify-center mb-8">
+            <div className="bg-white rounded-lg p-4 px-8">
+              <img 
+                src="/images/certification-logos.jpg" 
+                alt="SCCS, UKAS Product Certification, and UKCA certified" 
+                className="h-12 md:h-16 w-auto"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-secondary-hover pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm opacity-90">
               © 2025 A K Steel Services Limited. All rights reserved.

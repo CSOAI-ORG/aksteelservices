@@ -421,7 +421,33 @@ const Contact = () => {
                   )}
                 </div>
 
-                <Button type="submit" size="lg" className="w-full">
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const form = e.currentTarget.closest('form');
+                    if (!form) return;
+                    const formData = new FormData(form);
+                    const firstName = formData.get('firstName') as string || '';
+                    const lastName = formData.get('lastName') as string || '';
+                    const email = formData.get('email') as string || '';
+                    const phone = formData.get('phone') as string || '';
+                    const company = formData.get('company') as string || '';
+                    const message = formData.get('message') as string || '';
+                    
+                    if (!firstName || !lastName || !email || !phone || !message) {
+                      return;
+                    }
+                    
+                    const subject = encodeURIComponent('New Quote Request - AK Steel Services');
+                    const body = encodeURIComponent(
+                      `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\n\nProject Details:\n${message}\n\nSubmitted from: ${window.location.href}`
+                    );
+                    window.open(`mailto:info@aksteelservices.com?subject=${subject}&body=${body}`, '_blank');
+                  }}
+                >
                   <Send className="h-4 w-4 mr-2" />
                   Send Quote Request
                 </Button>
@@ -533,7 +559,7 @@ const Contact = () => {
               onClick={() => trackEvent('get_directions_click', { provider: 'google' })}
             >
               <a 
-                href="https://www.google.com/maps/dir/?api=1&destination=51.4416,0.3706"
+                href="https://www.google.com/maps/dir/?api=1&destination=AK+Steel+Services,+Wharf+Road,+Gravesend+DA12+2RU"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
@@ -549,7 +575,7 @@ const Contact = () => {
               onClick={() => trackEvent('get_directions_click', { provider: 'waze' })}
             >
               <a 
-                href="https://waze.com/ul?ll=51.4416,0.3706&navigate=yes"
+                href="https://waze.com/ul?q=AK+Steel+Services+Wharf+Road+Gravesend&navigate=yes"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2"
@@ -563,7 +589,7 @@ const Contact = () => {
           {/* Google Maps Embed */}
           <div className="rounded-lg overflow-hidden h-64">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.9999999999995!2d0.3703!3d51.4419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTHCsDI2JzMwLjgiTiAwwrAyMicxMy4xIkU!5e0!3m2!1sen!2suk!4v1234567890123"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.5!2d0.3685!3d51.4440!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8b1a1a1a1a1a1%3A0x0!2sWharf+Road%2C+Gravesend+DA12+2RU!5e0!3m2!1sen!2suk!4v1700000000000"
               width="100%"
               height="100%"
               style={{ border: 0 }}

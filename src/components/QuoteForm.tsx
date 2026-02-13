@@ -99,17 +99,21 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
       const body = encodeURIComponent(
         `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nLocation: ${location}\n\nProject Description:\n${description}${fileInfo}\n\nSubmitted from: ${window.location.href}`
       );
-      window.location.href = `mailto:info@aksteelservices.com?subject=${subject}&body=${body}`;
+      // Open mailto in a new approach that doesn't conflict with redirect
+      const mailtoLink = `mailto:info@aksteelservices.com?subject=${subject}&body=${body}`;
+      const mailWindow = window.open(mailtoLink, '_self');
 
       toast({
         title: 'Quote Request Composed',
         description: uploadedFiles.length > 0 
-          ? "Your email client has opened. Please attach your files and send the email to complete your request."
-          : "Your email client has opened a new message to info@aksteelservices.com. Please press send to deliver your request.",
+          ? "Your email client should open. Please attach your files and send the email to complete your request."
+          : "Your email client should open a new message to info@aksteelservices.com. Please press send to deliver your request.",
       });
 
-      // Redirect to thank you page
-      window.location.href = '/thank-you';
+      // Redirect to thank you page after a delay so mailto has time to trigger
+      setTimeout(() => {
+        window.location.href = '/thank-you';
+      }, 2000);
     } catch (error) {
       toast({
         title: "Error",
