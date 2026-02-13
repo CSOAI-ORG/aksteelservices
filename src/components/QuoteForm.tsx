@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Upload, X, File } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
   const { toast } = useToast();
@@ -72,52 +73,45 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
     const serviceType = formData.get('service') as string;
     
     try {
-      // Gather form values
       const name = formData.get('name') as string;
       const phone = formData.get('phone') as string;
       const email = formData.get('email') as string;
       const description = formData.get('description') as string;
-      const service = (formData.get('service') as string) || '';
-      const location = (formData.get('location') as string) || '';
 
-      // Track the form submission
       trackFormSubmission('quote_request');
       trackQuoteRequest(service || 'general');
 
-      // Create file attachment information
-      let fileInfo = '';
-      if (uploadedFiles.length > 0) {
-        fileInfo = `\n\nAttached Files (${uploadedFiles.length}):\n`;
-        uploadedFiles.forEach((file, index) => {
-          fileInfo += `${index + 1}. ${file.name} (${(file.size / 1024 / 1024).toFixed(2)}MB)\n`;
-        });
-        fileInfo += '\nNote: Please contact us to arrange file transfer for the attached documents.\n';
-      }
+      // Split name into first/last
+      const nameParts = name.trim().split(' ');
+      const firstName = nameParts[0] || '';
+      const lastName = nameParts.slice(1).join(' ') || '';
 
-      // Send email via mailto (no backend required)
-      const subject = encodeURIComponent('New Quote Request - AK Steel Services');
-      const body = encodeURIComponent(
-        `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nLocation: ${location}\n\nProject Description:\n${description}${fileInfo}\n\nSubmitted from: ${window.location.href}`
-      );
-      // Open mailto in a new approach that doesn't conflict with redirect
-      const mailtoLink = `mailto:info@aksteelservices.com?subject=${subject}&body=${body}`;
-      const mailWindow = window.open(mailtoLink, '_self');
-
-      toast({
-        title: 'Quote Request Composed',
-        description: uploadedFiles.length > 0 
-          ? "Your email client should open. Please attach your files and send the email to complete your request."
-          : "Your email client should open a new message to info@aksteelservices.com. Please press send to deliver your request.",
+      // Save to database
+      const { error } = await supabase.from('contact_submissions').insert({
+        first_name: firstName,
+        last_name: lastName,
+        email,
+        phone,
+        service: service || null,
+        location: location || null,
+        message: description,
+        preferred_contact: (formData.get('contact_method') as string) || 'phone',
       });
 
-      // Redirect to thank you page after a delay so mailto has time to trigger
-      setTimeout(() => {
-        window.location.href = '/thank-you';
-      }, 2000);
+      if (error) throw error;
+
+      toast({
+        title: 'Quote Request Sent!',
+        description: "Thank you! We'll get back to you within 24 hours with a detailed quote.",
+      });
+
+      // Redirect to thank you page
+      window.location.href = '/thank-you';
     } catch (error) {
+      console.error('Form submission error:', error);
       toast({
         title: "Error",
-        description: "There was a problem sending your request. Please try again.",
+        description: "There was a problem sending your request. Please try again or call us on 01474 550531.",
         variant: "destructive",
       });
     } finally {
