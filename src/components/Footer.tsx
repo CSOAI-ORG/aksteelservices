@@ -136,13 +136,6 @@ const Footer = () => {
         {/* Certification Logos */}
         <div className="border-t border-secondary-hover mt-12 pt-8">
           <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
-            <div className="bg-white rounded-lg p-4 px-8">
-              <img 
-                src="/images/certification-logos.jpg" 
-                alt="SCCS, UKAS Product Certification, and UKCA certified" 
-                className="h-12 md:h-16 w-auto"
-              />
-            </div>
             <div className="bg-white rounded-lg p-3">
               <img 
                 src="/images/bs-en-1090-logo.jpg" 
