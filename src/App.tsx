@@ -35,6 +35,16 @@ import HowItWorks from "./pages/HowItWorks";
 import FreeSiteSurvey from "./pages/FreeSiteSurvey";
 import ResidentialSteelServices from "./pages/ResidentialSteelServices";
 import CommercialSteelServices from "./pages/CommercialSteelServices";
+import LoftConversionSteelBeams from "./pages/LoftConversionSteelBeams";
+import RSJBeamsKentLondon from "./pages/RSJBeamsKentLondon";
+import HouseExtensionSteelwork from "./pages/HouseExtensionSteelwork";
+import SteelBeamSuppliersNearMe from "./pages/SteelBeamSuppliersNearMe";
+import SteelFabricatorsNearMe from "./pages/SteelFabricatorsNearMe";
+import MezzanineFloorInstallation from "./pages/MezzanineFloorInstallation";
+import SteelFrameBuildingsKent from "./pages/SteelFrameBuildingsKent";
+import SteelBeamsLondon from "./pages/SteelBeamsLondon";
+import StructuralEngineerSteelBeams from "./pages/StructuralEngineerSteelBeams";
+import SteelRSJPrices from "./pages/SteelRSJPrices";
 
 const queryClient = new QueryClient();
 
@@ -77,6 +87,16 @@ const App = () => (
             <Route path="/industrial-steel-platforms" element={<IndustrialSteelPlatforms />} />
             <Route path="/steel-staircase-installation" element={<SteelStaircaseInstallation />} />
             <Route path="/steel-building-extensions-kent" element={<SteelBuildingExtensionsKent />} />
+            <Route path="/loft-conversion-steel-beams" element={<LoftConversionSteelBeams />} />
+            <Route path="/rsj-beams-kent-london" element={<RSJBeamsKentLondon />} />
+            <Route path="/house-extension-steelwork" element={<HouseExtensionSteelwork />} />
+            <Route path="/steel-beam-suppliers-near-me" element={<SteelBeamSuppliersNearMe />} />
+            <Route path="/steel-fabricators-near-me" element={<SteelFabricatorsNearMe />} />
+            <Route path="/mezzanine-floor-installation" element={<MezzanineFloorInstallation />} />
+            <Route path="/steel-frame-buildings-kent" element={<SteelFrameBuildingsKent />} />
+            <Route path="/steel-beams-london" element={<SteelBeamsLondon />} />
+            <Route path="/structural-engineer-steel-beams" element={<StructuralEngineerSteelBeams />} />
+            <Route path="/steel-rsj-beam-prices" element={<SteelRSJPrices />} />
             <Route path="/thank-you" element={<ThankYou />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import StickyCallBar from "@/components/StickyCallBar";
+import MidPageCTA from "@/components/MidPageCTA";
+import TrustBar from "@/components/TrustBar";
 
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -202,6 +205,7 @@ const SteelConstructionGravesend = () => {
 
       <Footer />
       <WhatsAppButton />
+      <StickyCallBar />
       
     </div>
   );

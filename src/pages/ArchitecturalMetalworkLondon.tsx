@@ -16,6 +16,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import StickyCallBar from "@/components/StickyCallBar";
 
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -417,6 +418,7 @@ const ArchitecturalMetalworkLondon = () => {
 
       <Footer />
       <WhatsAppButton />
+      <StickyCallBar />
       
     </div>
   );

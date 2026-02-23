@@ -12,21 +12,33 @@ const Footer = () => {
   ];
 
   const services = [
-    "Steel Fabrication",
-    "Structural Steel",
+    "Steel Fabrication Kent",
+    "Structural Steel London",
+    "Steel Beams London",
+    "RSJ Beams Kent & London",
+    "Steel Beam Installation",
+    "Loft Conversion Beams",
+    "House Extension Steelwork",
     "Welding Services",
-    "Onsite Fabrication",
-    "Steel Construction",
-    "Crane Hire & Hiab"
+    "Crane Hire & Hiab",
+    "Mezzanine Floors",
+    "Steel Frame Buildings",
+    "Steel Beam Prices",
   ];
 
   const serviceRoutes: Record<string, string> = {
-    "Steel Fabrication": "/steel-fabrication-kent",
-    "Structural Steel": "/structural-steel-london",
+    "Steel Fabrication Kent": "/steel-fabrication-kent",
+    "Structural Steel London": "/structural-steel-london",
+    "Steel Beams London": "/steel-beams-london",
+    "RSJ Beams Kent & London": "/rsj-beams-kent-london",
+    "Steel Beam Installation": "/steel-beam-installation",
+    "Loft Conversion Beams": "/loft-conversion-steel-beams",
+    "House Extension Steelwork": "/house-extension-steelwork",
     "Welding Services": "/welding-services",
-    "Onsite Fabrication": "/onsite-steel-fabrication",
-    "Steel Construction": "/steel-construction-gravesend",
     "Crane Hire & Hiab": "/crane-hire-services",
+    "Mezzanine Floors": "/mezzanine-floor-installation",
+    "Steel Frame Buildings": "/steel-frame-buildings-kent",
+    "Steel Beam Prices": "/steel-rsj-beam-prices",
   };
 
   return (

@@ -14,30 +14,49 @@ const Sitemap = () => {
       { title: "Home", url: "/", description: "Steel fabrication services across Kent & London" },
       { title: "About Us", url: "/about", description: "Expert steel fabrication experience" },
       { title: "Contact", url: "/contact", description: "Get in touch for quotes and consultations" },
-      { title: "FAQ", url: "/faq", description: "Frequently asked questions about our services" },
-      { title: "Areas We Serve", url: "/areas-we-serve", description: "Service coverage across Kent, London & South East" },
-      
+      { title: "Gallery", url: "/gallery", description: "View our completed projects" },
+      { title: "Reviews", url: "/reviews", description: "What our customers say" },
+      { title: "How It Works", url: "/how-it-works", description: "Our simple 4-step process" },
+      { title: "Free Site Survey", url: "/free-site-survey", description: "Book your free site visit" },
+      { title: "FAQ", url: "/faq", description: "Frequently asked questions" },
+      { title: "Areas We Serve", url: "/areas-we-serve", description: "Service coverage across the South East" },
+    ],
+    "Residential Services": [
+      { title: "Residential Steel Services", url: "/residential-steel-services", description: "Steel solutions for homes and extensions" },
+      { title: "Loft Conversion Steel Beams", url: "/loft-conversion-steel-beams", description: "RSJ beams for loft conversions" },
+      { title: "House Extension Steelwork", url: "/house-extension-steelwork", description: "Steel frames for house extensions" },
+      { title: "Steel Beam Installation", url: "/steel-beam-installation", description: "Professional beam installation" },
+      { title: "RSJ Beams Kent & London", url: "/rsj-beams-kent-london", description: "RSJ beam supply and installation" },
+      { title: "Steel RSJ Beam Prices", url: "/steel-rsj-beam-prices", description: "Indicative price guide for steel beams" },
+      { title: "Steel Staircase Installation", url: "/steel-staircase-installation", description: "Custom steel staircases" },
+    ],
+    "Commercial & Industrial": [
+      { title: "Commercial Steel Services", url: "/commercial-steel-services", description: "Steel solutions for businesses" },
+      { title: "Mezzanine Floor Installation", url: "/mezzanine-floor-installation", description: "Mezzanine floors for warehouses" },
+      { title: "Industrial Steel Platforms", url: "/industrial-steel-platforms", description: "Access platforms and walkways" },
+      { title: "Steel Frame Buildings Kent", url: "/steel-frame-buildings-kent", description: "Complete steel frame structures" },
+      { title: "Steel Building Extensions", url: "/steel-building-extensions-kent", description: "Commercial building extensions" },
+      { title: "Architectural Metalwork London", url: "/architectural-metalwork-london", description: "Bespoke architectural metalwork" },
     ],
     "Steel Fabrication Services": [
-      { title: "Steel Fabrication Kent", url: "/steel-fabrication-kent", description: "Custom steel fabrication services in Kent" },
-      { title: "Structural Steel London", url: "/structural-steel-london", description: "Structural steel solutions in London" },
-      { title: "Steel Construction Gravesend", url: "/steel-construction-gravesend", description: "Steel construction services in Gravesend" },
-      { title: "Steel Building Extensions Kent", url: "/steel-building-extensions-kent", description: "Steel building extensions across Kent" },
-      { title: "Steel Beam Installation", url: "/steel-beam-installation", description: "Professional steel beam installation services" },
-      { title: "Steel Staircase Installation", url: "/steel-staircase-installation", description: "Custom steel staircase design and installation" },
-      { title: "Industrial Steel Platforms", url: "/industrial-steel-platforms", description: "Industrial steel platform construction" }
+      { title: "Steel Fabrication Kent", url: "/steel-fabrication-kent", description: "Custom steel fabrication in Kent" },
+      { title: "Structural Steel London", url: "/structural-steel-london", description: "Structural steel in London" },
+      { title: "Steel Beams London", url: "/steel-beams-london", description: "Steel beam supply across London" },
+      { title: "Structural Engineer Steel Beams", url: "/structural-engineer-steel-beams", description: "Fabrication from engineer drawings" },
+      { title: "Welding Services", url: "/welding-services", description: "MIG, TIG, ARC welding services" },
+      { title: "Onsite Steel Fabrication", url: "/onsite-steel-fabrication", description: "Mobile steel fabrication" },
+      { title: "Steel Construction Gravesend", url: "/steel-construction-gravesend", description: "Local Gravesend services" },
+      { title: "3D Modeling Services", url: "/3d-modeling-services", description: "3D CAD design services" },
+      { title: "Crane Hire Services", url: "/crane-hire-services", description: "Crane and Hiab hire" },
+      { title: "Emergency Steel Repair", url: "/emergency-steel-repair", description: "24/7 emergency repairs" },
     ],
-    "Specialized Services": [
-      { title: "Welding Services", url: "/welding-services", description: "Professional welding services - MIG, TIG, ARC" },
-      { title: "Onsite Steel Fabrication", url: "/onsite-steel-fabrication", description: "Mobile steel fabrication services" },
-      { title: "3D Modeling Services", url: "/3d-modeling-services", description: "3D CAD modeling and design services" },
-      { title: "Architectural Metalwork London", url: "/architectural-metalwork-london", description: "Bespoke architectural metalwork in London" },
-      { title: "Crane Hire Services", url: "/crane-hire-services", description: "Crane hire and lifting services" },
-      { title: "Emergency Steel Repair", url: "/emergency-steel-repair", description: "24/7 emergency steel repair services" }
+    "Find Us Locally": [
+      { title: "Steel Fabricators Near Me", url: "/steel-fabricators-near-me", description: "Local steel fabrication services" },
+      { title: "Steel Beam Suppliers Near Me", url: "/steel-beam-suppliers-near-me", description: "Local steel beam supply" },
     ],
     "Legal & Information": [
       { title: "Privacy Policy", url: "/privacy-policy", description: "How we handle your personal information" },
-      { title: "Terms of Service", url: "/terms-of-service", description: "Terms and conditions of service" }
+      { title: "Terms of Service", url: "/terms-of-service", description: "Terms and conditions" },
     ]
   };
 
