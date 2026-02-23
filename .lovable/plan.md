@@ -1,137 +1,80 @@
 
+# Massive Website Improvement & SEO Overhaul
 
-# Full Website Conversion Rate Overhaul - AK Steel Services
-
-This is a comprehensive redesign and improvement plan to dramatically increase calls, quote requests, and overall conversions. The changes span design improvements, new pages, better CTAs, trust signals, and user experience enhancements.
-
----
-
-## 1. Sticky Call-to-Action Bar (Mobile + Desktop)
-
-Add a persistent bottom bar on mobile and top banner on desktop with the phone number and "Get Quote" button always visible. Currently, the phone number disappears as users scroll. This is the single biggest conversion killer.
-
-- Mobile: fixed bottom bar with "Call Now" and "Get Quote" buttons
-- Desktop: ensure the header CTA buttons are more prominent with pulsing/attention-grabbing styling
+This plan covers improvements across the entire site: adding missing routes for existing pages, creating new high-value SEO landing pages, improving all inner pages with better design/CTAs, and enhancing overall site quality.
 
 ---
 
-## 2. Homepage Hero Section Overhaul
+## Part 1: Connect 7 Existing Pages (Currently Unreachable)
 
-The current hero is decent but lacks urgency and a strong value proposition. Changes:
+There are 7 fully-built landing pages that exist in the codebase but have **no routes** in the router -- meaning Google and users can never find them. This is a major SEO fix.
 
-- Add a **countdown/urgency element**: "Free Site Survey This Week" or "Book Before March - 10% Off"
-- Make the phone number **much larger** and more prominent in the hero
-- Add a **mini inline quote form** (just Name + Phone + Service) directly in the hero instead of forcing users to scroll down
-- Add a **"Trusted by 1,000+ customers"** social proof line with Google rating stars right in the hero
+Pages to connect:
+- `/loft-conversion-steel-beams` - LoftConversionSteelBeams
+- `/rsj-beams-kent-london` - RSJBeamsKentLondon
+- `/house-extension-steelwork` - HouseExtensionSteelwork
+- `/steel-beam-suppliers-near-me` - SteelBeamSuppliersNearMe
+- `/steel-fabricators-near-me` - SteelFabricatorsNearMe
+- `/mezzanine-floor-installation` - MezzanineFloorInstallation
+- `/steel-frame-buildings-kent` - SteelFrameBuildingsKent
 
----
-
-## 3. "Click-to-Call" Phone Number Everywhere
-
-Currently some phone numbers are plain text. Every single phone number on the site should be a tappable/clickable link with tracking. Add phone number CTAs:
-
-- After every section on the homepage
-- In service page content (mid-page CTAs)
-- Floating call button alongside WhatsApp button
+All 7 will be added to `App.tsx` routes and to the Header services dropdown and Footer links.
 
 ---
 
-## 4. Simplified Quick Quote Form
+## Part 2: Create 3 New High-Value SEO Landing Pages
 
-The current quote form has too many fields (name, phone, email, service, location, description, file upload, contact method, timeline). This creates friction. Changes:
+### a. `/steel-beams-london` - Steel Beams London
+Targets "steel beams London" search queries. Covers supply, delivery, and installation of steel beams across all London boroughs with specific area targeting.
 
-- Create a **new compact "Quick Quote" component** with just 3 fields: Name, Phone, Brief Description
-- Use this compact form in the hero section and mid-page CTAs
-- Keep the full detailed form on the Contact page only
+### b. `/structural-engineer-steel-beams` - Structural Engineer Steel Beams
+Targets searches from people who already have structural engineer drawings and need someone to fabricate/install. High-intent traffic.
 
----
-
-## 5. New Pages to Add
-
-### a. "How It Works" Page (`/how-it-works`)
-A simple 3-4 step process page showing:
-1. Get in touch / Request quote
-2. Free site survey
-3. We fabricate and deliver
-4. Installation complete
-
-This reduces anxiety for first-time customers who don't know what to expect.
-
-### b. "Free Site Survey" Landing Page (`/free-site-survey`)
-A dedicated page focused entirely on getting people to book a free site visit. Strong CTA, minimal distractions, trust signals.
-
-### c. "Residential Services" Page (`/residential-steel-services`)
-Many homeowners searching for loft conversions, extensions, RSJ beams etc. A dedicated residential page groups these together with relatable language (not industrial jargon).
-
-### d. "Commercial & Industrial" Page (`/commercial-steel-services`)
-Separate page for commercial clients with different messaging, bigger project examples, and B2B trust signals.
+### c. `/steel-rsj-beam-prices` - Steel RSJ Beam Prices
+Targets cost/price related searches ("how much does a steel beam cost", "RSJ beam prices"). Includes a price guide table and drives quotes.
 
 ---
 
-## 6. Trust & Social Proof Improvements
+## Part 3: Improve All Existing Inner Pages
 
-- Add a **"As Seen On" / "Trusted By"** section showing builder logos or partner companies
-- Add **project counter** that animates on scroll (e.g., "1,247 Projects Completed")
-- Add **response time guarantee**: "We respond to all enquiries within 2 hours"
-- Move Google Reviews higher on the homepage (currently below services)
-- Add a **video testimonial section** placeholder (even just a "Watch Our Work" section with project photos in a more dynamic layout)
+Every service page will be enhanced with:
+- **StickyCallBar** component added (currently missing from most inner pages)
+- **MidPageCTA** component inserted mid-content for better conversion
+- **TrustBar** added to build credibility
+- Internal links to related services (cross-linking for SEO)
+- Schema.org structured data where missing
 
----
-
-## 7. Urgency & Scarcity Elements
-
-- Add a banner: "Limited Availability - Book Your Free Survey Today"
-- Add "Popular This Month" badges to top services
-- Show "X quotes requested this week" (can be a reasonable static number)
+Pages to update: SteelFabricationKent, StructuralSteelLondon, WeldingServices, SteelConstructionGravesend, OnsiteSteelFabrication, CraneHireServices, ThreeDModelingServices, EmergencySteelRepair, SteelBeamInstallation, ArchitecturalMetalworkLondon, IndustrialSteelPlatforms, SteelStaircaseInstallation, SteelBuildingExtensionsKent, plus the 7 newly-connected pages.
 
 ---
 
-## 8. Footer Improvements
+## Part 4: Homepage & Navigation Improvements
 
-- Add a **mini quote form** in the footer
-- Make the phone number much larger and more prominent
-- Add "Open Now" / "Closed" live indicator based on business hours
-- Add Google Maps embed or link to directions
-
----
-
-## 9. Design & Visual Improvements
-
-- Add **subtle animations** on scroll (fade-in for sections)
-- Improve card hover effects with slight lift/shadow
-- Add **gradient backgrounds** between sections for visual flow
-- Make all CTA buttons larger and with more contrast
-- Add **icon badges** next to the phone number (phone icon pulse animation)
+- **Header**: Add the 7 missing pages + 3 new pages to the Services dropdown menu, organised into clear groups (Residential, Commercial, Local SEO)
+- **Footer**: Add links to all new pages in the services column
+- **Sitemap page**: Update with all new routes
+- **robots.txt**: Add XML sitemap reference
 
 ---
 
-## 10. Service Pages - Mid-Page CTAs
+## Part 5: Gallery & About Page Improvements
 
-Every service page should have a CTA break in the middle of content, not just at the top and bottom. Add a styled "banner" component that appears mid-page:
-
-> "Need [Service Name]? Call us now on 01474 550531 or get a free quote in 60 seconds"
+- **Gallery**: Add category filtering (Residential, Commercial, Industrial, Crane Operations) so visitors can find relevant work photos
+- **About**: Add real project photos, improve the timeline section, add a "response time guarantee" badge
 
 ---
 
-## Technical Implementation Summary
+## Technical Summary
 
-| Change | Files Affected |
-|--------|---------------|
-| Sticky mobile CTA bar | New component `StickyCallBar.tsx`, add to `Index.tsx` and all pages |
-| Quick quote mini form | New component `QuickQuoteForm.tsx` |
-| Hero redesign | `NewHeroSection.tsx` |
-| How It Works page | New `src/pages/HowItWorks.tsx`, update `App.tsx` routes |
-| Free Site Survey page | New `src/pages/FreeSiteSurvey.tsx`, update `App.tsx` routes |
-| Residential Services page | New `src/pages/ResidentialSteelServices.tsx`, update `App.tsx` routes |
-| Commercial Services page | New `src/pages/CommercialSteelServices.tsx`, update `App.tsx` routes |
-| Trust bar / social proof | New component `TrustBar.tsx` |
-| Urgency banner | New component `UrgencyBanner.tsx` |
-| Mid-page CTA banner | New component `MidPageCTA.tsx` |
-| Footer mini form + improvements | Update `Footer.tsx` |
-| Service page CTAs | Update all service pages |
-| Scroll animations | Update `index.css` with animation classes |
-| Header nav updates | Update `Header.tsx` with new pages in navigation |
-| Open/Closed indicator | New component `OpenClosedBadge.tsx` |
+| Category | Files | Type |
+|----------|-------|------|
+| New SEO pages | 3 new files | Create |
+| Route registration | App.tsx | Edit |
+| Navigation updates | Header.tsx, Footer.tsx | Edit |
+| Inner page improvements | ~20 service pages | Edit (add StickyCallBar, MidPageCTA, TrustBar, internal links) |
+| Gallery filtering | Gallery.tsx | Edit |
+| About improvements | About.tsx | Edit |
+| Sitemap update | Sitemap.tsx | Edit |
+| robots.txt | robots.txt | Edit |
 
-This is approximately **8 new files** and **15+ file modifications** - a significant amount of visible work that will make a real difference to conversion rates.
-
+Total: ~3 new files created, ~25+ files modified -- a significant amount of visible improvement across the entire site.
