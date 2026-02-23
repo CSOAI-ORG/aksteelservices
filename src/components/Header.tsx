@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Mail, ChevronDown } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 import {
   DropdownMenu,
@@ -19,7 +19,6 @@ const Header = () => {
     { name: "How It Works", href: "/how-it-works" },
     { name: "Gallery", href: "/gallery" },
     { name: "Reviews", href: "/reviews" },
-    { name: "Areas We Serve", href: "/areas-we-serve" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -37,48 +36,25 @@ const Header = () => {
     { name: "3D Modeling Services", href: "/3d-modeling-services" },
     { name: "Crane Hire Services", href: "/crane-hire-services" },
     { name: "Emergency Steel Repair", href: "/emergency-steel-repair" },
-    { name: "Architectural Metalwork London", href: "/architectural-metalwork-london" },
+    { name: "Architectural Metalwork", href: "/architectural-metalwork-london" },
     { name: "Steel Staircase Installation", href: "/steel-staircase-installation" },
     { name: "Industrial Steel Platforms", href: "/industrial-steel-platforms" },
-    { name: "Steel Building Extensions Kent", href: "/steel-building-extensions-kent" },
+    { name: "Steel Building Extensions", href: "/steel-building-extensions-kent" },
   ];
 
   return (
     <header className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border sticky top-0 z-40">
       <div className="container mx-auto px-4">
-        {/* Top bar with contact info */}
-        <div className="hidden md:flex justify-between items-center py-2 text-sm border-b border-border">
-          <div className="flex items-center gap-6">
-            <a 
-              href="tel:01474550531" 
-              className="flex items-center gap-2 text-primary font-semibold hover:text-primary-hover transition-colors"
-            >
-              <Phone className="h-4 w-4" />
-              01474 550531
-            </a>
-            <a 
-              href="mailto:info@aksteelservices.com" 
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Mail className="h-4 w-4" />
-              info@aksteelservices.com
-            </a>
-          </div>
-          <div className="text-muted-foreground">
-            Mon-Fri: 7:30-17:00 | Sat: 7:00-13:00
-          </div>
-        </div>
-
-        {/* Main navigation */}
-        <div className="flex justify-between items-center py-4">
+        {/* Main navigation — single clean bar */}
+        <div className="flex justify-between items-center py-3">
           <Link to="/" className="flex items-center">
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-xl md:text-2xl font-bold text-primary">
               AK <span className="text-secondary">Steel Services</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-6">
+          <nav className="hidden lg:flex items-center space-x-5">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
@@ -112,11 +88,11 @@ const Header = () => {
             </DropdownMenu>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" className="hidden md:flex font-semibold" asChild>
               <a href="tel:01474550531" className="flex items-center gap-1.5">
                 <Phone className="h-4 w-4" />
-                Call Now
+                01474 550531
               </a>
             </Button>
             <Button variant="hero" size="sm" className="hidden sm:flex" asChild>

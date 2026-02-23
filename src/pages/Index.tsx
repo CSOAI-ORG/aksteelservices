@@ -8,7 +8,6 @@ import CraneServicesSection from "@/components/CraneServicesSection";
 import SEOHead from "@/components/SEOHead";
 import GoogleReviews from "@/components/GoogleReviews";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import StickyCallBar from "@/components/StickyCallBar";
@@ -16,10 +15,10 @@ import TrustBar from "@/components/TrustBar";
 import UrgencyBanner from "@/components/UrgencyBanner";
 import MidPageCTA from "@/components/MidPageCTA";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, MapPin } from "lucide-react";
+import { CheckCircle, ArrowRight, MapPin, Home, Building } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import { Link } from "react-router-dom";
 
@@ -34,28 +33,11 @@ const Index = () => {
     "url": "https://aksteelservices.com",
     "telephone": "01474550531",
     "email": "info@aksteelservices.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Gravesend",
-      "addressRegion": "Kent",
-      "addressCountry": "UK"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "51.4416",
-      "longitude": "0.3706"
-    },
+    "address": { "@type": "PostalAddress", "addressLocality": "Gravesend", "addressRegion": "Kent", "addressCountry": "UK" },
+    "geo": { "@type": "GeoCoordinates", "latitude": "51.4416", "longitude": "0.3706" },
     "openingHours": ["Mo-Fr 07:30-17:00", "Sa 07:00-13:00"],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "47"
-    },
-    "serviceArea": {
-      "@type": "GeoCircle",
-      "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.4416", "longitude": "0.3706" },
-      "geoRadius": "50000"
-    }
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47" },
+    "serviceArea": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.4416", "longitude": "0.3706" }, "geoRadius": "50000" }
   };
 
   return (
@@ -68,19 +50,59 @@ const Index = () => {
       />
       <StickyCallBar />
       <Header />
-      <Breadcrumbs />
       
-      {/* Hero with inline quote form */}
+      {/* Hero with slideshow + inline quote form */}
       <NewHeroSection />
 
       {/* Trust Bar with animated counters */}
       <TrustBar />
 
-      {/* Google Reviews - moved higher for social proof */}
-      <GoogleReviews />
-
       {/* Services Section */}
       <ServicesSection />
+
+      {/* Residential & Commercial quick links */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-6">
+            <Link to="/residential-steel-services" className="group block">
+              <div className="relative rounded-2xl overflow-hidden h-64 bg-secondary">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${REAL_PHOTOS.residentialExtension2.src})` }}
+                />
+                <div className="absolute inset-0 bg-secondary/60 group-hover:bg-secondary/50 transition-colors" />
+                <div className="relative z-10 flex flex-col justify-end h-full p-8 text-secondary-foreground">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Home className="h-5 w-5 text-accent" />
+                    <Badge className="bg-accent text-accent-foreground text-xs">Popular</Badge>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-1">Residential Services</h3>
+                  <p className="text-sm text-secondary-foreground/80">Loft conversions, extensions, RSJ beams & more</p>
+                </div>
+              </div>
+            </Link>
+            <Link to="/commercial-steel-services" className="group block">
+              <div className="relative rounded-2xl overflow-hidden h-64 bg-secondary">
+                <div
+                  className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${REAL_PHOTOS.industrialInterior1.src})` }}
+                />
+                <div className="absolute inset-0 bg-secondary/60 group-hover:bg-secondary/50 transition-colors" />
+                <div className="relative z-10 flex flex-col justify-end h-full p-8 text-secondary-foreground">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Building className="h-5 w-5 text-accent" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-1">Commercial & Industrial</h3>
+                  <p className="text-sm text-secondary-foreground/80">Frameworks, mezzanines, platforms & large-scale projects</p>
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Google Reviews */}
+      <GoogleReviews />
 
       {/* Urgency CTA Banner */}
       <UrgencyBanner />
@@ -100,12 +122,12 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { src: REAL_PHOTOS.craneConstruction1, loc: "London", title: "Commercial Steel Framework", desc: "Large-scale structural steel installation with crane lifting for a commercial development." },
-              { src: REAL_PHOTOS.residentialExtension2, loc: "Kent", title: "Residential Rear Extension", desc: "Steel beam installation for a rear extension, creating open-plan living space." },
-              { src: REAL_PHOTOS.teamInstallingBeam, loc: "Gravesend", title: "RSJ Beam Installation", desc: "Professional RSJ beam fitting for load-bearing wall removal in a domestic property." },
-              { src: REAL_PHOTOS.rooftopCraneOp, loc: "South London", title: "Rooftop Steel Delivery", desc: "Complex crane operation delivering steel beams to a rooftop construction project." },
-              { src: REAL_PHOTOS.industrialInterior1, loc: "Kent", title: "Industrial Mezzanine", desc: "Warehouse mezzanine floor installation to double usable storage space." },
-              { src: REAL_PHOTOS.teamCarryingBeam, loc: "Dartford", title: "Loft Conversion Steelwork", desc: "Structural steel beams for a loft conversion with dormer extension." },
+              { src: REAL_PHOTOS.craneConstruction1, loc: "London", title: "Commercial Steel Framework", desc: "Large-scale structural steel installation with crane lifting." },
+              { src: REAL_PHOTOS.residentialExtension2, loc: "Kent", title: "Residential Rear Extension", desc: "Steel beam installation for open-plan living space." },
+              { src: REAL_PHOTOS.teamInstallingBeam, loc: "Gravesend", title: "RSJ Beam Installation", desc: "Professional RSJ beam fitting for wall removal." },
+              { src: REAL_PHOTOS.rooftopCraneOp, loc: "South London", title: "Rooftop Steel Delivery", desc: "Complex crane operation for rooftop steel installation." },
+              { src: REAL_PHOTOS.industrialInterior1, loc: "Kent", title: "Industrial Mezzanine", desc: "Warehouse mezzanine floor to double usable space." },
+              { src: REAL_PHOTOS.teamCarryingBeam, loc: "Dartford", title: "Loft Conversion Steelwork", desc: "Structural steel beams for loft conversion." },
             ].map((project, i) => (
               <Card key={i} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="aspect-video overflow-hidden">
@@ -115,13 +137,13 @@ const Index = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <CardHeader>
-                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                    <MapPin className="h-4 w-4" />
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
+                    <MapPin className="h-3.5 w-3.5" />
                     <span>{project.loc}</span>
                   </div>
-                  <CardTitle className="text-lg">{project.title}</CardTitle>
-                  <CardDescription>{project.desc}</CardDescription>
+                  <CardTitle className="text-base">{project.title}</CardTitle>
+                  <CardDescription className="text-sm">{project.desc}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -155,14 +177,14 @@ const Index = () => {
                 With years of experience in steel fabrication, we have built a reputation 
                 for excellence across Kent, London, and the South East.
               </p>
-              <div className="grid gap-4">
+              <div className="grid gap-3">
                 {[
-                  "Advanced 3D modeling and CAD design capabilities",
-                  "Fully certified welders and fabrication specialists",
-                  "Modern equipment and state-of-the-art facilities",
-                  "Comprehensive insurance and quality guarantees",
-                  "Fast response times and flexible scheduling",
-                  "Competitive pricing with transparent quotes"
+                  "Advanced 3D modeling and CAD design",
+                  "Fully certified welders and specialists",
+                  "Modern equipment and facilities",
+                  "Comprehensive insurance and guarantees",
+                  "Fast response and flexible scheduling",
+                  "Competitive, transparent pricing"
                 ].map((item, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
@@ -193,7 +215,7 @@ const Index = () => {
                 />
                 <div className="bg-primary rounded-lg p-6 text-primary-foreground flex flex-col justify-center">
                   <div className="text-2xl font-bold mb-2">Free Quotes</div>
-                  <div className="text-sm opacity-90">Get your project estimate within 24 hours</div>
+                  <div className="text-sm opacity-90">Get your estimate within 24 hours</div>
                 </div>
               </div>
             </div>
@@ -211,7 +233,7 @@ const Index = () => {
             <h3 className="text-lg font-semibold text-muted-foreground">Accredited & Certified</h3>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-6">
-            <div className="bg-white rounded-lg p-4 shadow-sm">
+            <div className="bg-background rounded-lg p-4 shadow-sm">
               <img 
                 src="/images/bs-en-1090-logo.jpg" 
                 alt="BS EN 1090 certified — SCCS and UKAS Product Certification" 
