@@ -16,30 +16,29 @@ const Header = () => {
   const navigationItems = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "How It Works", href: "/how-it-works" },
     { name: "Gallery", href: "/gallery" },
     { name: "Reviews", href: "/reviews" },
     { name: "Areas We Serve", href: "/areas-we-serve" },
-    { name: "Calculator", href: "/calculator" },
     { name: "Contact", href: "/contact" },
   ];
 
   const serviceItems = [
-    // Core Services
+    { name: "🏠 Residential Services", href: "/residential-steel-services", highlight: true },
+    { name: "🏢 Commercial Services", href: "/commercial-steel-services", highlight: true },
+    { name: "📋 Free Site Survey", href: "/free-site-survey", highlight: true },
+    { name: "---", href: "" },
     { name: "Steel Fabrication Kent", href: "/steel-fabrication-kent" },
     { name: "Structural Steel London", href: "/structural-steel-london" },
     { name: "Welding Services", href: "/welding-services" },
-    // Specialized Services
     { name: "Steel Construction Gravesend", href: "/steel-construction-gravesend" },
     { name: "Onsite Steel Fabrication", href: "/onsite-steel-fabrication" },
     { name: "Steel Beam Installation", href: "/steel-beam-installation" },
-    // Technical Services
     { name: "3D Modeling Services", href: "/3d-modeling-services" },
     { name: "Crane Hire Services", href: "/crane-hire-services" },
     { name: "Emergency Steel Repair", href: "/emergency-steel-repair" },
-    // Architectural Services
     { name: "Architectural Metalwork London", href: "/architectural-metalwork-london" },
     { name: "Steel Staircase Installation", href: "/steel-staircase-installation" },
-    // Construction Services
     { name: "Industrial Steel Platforms", href: "/industrial-steel-platforms" },
     { name: "Steel Building Extensions Kent", href: "/steel-building-extensions-kent" },
   ];
@@ -52,7 +51,7 @@ const Header = () => {
           <div className="flex items-center gap-6">
             <a 
               href="tel:01474550531" 
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              className="flex items-center gap-2 text-primary font-semibold hover:text-primary-hover transition-colors"
             >
               <Phone className="h-4 w-4" />
               01474 550531
@@ -79,114 +78,51 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm"
               >
                 {item.name}
               </Link>
             ))}
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium text-sm">
                 Services
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-72 bg-background border border-border">
-                <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">Core Services</div>
-                <DropdownMenuItem asChild>
-                  <Link to="/steel-fabrication-kent" className="text-foreground hover:text-primary">
-                    Steel Fabrication Kent
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/structural-steel-london" className="text-foreground hover:text-primary">
-                    Structural Steel London
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/welding-services" className="text-foreground hover:text-primary">
-                    Welding Services
-                  </Link>
-                </DropdownMenuItem>
-                
-                <DropdownMenuSeparator />
-                <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">Specialized Services</div>
-                <DropdownMenuItem asChild>
-                  <Link to="/steel-construction-gravesend" className="text-foreground hover:text-primary">
-                    Steel Construction Gravesend
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/onsite-steel-fabrication" className="text-foreground hover:text-primary">
-                    Onsite Steel Fabrication
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/steel-beam-installation" className="text-foreground hover:text-primary">
-                    Steel Beam Installation
-                  </Link>
-                </DropdownMenuItem>
-                
-                <DropdownMenuSeparator />
-                <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">Technical Services</div>
-                <DropdownMenuItem asChild>
-                  <Link to="/3d-modeling-services" className="text-foreground hover:text-primary">
-                    3D Modeling Services
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/crane-hire-services" className="text-foreground hover:text-primary">
-                    Crane Hire Services
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/emergency-steel-repair" className="text-foreground hover:text-primary">
-                    Emergency Steel Repair
-                  </Link>
-                </DropdownMenuItem>
-                
-                <DropdownMenuSeparator />
-                <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">Architectural Services</div>
-                <DropdownMenuItem asChild>
-                  <Link to="/architectural-metalwork-london" className="text-foreground hover:text-primary">
-                    Architectural Metalwork London
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/steel-staircase-installation" className="text-foreground hover:text-primary">
-                    Steel Staircase Installation
-                  </Link>
-                </DropdownMenuItem>
-                
-                <DropdownMenuSeparator />
-                <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground">Construction Services</div>
-                <DropdownMenuItem asChild>
-                  <Link to="/industrial-steel-platforms" className="text-foreground hover:text-primary">
-                    Industrial Steel Platforms
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link to="/steel-building-extensions-kent" className="text-foreground hover:text-primary">
-                    Steel Building Extensions Kent
-                  </Link>
-                </DropdownMenuItem>
+                {serviceItems.map((item, i) => {
+                  if (item.name === "---") return <DropdownMenuSeparator key={i} />;
+                  return (
+                    <DropdownMenuItem key={i} asChild>
+                      <Link 
+                        to={item.href} 
+                        className={`text-foreground hover:text-primary ${item.highlight ? "font-semibold" : ""}`}
+                      >
+                        {item.name}
+                      </Link>
+                    </DropdownMenuItem>
+                  );
+                })}
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <Button variant="outline" size="sm" className="hidden md:flex" asChild>
-              <a href="tel:01474550531">Call Now</a>
+          <div className="flex items-center gap-3">
+            <Button variant="outline" size="sm" className="hidden md:flex font-semibold" asChild>
+              <a href="tel:01474550531" className="flex items-center gap-1.5">
+                <Phone className="h-4 w-4" />
+                Call Now
+              </a>
             </Button>
-            <Button variant="hero" size="sm" asChild>
-              <Link to="/contact">Get Quote</Link>
+            <Button variant="hero" size="sm" className="hidden sm:flex" asChild>
+              <Link to="/contact">Get Free Quote</Link>
             </Button>
 
-            {/* Mobile menu button */}
             <Button
               variant="ghost"
               size="icon"
@@ -201,23 +137,35 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden border-t border-border py-4">
-            <nav className="flex flex-col space-y-4">
+            <nav className="flex flex-col space-y-3">
               {navigationItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-foreground hover:text-primary transition-colors font-medium py-2"
+                  className="text-foreground hover:text-primary transition-colors font-medium py-1.5"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
               
-              {/* Mobile Services Section */}
-              <div className="border-t border-border pt-4">
-                <div className="text-sm font-semibold text-muted-foreground mb-3">Services</div>
-                <div className="grid grid-cols-1 gap-2">
-                  {serviceItems.map((item) => (
+              <div className="border-t border-border pt-3">
+                <div className="text-sm font-semibold text-accent mb-2">Quick Links</div>
+                <Link to="/residential-steel-services" className="block py-1.5 text-foreground hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>
+                  🏠 Residential Services
+                </Link>
+                <Link to="/commercial-steel-services" className="block py-1.5 text-foreground hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>
+                  🏢 Commercial Services
+                </Link>
+                <Link to="/free-site-survey" className="block py-1.5 text-foreground hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>
+                  📋 Free Site Survey
+                </Link>
+              </div>
+
+              <div className="border-t border-border pt-3">
+                <div className="text-sm font-semibold text-muted-foreground mb-2">All Services</div>
+                <div className="grid grid-cols-1 gap-1">
+                  {serviceItems.filter(i => !i.highlight && i.name !== "---").map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
@@ -230,11 +178,13 @@ const Header = () => {
                 </div>
               </div>
               
-              <div className="flex flex-col gap-2 pt-4 border-t border-border">
-                <Button variant="outline" size="sm" asChild>
-                  <a href="tel:01474550531">Call 01474 550531</a>
-                </Button>
+              <div className="flex flex-col gap-2 pt-3 border-t border-border">
                 <Button variant="hero" size="sm" asChild>
+                  <a href="tel:01474550531" className="flex items-center gap-2">
+                    <Phone className="h-4 w-4" /> Call 01474 550531
+                  </a>
+                </Button>
+                <Button variant="outline" size="sm" asChild>
                   <Link to="/contact">Get Free Quote</Link>
                 </Button>
               </div>

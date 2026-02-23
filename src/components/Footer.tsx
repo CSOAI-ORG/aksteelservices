@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
 import { Link } from "react-router-dom";
+import OpenClosedBadge from "@/components/OpenClosedBadge";
+import QuickQuoteForm from "@/components/QuickQuoteForm";
 
 const Footer = () => {
   const serviceAreas = [
@@ -29,6 +31,19 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
+      {/* Mini Quote Form Banner */}
+      <div className="bg-secondary-hover border-b border-border/20">
+        <div className="container mx-auto px-4 py-10">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-2xl font-bold text-accent mb-2">Get a Quick Quote</h3>
+              <p className="text-secondary-foreground/80 text-sm">Fill in below and we'll get back to you within 2 hours</p>
+            </div>
+            <QuickQuoteForm variant="footer" />
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           
@@ -73,9 +88,9 @@ const Footer = () => {
             <div className="space-y-3">
               <a 
                 href="tel:01474550531" 
-                className="flex items-center gap-3 hover:text-accent transition-colors"
+                className="flex items-center gap-3 text-lg font-bold text-accent hover:text-accent-hover transition-colors"
               >
-                <Phone className="h-4 w-4" />
+                <Phone className="h-5 w-5" />
                 <span>01474 550531</span>
               </a>
               <a 
@@ -97,6 +112,7 @@ const Footer = () => {
                   <div>Sunday: Closed</div>
                 </div>
               </div>
+              <OpenClosedBadge />
             </div>
           </div>
 
@@ -114,6 +130,16 @@ const Footer = () => {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/residential-steel-services" className="text-sm hover:text-accent transition-colors font-medium text-accent">
+                  Residential Services →
+                </Link>
+              </li>
+              <li>
+                <Link to="/commercial-steel-services" className="text-sm hover:text-accent transition-colors font-medium text-accent">
+                  Commercial Services →
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -127,8 +153,14 @@ const Footer = () => {
                 </span>
               ))}
             </div>
-            <div className="pt-4">
+            <div className="pt-4 space-y-2">
               <p className="text-sm font-medium text-accent">Emergency Services Available 24/7</p>
+              <Link to="/how-it-works" className="text-sm text-secondary-foreground hover:text-accent transition-colors block">
+                How It Works →
+              </Link>
+              <Link to="/free-site-survey" className="text-sm text-secondary-foreground hover:text-accent transition-colors block">
+                Free Site Survey →
+              </Link>
             </div>
           </div>
         </div>
@@ -153,18 +185,10 @@ const Footer = () => {
               © 2025 A K Steel Services Limited. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
-              <Link to="/reviews" className="hover:text-accent transition-colors">
-                Reviews
-              </Link>
-              <Link to="/privacy-policy" className="hover:text-accent transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-service" className="hover:text-accent transition-colors">
-                Terms of Service
-              </Link>
-              <Link to="/sitemap" className="hover:text-accent transition-colors">
-                Sitemap
-              </Link>
+              <Link to="/reviews" className="hover:text-accent transition-colors">Reviews</Link>
+              <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+              <Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link>
+              <Link to="/sitemap" className="hover:text-accent transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>

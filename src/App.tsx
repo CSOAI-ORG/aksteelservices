@@ -19,7 +19,6 @@ import IndustrialSteelPlatforms from "./pages/IndustrialSteelPlatforms";
 import SteelStaircaseInstallation from "./pages/SteelStaircaseInstallation";
 import SteelBuildingExtensionsKent from "./pages/SteelBuildingExtensionsKent";
 import AreasWeServe from "./pages/AreasWeServe";
-
 import About from "./pages/About";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
@@ -32,6 +31,10 @@ import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
 import Reviews from "./pages/Reviews";
 import ScrollToTop from "./components/ScrollToTop";
+import HowItWorks from "./pages/HowItWorks";
+import FreeSiteSurvey from "./pages/FreeSiteSurvey";
+import ResidentialSteelServices from "./pages/ResidentialSteelServices";
+import CommercialSteelServices from "./pages/CommercialSteelServices";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +54,10 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/reviews" element={<Reviews />} />
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
+            <Route path="/how-it-works" element={<HowItWorks />} />
+            <Route path="/free-site-survey" element={<FreeSiteSurvey />} />
+            <Route path="/residential-steel-services" element={<ResidentialSteelServices />} />
+            <Route path="/commercial-steel-services" element={<CommercialSteelServices />} />
             <Route path="/project-gallery" element={<Navigate to="/" replace />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
