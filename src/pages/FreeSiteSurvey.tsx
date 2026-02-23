@@ -6,6 +6,15 @@ import QuickQuoteForm from "@/components/QuickQuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { CheckCircle, Phone, ShieldCheck, Clock, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { createServiceSchema, createFAQSchema, combineSchemas } from "@/lib/schema";
+
+const surveyFaqs = [
+  { q: "Is the site survey really free?", a: "Yes, 100% free with no obligation. We'll visit your site, assess the project, take measurements, and provide a detailed quote — all at no cost to you." },
+  { q: "How long does a site survey take?", a: "Typically 30-60 minutes depending on the size and complexity of your project. We'll arrange a time that suits you." },
+  { q: "What areas do you cover?", a: "We cover all of Kent, London, and the wider South East England. For larger projects, we can travel further." },
+  { q: "How quickly can you visit?", a: "We aim to arrange site surveys within 48 hours of your enquiry. For urgent projects, we can often visit the same or next day." },
+  { q: "What happens after the survey?", a: "You'll receive a detailed written quote within 24 hours of our visit, including a full breakdown of costs, timeline, and specifications." },
+];
 
 const FreeSiteSurvey = () => {
   return (
@@ -13,6 +22,10 @@ const FreeSiteSurvey = () => {
       <SEOHead
         title="Free Site Survey | AK Steel Services Kent & London"
         description="Book a free, no-obligation site survey with AK Steel Services. We'll assess your project, take measurements, and provide a detailed quote — all at no cost."
+        schemaData={combineSchemas(
+          createServiceSchema("Free Site Survey", "Book a free, no-obligation site survey. We assess your project, take measurements, and provide a detailed quote at no cost."),
+          createFAQSchema(surveyFaqs)
+        )}
       />
       <StickyCallBar />
       <Header />
@@ -88,13 +101,7 @@ const FreeSiteSurvey = () => {
             Frequently Asked <span className="text-primary">Questions</span>
           </h2>
           <div className="space-y-6">
-            {[
-              { q: "Is the site survey really free?", a: "Yes, 100% free with no obligation. We'll visit your site, assess the project, take measurements, and provide a detailed quote — all at no cost to you." },
-              { q: "How long does a site survey take?", a: "Typically 30-60 minutes depending on the size and complexity of your project. We'll arrange a time that suits you." },
-              { q: "What areas do you cover?", a: "We cover all of Kent, London, and the wider South East England. For larger projects, we can travel further." },
-              { q: "How quickly can you visit?", a: "We aim to arrange site surveys within 48 hours of your enquiry. For urgent projects, we can often visit the same or next day." },
-              { q: "What happens after the survey?", a: "You'll receive a detailed written quote within 24 hours of our visit, including a full breakdown of costs, timeline, and specifications." },
-            ].map((faq, i) => (
+            {surveyFaqs.map((faq, i) => (
               <div key={i} className="border border-border rounded-lg p-6">
                 <h3 className="font-bold text-lg mb-2">{faq.q}</h3>
                 <p className="text-muted-foreground">{faq.a}</p>

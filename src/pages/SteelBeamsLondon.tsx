@@ -13,6 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, ArrowRight, MapPin, Truck, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
+import { createServiceSchema } from "@/lib/schema";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 
 const londonAreas = [
@@ -37,6 +38,7 @@ const SteelBeamsLondon = () => {
         description="Steel beams supplied and installed across London. RSJ beams, universal beams, steel lintels. Free site survey, same-day quotes. Call 01474 550531."
         keywords="steel beams London, RSJ beams London, steel beam installation London, structural steel beams, steel lintels London"
         canonicalUrl="https://aksteelservices.com/steel-beams-london"
+        schemaData={createServiceSchema("Steel Beams London", "Steel beams supplied and installed across London. RSJ beams, universal beams, steel lintels. Free site survey, same-day quotes.", ["London", "Central London", "South London", "East London", "West London"])}
       />
       <Header />
       <Breadcrumbs />

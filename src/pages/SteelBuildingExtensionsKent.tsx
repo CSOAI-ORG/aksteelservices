@@ -20,7 +20,9 @@ import StickyCallBar from "@/components/StickyCallBar";
 
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createServiceSchema } from "@/lib/schema";
 
 const extensionTypes = [
   {
@@ -90,6 +92,11 @@ const kentAreas = [
 const SteelBuildingExtensionsKent = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Steel Building Extensions Kent | House & Commercial Extensions"
+        description="Steel frame building extensions across Kent. Single storey, double storey, wrap-around, and commercial extensions. Fast construction, competitive pricing."
+        schemaData={createServiceSchema("Steel Building Extensions Kent", "Steel frame building extensions including single storey, double storey, and wrap-around extensions across Kent.", ["Kent", "Canterbury", "Maidstone", "Gravesend"])}
+      />
       <Header />
       
       {/* Hero Section */}

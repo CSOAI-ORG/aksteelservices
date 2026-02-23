@@ -14,6 +14,7 @@ import { CheckCircle, Phone, Building, Home, Factory } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { createServiceSchema } from "@/lib/schema";
 
 const StructuralSteelLondon = () => {
   const projects = [
@@ -48,6 +49,7 @@ const StructuralSteelLondon = () => {
       <SEOHead
         title="Structural Steel Contractor London - All Boroughs | AK Steel Services"
         description="Professional structural steel contractor serving all London boroughs. Residential extensions, commercial buildings, heritage restorations. London building regulations compliance & planning support."
+        schemaData={createServiceSchema("Structural Steel Contractor London", "Professional structural steel contractor serving all London boroughs. Residential extensions, commercial buildings, heritage restorations.", ["London", "Westminster", "Camden", "Islington", "South East England"])}
         keywords="structural steel London, London steel contractor, steel frame construction London, residential steel extension London, commercial steel construction"
       />
       <Header />

@@ -20,7 +20,9 @@ import StickyCallBar from "@/components/StickyCallBar";
 
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createServiceSchema } from "@/lib/schema";
 
 const metalworkServices = [
   {
@@ -90,6 +92,11 @@ const londonProjects = [
 const ArchitecturalMetalworkLondon = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Architectural Metalwork London | Bespoke Metal Fabrication"
+        description="Bespoke architectural metalwork in London. Decorative railings, gates, sculptures, restoration. Serving all London boroughs. Call 01474 550531."
+        schemaData={createServiceSchema("Architectural Metalwork London", "Bespoke architectural metalwork including decorative railings, ornamental gates, sculptural features, and heritage restoration across London.", ["London"])}
+      />
       <Header />
       
       {/* Hero Section */}

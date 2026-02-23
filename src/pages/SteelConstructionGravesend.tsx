@@ -14,6 +14,7 @@ import { CheckCircle, Phone, MapPin, Award, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { createServiceSchema } from "@/lib/schema";
 
 const SteelConstructionGravesend = () => {
   const projects = [
@@ -33,6 +34,7 @@ const SteelConstructionGravesend = () => {
         title="Steel Construction Gravesend - Local Expert Builders | AK Steel Services"
         description="Premier steel construction company in Gravesend, Kent. Complete steel building solutions from planning to completion. Local expertise, fast response."
         keywords="steel construction Gravesend, Gravesend steel builders, Kent steel construction, commercial steel buildings Gravesend, industrial steel construction"
+        schemaData={createServiceSchema("Steel Construction Gravesend", "Premier steel construction company in Gravesend, Kent. Complete steel building solutions from planning to completion.", ["Gravesend", "Kent"])}
       />
       <Header />
       <Breadcrumbs />

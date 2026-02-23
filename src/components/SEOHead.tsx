@@ -7,7 +7,7 @@ interface SEOHeadProps {
   description: string;
   keywords?: string;
   canonicalUrl?: string;
-  schemaData?: object;
+  schemaData?: object | object[];
   ogImage?: string;
   ogImageAlt?: string;
 }
@@ -115,17 +115,18 @@ const SEOHead = ({ title, description, keywords, canonicalUrl, schemaData, ogIma
       }
     });
 
-    // Add schema.org structured data
+    // Add schema.org structured data (supports single or multiple schemas)
     if (schemaData) {
-      let schemaScript = document.querySelector('script[type="application/ld+json"]');
-      if (schemaScript) {
-        schemaScript.textContent = JSON.stringify(schemaData);
-      } else {
+      // Remove all existing schema scripts first
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(el => el.remove());
+      
+      const schemas = Array.isArray(schemaData) ? schemaData : [schemaData];
+      schemas.forEach(schema => {
         const script = document.createElement("script");
         script.type = "application/ld+json";
-        script.textContent = JSON.stringify(schemaData);
+        script.textContent = JSON.stringify(schema);
         document.head.appendChild(script);
-      }
+      });
     }
 
   }, [title, description, keywords, fullUrl, schemaData, imageUrl, imageAlt]);

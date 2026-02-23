@@ -14,6 +14,7 @@ import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Link } from "react-router-dom";
+import { createServiceSchema } from "@/lib/schema";
 
 const SteelFabricationKent = () => {
   const services = [
@@ -38,6 +39,7 @@ const SteelFabricationKent = () => {
         title="Steel Fabrication Kent | Expert Metal Fabrication Services"
         description="Professional steel fabrication services in Kent. Custom metalwork, structural steel, industrial components. Expert service in Gravesend, Canterbury, Maidstone."
         keywords="steel fabrication Kent, metal fabrication Kent, custom steel work, Gravesend steel fabrication, Canterbury metalwork"
+        schemaData={createServiceSchema("Steel Fabrication Kent", "Professional steel fabrication services in Kent. Custom metalwork, structural steel, industrial components across Gravesend, Canterbury, Maidstone and all Kent.", ["Kent", "Gravesend", "Canterbury", "Maidstone"])}
       />
       <Header />
       <Breadcrumbs />
