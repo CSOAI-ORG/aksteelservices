@@ -30,7 +30,7 @@ const NewHeroSection = () => {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 3000);
+    const timer = setInterval(nextSlide, 4000);
     return () => clearInterval(timer);
   }, [nextSlide]);
 
@@ -40,7 +40,7 @@ const NewHeroSection = () => {
       {slideshowImages.map((img, i) => (
         <div
           key={i}
-          className="absolute inset-0 transition-opacity duration-1000"
+          className={`absolute inset-0 transition-opacity duration-1000 ${i === currentSlide ? "animate-ken-burns" : ""}`}
           style={{
             backgroundImage: `url(${img.src})`,
             backgroundSize: "cover",
@@ -51,8 +51,9 @@ const NewHeroSection = () => {
         />
       ))}
 
-      {/* Dark overlay for readability */}
+      {/* Dark overlay with bottom gradient for readability */}
       <div className="absolute inset-0 bg-secondary/70" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent" aria-hidden="true" />
 
       {/* Slide indicator dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
@@ -116,9 +117,15 @@ const NewHeroSection = () => {
           </div>
 
           {/* Right side - Quick Quote Form */}
-          <div className="bg-background rounded-2xl p-6 md:p-8 shadow-2xl border border-border">
+          <div className="bg-background rounded-2xl p-6 md:p-8 shadow-2xl border border-border animate-glow-pulse">
             <h2 className="text-xl font-bold text-foreground mb-1">Get a Free Quote in 60 Seconds</h2>
-            <p className="text-sm text-muted-foreground mb-4">No obligation — we'll call you back within 2 hours</p>
+            <div className="flex items-center gap-2 mb-4">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+              </span>
+              <p className="text-sm text-muted-foreground">Responding Now — we'll call you back within 2 hours</p>
+            </div>
             <QuickQuoteForm variant="hero" />
           </div>
         </div>

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 
 const FreeSiteSurvey = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-16 md:pb-0">
       <SEOHead
         title="Free Site Survey | AK Steel Services Kent & London"
         description="Book a free, no-obligation site survey with AK Steel Services. We'll assess your project, take measurements, and provide a detailed quote — all at no cost."
@@ -75,6 +75,29 @@ const FreeSiteSurvey = () => {
               <div key={i} className="flex flex-col items-center gap-2">
                 <div className="text-primary">{item.icon}</div>
                 <span className="text-sm font-semibold text-foreground">{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </h2>
+          <div className="space-y-6">
+            {[
+              { q: "Is the site survey really free?", a: "Yes, 100% free with no obligation. We'll visit your site, assess the project, take measurements, and provide a detailed quote — all at no cost to you." },
+              { q: "How long does a site survey take?", a: "Typically 30-60 minutes depending on the size and complexity of your project. We'll arrange a time that suits you." },
+              { q: "What areas do you cover?", a: "We cover all of Kent, London, and the wider South East England. For larger projects, we can travel further." },
+              { q: "How quickly can you visit?", a: "We aim to arrange site surveys within 48 hours of your enquiry. For urgent projects, we can often visit the same or next day." },
+              { q: "What happens after the survey?", a: "You'll receive a detailed written quote within 24 hours of our visit, including a full breakdown of costs, timeline, and specifications." },
+            ].map((faq, i) => (
+              <div key={i} className="border border-border rounded-lg p-6">
+                <h3 className="font-bold text-lg mb-2">{faq.q}</h3>
+                <p className="text-muted-foreground">{faq.a}</p>
               </div>
             ))}
           </div>

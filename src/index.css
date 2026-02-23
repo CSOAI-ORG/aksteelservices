@@ -110,8 +110,13 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    line-height: 1.7;
   }
 }
 
@@ -164,4 +169,57 @@
 
 .animate-pulse-ring {
   animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Ken Burns zoom effect for hero slideshow */
+@keyframes ken-burns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 4s ease-out forwards;
+}
+
+/* Glow pulse for quote form card */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.15); }
+  50% { box-shadow: 0 25px 50px -12px hsl(var(--primary) / 0.3); }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* Staggered fade-up for card grids */
+.stagger-fade-up > * {
+  opacity: 0;
+  animation: fade-up 0.6s ease-out forwards;
+}
+.stagger-fade-up > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-fade-up > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-fade-up > *:nth-child(3) { animation-delay: 200ms; }
+.stagger-fade-up > *:nth-child(4) { animation-delay: 300ms; }
+.stagger-fade-up > *:nth-child(5) { animation-delay: 400ms; }
+.stagger-fade-up > *:nth-child(6) { animation-delay: 500ms; }
+
+/* Footer link hover underline */
+.footer-link {
+  position: relative;
+}
+.footer-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: hsl(var(--accent));
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+.footer-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

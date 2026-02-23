@@ -37,7 +37,7 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-16 md:pb-0">
       <SEOHead
         title="How It Works | AK Steel Services | Simple 4-Step Process"
         description="From first call to finished installation — see how AK Steel Services delivers professional steelwork in 4 simple steps. Free site surveys available."
@@ -60,19 +60,24 @@ const HowItWorks = () => {
       {/* Steps */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto space-y-12">
-            {steps.map((step, i) => (
-              <div key={i} className="flex flex-col md:flex-row gap-6 items-start group">
-                <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
-                  {step.icon}
+          <div className="max-w-4xl mx-auto relative">
+            {/* Timeline connector line */}
+            <div className="absolute left-10 top-10 bottom-10 w-0.5 bg-primary/20 hidden md:block" aria-hidden="true" />
+            
+            <div className="space-y-12">
+              {steps.map((step, i) => (
+                <div key={i} className="flex flex-col md:flex-row gap-6 items-start group relative">
+                  <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 relative z-10">
+                    {step.icon}
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-sm font-bold text-accent uppercase tracking-wider">Step {step.number}</p>
+                    <h2 className="text-2xl font-bold text-foreground">{step.title}</h2>
+                    <p className="text-muted-foreground text-lg leading-relaxed">{step.description}</p>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <p className="text-sm font-bold text-accent uppercase tracking-wider">Step {step.number}</p>
-                  <h2 className="text-2xl font-bold text-foreground">{step.title}</h2>
-                  <p className="text-muted-foreground text-lg leading-relaxed">{step.description}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
