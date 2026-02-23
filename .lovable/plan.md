@@ -1,80 +1,125 @@
 
-# Massive Website Improvement & SEO Overhaul
 
-This plan covers improvements across the entire site: adding missing routes for existing pages, creating new high-value SEO landing pages, improving all inner pages with better design/CTAs, and enhancing overall site quality.
+# Homepage Polish & Full Site Improvements
 
----
-
-## Part 1: Connect 7 Existing Pages (Currently Unreachable)
-
-There are 7 fully-built landing pages that exist in the codebase but have **no routes** in the router -- meaning Google and users can never find them. This is a major SEO fix.
-
-Pages to connect:
-- `/loft-conversion-steel-beams` - LoftConversionSteelBeams
-- `/rsj-beams-kent-london` - RSJBeamsKentLondon
-- `/house-extension-steelwork` - HouseExtensionSteelwork
-- `/steel-beam-suppliers-near-me` - SteelBeamSuppliersNearMe
-- `/steel-fabricators-near-me` - SteelFabricatorsNearMe
-- `/mezzanine-floor-installation` - MezzanineFloorInstallation
-- `/steel-frame-buildings-kent` - SteelFrameBuildingsKent
-
-All 7 will be added to `App.tsx` routes and to the Header services dropdown and Footer links.
+## Overview
+This plan covers a comprehensive polish of the homepage plus improvements across all pages, focusing on visual refinement, better user flow, and fixing issues spotted in the current build.
 
 ---
 
-## Part 2: Create 3 New High-Value SEO Landing Pages
+## Part 1: Homepage Polish (100% Overhaul)
 
-### a. `/steel-beams-london` - Steel Beams London
-Targets "steel beams London" search queries. Covers supply, delivery, and installation of steel beams across all London boroughs with specific area targeting.
+### 1a. Hero Section Refinements
+- Reduce slideshow speed from 3s to 4s (less frantic)
+- Add a Ken Burns (slow zoom) effect on each slide for a more cinematic feel
+- Add a subtle gradient overlay from bottom to improve text readability
+- Make the quote form card have a slight glow/shadow animation to draw the eye
+- Add "Responding Now" live dot indicator next to the response time text
 
-### b. `/structural-engineer-steel-beams` - Structural Engineer Steel Beams
-Targets searches from people who already have structural engineer drawings and need someone to fabricate/install. High-intent traffic.
+### 1b. Services Section Improvements
+- Add service cards with hover lift effect and coloured top-border accent
+- Make the "Learn More" links use `<Link>` (React Router) instead of `<a>` tags (currently broken -- uses `<a href>` which causes full page reloads)
+- Add a "Most Popular" badge to Steel Fabrication and Structural Steel cards
+- Add service icons with background circles for a cleaner look
 
-### c. `/steel-rsj-beam-prices` - Steel RSJ Beam Prices
-Targets cost/price related searches ("how much does a steel beam cost", "RSJ beam prices"). Includes a price guide table and drives quotes.
+### 1c. Residential & Commercial Cards
+- Add animated arrow on hover
+- Add a subtle count ("50+ projects this year") on each card
+
+### 1d. Reviews Section
+- Truncate long reviews with "Read more" expand functionality so cards are equal height
+- Add reviewer initial avatar circles (coloured) for visual interest
+
+### 1e. Recent Projects Section
+- Add a hover overlay with "View Project" text on each card
+- Stagger the fade-in animation for each project card
+
+### 1f. Why Choose Us Section
+- Add animated number counters inline (e.g. "20+ years" next to the text)
+- Add a subtle background pattern/texture
+
+### 1g. Homepage Flow Reorder
+- Move the certifications section higher (after Trust Bar) to establish credibility early
+- Remove the duplicate CraneServicesSection (overlaps with services section content)
+- Add a "How It Works" mini-preview (3 steps condensed) between services and reviews
+
+### 1h. Footer Polish
+- Add hover underline animations on links
+- Make the copyright year dynamic (2025 -> current year automatically)
 
 ---
 
-## Part 3: Improve All Existing Inner Pages
+## Part 2: Inner Page Polish
 
-Every service page will be enhanced with:
-- **StickyCallBar** component added (currently missing from most inner pages)
-- **MidPageCTA** component inserted mid-content for better conversion
-- **TrustBar** added to build credibility
-- Internal links to related services (cross-linking for SEO)
-- Schema.org structured data where missing
+### 2a. All Service Pages
+- Add a consistent hero banner pattern: dark background with breadcrumbs, page title, and a quick-stats row (response time, rating, projects)
+- Ensure all pages have `pb-16 md:pb-0` on the wrapper div to account for the mobile sticky bar
 
-Pages to update: SteelFabricationKent, StructuralSteelLondon, WeldingServices, SteelConstructionGravesend, OnsiteSteelFabrication, CraneHireServices, ThreeDModelingServices, EmergencySteelRepair, SteelBeamInstallation, ArchitecturalMetalworkLondon, IndustrialSteelPlatforms, SteelStaircaseInstallation, SteelBuildingExtensionsKent, plus the 7 newly-connected pages.
+### 2b. Contact Page
+- The form currently doesn't use `name` attributes on inputs, so `FormData` extraction returns empty. Fix all input `name` attributes so the form actually submits data.
 
----
+### 2c. How It Works Page
+- Add a connecting line/timeline between the 4 steps for visual continuity
+- Add project photos alongside each step
 
-## Part 4: Homepage & Navigation Improvements
+### 2d. Free Site Survey Page
+- Add a FAQ section addressing common concerns ("Is it really free?", "How long does it take?")
 
-- **Header**: Add the 7 missing pages + 3 new pages to the Services dropdown menu, organised into clear groups (Residential, Commercial, Local SEO)
-- **Footer**: Add links to all new pages in the services column
-- **Sitemap page**: Update with all new routes
-- **robots.txt**: Add XML sitemap reference
-
----
-
-## Part 5: Gallery & About Page Improvements
-
-- **Gallery**: Add category filtering (Residential, Commercial, Industrial, Crane Operations) so visitors can find relevant work photos
-- **About**: Add real project photos, improve the timeline section, add a "response time guarantee" badge
+### 2e. Gallery Page
+- Add a lightbox/modal view when clicking on photos
+- Improve the filter buttons with active state styling
 
 ---
 
-## Technical Summary
+## Part 3: Global Design Improvements
 
-| Category | Files | Type |
-|----------|-------|------|
-| New SEO pages | 3 new files | Create |
-| Route registration | App.tsx | Edit |
-| Navigation updates | Header.tsx, Footer.tsx | Edit |
-| Inner page improvements | ~20 service pages | Edit (add StickyCallBar, MidPageCTA, TrustBar, internal links) |
-| Gallery filtering | Gallery.tsx | Edit |
-| About improvements | About.tsx | Edit |
-| Sitemap update | Sitemap.tsx | Edit |
-| robots.txt | robots.txt | Edit |
+### 3a. Animations
+- Add staggered fade-up animations to all card grids using CSS animation-delay
+- Add smooth scroll behaviour to the html element
+- Add a subtle parallax effect on hero backgrounds
 
-Total: ~3 new files created, ~25+ files modified -- a significant amount of visible improvement across the entire site.
+### 3b. Typography & Spacing
+- Increase line-height on body text for better readability
+- Add consistent section padding (py-20 everywhere)
+
+### 3c. Mobile Optimisations
+- Ensure no horizontal overflow on any page
+- Test and fix the sticky call bar z-index against dropdown menus
+- Add bottom padding to all pages to prevent content hiding behind the sticky bar
+
+---
+
+## Part 4: Technical Fixes
+
+### 4a. Fix ServicesSection Links
+- Change `<a href={service.link}>` to `<Link to={service.link}>` to prevent full page reloads
+
+### 4b. Contact Form Fix
+- Add missing `name` attributes to all form inputs so data actually submits
+- Wire up the form submission to save to the database properly
+
+### 4c. CSS Improvements
+- Add `scroll-behavior: smooth` to html
+- Add staggered animation delay utility classes
+
+---
+
+## Files to Modify
+
+| File | Changes |
+|------|---------|
+| `src/components/NewHeroSection.tsx` | Slower slideshow, Ken Burns effect, glow on form card, live dot indicator |
+| `src/components/ServicesSection.tsx` | Fix Link imports, add Popular badges, card hover improvements |
+| `src/components/GoogleReviews.tsx` | Truncate reviews, avatar initials, equal-height cards |
+| `src/pages/Index.tsx` | Reorder sections, remove CraneServicesSection, add mini How It Works, move certs up |
+| `src/components/Footer.tsx` | Dynamic year, hover animations |
+| `src/index.css` | Smooth scroll, stagger animations, Ken Burns keyframes |
+| `src/pages/Contact.tsx` | Fix form name attributes for proper submission |
+| `src/pages/HowItWorks.tsx` | Add timeline connector, photos |
+| `src/pages/FreeSiteSurvey.tsx` | Add FAQ section |
+| `src/components/TeamSection.tsx` | Polish cards, add team photos |
+| `src/components/TrustBar.tsx` | Subtle background pattern, improved spacing |
+| All service pages (~20 files) | Add `pb-16 md:pb-0` wrapper padding for mobile sticky bar |
+
+Total: ~30 files modified for a thorough, professional polish across the entire site.
+
