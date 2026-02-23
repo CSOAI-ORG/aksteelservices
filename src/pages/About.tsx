@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
+import StickyCallBar from "@/components/StickyCallBar";
+import TrustBar from "@/components/TrustBar";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import BrandLogo from "@/components/BrandLogo";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import LazyImage from "@/components/LazyImage";
+import { REAL_PHOTOS } from "@/assets/real-photos";
 import { Award, Users, Clock, CheckCircle, Shield, Wrench, Building } from "lucide-react";
 
 const About = () => {
@@ -78,6 +81,20 @@ const About = () => {
               London, and the South East. Our commitment to excellence, innovation, and customer 
               satisfaction has made us industry leaders.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <TrustBar />
+
+      {/* Real Project Photos */}
+      <section className="py-12 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <h2 className="text-2xl font-bold text-center mb-8">Our Work in Action</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[REAL_PHOTOS.craneConstruction1, REAL_PHOTOS.teamCarryingBeam, REAL_PHOTOS.residentialExtension2, REAL_PHOTOS.roofStructure2].map((photo, i) => (
+              <LazyImage key={i} src={photo.src} alt={photo.alt} className="rounded-lg aspect-square object-cover" />
+            ))}
           </div>
         </div>
       </section>
@@ -223,6 +240,7 @@ const About = () => {
 
       <Footer />
       <WhatsAppButton />
+      <StickyCallBar />
       
     </div>
   );

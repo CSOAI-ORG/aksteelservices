@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
-
+import StickyCallBar from "@/components/StickyCallBar";
+import MidPageCTA from "@/components/MidPageCTA";
+import TrustBar from "@/components/TrustBar";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -80,6 +82,8 @@ const WeldingServices = () => {
         </div>
       </section>
 
+      <TrustBar />
+
       {/* Welding Capabilities */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -149,6 +153,8 @@ const WeldingServices = () => {
           </div>
         </div>
       </section>
+
+      <MidPageCTA serviceName="Welding Services" />
 
       {/* Welding Types */}
       <section className="py-20 bg-muted/50">
@@ -265,6 +271,7 @@ const WeldingServices = () => {
 
       <Footer />
       <WhatsAppButton />
+      <StickyCallBar />
       
     </div>
   );

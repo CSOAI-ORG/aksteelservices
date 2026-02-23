@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
+import StickyCallBar from "@/components/StickyCallBar";
+import MidPageCTA from "@/components/MidPageCTA";
+import TrustBar from "@/components/TrustBar";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -252,6 +255,7 @@ const EmergencySteelRepair = () => {
 
       <Footer />
       <WhatsAppButton />
+      <StickyCallBar />
       
     </div>
   );

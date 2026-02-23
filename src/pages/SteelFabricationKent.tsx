@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import QuoteForm from "@/components/QuoteForm";
-
+import StickyCallBar from "@/components/StickyCallBar";
+import MidPageCTA from "@/components/MidPageCTA";
+import TrustBar from "@/components/TrustBar";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +13,7 @@ import { CheckCircle, Phone, Clock, Award, ArrowRight } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { Link } from "react-router-dom";
 
 const SteelFabricationKent = () => {
   const services = [
@@ -69,6 +72,8 @@ const SteelFabricationKent = () => {
         </div>
       </section>
 
+      <TrustBar />
+
       {/* Services Overview */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
@@ -126,6 +131,8 @@ const SteelFabricationKent = () => {
           </div>
         </div>
       </section>
+
+      <MidPageCTA serviceName="Steel Fabrication in Kent" />
 
       {/* Process Section */}
       <section className="py-20 bg-muted/50">
@@ -224,6 +231,7 @@ const SteelFabricationKent = () => {
 
       <Footer />
       <WhatsAppButton />
+      <StickyCallBar />
       
     </div>
   );
