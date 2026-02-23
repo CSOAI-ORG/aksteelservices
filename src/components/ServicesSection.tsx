@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   Wrench, 
   Building, 
@@ -17,42 +19,44 @@ const ServicesSection = () => {
       title: "Steel Fabrication",
       description: "Custom steel fabrication for commercial and residential projects with precision engineering and quality craftsmanship.",
       features: ["Custom Design", "Precision Cutting", "Quality Materials"],
-      link: "/steel-fabrication-kent"
+      link: "/steel-fabrication-kent",
+      popular: true,
     },
     {
       icon: <Cog className="h-8 w-8" />,
       title: "Structural Steel",
       description: "Structural steelwork including beams, columns, frames for building extensions and new construction projects.",
       features: ["Building Extensions", "New Construction", "Loft Conversions"],
-      link: "/structural-steel-london"
+      link: "/structural-steel-london",
+      popular: true,
     },
     {
       icon: <Zap className="h-8 w-8" />,
       title: "Welding Services",
       description: "Professional welding services using latest techniques for all steel types with certified welders.",
       features: ["MIG/TIG Welding", "Onsite Service", "Emergency Repairs"],
-      link: "/welding-services"
+      link: "/welding-services",
     },
     {
       icon: <Wrench className="h-8 w-8" />,
       title: "Onsite Fabrication",
       description: "Mobile fabrication services bringing our expertise directly to your location for complex installations.",
       features: ["Mobile Service", "Complex Installs", "Rapid Response"],
-      link: "/onsite-steel-fabrication"
+      link: "/onsite-steel-fabrication",
     },
     {
       icon: <Truck className="h-8 w-8" />,
       title: "Crane Hire & Hiab",
       description: "Equipment services for safe steel delivery and installation with qualified operators and modern equipment.",
       features: ["Qualified Operators", "Modern Equipment", "Safe Installation"],
-      link: "/crane-hire-services"
+      link: "/crane-hire-services",
     },
     {
       icon: <Phone className="h-8 w-8" />,
       title: "Emergency Services",
       description: "24/7 emergency steel repair services for urgent structural issues and equipment breakdowns.",
       features: ["24/7 Available", "Rapid Response", "Temporary Solutions"],
-      link: "/emergency-steel-repair"
+      link: "/emergency-steel-repair",
     }
   ];
 
@@ -73,11 +77,16 @@ const ServicesSection = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 stagger-fade-up">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
+            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-t-4 border-t-primary/20 hover:border-t-primary hover:-translate-y-1 relative overflow-hidden">
+              {service.popular && (
+                <Badge className="absolute top-3 right-3 bg-accent text-accent-foreground text-xs z-10">
+                  Most Popular
+                </Badge>
+              )}
               <CardHeader className="pb-4">
-                <div className="text-primary group-hover:text-accent transition-colors duration-300 mb-3">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 mb-3">
                   {service.icon}
                 </div>
                 <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
@@ -95,10 +104,10 @@ const ServicesSection = () => {
                   ))}
                 </ul>
                 <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300" asChild>
-                  <a href={service.link} className="flex items-center justify-center gap-2">
+                  <Link to={service.link} className="flex items-center justify-center gap-2">
                     Learn More
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
               </CardContent>
             </Card>
@@ -114,8 +123,8 @@ const ServicesSection = () => {
             Every project is unique. Contact us for a free consultation and quote tailored to your specific requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="hero" size="lg">
-              Get Free Quote
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/contact">Get Free Quote</Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
               <a href="tel:01474550531">Call 01474 550531</a>

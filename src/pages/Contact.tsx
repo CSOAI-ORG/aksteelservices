@@ -144,7 +144,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pb-16 md:pb-0">
       <SEOHead
         title="Contact AK Steel Services | Get Free Quote | 01474 550531"
         description="Contact AK Steel Services for steel fabrication quotes. Call 01474 550531, email info@aksteelservices.com or use our contact form. Serving Kent, London & South East."
@@ -257,6 +257,7 @@ const Contact = () => {
                     <Label htmlFor="firstName">First Name *</Label>
                     <Input 
                       id="firstName" 
+                      name="firstName"
                       placeholder="Enter your first name"
                       required
                     />
@@ -265,6 +266,7 @@ const Contact = () => {
                     <Label htmlFor="lastName">Last Name *</Label>
                     <Input 
                       id="lastName" 
+                      name="lastName"
                       placeholder="Enter your last name"
                       required
                     />
@@ -276,6 +278,7 @@ const Contact = () => {
                     <Label htmlFor="email">Email Address *</Label>
                     <Input 
                       id="email" 
+                      name="email"
                       type="email"
                       placeholder="your@email.com"
                       required
@@ -285,6 +288,7 @@ const Contact = () => {
                     <Label htmlFor="phone">Phone Number *</Label>
                     <Input 
                       id="phone" 
+                      name="phone"
                       type="tel"
                       placeholder="01474 550531"
                       required
@@ -296,6 +300,7 @@ const Contact = () => {
                   <Label htmlFor="company">Company/Organization</Label>
                   <Input 
                     id="company" 
+                    name="company"
                     placeholder="Your company name (optional)"
                   />
                 </div>
@@ -320,6 +325,7 @@ const Contact = () => {
                   <Label htmlFor="location">Project Location *</Label>
                   <Input 
                     id="location" 
+                    name="location"
                     placeholder="e.g., Canterbury, Kent or London"
                     required
                   />
@@ -360,6 +366,7 @@ const Contact = () => {
                   <Label htmlFor="message">Project Details *</Label>
                   <Textarea 
                     id="message"
+                    name="message"
                     placeholder="Please describe your project in detail. Include dimensions, materials, timeline, and any specific requirements..."
                     rows={6}
                     required

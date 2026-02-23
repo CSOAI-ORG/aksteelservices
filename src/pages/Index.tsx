@@ -4,7 +4,6 @@ import NewHeroSection from "@/components/NewHeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import QuoteForm from "@/components/QuoteForm";
 import TeamSection from "@/components/TeamSection";
-import CraneServicesSection from "@/components/CraneServicesSection";
 import SEOHead from "@/components/SEOHead";
 import GoogleReviews from "@/components/GoogleReviews";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -18,7 +17,7 @@ import MidPageCTA from "@/components/MidPageCTA";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, MapPin, Home, Building } from "lucide-react";
+import { CheckCircle, ArrowRight, MapPin, Home, Building, ClipboardList, Search, Wrench } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import { Link } from "react-router-dom";
 
@@ -57,6 +56,22 @@ const Index = () => {
       {/* Trust Bar with animated counters */}
       <TrustBar />
 
+      {/* Certifications - moved up for early credibility */}
+      <section className="py-10 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-wrap justify-center items-center gap-6">
+            <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Accredited & Certified:</p>
+            <div className="bg-background rounded-lg p-4 shadow-sm">
+              <img 
+                src="/images/bs-en-1090-logo.jpg" 
+                alt="BS EN 1090 certified — SCCS and UKAS Product Certification" 
+                className="h-14 md:h-20 w-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <ServicesSection />
 
@@ -78,6 +93,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-1">Residential Services</h3>
                   <p className="text-sm text-secondary-foreground/80">Loft conversions, extensions, RSJ beams & more</p>
+                  <span className="text-xs text-accent mt-2 font-semibold">50+ projects this year →</span>
                 </div>
               </div>
             </Link>
@@ -94,6 +110,7 @@ const Index = () => {
                   </div>
                   <h3 className="text-2xl font-bold mb-1">Commercial & Industrial</h3>
                   <p className="text-sm text-secondary-foreground/80">Frameworks, mezzanines, platforms & large-scale projects</p>
+                  <span className="text-xs text-accent mt-2 font-semibold">30+ commercial builds →</span>
                 </div>
               </div>
             </Link>
@@ -103,6 +120,40 @@ const Index = () => {
 
       {/* Google Reviews */}
       <GoogleReviews />
+
+      {/* How It Works mini-preview */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <Badge variant="secondary" className="mb-4">Simple Process</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              How It <span className="text-primary">Works</span>
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">From first call to finished installation in 4 simple steps</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto stagger-fade-up">
+            {[
+              { icon: <ClipboardList className="h-8 w-8" />, step: "01", title: "Get In Touch", desc: "Call, email, or fill in our quick quote form" },
+              { icon: <Search className="h-8 w-8" />, step: "02", title: "Free Site Survey", desc: "We visit, measure, and provide a detailed quote" },
+              { icon: <Wrench className="h-8 w-8" />, step: "03", title: "Fabricate & Install", desc: "Expert fabrication and professional installation" },
+            ].map((s, i) => (
+              <div key={i} className="text-center space-y-3">
+                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mx-auto">
+                  {s.icon}
+                </div>
+                <p className="text-xs font-bold text-accent uppercase tracking-wider">Step {s.step}</p>
+                <h3 className="text-lg font-bold">{s.title}</h3>
+                <p className="text-sm text-muted-foreground">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Button variant="outline" asChild>
+              <Link to="/how-it-works">See Full Process <ArrowRight className="ml-2 h-4 w-4" /></Link>
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Urgency CTA Banner */}
       <UrgencyBanner />
@@ -120,7 +171,7 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 stagger-fade-up">
             {[
               { src: REAL_PHOTOS.craneConstruction1, loc: "London", title: "Commercial Steel Framework", desc: "Large-scale structural steel installation with crane lifting." },
               { src: REAL_PHOTOS.residentialExtension2, loc: "Kent", title: "Residential Rear Extension", desc: "Steel beam installation for open-plan living space." },
@@ -130,12 +181,15 @@ const Index = () => {
               { src: REAL_PHOTOS.teamCarryingBeam, loc: "Dartford", title: "Loft Conversion Steelwork", desc: "Structural steel beams for loft conversion." },
             ].map((project, i) => (
               <Card key={i} className="overflow-hidden group hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="aspect-video overflow-hidden">
+                <div className="aspect-video overflow-hidden relative">
                   <LazyImage 
                     src={project.src.src}
                     alt={project.src.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-secondary/0 group-hover:bg-secondary/40 transition-colors duration-300 flex items-center justify-center">
+                    <span className="text-secondary-foreground font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">View Project →</span>
+                  </div>
                 </div>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-1">
@@ -224,25 +278,6 @@ const Index = () => {
       </section>
 
       <TeamSection />
-      <CraneServicesSection />
-
-      {/* Certifications */}
-      <section className="py-12 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-6">
-            <h3 className="text-lg font-semibold text-muted-foreground">Accredited & Certified</h3>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-6">
-            <div className="bg-background rounded-lg p-4 shadow-sm">
-              <img 
-                src="/images/bs-en-1090-logo.jpg" 
-                alt="BS EN 1090 certified — SCCS and UKAS Product Certification" 
-                className="h-14 md:h-20 w-auto"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Full Quote Form */}
       <section id="get-quote" className="py-20 bg-muted/50">

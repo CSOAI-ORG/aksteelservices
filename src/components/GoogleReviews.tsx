@@ -1,8 +1,55 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Star, Quote, ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const ReviewCard = ({ review, initials, bgColor, truncated, renderStars }: {
+  review: { name: string; rating: number; date: string; review: string };
+  initials: string;
+  bgColor: string;
+  truncated: boolean;
+  renderStars: (r: number) => JSX.Element[];
+}) => {
+  const [expanded, setExpanded] = useState(false);
+  const text = truncated && !expanded ? review.review.slice(0, 180) + "..." : review.review;
+
+  return (
+    <Card className="relative flex flex-col">
+      <CardHeader>
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-1">
+            {renderStars(review.rating)}
+          </div>
+          <Quote className="h-5 w-5 text-primary opacity-50" />
+        </div>
+        <div className="flex items-center gap-3">
+          <div className={`w-10 h-10 rounded-full ${bgColor} text-primary-foreground flex items-center justify-center text-sm font-bold`}>
+            {initials}
+          </div>
+          <div>
+            <CardTitle className="text-lg">{review.name}</CardTitle>
+            <p className="text-sm text-muted-foreground">{review.date}</p>
+          </div>
+        </div>
+      </CardHeader>
+      <CardContent className="flex-1">
+        <p className="text-muted-foreground leading-relaxed">
+          "{text}"
+        </p>
+        {truncated && (
+          <button
+            onClick={() => setExpanded(!expanded)}
+            className="text-primary text-sm font-medium mt-2 hover:underline"
+          >
+            {expanded ? "Show less" : "Read more"}
+          </button>
+        )}
+      </CardContent>
+    </Card>
+  );
+};
 
 const GoogleReviews = () => {
   const reviews = [
@@ -104,26 +151,23 @@ const GoogleReviews = () => {
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {displayedReviews.map((review, index) => (
-            <Card key={index} className="relative">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1">
-                    {renderStars(review.rating)}
-                  </div>
-                  <Quote className="h-5 w-5 text-primary opacity-50" />
-                </div>
-                <CardTitle className="text-lg">{review.name}</CardTitle>
-                <p className="text-sm text-muted-foreground">{review.date}</p>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed">
-                  "{review.review}"
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 stagger-fade-up">
+          {displayedReviews.map((review, index) => {
+            const initials = review.name.split(' ').map(n => n[0]).join('');
+            const colors = ['bg-primary', 'bg-accent', 'bg-secondary', 'bg-primary/80', 'bg-accent/80', 'bg-secondary/80'];
+            const truncated = review.review.length > 180;
+            
+            return (
+              <ReviewCard
+                key={index}
+                review={review}
+                initials={initials}
+                bgColor={colors[index % colors.length]}
+                truncated={truncated}
+                renderStars={renderStars}
+              />
+            );
+          })}
         </div>
 
         <div className="text-center mb-8">
