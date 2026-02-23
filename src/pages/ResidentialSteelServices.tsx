@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { createServiceSchema } from "@/lib/schema";
 
 const services = [
   {
@@ -56,6 +57,7 @@ const ResidentialSteelServices = () => {
       <SEOHead
         title="Residential Steel Services | Beams, Extensions & Loft Conversions | AK Steel"
         description="Steel beams for loft conversions, house extensions, and wall removals. AK Steel Services provides residential steelwork across Kent & London. Free quotes."
+        schemaData={createServiceSchema("Residential Steel Services", "Steel beams for loft conversions, house extensions, and load-bearing wall removals across Kent and London.")}
       />
       <StickyCallBar />
       <Header />

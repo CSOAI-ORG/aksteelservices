@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { createServiceSchema } from "@/lib/schema";
 
 const services = [
   {
@@ -50,6 +51,7 @@ const CommercialSteelServices = () => {
       <SEOHead
         title="Commercial & Industrial Steel Services | AK Steel Kent & London"
         description="Steel frameworks, mezzanine floors, industrial platforms & structural steel for commercial projects. BS EN 1090 certified. Serving Kent & London."
+        schemaData={createServiceSchema("Commercial & Industrial Steel Services", "Steel frameworks, mezzanine floors, industrial platforms and structural steel for commercial projects. BS EN 1090 certified.")}
       />
       <StickyCallBar />
       <Header />

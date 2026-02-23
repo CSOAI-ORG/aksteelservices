@@ -22,7 +22,9 @@ import TrustBar from "@/components/TrustBar";
 
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createServiceSchema } from "@/lib/schema";
 
 const beamTypes = [
   {
@@ -86,6 +88,11 @@ const projectExamples = [
 const SteelBeamInstallation = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Steel Beam Installation | Supply & Fit Steel Beams | Kent & London"
+        description="Professional steel beam installation services. Universal beams, RSJ, columns, and channels. Supply and install across Kent & London. Call 01474 550531."
+        schemaData={createServiceSchema("Steel Beam Installation", "Professional steel beam supply and installation. Universal beams, RSJ, PFC channels, and columns fitted by certified steel erectors.")}
+      />
       <Header />
       
       {/* Hero Section */}

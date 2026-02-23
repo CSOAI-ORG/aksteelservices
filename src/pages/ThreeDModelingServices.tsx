@@ -12,6 +12,8 @@ import { CheckCircle, Phone, Monitor, Layers, FileText } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
+import { createServiceSchema } from "@/lib/schema";
 
 const ThreeDModelingServices = () => {
   const software = [
@@ -50,6 +52,11 @@ const ThreeDModelingServices = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="3D Steel Modeling & CAD Design Services | AK Steel Services"
+        description="Advanced 3D structural modeling, BIM coordination, and CAD design for steel fabrication projects. Tekla, AutoCAD, SolidWorks. Kent & London."
+        schemaData={createServiceSchema("3D Steel Modeling & CAD Design", "Advanced 3D structural modeling, BIM coordination, and technical drawings for steel fabrication projects.")}
+      />
       <Header />
       
       {/* Hero Section */}

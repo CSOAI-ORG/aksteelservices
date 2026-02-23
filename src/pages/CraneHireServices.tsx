@@ -5,6 +5,7 @@ import StickyCallBar from "@/components/StickyCallBar";
 import MidPageCTA from "@/components/MidPageCTA";
 import TrustBar from "@/components/TrustBar";
 
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +14,7 @@ import { REAL_PHOTOS } from "@/assets/real-photos";
 import fallbackImage from "@/assets/structural-steel-construction.jpg";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { createServiceSchema } from "@/lib/schema";
 
 const CraneHireServices = () => {
   const equipment = [
@@ -47,6 +49,11 @@ const CraneHireServices = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Crane Hire & Hiab Services | Steel Lifting | Kent & London"
+        description="Crane hire and Hiab truck services for steel beam delivery and installation. Qualified operators, modern equipment. Call 01474 550531."
+        schemaData={createServiceSchema("Crane Hire & Hiab Services", "Equipment services for safe steel delivery and installation with qualified operators and modern equipment across Kent and London.")}
+      />
       <Header />
       
       {/* Hero Section */}

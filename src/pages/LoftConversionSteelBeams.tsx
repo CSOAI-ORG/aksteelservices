@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, ArrowRight, Home, Ruler, FileText, HardHat } from "lucide-react";
 import { Link } from "react-router-dom";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createFAQSchema, combineSchemas } from "@/lib/schema";
 
 const LoftConversionSteelBeams = () => {
   const schemaData = {
@@ -65,7 +66,7 @@ const LoftConversionSteelBeams = () => {
         title="Loft Conversion Steel Beams Kent & London | RSJ for Loft Conversions"
         description="Expert loft conversion steel beam supply and installation across Kent & London. Building reg compliant RSJ beams, structural calculations support. Call 01474 550531."
         keywords="loft conversion steel beams, RSJ loft conversion, steel beams for loft, loft conversion Kent, loft steel beams London, dormer steel beams"
-        schemaData={schemaData}
+        schemaData={combineSchemas(schemaData, createFAQSchema(faqs))}
       />
       <Header />
       <Breadcrumbs />

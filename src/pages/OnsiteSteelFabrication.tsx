@@ -5,6 +5,7 @@ import StickyCallBar from "@/components/StickyCallBar";
 import MidPageCTA from "@/components/MidPageCTA";
 import TrustBar from "@/components/TrustBar";
 
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -12,6 +13,7 @@ import { CheckCircle, Phone, Truck, Shield, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { createServiceSchema } from "@/lib/schema";
 
 const OnsiteSteelFabrication = () => {
   const capabilities = [
@@ -46,8 +48,12 @@ const OnsiteSteelFabrication = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead
+        title="Onsite Steel Fabrication | Mobile Welding & Fabrication | Kent & London"
+        description="Professional onsite steel fabrication and mobile welding services across Kent & London. Emergency repairs, site modifications, heavy installations."
+        schemaData={createServiceSchema("Onsite Steel Fabrication", "Mobile fabrication services bringing professional expertise directly to your location for complex installations across Kent and London.")}
+      />
       <Header />
-      
       {/* Hero Section */}
       <section className="py-20 bg-gradient-to-br from-primary to-secondary text-white">
         <div className="container mx-auto px-4">

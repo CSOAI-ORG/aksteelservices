@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge";
 import { Phone, ArrowRight, AlertTriangle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { createServiceSchema } from "@/lib/schema";
 
 const priceGuide = [
   { size: "152 × 89mm", weight: "16 kg/m", supplyFrom: "£45–£65/m", installed: "£350–£600" },
@@ -32,6 +33,7 @@ const SteelRSJPrices = () => {
         description="Steel RSJ beam prices guide 2025. See indicative costs for supply and installation. Get an exact quote for your project. Call AK Steel Services 01474 550531."
         keywords="steel beam prices, RSJ beam cost, how much does a steel beam cost, steel beam price per metre, RSJ prices UK"
         canonicalUrl="https://aksteelservices.com/steel-rsj-beam-prices"
+        schemaData={createServiceSchema("Steel RSJ Beam Prices", "Steel RSJ beam prices guide. See indicative costs for supply and installation of steel beams across Kent and London.")}
       />
       <Header />
       <Breadcrumbs />

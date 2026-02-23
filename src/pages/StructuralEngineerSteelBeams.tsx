@@ -14,6 +14,7 @@ import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, ArrowRight, FileText, Ruler, HardHat, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createServiceSchema } from "@/lib/schema";
 
 const steps = [
   { num: "01", title: "Send Us Your Drawings", desc: "Email or upload your structural engineer's calculations and beam specifications. We accept PDF, DWG, and all standard formats." },
@@ -30,6 +31,7 @@ const StructuralEngineerSteelBeams = () => {
         description="Got structural engineer drawings? We fabricate and install steel beams to your exact specification. BS EN 1090 certified. Free quotes within 24hrs. Call 01474 550531."
         keywords="structural engineer steel beams, steel beam fabrication to spec, RSJ beam installation, structural steel supply, beam installation from drawings"
         canonicalUrl="https://aksteelservices.com/structural-engineer-steel-beams"
+        schemaData={createServiceSchema("Structural Engineer Steel Beam Fabrication & Installation", "Got structural engineer drawings? We fabricate and install steel beams to your exact specification. BS EN 1090 certified.")}
       />
       <Header />
       <Breadcrumbs />

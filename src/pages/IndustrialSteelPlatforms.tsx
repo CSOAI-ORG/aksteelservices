@@ -20,7 +20,9 @@ import StickyCallBar from "@/components/StickyCallBar";
 
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createServiceSchema } from "@/lib/schema";
 
 const platformTypes = [
   {
@@ -90,6 +92,11 @@ const industries = [
 const IndustrialSteelPlatforms = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Industrial Steel Platforms | Mezzanines & Walkways | Kent & London"
+        description="Industrial steel platforms, mezzanine floors, access walkways, and loading platforms. Designed and installed across Kent & London."
+        schemaData={createServiceSchema("Industrial Steel Platforms", "Industrial steel platforms including mezzanine floors, access walkways, and loading platforms designed and installed to safety standards.")}
+      />
       <Header />
       
       {/* Hero Section */}

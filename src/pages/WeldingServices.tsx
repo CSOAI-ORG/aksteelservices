@@ -13,6 +13,7 @@ import { CheckCircle, Phone, Zap, Shield, Clock } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { createServiceSchema } from "@/lib/schema";
 
 const WeldingServices = () => {
   const weldingTypes = [
@@ -48,6 +49,7 @@ const WeldingServices = () => {
         title="Professional Welding Services | MIG, TIG, ARC Welding | Kent & London"
         description="Expert welding services across Kent & London. MIG, TIG, ARC welding. Certified welders, 24/7 emergency service, mobile welding units. Call 01474 550531"
         keywords="welding services, MIG welding, TIG welding, ARC welding, Kent welding, London welding, emergency welding, mobile welding"
+        schemaData={createServiceSchema("Professional Welding Services", "Expert MIG, TIG, ARC welding services across Kent & London. Certified welders, 24/7 emergency service, mobile welding units.")}
       />
       <Header />
       <Breadcrumbs />

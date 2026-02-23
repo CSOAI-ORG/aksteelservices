@@ -20,7 +20,9 @@ import StickyCallBar from "@/components/StickyCallBar";
 
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SEOHead from "@/components/SEOHead";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createServiceSchema } from "@/lib/schema";
 
 const staircaseTypes = [
   {
@@ -90,6 +92,11 @@ const projectTypes = [
 const SteelStaircaseInstallation = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Steel Staircase Installation | Bespoke Stairs | Kent & London"
+        description="Bespoke steel staircases — straight, spiral, L-shaped, and industrial. Custom design and professional installation. Kent & London."
+        schemaData={createServiceSchema("Steel Staircase Installation", "Bespoke steel staircase design, fabrication, and installation. Straight, spiral, L-shaped, and industrial staircases across Kent and London.")}
+      />
       <Header />
       
       {/* Hero Section */}
