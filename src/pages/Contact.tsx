@@ -365,7 +365,7 @@ const Contact = () => {
 
                 <div>
                   <Label htmlFor="service">Service Required *</Label>
-                  <Select required>
+                  <Select value={serviceVal} onValueChange={setServiceVal} required>
                     <SelectTrigger>
                       <SelectValue placeholder="Select the service you need" />
                     </SelectTrigger>
