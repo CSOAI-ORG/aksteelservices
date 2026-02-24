@@ -391,7 +391,7 @@ const Contact = () => {
 
                 <div>
                   <Label htmlFor="timeline">Project Timeline</Label>
-                  <Select>
+                  <Select value={timelineVal} onValueChange={setTimelineVal}>
                     <SelectTrigger>
                       <SelectValue placeholder="When do you need this completed?" />
                     </SelectTrigger>
