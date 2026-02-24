@@ -406,7 +406,7 @@ const Contact = () => {
 
                 <div>
                   <Label htmlFor="budget">Estimated Budget</Label>
-                  <Select>
+                  <Select value={budgetVal} onValueChange={setBudgetVal}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select your budget range (optional)" />
                     </SelectTrigger>
