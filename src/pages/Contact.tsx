@@ -634,7 +634,7 @@ const Contact = () => {
           {/* Google Maps Embed */}
           <div className="rounded-lg overflow-hidden h-64">
             <iframe
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=AK+STEEL+SERVICES+LIMITED,Wharf+Road,Gravesend,DA12+2RU&zoom=15"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.5!2d0.3703708!3d51.4416087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8b1a6c6c0a8c7%3A0xd69be54f329a6009!2sAK%20STEEL%20SERVICES%20LIMITED!5e0!3m2!1sen!2suk!4v1700000000000"
               width="100%"
               height="100%"
               style={{ border: 0 }}
