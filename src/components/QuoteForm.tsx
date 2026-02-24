@@ -202,6 +202,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
             <Label htmlFor="description">Project Description *</Label>
             <Textarea 
               id="description" 
+              name="description"
               placeholder="Please describe your steel fabrication project in detail..."
               className="min-h-[100px]"
               required 
