@@ -35,6 +35,10 @@ import { supabase } from "@/integrations/supabase/client";
 const Contact = () => {
   const { toast } = useToast();
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serviceVal, setServiceVal] = useState("");
+  const [timelineVal, setTimelineVal] = useState("");
+  const [budgetVal, setBudgetVal] = useState("");
   const { trackEvent, trackWhatsAppClick } = useAnalytics();
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
