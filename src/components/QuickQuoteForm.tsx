@@ -34,6 +34,19 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
       });
 
       if (error) throw error;
+
+      // Send email notification
+      await supabase.functions.invoke('send-quote-email', {
+        body: {
+          firstName: name.split(" ")[0] || name,
+          lastName: name.split(" ").slice(1).join(" ") || "-",
+          email: "quick-quote@placeholder.com",
+          phone,
+          message: service || "Quick quote request",
+          service: service || "General Enquiry",
+        },
+      });
+
       setSubmitted(true);
     } catch {
       toast({ title: "Error", description: "Please try again or call us directly.", variant: "destructive" });

@@ -35,6 +35,10 @@ import { supabase } from "@/integrations/supabase/client";
 const Contact = () => {
   const { toast } = useToast();
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [serviceVal, setServiceVal] = useState("");
+  const [timelineVal, setTimelineVal] = useState("");
+  const [budgetVal, setBudgetVal] = useState("");
   const { trackEvent, trackWhatsAppClick } = useAnalytics();
 
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -251,7 +255,61 @@ const Contact = () => {
                 a detailed quote for your project.
               </p>
 
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={async (e) => {
+                e.preventDefault();
+                if (isSubmitting) return;
+                setIsSubmitting(true);
+                const formData = new FormData(e.currentTarget);
+                const firstName = (formData.get('firstName') as string || '').trim();
+                const lastName = (formData.get('lastName') as string || '').trim();
+                const email = (formData.get('email') as string || '').trim();
+                const phone = (formData.get('phone') as string || '').trim();
+                const company = (formData.get('company') as string || '').trim();
+                const message = (formData.get('message') as string || '').trim();
+                const location = (formData.get('location') as string || '').trim();
+                
+                if (!firstName || !lastName || !email || !phone || !message) {
+                  toast({ title: "Please fill in all required fields", variant: "destructive" });
+                  setIsSubmitting(false);
+                  return;
+                }
+                
+                try {
+                  const { error } = await supabase.from('contact_submissions').insert({
+                    first_name: firstName,
+                    last_name: lastName,
+                    email,
+                    phone,
+                    company: company || null,
+                    service: serviceVal || null,
+                    location: location || null,
+                    timeline: timelineVal || null,
+                    budget: budgetVal || null,
+                    message,
+                  });
+                  
+                  if (error) throw error;
+
+                  await supabase.functions.invoke('send-quote-email', {
+                    body: { firstName, lastName, email, phone, company, service: serviceVal, location, timeline: timelineVal, budget: budgetVal, message },
+                  });
+                  
+                  toast({
+                    title: "Quote Request Sent!",
+                    description: "Thank you! We'll get back to you within 24 hours.",
+                  });
+                  window.location.href = '/thank-you';
+                } catch (err) {
+                  console.error('Form error:', err);
+                  toast({
+                    title: "Error",
+                    description: "Something went wrong. Please call us on 01474 550531.",
+                    variant: "destructive",
+                  });
+                } finally {
+                  setIsSubmitting(false);
+                }
+              }}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="firstName">First Name *</Label>
@@ -307,7 +365,7 @@ const Contact = () => {
 
                 <div>
                   <Label htmlFor="service">Service Required *</Label>
-                  <Select required>
+                  <Select value={serviceVal} onValueChange={setServiceVal} required>
                     <SelectTrigger>
                       <SelectValue placeholder="Select the service you need" />
                     </SelectTrigger>
@@ -333,7 +391,7 @@ const Contact = () => {
 
                 <div>
                   <Label htmlFor="timeline">Project Timeline</Label>
-                  <Select>
+                  <Select value={timelineVal} onValueChange={setTimelineVal}>
                     <SelectTrigger>
                       <SelectValue placeholder="When do you need this completed?" />
                     </SelectTrigger>
@@ -348,7 +406,7 @@ const Contact = () => {
 
                 <div>
                   <Label htmlFor="budget">Estimated Budget</Label>
-                  <Select>
+                  <Select value={budgetVal} onValueChange={setBudgetVal}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select your budget range (optional)" />
                     </SelectTrigger>
@@ -433,59 +491,10 @@ const Contact = () => {
                   type="submit" 
                   size="lg" 
                   className="w-full"
-                  onClick={async (e) => {
-                    e.preventDefault();
-                    const form = e.currentTarget.closest('form');
-                    if (!form) return;
-                    const formData = new FormData(form);
-                    const firstName = (formData.get('firstName') as string || '').trim();
-                    const lastName = (formData.get('lastName') as string || '').trim();
-                    const email = (formData.get('email') as string || '').trim();
-                    const phone = (formData.get('phone') as string || '').trim();
-                    const company = (formData.get('company') as string || '').trim();
-                    const message = (formData.get('message') as string || '').trim();
-                    const location = (formData.get('location') as string || '').trim();
-                    
-                    if (!firstName || !lastName || !email || !phone || !message) {
-                      toast({ title: "Please fill in all required fields", variant: "destructive" });
-                      return;
-                    }
-                    
-                    try {
-                      const { error } = await supabase.from('contact_submissions').insert({
-                        first_name: firstName,
-                        last_name: lastName,
-                        email,
-                        phone,
-                        company: company || null,
-                        location: location || null,
-                        message,
-                      });
-                      
-                      if (error) throw error;
-
-                      // Send email notification
-                      await supabase.functions.invoke('send-quote-email', {
-                        body: { firstName, lastName, email, phone, company, location, message },
-                      });
-                      
-                      toast({
-                        title: "Quote Request Sent!",
-                        description: "Thank you! We'll get back to you within 24 hours.",
-                      });
-                      window.location.href = '/thank-you';
-                    } catch (err) {
-                      console.error('Form error:', err);
-                      toast({
-                        title: "Error",
-                        description: "Something went wrong. Please call us on 01474 550531.",
-                        variant: "destructive",
-                      });
-                    }
-                  }}
+                  disabled={isSubmitting}
                 >
                   <Send className="h-4 w-4 mr-2" />
-                  Send Quote Request
+                  {isSubmitting ? "Sending..." : "Send Quote Request"}
                 </Button>
 
                 <p className="text-sm text-muted-foreground text-center">
@@ -625,7 +634,7 @@ const Contact = () => {
           {/* Google Maps Embed */}
           <div className="rounded-lg overflow-hidden h-64">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.5!2d0.3685!3d51.4440!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8b1a1a1a1a1a1%3A0x0!2sWharf+Road%2C+Gravesend+DA12+2RU!5e0!3m2!1sen!2suk!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.5!2d0.3703708!3d51.4416087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8b1a6c6c0a8c7%3A0xd69be54f329a6009!2sAK%20STEEL%20SERVICES%20LIMITED!5e0!3m2!1sen!2suk!4v1700000000000"
               width="100%"
               height="100%"
               style={{ border: 0 }}
