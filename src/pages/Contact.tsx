@@ -491,59 +491,10 @@ const Contact = () => {
                   type="submit" 
                   size="lg" 
                   className="w-full"
-                  onClick={async (e) => {
-                    e.preventDefault();
-                    const form = e.currentTarget.closest('form');
-                    if (!form) return;
-                    const formData = new FormData(form);
-                    const firstName = (formData.get('firstName') as string || '').trim();
-                    const lastName = (formData.get('lastName') as string || '').trim();
-                    const email = (formData.get('email') as string || '').trim();
-                    const phone = (formData.get('phone') as string || '').trim();
-                    const company = (formData.get('company') as string || '').trim();
-                    const message = (formData.get('message') as string || '').trim();
-                    const location = (formData.get('location') as string || '').trim();
-                    
-                    if (!firstName || !lastName || !email || !phone || !message) {
-                      toast({ title: "Please fill in all required fields", variant: "destructive" });
-                      return;
-                    }
-                    
-                    try {
-                      const { error } = await supabase.from('contact_submissions').insert({
-                        first_name: firstName,
-                        last_name: lastName,
-                        email,
-                        phone,
-                        company: company || null,
-                        location: location || null,
-                        message,
-                      });
-                      
-                      if (error) throw error;
-
-                      // Send email notification
-                      await supabase.functions.invoke('send-quote-email', {
-                        body: { firstName, lastName, email, phone, company, location, message },
-                      });
-                      
-                      toast({
-                        title: "Quote Request Sent!",
-                        description: "Thank you! We'll get back to you within 24 hours.",
-                      });
-                      window.location.href = '/thank-you';
-                    } catch (err) {
-                      console.error('Form error:', err);
-                      toast({
-                        title: "Error",
-                        description: "Something went wrong. Please call us on 01474 550531.",
-                        variant: "destructive",
-                      });
-                    }
-                  }}
+                  disabled={isSubmitting}
                 >
                   <Send className="h-4 w-4 mr-2" />
-                  Send Quote Request
+                  {isSubmitting ? "Sending..." : "Send Quote Request"}
                 </Button>
 
                 <p className="text-sm text-muted-foreground text-center">
