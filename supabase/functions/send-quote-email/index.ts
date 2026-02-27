@@ -43,8 +43,8 @@ serve(async (req) => {
         'Authorization': `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'AK Steel Services <info@aksteelservices.com>',
-        to: ['info@aksteelservices.com'],
+        from: 'AK Steel Services <onboarding@resend.dev>',
+        to: ['nicholastempleman@gmail.com'],
         subject: `New Quote Request from ${firstName} ${lastName}`,
         html: emailHtml,
         reply_to: email,
