@@ -15,7 +15,7 @@ import {
 const ServicesSection = () => {
   const services = [
     {
-      icon: <Building className="h-8 w-8" />,
+      icon: <Building className="h-7 w-7" />,
       title: "Steel Fabrication",
       description: "Custom steel fabrication for commercial and residential projects with precision engineering and quality craftsmanship.",
       features: ["Custom Design", "Precision Cutting", "Quality Materials"],
@@ -23,7 +23,7 @@ const ServicesSection = () => {
       popular: true,
     },
     {
-      icon: <Cog className="h-8 w-8" />,
+      icon: <Cog className="h-7 w-7" />,
       title: "Structural Steel",
       description: "Structural steelwork including beams, columns, frames for building extensions and new construction projects.",
       features: ["Building Extensions", "New Construction", "Loft Conversions"],
@@ -31,28 +31,28 @@ const ServicesSection = () => {
       popular: true,
     },
     {
-      icon: <Zap className="h-8 w-8" />,
+      icon: <Zap className="h-7 w-7" />,
       title: "Welding Services",
       description: "Professional welding services using latest techniques for all steel types with certified welders.",
       features: ["MIG/TIG Welding", "Onsite Service", "Emergency Repairs"],
       link: "/welding-services",
     },
     {
-      icon: <Wrench className="h-8 w-8" />,
+      icon: <Wrench className="h-7 w-7" />,
       title: "Onsite Fabrication",
       description: "Mobile fabrication services bringing our expertise directly to your location for complex installations.",
       features: ["Mobile Service", "Complex Installs", "Rapid Response"],
       link: "/onsite-steel-fabrication",
     },
     {
-      icon: <Truck className="h-8 w-8" />,
+      icon: <Truck className="h-7 w-7" />,
       title: "Crane Hire & Hiab",
       description: "Equipment services for safe steel delivery and installation with qualified operators and modern equipment.",
       features: ["Qualified Operators", "Modern Equipment", "Safe Installation"],
       link: "/crane-hire-services",
     },
     {
-      icon: <Phone className="h-8 w-8" />,
+      icon: <Phone className="h-7 w-7" />,
       title: "Emergency Services",
       description: "24/7 emergency steel repair services for urgent structural issues and equipment breakdowns.",
       features: ["24/7 Available", "Rapid Response", "Temporary Solutions"],
@@ -61,23 +61,24 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <Badge variant="secondary" className="mb-4">What We Do</Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Comprehensive Steel Services Across{" "}
-            <span className="text-primary">London and Southern England</span>
+            <span className="text-primary">London & Southern England</span>
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             From initial design consultation to final installation, we provide complete steel fabrication 
             solutions for residential, commercial, and industrial projects.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 stagger-fade-up">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-14 stagger-fade-up">
           {services.map((service, index) => (
             <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-t-4 border-t-primary/20 hover:border-t-primary hover:-translate-y-1 relative overflow-hidden">
               {service.popular && (
@@ -85,17 +86,17 @@ const ServicesSection = () => {
                   Most Popular
                 </Badge>
               )}
-              <CardHeader className="pb-4">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 mb-3">
+              <CardHeader className="pb-3">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300 mb-3">
                   {service.icon}
                 </div>
-                <CardTitle className="text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-base leading-relaxed">
+                <CardTitle className="text-lg mb-1.5">{service.title}</CardTitle>
+                <CardDescription className="text-sm leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="pt-0">
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-1.5 mb-5">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-sm">
                       <div className="w-1.5 h-1.5 bg-accent rounded-full flex-shrink-0" />
@@ -115,8 +116,8 @@ const ServicesSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center bg-muted rounded-2xl p-8">
-          <h3 className="text-2xl font-bold mb-4">
+        <div className="text-center bg-muted rounded-2xl p-8 md:p-10">
+          <h3 className="text-2xl font-bold mb-3">
             Need a Custom Steel Solution?
           </h3>
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">

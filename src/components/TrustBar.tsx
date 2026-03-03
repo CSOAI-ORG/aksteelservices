@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from "react";
 import { Award, Users, Hammer, Clock, Star } from "lucide-react";
 
 const stats = [
-  { icon: <Hammer className="h-7 w-7" />, target: 1247, label: "Projects Completed", suffix: "+" },
-  { icon: <Users className="h-7 w-7" />, target: 500, label: "Happy Customers", suffix: "+" },
-  { icon: <Award className="h-7 w-7" />, target: 20, label: "Years Experience", suffix: "+" },
-  { icon: <Clock className="h-7 w-7" />, target: 2, label: "Hour Response Time", suffix: "hr" },
-  { icon: <Star className="h-7 w-7" />, target: 5, label: "Star Google Rating", suffix: ".0" },
+  { icon: <Hammer className="h-6 w-6" />, target: 1247, label: "Projects Completed", suffix: "+" },
+  { icon: <Users className="h-6 w-6" />, target: 500, label: "Happy Customers", suffix: "+" },
+  { icon: <Award className="h-6 w-6" />, target: 20, label: "Years Experience", suffix: "+" },
+  { icon: <Clock className="h-6 w-6" />, target: 2, label: "Hour Response Time", suffix: "hr" },
+  { icon: <Star className="h-6 w-6" />, target: 5, label: "Star Google Rating", suffix: ".0" },
 ];
 
 const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string }) => {
@@ -37,7 +37,7 @@ const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string })
   }, [target, hasAnimated]);
 
   return (
-    <div ref={ref} className="text-3xl md:text-4xl font-bold text-primary">
+    <div ref={ref} className="text-2xl md:text-3xl font-extrabold text-primary tabular-nums">
       {count}{suffix}
     </div>
   );
@@ -45,17 +45,17 @@ const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string })
 
 const TrustBar = () => {
   return (
-    <section className="py-14 bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-4">
+    <section className="py-10 md:py-14 bg-secondary text-secondary-foreground">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
-          <p className="text-sm font-medium text-muted-foreground uppercase tracking-wider">Trusted Across Kent & London</p>
+          <p className="text-xs font-semibold text-secondary-foreground/60 uppercase tracking-[0.15em]">Trusted Across Kent & London</p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
           {stats.map((stat, i) => (
-            <div key={i} className="text-center space-y-2">
-              <div className="flex justify-center text-accent">{stat.icon}</div>
+            <div key={i} className="text-center space-y-1.5">
+              <div className="flex justify-center text-accent mb-1">{stat.icon}</div>
               <AnimatedCounter target={stat.target} suffix={stat.suffix} />
-              <p className="text-xs md:text-sm text-secondary-foreground/80">{stat.label}</p>
+              <p className="text-[11px] md:text-xs text-secondary-foreground/70 font-medium">{stat.label}</p>
             </div>
           ))}
         </div>
