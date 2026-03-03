@@ -68,11 +68,12 @@ const Index = () => {
                 className="h-12 md:h-16 w-auto"
               />
             </div>
-            <div className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50 flex items-center gap-2">
-              <div className="bg-[hsl(210,80%,45%)] text-white font-bold rounded px-3 py-2 text-sm leading-tight text-center">
-                <div className="text-xs tracking-wider">UKCA</div>
-              </div>
-              <span className="text-xs text-muted-foreground font-medium">UK Conformity<br/>Assessed</span>
+            <div className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50">
+              <img 
+                src="/images/ukca-logo.png" 
+                alt="UKCA — UK Conformity Assessed certification" 
+                className="h-12 md:h-16 w-auto"
+              />
             </div>
           </div>
         </div>

@@ -187,11 +187,12 @@ const Footer = () => {
                 className="h-12 md:h-16 w-auto"
               />
             </div>
-            <div className="bg-white rounded-lg p-3 flex items-center gap-2">
-              <div className="bg-[hsl(210,80%,45%)] text-white font-bold rounded px-2.5 py-1.5 text-xs leading-tight text-center">
-                <div className="tracking-wider">UKCA</div>
-              </div>
-              <span className="text-[10px] text-secondary font-medium leading-tight">UK Conformity<br/>Assessed</span>
+            <div className="bg-white rounded-lg p-3">
+              <img 
+                src="/images/ukca-logo.png" 
+                alt="UKCA — UK Conformity Assessed certification" 
+                className="h-12 md:h-16 w-auto"
+              />
             </div>
           </div>
         </div>
