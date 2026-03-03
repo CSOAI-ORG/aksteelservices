@@ -13,11 +13,15 @@ const pageNames: { [key: string]: string } = {
   "/": "Home",
   "/about": "About Us",
   "/contact": "Contact",
+  "/gallery": "Gallery",
+  "/reviews": "Reviews",
+  "/how-it-works": "How It Works",
   "/areas-we-serve": "Areas We Serve",
-  
   "/faq": "FAQ",
   "/privacy-policy": "Privacy Policy",
   "/terms-of-service": "Terms of Service",
+  "/thank-you": "Thank You",
+  "/free-site-survey": "Free Site Survey",
   "/steel-fabrication-kent": "Steel Fabrication Kent",
   "/structural-steel-london": "Structural Steel London",
   "/welding-services": "Welding Services",
@@ -31,27 +35,35 @@ const pageNames: { [key: string]: string } = {
   "/steel-staircase-installation": "Steel Staircase Installation",
   "/industrial-steel-platforms": "Industrial Steel Platforms",
   "/steel-building-extensions-kent": "Steel Building Extensions Kent",
+  "/residential-steel-services": "Residential Services",
+  "/commercial-steel-services": "Commercial Services",
+  "/steel-beams-london": "Steel Beams London",
+  "/rsj-beams-kent-london": "RSJ Beams Kent & London",
+  "/loft-conversion-steel-beams": "Loft Conversion Steel Beams",
+  "/house-extension-steelwork": "House Extension Steelwork",
+  "/mezzanine-floor-installation": "Mezzanine Floor Installation",
+  "/steel-frame-buildings-kent": "Steel Frame Buildings Kent",
+  "/steel-rsj-beam-prices": "Steel Beam Prices",
+  "/steel-fabricators-near-me": "Steel Fabricators Near Me",
+  "/steel-beam-suppliers-near-me": "Steel Beam Suppliers Near Me",
 };
 
 const Breadcrumbs = () => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
-  // Don't show breadcrumbs on home page
-  if (location.pathname === "/") {
-    return null;
-  }
+  if (location.pathname === "/") return null;
 
   return (
-    <div className="bg-muted/30 border-b border-border">
-      <div className="container mx-auto px-4 py-3">
+    <div className="bg-muted/30 border-b border-border/50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
-                <Link to="/" className="flex items-center gap-1">
-                  <Home className="h-4 w-4" />
-                  Home
+                <Link to="/" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors">
+                  <Home className="h-3.5 w-3.5" />
+                  <span className="text-sm">Home</span>
                 </Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
@@ -63,13 +75,13 @@ const Breadcrumbs = () => {
 
               return (
                 <div key={routeTo} className="flex items-center">
-                  <BreadcrumbSeparator />
+                  <BreadcrumbSeparator className="text-muted-foreground/50" />
                   <BreadcrumbItem>
                     {isLast ? (
-                      <BreadcrumbPage>{pageName}</BreadcrumbPage>
+                      <BreadcrumbPage className="text-sm font-medium">{pageName}</BreadcrumbPage>
                     ) : (
                       <BreadcrumbLink asChild>
-                        <Link to={routeTo}>{pageName}</Link>
+                        <Link to={routeTo} className="text-sm">{pageName}</Link>
                       </BreadcrumbLink>
                     )}
                   </BreadcrumbItem>
