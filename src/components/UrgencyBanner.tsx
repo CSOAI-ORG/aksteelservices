@@ -21,7 +21,7 @@ const UrgencyBanner = () => {
               Book Free Survey <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
-          <Button variant="outline" size="lg" className="border-primary-foreground/40 text-primary-foreground hover:bg-primary-foreground/10" asChild>
+          <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold" asChild>
             <a href="tel:01474550531" className="flex items-center gap-2">
               <Phone className="h-4 w-4" /> Call 01474 550531
             </a>
