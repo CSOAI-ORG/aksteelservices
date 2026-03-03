@@ -117,6 +117,22 @@
   body {
     @apply bg-background text-foreground;
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Global container padding enhancement */
+  .container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Consistent section spacing for inner pages */
+  section h1 {
+    @apply tracking-tight;
+  }
+
+  section h2 {
+    @apply tracking-tight;
   }
 }
 
