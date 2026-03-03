@@ -51,32 +51,32 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border sticky top-0 z-40">
-      <div className="container mx-auto px-4">
-        {/* Main navigation — single clean bar */}
-        <div className="flex justify-between items-center py-3">
+    <header className="bg-background/95 backdrop-blur-md supports-[backdrop-filter]:bg-background/80 border-b border-border/60 sticky top-0 z-40">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           <Link to="/" className="flex items-center">
-            <div className="text-xl md:text-2xl font-bold text-primary">
-              AK <span className="text-secondary">Steel Services</span>
+            <div className="text-xl md:text-2xl font-extrabold tracking-tight">
+              <span className="text-primary">AK</span>{" "}
+              <span className="text-secondary">Steel Services</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-5">
+          <nav className="hidden lg:flex items-center gap-1">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium text-sm"
+                className="text-foreground/80 hover:text-primary transition-colors font-medium text-sm px-3 py-2 rounded-md hover:bg-muted/50"
               >
                 {item.name}
               </Link>
             ))}
             
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium text-sm">
+              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground/80 hover:text-primary transition-colors font-medium text-sm px-3 py-2 rounded-md hover:bg-muted/50">
                 Services
-                <ChevronDown className="h-4 w-4" />
+                <ChevronDown className="h-3.5 w-3.5" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-72 bg-background border border-border">
                 {serviceItems.map((item, i) => {
@@ -97,13 +97,13 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="hidden md:flex font-semibold" asChild>
+            <Button variant="outline" size="sm" className="hidden md:flex font-semibold text-xs" asChild>
               <a href="tel:01474550531" className="flex items-center gap-1.5">
-                <Phone className="h-4 w-4" />
+                <Phone className="h-3.5 w-3.5" />
                 01474 550531
               </a>
             </Button>
-            <Button variant="hero" size="sm" className="hidden sm:flex" asChild>
+            <Button variant="hero" size="sm" className="hidden sm:flex text-xs" asChild>
               <Link to="/contact">Get Free Quote</Link>
             </Button>
 
@@ -120,40 +120,40 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden border-t border-border py-4">
-            <nav className="flex flex-col space-y-3">
+          <div className="lg:hidden border-t border-border py-4 animate-fade-in">
+            <nav className="flex flex-col space-y-1">
               {navigationItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-foreground hover:text-primary transition-colors font-medium py-1.5"
+                  className="text-foreground hover:text-primary hover:bg-muted/50 transition-colors font-medium py-2.5 px-3 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
               
-              <div className="border-t border-border pt-3">
-                <div className="text-sm font-semibold text-accent mb-2">Quick Links</div>
-                <Link to="/residential-steel-services" className="block py-1.5 text-foreground hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>
+              <div className="border-t border-border pt-3 mt-2">
+                <div className="text-xs font-semibold text-accent mb-2 px-3">Quick Links</div>
+                <Link to="/residential-steel-services" className="block py-2 px-3 text-foreground hover:text-primary hover:bg-muted/50 rounded-md font-medium" onClick={() => setIsMenuOpen(false)}>
                   🏠 Residential Services
                 </Link>
-                <Link to="/commercial-steel-services" className="block py-1.5 text-foreground hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/commercial-steel-services" className="block py-2 px-3 text-foreground hover:text-primary hover:bg-muted/50 rounded-md font-medium" onClick={() => setIsMenuOpen(false)}>
                   🏢 Commercial Services
                 </Link>
-                <Link to="/free-site-survey" className="block py-1.5 text-foreground hover:text-primary font-medium" onClick={() => setIsMenuOpen(false)}>
+                <Link to="/free-site-survey" className="block py-2 px-3 text-foreground hover:text-primary hover:bg-muted/50 rounded-md font-medium" onClick={() => setIsMenuOpen(false)}>
                   📋 Free Site Survey
                 </Link>
               </div>
 
               <div className="border-t border-border pt-3">
-                <div className="text-sm font-semibold text-muted-foreground mb-2">All Services</div>
-                <div className="grid grid-cols-1 gap-1">
+                <div className="text-xs font-semibold text-muted-foreground mb-2 px-3">All Services</div>
+                <div className="grid grid-cols-1 gap-0.5">
                   {serviceItems.filter(i => !i.highlight && i.name !== "---").map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="text-foreground hover:text-primary transition-colors text-sm py-1 pl-4"
+                      className="text-foreground/80 hover:text-primary transition-colors text-sm py-1.5 px-6"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}

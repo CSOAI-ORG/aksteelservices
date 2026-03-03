@@ -16,32 +16,32 @@ const ReviewCard = ({ review, initials, bgColor, truncated, renderStars }: {
   const text = truncated && !expanded ? review.review.slice(0, 180) + "..." : review.review;
 
   return (
-    <Card className="relative flex flex-col">
-      <CardHeader>
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-1">
+    <Card className="relative flex flex-col hover:shadow-lg transition-shadow duration-300">
+      <CardHeader className="pb-3">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-0.5">
             {renderStars(review.rating)}
           </div>
-          <Quote className="h-5 w-5 text-primary opacity-50" />
+          <Quote className="h-5 w-5 text-primary/30" />
         </div>
         <div className="flex items-center gap-3">
           <div className={`w-10 h-10 rounded-full ${bgColor} text-primary-foreground flex items-center justify-center text-sm font-bold`}>
             {initials}
           </div>
           <div>
-            <CardTitle className="text-lg">{review.name}</CardTitle>
-            <p className="text-sm text-muted-foreground">{review.date}</p>
+            <CardTitle className="text-base">{review.name}</CardTitle>
+            <p className="text-xs text-muted-foreground">{review.date}</p>
           </div>
         </div>
       </CardHeader>
-      <CardContent className="flex-1">
-        <p className="text-muted-foreground leading-relaxed">
+      <CardContent className="flex-1 pt-0">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           "{text}"
         </p>
         {truncated && (
           <button
             onClick={() => setExpanded(!expanded)}
-            className="text-primary text-sm font-medium mt-2 hover:underline"
+            className="text-primary text-xs font-medium mt-2 hover:underline"
           >
             {expanded ? "Show less" : "Read more"}
           </button>
@@ -53,59 +53,19 @@ const ReviewCard = ({ review, initials, bgColor, truncated, renderStars }: {
 
 const GoogleReviews = () => {
   const reviews = [
-    {
-      name: "Armando Metaj",
-      rating: 5,
-      date: "6 days ago",
-      review:
-        "Great service with those boys. Amel and Adi are very helpful and taking care of drawing. Thanks for your service",
-    },
-    {
-      name: "Viktor Mh",
-      rating: 5,
-      date: "2 weeks ago",
-      review:
-        "I had a great experience with AK Steel Services Limited. They provided high-quality steel products and were very professional and helpful. The team was easy to work with and delivered everything on time. I highly recommend them for their good service, reliable products and reasonable prices.",
-    },
-    {
-      name: "Festim Bajraktari",
-      rating: 5,
-      date: "2 weeks ago",
-      review:
-        "Adi and the team at AK are absolutely amazing, their communication, work and the team are absolutely first class. Adi is very attentive and very knowledgeable in the field, always helping us with new solutions and ideas how to bring our projects to life and work together. We always use AK steel for our projects as they are competitively priced, very responsive, always on hand to deal with any issues, and quick delivery to site! Thank you to all the team at AK, always a pleasure working with you guys.",
-    },
-    {
-      name: "Andy Gjini",
-      rating: 5,
-      date: "2 weeks ago",
-      review: "Excellent service and highly professional team!",
-    },
-    {
-      name: "Shkari Anwar",
-      rating: 5,
-      date: "2 weeks ago",
-      review:
-        "AK Steel Services Ltd supplied and fitted a 9-metre box frame for my project, with each beam weighing around 1.5 tonnes. They also supplied over 40 additional beams and posts for the rest of the house — a large and complex order that was delivered accurately and on time. What impressed me the most was their prompt quotation, clear communication, and patience throughout the process. They were easy to work with, kept me updated, and showed real experience handling such a large project smoothly and professionally. Highly recommended for anyone needing reliable steel supply or supply-and-fit services.",
-    },
-    {
-      name: "Valter Nezaj",
-      rating: 5,
-      date: "2 weeks ago",
-      review: "Outstanding quality and service. Highly recommended!",
-    },
+    { name: "Armando Metaj", rating: 5, date: "6 days ago", review: "Great service with those boys. Amel and Adi are very helpful and taking care of drawing. Thanks for your service" },
+    { name: "Viktor Mh", rating: 5, date: "2 weeks ago", review: "I had a great experience with AK Steel Services Limited. They provided high-quality steel products and were very professional and helpful. The team was easy to work with and delivered everything on time. I highly recommend them for their good service, reliable products and reasonable prices." },
+    { name: "Festim Bajraktari", rating: 5, date: "2 weeks ago", review: "Adi and the team at AK are absolutely amazing, their communication, work and the team are absolutely first class. Adi is very attentive and very knowledgeable in the field, always helping us with new solutions and ideas how to bring our projects to life and work together. We always use AK steel for our projects as they are competitively priced, very responsive, always on hand to deal with any issues, and quick delivery to site! Thank you to all the team at AK, always a pleasure working with you guys." },
+    { name: "Andy Gjini", rating: 5, date: "2 weeks ago", review: "Excellent service and highly professional team!" },
+    { name: "Shkari Anwar", rating: 5, date: "2 weeks ago", review: "AK Steel Services Ltd supplied and fitted a 9-metre box frame for my project, with each beam weighing around 1.5 tonnes. They also supplied over 40 additional beams and posts for the rest of the house — a large and complex order that was delivered accurately and on time. What impressed me the most was their prompt quotation, clear communication, and patience throughout the process. They were easy to work with, kept me updated, and showed real experience handling such a large project smoothly and professionally. Highly recommended for anyone needing reliable steel supply or supply-and-fit services." },
+    { name: "Valter Nezaj", rating: 5, date: "2 weeks ago", review: "Outstanding quality and service. Highly recommended!" },
   ];
 
-  // Show only first 6 reviews on homepage
   const displayedReviews = reviews.slice(0, 6);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        className={`h-4 w-4 ${
-          i < rating ? "text-yellow-400 fill-current" : "text-gray-300"
-        }`}
-      />
+      <Star key={i} className={`h-4 w-4 ${i < rating ? "text-yellow-400 fill-current" : "text-muted-foreground/30"}`} />
     ));
   };
 
@@ -113,7 +73,7 @@ const GoogleReviews = () => {
   const reviewUrl = "https://g.page/r/CWAvmjJP5ZvWEBM/review";
 
   const GoogleLogo = () => (
-    <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
       <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
       <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
       <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -122,77 +82,53 @@ const GoogleReviews = () => {
   );
 
   return (
-    <section className="py-20 bg-muted/30" aria-label="Google reviews from real customers">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge variant="secondary" className="mb-6 inline-flex items-center gap-2">
+    <section className="py-16 md:py-20 bg-muted/30" aria-label="Google reviews from real customers">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <Badge variant="secondary" className="mb-4 inline-flex items-center gap-2">
             <GoogleLogo />
-            Google Reviews (Real Customers)
+            Google Reviews
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             What Our <span className="text-primary">Customers Say</span>
           </h2>
-          <p className="text-xl text-muted-foreground mb-6">
+          <p className="text-lg text-muted-foreground mb-6">
             Verified feedback from Google for AK Steel Services Limited.
           </p>
-          <Button 
-            variant="default" 
-            asChild
-            className="inline-flex items-center gap-2"
-          >
-            <a 
-              href={reviewUrl}
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              <Star className="h-4 w-4" />
-              Leave a Review
+          <Button variant="default" size="sm" asChild className="inline-flex items-center gap-2">
+            <a href={reviewUrl} target="_blank" rel="noopener noreferrer">
+              <Star className="h-4 w-4" /> Leave a Review
             </a>
           </Button>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 stagger-fade-up">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-10 stagger-fade-up">
           {displayedReviews.map((review, index) => {
             const initials = review.name.split(' ').map(n => n[0]).join('');
             const colors = ['bg-primary', 'bg-accent', 'bg-secondary', 'bg-primary/80', 'bg-accent/80', 'bg-secondary/80'];
             const truncated = review.review.length > 180;
-            
             return (
-              <ReviewCard
-                key={index}
-                review={review}
-                initials={initials}
-                bgColor={colors[index % colors.length]}
-                truncated={truncated}
-                renderStars={renderStars}
-              />
+              <ReviewCard key={index} review={review} initials={initials} bgColor={colors[index % colors.length]} truncated={truncated} renderStars={renderStars} />
             );
           })}
         </div>
 
         <div className="text-center mb-8">
           <Button variant="outline" size="lg" asChild>
-            <Link to="/reviews">
-              View All 12 Reviews
-            </Link>
+            <Link to="/reviews">View All 12 Reviews</Link>
           </Button>
         </div>
 
         <div className="text-center">
-          <a 
-            href={googleBusinessUrl}
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block hover:opacity-80 transition-opacity"
-          >
-            <div className="flex items-center justify-center gap-2 mb-2">
+          <a href={googleBusinessUrl} target="_blank" rel="noopener noreferrer" className="inline-block hover:opacity-80 transition-opacity">
+            <div className="flex items-center justify-center gap-2 mb-1.5">
               <GoogleLogo />
-              <div className="flex items-center gap-1">{renderStars(5)}</div>
-              <span className="font-semibold">5.0/5</span>
-              <span className="text-muted-foreground">• 12 Google reviews</span>
+              <div className="flex items-center gap-0.5">{renderStars(5)}</div>
+              <span className="font-bold text-sm">5.0/5</span>
+              <span className="text-muted-foreground text-sm">• 12 Google reviews</span>
             </div>
           </a>
-          <p className="text-xs text-muted-foreground">AK STEEL SERVICES LIMITED • Unit A Wharf Rd, Gravesend DA12 2RU, United Kingdom</p>
+          <p className="text-xs text-muted-foreground">AK STEEL SERVICES LIMITED • Unit A Wharf Rd, Gravesend DA12 2RU</p>
         </div>
       </div>
     </section>

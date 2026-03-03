@@ -8,15 +8,15 @@ interface MidPageCTAProps {
 
 const MidPageCTA = ({ serviceName = "Steel Services" }: MidPageCTAProps) => {
   return (
-    <div className="my-12 rounded-2xl bg-gradient-to-r from-secondary to-secondary-hover p-8 md:p-10 text-secondary-foreground text-center space-y-4">
-      <p className="text-accent text-sm font-bold uppercase tracking-wider">Ready to Get Started?</p>
+    <div className="my-14 md:my-16 rounded-2xl bg-gradient-to-r from-secondary to-secondary-hover p-8 md:p-12 text-secondary-foreground text-center space-y-4">
+      <p className="text-accent text-xs font-bold uppercase tracking-[0.15em]">Ready to Get Started?</p>
       <h3 className="text-xl md:text-2xl font-bold">
         Need {serviceName}? Get a Free Quote in 60 Seconds
       </h3>
-      <p className="text-secondary-foreground/80 text-sm max-w-lg mx-auto">
+      <p className="text-secondary-foreground/70 text-sm max-w-lg mx-auto">
         Call us now or fill in our quick form — we respond to all enquiries within 2 hours
       </p>
-      <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+      <div className="flex flex-col sm:flex-row gap-3 justify-center pt-3">
         <Button variant="hero" size="lg" asChild>
           <Link to="/contact" className="flex items-center gap-2">
             Get Free Quote <ArrowRight className="h-4 w-4" />
