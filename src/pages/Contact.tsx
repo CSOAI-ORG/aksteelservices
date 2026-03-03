@@ -158,19 +158,18 @@ const Contact = () => {
       <Breadcrumbs />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-4">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-primary to-secondary text-primary-foreground">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="secondary" className="mb-6">
+            <Badge variant="secondary" className="mb-4">
               Get In Touch
             </Badge>
-            <BrandLogo className="mx-auto mb-4" width={160} height={40} />
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Contact <span className="text-primary">AK Steel Services</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-5 leading-[1.1] tracking-tight">
+              Contact <span className="text-accent">AK Steel Services</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg md:text-xl opacity-90 mb-8 leading-relaxed max-w-3xl mx-auto">
               Ready to discuss your steel fabrication project? Our expert team is here to help. 
-              Get your free quote today and discover why we're Kent and London's trusted steel specialists.
+              Get your free quote today.
             </p>
           </div>
         </div>
