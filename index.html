@@ -8,10 +8,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="theme-color" content="#1a365d" />
     <meta name="msapplication-TileColor" content="#1a365d" />
-    <title>Steel Fabrication Kent | Structural Steel Services | AK Steel Services</title>
-    <meta name="description" content="Leading steel fabrication company in Kent with 30+ years experience. Structural steel, welding, onsite fabrication. Free quotes. Call 01474550531">
+    <title>Steel Fabrication Kent & London | AK Steel Services | Free Quotes</title>
+    <meta name="description" content="Professional steel fabrication in Kent & London. BS EN 1090 certified. RSJ beams, structural steel, welding, loft conversions, extensions. Free site surveys. Call 01474 550531.">
     <meta name="author" content="AK Steel Services Limited" />
-    <meta name="keywords" content="steel fabrication Kent, structural steel London, welding services, steel construction Gravesend, onsite fabrication">
+    <meta name="keywords" content="steel fabrication Kent, structural steel London, RSJ beams, steel beam installation, welding services, loft conversion steel, house extension steelwork, steel fabricators near me, Gravesend">
     <link rel="canonical" href="https://aksteelservices.com" />
 
     <!-- Open Graph Meta Tags -->
@@ -36,8 +36,8 @@
     <meta name="twitter:site" content="@aksteelservices" />
 
     <!-- WhatsApp and Mobile Sharing -->
-    <meta property="whatsapp:title" content="AK Steel Services - Steel Fabrication Kent" />
-    <meta property="whatsapp:description" content="30+ years of steel fabrication excellence. Professional structural steel services across Kent & London. Call 01474 550531 for free quote!" />
+    <meta property="whatsapp:title" content="AK Steel Services - Steel Fabrication Kent & London" />
+    <meta property="whatsapp:description" content="Professional steel fabrication across Kent & London. BS EN 1090 certified. Call 01474 550531 for a free quote!" />
     <meta property="whatsapp:image" content="https://aksteelservices.com/src/assets/social-share-image.jpg" />
 
     <!-- Local Business Schema -->
@@ -45,47 +45,119 @@
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "AK Steel Services Limited",
-      "description": "Leading steel fabrication company providing structural steel, welding, and onsite fabrication services",
+      "@id": "https://aksteelservices.com/#business",
+      "name": "AK Steel Services",
+      "legalName": "A K Steel Services Limited",
+      "description": "Professional steel fabrication company providing structural steel, RSJ beams, welding, and installation services across Kent, London, and South East England. BS EN 1090 certified.",
+      "image": "https://aksteelservices.com/src/assets/social-share-image.jpg",
+      "logo": "https://aksteelservices.com/favicon.ico",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Unit A, Wharf Road",
         "addressLocality": "Gravesend",
         "addressRegion": "Kent",
+        "postalCode": "DA12 2RU",
         "addressCountry": "GB"
       },
-      "telephone": "01474550531",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "51.4416",
+        "longitude": "0.3706"
+      },
+      "telephone": "+441474550531",
       "email": "info@aksteelservices.com",
       "url": "https://aksteelservices.com",
-      "priceRange": "£££",
-      "openingHours": ["Mo-Fr 07:30-17:00", "Sa 07:00-13:00"],
-      "areaServed": ["Kent", "London", "Surrey", "Essex", "Sussex"],
+      "priceRange": "££",
+      "currenciesAccepted": "GBP",
+      "paymentAccepted": "Cash, Credit Card, Bank Transfer",
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "17:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "13:00"}
+      ],
+      "areaServed": [
+        {"@type": "City", "name": "Gravesend"},
+        {"@type": "City", "name": "London"},
+        {"@type": "City", "name": "Dartford"},
+        {"@type": "City", "name": "Maidstone"},
+        {"@type": "City", "name": "Canterbury"},
+        {"@type": "AdministrativeArea", "name": "Kent"},
+        {"@type": "AdministrativeArea", "name": "Surrey"},
+        {"@type": "AdministrativeArea", "name": "Essex"}
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "bestRating": "5",
+        "ratingCount": "47",
+        "reviewCount": "47"
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61577360927185",
+        "https://www.instagram.com/aksteelservices/"
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Steel Fabrication Services",
         "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Steel Fabrication"
-            }
-          },
-          {
-            "@type": "Offer", 
-            "itemOffered": {
-              "@type": "Service",
-              "name": "Structural Steel"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service", 
-              "name": "Welding Services"
-            }
-          }
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Steel Fabrication", "url": "https://aksteelservices.com/steel-fabrication-kent"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Structural Steel", "url": "https://aksteelservices.com/structural-steel-london"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "RSJ Beam Installation", "url": "https://aksteelservices.com/rsj-beams-kent-london"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Steel Beam Installation", "url": "https://aksteelservices.com/steel-beam-installation"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Loft Conversion Steelwork", "url": "https://aksteelservices.com/loft-conversion-steel-beams"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "House Extension Steelwork", "url": "https://aksteelservices.com/house-extension-steelwork"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Welding Services", "url": "https://aksteelservices.com/welding-services"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Crane Hire", "url": "https://aksteelservices.com/crane-hire-services"}}
         ]
       }
+    }
+    </script>
+    <!-- FAQ Schema for AEO (Answer Engine Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does steel fabrication cost in Kent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Steel fabrication costs in Kent vary depending on the project. RSJ beam supply and installation typically starts from £800-£1,500 for residential work. Contact AK Steel Services on 01474 550531 for a free, no-obligation quote tailored to your project."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer free site surveys for steel beam installation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, AK Steel Services offers completely free site surveys across Kent, London, and the South East. Our experienced team will visit your property, take measurements, and provide a detailed written quotation — typically within 24 hours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you BS EN 1090 certified?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, AK Steel Services is fully BS EN 1090 certified and UKCA (UK Conformity Assessed) approved. This means all our structural steelwork meets the highest European and UK safety and quality standards."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you cover for steel fabrication?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We cover Kent, London, Surrey, Essex, and Sussex. Our main base is in Gravesend, Kent, and we regularly work in Dartford, Maidstone, Canterbury, Medway, Bromley, and across Greater London."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you respond to an enquiry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We aim to respond to all enquiries within 2 hours during working hours. For emergencies, we offer a 24/7 service. Call 01474 550531 for immediate assistance."
+          }
+        }
+      ]
     }
     </script>
     
@@ -97,10 +169,10 @@
       gtag('js', new Date());
       gtag('config', 'AW-17717697220');
     </script>
-    <meta property="og:title" content="Steel Fabrication Kent | Structural Steel Services | AK Steel Services">
-  <meta name="twitter:title" content="Steel Fabrication Kent | Structural Steel Services | AK Steel Services">
-  <meta property="og:description" content="Leading steel fabrication company in Kent with 30+ years experience. Structural steel, welding, onsite fabrication. Free quotes. Call 01474550531">
-  <meta name="twitter:description" content="Leading steel fabrication company in Kent with 30+ years experience. Structural steel, welding, onsite fabrication. Free quotes. Call 01474550531">
+    <meta property="og:title" content="Steel Fabrication Kent & London | AK Steel Services | Free Quotes">
+  <meta name="twitter:title" content="Steel Fabrication Kent & London | AK Steel Services | Free Quotes">
+  <meta property="og:description" content="Professional steel fabrication in Kent & London. BS EN 1090 certified. Free site surveys. Call 01474 550531.">
+  <meta name="twitter:description" content="Professional steel fabrication in Kent & London. BS EN 1090 certified. Free site surveys. Call 01474 550531.">
   <link rel="icon" type="image/x-icon" href="https://storage.googleapis.com/gpt-engineer-file-uploads/CFmYDMddOVYAZ42uKOEVA7OgV7b2/uploads/1759589760830-A2543F01-6BB3-42E1-BD36-EBD741255075.jpeg">
 </head>
 

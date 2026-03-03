@@ -27,24 +27,36 @@ const Index = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "https://aksteelservices.com/#business",
     "name": "AK Steel Services",
-    "description": "Professional steel fabrication, structural steel, and welding services across Kent, London, and South East England.",
+    "description": "Professional steel fabrication, structural steel, RSJ beams, and welding services across Kent, London, and South East England. BS EN 1090 certified. Free site surveys.",
     "url": "https://aksteelservices.com",
-    "telephone": "01474550531",
+    "telephone": "+441474550531",
     "email": "info@aksteelservices.com",
-    "address": { "@type": "PostalAddress", "addressLocality": "Gravesend", "addressRegion": "Kent", "addressCountry": "UK" },
+    "address": { "@type": "PostalAddress", "streetAddress": "Unit A, Wharf Road", "addressLocality": "Gravesend", "addressRegion": "Kent", "postalCode": "DA12 2RU", "addressCountry": "GB" },
     "geo": { "@type": "GeoCoordinates", "latitude": "51.4416", "longitude": "0.3706" },
-    "openingHours": ["Mo-Fr 07:30-17:00", "Sa 07:00-13:00"],
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "47" },
-    "serviceArea": { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": "51.4416", "longitude": "0.3706" }, "geoRadius": "50000" }
+    "openingHoursSpecification": [
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:30", "closes": "17:00"},
+      {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "07:00", "closes": "13:00"}
+    ],
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "bestRating": "5", "reviewCount": "47", "ratingCount": "47" },
+    "serviceArea": [
+      { "@type": "AdministrativeArea", "name": "Kent" },
+      { "@type": "City", "name": "London" },
+      { "@type": "AdministrativeArea", "name": "South East England" }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61577360927185",
+      "https://www.instagram.com/aksteelservices/"
+    ]
   };
 
   return (
     <div className="min-h-screen pb-16 md:pb-0">
       <SEOHead
-        title="Steel Fabrication Services | AK Steel Services Kent & London"
-        description="Professional steel fabrication, structural steel & welding services across Kent & London. Free quotes, 24/7 emergency service. Call 01474 550531"
-        keywords="steel fabrication, structural steel, welding services, Kent, London, steel construction, metal fabrication"
+        title="Steel Fabrication Kent & London | AK Steel Services | Free Quotes"
+        description="Professional steel fabrication in Kent & London. BS EN 1090 certified. RSJ beams, structural steel, welding, loft conversions, extensions. Free site surveys. Call 01474 550531."
+        keywords="steel fabrication Kent, structural steel London, RSJ beams Kent, steel beam installation, welding services Kent, loft conversion steel beams, house extension steelwork, steel fabricators near me, Gravesend steel"
         schemaData={localBusinessSchema}
       />
       <StickyCallBar />
@@ -68,11 +80,12 @@ const Index = () => {
                 className="h-12 md:h-16 w-auto"
               />
             </div>
-            <div className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50 flex items-center gap-2">
-              <div className="bg-[hsl(210,80%,45%)] text-white font-bold rounded px-3 py-2 text-sm leading-tight text-center">
-                <div className="text-xs tracking-wider">UKCA</div>
-              </div>
-              <span className="text-xs text-muted-foreground font-medium">UK Conformity<br/>Assessed</span>
+            <div className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50">
+              <img 
+                src="/images/ukca-logo.png" 
+                alt="UKCA — UK Conformity Assessed certification" 
+                className="h-12 md:h-16 w-auto"
+              />
             </div>
           </div>
         </div>
