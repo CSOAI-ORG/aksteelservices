@@ -71,14 +71,14 @@ const h1 = {
 }
 const text = {
   fontSize: '14px',
-  color: '#55575d',
+  color: '#666666',
   lineHeight: '1.5',
   margin: '0 0 25px',
 }
 const link = { color: 'inherit', textDecoration: 'underline' }
 const button = {
-  backgroundColor: '#000000',
-  color: '#ffffff',
+  backgroundColor: 'hsl(0, 84%, 45%)',
+  color: '#fafafa',
   fontSize: '14px',
   borderRadius: '8px',
   padding: '12px 20px',
