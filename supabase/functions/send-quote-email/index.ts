@@ -1,4 +1,4 @@
-import { createClient } from 'npm:@supabase/supabase-js@2'
+import { sendLovableEmail } from 'npm:@lovable.dev/email-js'
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -20,14 +20,10 @@ Deno.serve(async (req) => {
   }
 
   try {
-    const supabaseUrl = Deno.env.get('SUPABASE_URL');
-    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-
-    if (!supabaseUrl || !supabaseServiceKey) {
-      throw new Error('Server configuration error');
+    const apiKey = Deno.env.get('LOVABLE_API_KEY');
+    if (!apiKey) {
+      throw new Error('Email provider is not configured');
     }
-
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     const {
       firstName,
@@ -105,13 +101,9 @@ Deno.serve(async (req) => {
       .join('\n');
 
     const subject = `New Quote Request from ${firstName} ${lastName}`;
-    const messageId = crypto.randomUUID();
 
-    // Enqueue into the transactional_emails queue for Lovable's built-in email system
-    const { error: enqueueError } = await supabase.rpc('enqueue_email', {
-      queue_name: 'transactional_emails',
-      payload: {
-        message_id: messageId,
+    await sendLovableEmail(
+      {
         to: 'info@aksteelservices.com',
         from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
         sender_domain: 'notify.aksteelservices.com',
@@ -120,13 +112,9 @@ Deno.serve(async (req) => {
         text: emailText,
         purpose: 'transactional',
         label: 'quote-request',
-        queued_at: new Date().toISOString(),
       },
-    });
-
-    if (enqueueError) {
-      throw new Error(`Failed to enqueue email: ${enqueueError.message}`);
-    }
+      { apiKey, sendUrl: Deno.env.get('LOVABLE_SEND_URL') }
+    );
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
