@@ -289,9 +289,11 @@ const Contact = () => {
                   
                   if (error) throw error;
 
-                  await supabase.functions.invoke('send-quote-email', {
+                  const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
                     body: { firstName, lastName, email, phone, company, service: serviceVal, location, timeline: timelineVal, budget: budgetVal, message },
                   });
+
+                  if (emailError) throw emailError;
                   
                   toast({
                     title: "Quote Request Sent!",

@@ -36,7 +36,7 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
       if (error) throw error;
 
       // Send email notification
-      await supabase.functions.invoke('send-quote-email', {
+      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
         body: {
           firstName: name.split(" ")[0] || name,
           lastName: name.split(" ").slice(1).join(" ") || "-",
@@ -46,6 +46,8 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
           service: service || "General Enquiry",
         },
       });
+
+      if (emailError) throw emailError;
 
       setSubmitted(true);
     } catch {
