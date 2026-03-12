@@ -101,9 +101,11 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
       if (error) throw error;
 
       // Send email notification
-      await supabase.functions.invoke('send-quote-email', {
+      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
         body: { firstName, lastName, email, phone, service, location, message: description },
       });
+
+      if (emailError) throw emailError;
 
       toast({
         title: 'Quote Request Sent!',
