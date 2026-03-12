@@ -1,5 +1,3 @@
-import { createClient } from 'npm:@supabase/supabase-js@2'
-
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers':
@@ -14,20 +12,53 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 
+async function sendViaResend({
+  apiKey,
+  from,
+  to,
+  replyTo,
+  subject,
+  html,
+  text,
+}: {
+  apiKey: string;
+  from: string;
+  to: string;
+  replyTo: string;
+  subject: string;
+  html: string;
+  text: string;
+}) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      reply_to: replyTo,
+      subject,
+      html,
+      text,
+    }),
+  });
+
+  const bodyText = await response.text();
+  return { ok: response.ok, status: response.status, bodyText };
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const supabaseUrl = Deno.env.get('SUPABASE_URL');
-    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
-
-    if (!supabaseUrl || !supabaseServiceKey) {
-      throw new Error('Server configuration error');
+    const resendApiKey = Deno.env.get('RESEND_API_KEY');
+    if (!resendApiKey) {
+      throw new Error('Email provider is not configured');
     }
-
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
     const {
       firstName,
@@ -105,30 +136,40 @@ Deno.serve(async (req) => {
       .join('\n');
 
     const subject = `New Quote Request from ${firstName} ${lastName}`;
-    const messageId = crypto.randomUUID();
 
-    // Enqueue into the transactional_emails queue for Lovable's built-in email system
-    const { error: enqueueError } = await supabase.rpc('enqueue_email', {
-      queue_name: 'transactional_emails',
-      payload: {
-        message_id: messageId,
-        to: 'info@aksteelservices.com',
-        from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
-        sender_domain: 'notify.aksteelservices.com',
-        subject,
-        html: emailHtml,
-        text: emailText,
-        purpose: 'transactional',
-        label: 'quote-request',
-        queued_at: new Date().toISOString(),
-      },
+    const primarySend = await sendViaResend({
+      apiKey: resendApiKey,
+      from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
+      to: 'info@aksteelservices.com',
+      replyTo: String(email),
+      subject,
+      html: emailHtml,
+      text: emailText,
     });
 
-    if (enqueueError) {
-      throw new Error(`Failed to enqueue email: ${enqueueError.message}`);
+    if (primarySend.ok) {
+      return new Response(JSON.stringify({ success: true }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
     }
 
-    return new Response(JSON.stringify({ success: true }), {
+    const fallbackSend = await sendViaResend({
+      apiKey: resendApiKey,
+      from: 'AK Steel Services <onboarding@resend.dev>',
+      to: 'info@aksteelservices.com',
+      replyTo: String(email),
+      subject,
+      html: emailHtml,
+      text: emailText,
+    });
+
+    if (!fallbackSend.ok) {
+      throw new Error(
+        `Email send failed. Primary (${primarySend.status}): ${primarySend.bodyText} | Fallback (${fallbackSend.status}): ${fallbackSend.bodyText}`
+      );
+    }
+
+    return new Response(JSON.stringify({ success: true, fallback: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
