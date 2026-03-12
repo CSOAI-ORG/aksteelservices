@@ -37,6 +37,23 @@ Deno.serve(async (req) => {
       </div>
     `;
 
+    const emailText = [
+      'New Quote Request from AK Steel Services Website',
+      `Name: ${firstName} ${lastName}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      company ? `Company: ${company}` : null,
+      service ? `Service: ${service}` : null,
+      location ? `Location: ${location}` : null,
+      timeline ? `Timeline: ${timeline}` : null,
+      budget ? `Budget: ${budget}` : null,
+      '',
+      'Project Details:',
+      message,
+      '',
+      'Submitted from aksteelservices.com',
+    ].filter(Boolean).join('\n');
+
     const messageId = crypto.randomUUID();
     const runId = crypto.randomUUID();
 
