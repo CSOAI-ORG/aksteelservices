@@ -137,10 +137,12 @@ Deno.serve(async (req) => {
 
     const subject = `New Quote Request from ${firstName} ${lastName}`;
 
+    const recipients = ['info@aksteelservices.com', 'nicholastempleman@gmail.com'];
+
     const primarySend = await sendViaResend({
       apiKey: resendApiKey,
       from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
-      to: 'info@aksteelservices.com',
+      to: recipients,
       replyTo: String(email),
       subject,
       html: emailHtml,
