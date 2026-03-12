@@ -37,7 +37,7 @@ async function sendViaResend({
     },
     body: JSON.stringify({
       from,
-      to: [to],
+      to: Array.isArray(to) ? to : [to],
       reply_to: replyTo,
       subject,
       html,
