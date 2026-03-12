@@ -155,12 +155,13 @@ Deno.serve(async (req) => {
       });
     }
 
+    // Fallback: onboarding@resend.dev can only send to the account owner's email
     const fallbackSend = await sendViaResend({
       apiKey: resendApiKey,
       from: 'AK Steel Services <onboarding@resend.dev>',
-      to: recipients,
+      to: 'nicholastempleman@gmail.com',
       replyTo: String(email),
-      subject,
+      subject: `[FALLBACK] ${subject}`,
       html: emailHtml,
       text: emailText,
     });
