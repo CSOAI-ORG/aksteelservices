@@ -67,7 +67,7 @@ Deno.serve(async (req) => {
         sender_domain: 'notify.aksteelservices.com',
         subject: `New Quote Request from ${firstName} ${lastName}`,
         html: emailHtml,
-        purpose: 'transactional',
+        text: emailText,
         label: 'quote-notification',
         queued_at: new Date().toISOString(),
       },
