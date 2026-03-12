@@ -1,5 +1,3 @@
-import { sendLovableEmail } from 'npm:@lovable.dev/email-js'
-
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers':
@@ -14,14 +12,51 @@ const escapeHtml = (value: string) =>
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#039;');
 
+async function sendViaResend({
+  apiKey,
+  from,
+  to,
+  replyTo,
+  subject,
+  html,
+  text,
+}: {
+  apiKey: string;
+  from: string;
+  to: string;
+  replyTo: string;
+  subject: string;
+  html: string;
+  text: string;
+}) {
+  const response = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from,
+      to: [to],
+      reply_to: replyTo,
+      subject,
+      html,
+      text,
+    }),
+  });
+
+  const bodyText = await response.text();
+  return { ok: response.ok, status: response.status, bodyText };
+}
+
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const apiKey = Deno.env.get('LOVABLE_API_KEY');
-    if (!apiKey) {
+    const resendApiKey = Deno.env.get('RESEND_API_KEY');
+    if (!resendApiKey) {
       throw new Error('Email provider is not configured');
     }
 
@@ -102,22 +137,39 @@ Deno.serve(async (req) => {
 
     const subject = `New Quote Request from ${firstName} ${lastName}`;
 
-    await sendLovableEmail(
-      {
-        run_id: crypto.randomUUID(),
-        to: 'info@aksteelservices.com',
-        from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
-        sender_domain: 'notify.aksteelservices.com',
-        subject,
-        html: emailHtml,
-        text: emailText,
-        purpose: 'transactional',
-        label: 'quote-request',
-      },
-      { apiKey, sendUrl: Deno.env.get('LOVABLE_SEND_URL') }
-    );
+    const primarySend = await sendViaResend({
+      apiKey: resendApiKey,
+      from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
+      to: 'info@aksteelservices.com',
+      replyTo: String(email),
+      subject,
+      html: emailHtml,
+      text: emailText,
+    });
 
-    return new Response(JSON.stringify({ success: true }), {
+    if (primarySend.ok) {
+      return new Response(JSON.stringify({ success: true }), {
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      });
+    }
+
+    const fallbackSend = await sendViaResend({
+      apiKey: resendApiKey,
+      from: 'AK Steel Services <onboarding@resend.dev>',
+      to: 'info@aksteelservices.com',
+      replyTo: String(email),
+      subject,
+      html: emailHtml,
+      text: emailText,
+    });
+
+    if (!fallbackSend.ok) {
+      throw new Error(
+        `Email send failed. Primary (${primarySend.status}): ${primarySend.bodyText} | Fallback (${fallbackSend.status}): ${fallbackSend.bodyText}`
+      );
+    }
+
+    return new Response(JSON.stringify({ success: true, fallback: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
