@@ -23,7 +23,7 @@ async function sendViaResend({
 }: {
   apiKey: string;
   from: string;
-  to: string;
+  to: string | string[];
   replyTo: string;
   subject: string;
   html: string;
@@ -37,7 +37,7 @@ async function sendViaResend({
     },
     body: JSON.stringify({
       from,
-      to: [to],
+      to: Array.isArray(to) ? to : [to],
       reply_to: replyTo,
       subject,
       html,
@@ -137,10 +137,12 @@ Deno.serve(async (req) => {
 
     const subject = `New Quote Request from ${firstName} ${lastName}`;
 
+    const recipients = ['info@aksteelservices.com', 'nicholastempleman@gmail.com'];
+
     const primarySend = await sendViaResend({
       apiKey: resendApiKey,
       from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
-      to: 'info@aksteelservices.com',
+      to: recipients,
       replyTo: String(email),
       subject,
       html: emailHtml,
@@ -156,7 +158,7 @@ Deno.serve(async (req) => {
     const fallbackSend = await sendViaResend({
       apiKey: resendApiKey,
       from: 'AK Steel Services <onboarding@resend.dev>',
-      to: 'info@aksteelservices.com',
+      to: recipients,
       replyTo: String(email),
       subject,
       html: emailHtml,
