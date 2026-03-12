@@ -38,10 +38,12 @@ Deno.serve(async (req) => {
     `;
 
     const messageId = crypto.randomUUID();
+    const runId = crypto.randomUUID();
 
     const { error } = await supabase.rpc('enqueue_email', {
       queue_name: 'transactional_emails',
       payload: {
+        run_id: runId,
         message_id: messageId,
         to: 'info@aksteelservices.com',
         from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
