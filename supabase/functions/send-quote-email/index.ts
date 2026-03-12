@@ -68,6 +68,7 @@ Deno.serve(async (req) => {
         subject: `New Quote Request from ${firstName} ${lastName}`,
         html: emailHtml,
         text: emailText,
+        purpose: 'transactional',
         label: 'quote-notification',
         queued_at: new Date().toISOString(),
       },
