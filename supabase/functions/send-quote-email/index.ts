@@ -158,7 +158,7 @@ Deno.serve(async (req) => {
     const fallbackSend = await sendViaResend({
       apiKey: resendApiKey,
       from: 'AK Steel Services <onboarding@resend.dev>',
-      to: 'info@aksteelservices.com',
+      to: recipients,
       replyTo: String(email),
       subject,
       html: emailHtml,
