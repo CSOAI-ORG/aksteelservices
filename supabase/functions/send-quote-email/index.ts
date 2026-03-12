@@ -23,7 +23,7 @@ async function sendViaResend({
 }: {
   apiKey: string;
   from: string;
-  to: string;
+  to: string | string[];
   replyTo: string;
   subject: string;
   html: string;
