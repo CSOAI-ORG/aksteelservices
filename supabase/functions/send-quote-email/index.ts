@@ -1,27 +1,19 @@
+import { createClient } from 'npm:@supabase/supabase-js@2'
+
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers':
-    'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
-};
-
-const escapeHtml = (value: string) =>
-  value
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#039;');
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type, x-supabase-client-platform, x-supabase-client-platform-version, x-supabase-client-runtime, x-supabase-client-runtime-version',
+}
 
 Deno.serve(async (req) => {
   if (req.method === 'OPTIONS') {
-    return new Response(null, { headers: corsHeaders });
+    return new Response(null, { headers: corsHeaders })
   }
 
   try {
-    const resendApiKey = Deno.env.get('RESEND_API_KEY');
-    if (!resendApiKey) {
-      throw new Error('Email provider is not configured');
-    }
+    const supabaseUrl = Deno.env.get('SUPABASE_URL')!
+    const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!
+    const supabase = createClient(supabaseUrl, supabaseServiceKey)
 
     const {
       firstName,
@@ -34,50 +26,27 @@ Deno.serve(async (req) => {
       timeline,
       budget,
       message,
-    } = await req.json();
-
-    if (!firstName || !lastName || !email || !phone || !message) {
-      return new Response(
-        JSON.stringify({ error: 'Missing required quote fields' }),
-        {
-          status: 400,
-          headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-        }
-      );
-    }
-
-    const safe = {
-      firstName: escapeHtml(String(firstName)),
-      lastName: escapeHtml(String(lastName)),
-      email: escapeHtml(String(email)),
-      phone: escapeHtml(String(phone)),
-      company: company ? escapeHtml(String(company)) : '',
-      service: service ? escapeHtml(String(service)) : '',
-      location: location ? escapeHtml(String(location)) : '',
-      timeline: timeline ? escapeHtml(String(timeline)) : '',
-      budget: budget ? escapeHtml(String(budget)) : '',
-      message: escapeHtml(String(message)),
-    };
+    } = await req.json()
 
     const emailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #333;">New Quote Request from AK Steel Services Website</h2>
         <table style="border-collapse: collapse; width: 100%;">
-          <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Name</td><td style="padding: 8px; border: 1px solid #ddd;">${safe.firstName} ${safe.lastName}</td></tr>
-          <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Email</td><td style="padding: 8px; border: 1px solid #ddd;"><a href="mailto:${safe.email}">${safe.email}</a></td></tr>
-          <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Phone</td><td style="padding: 8px; border: 1px solid #ddd;"><a href="tel:${safe.phone}">${safe.phone}</a></td></tr>
-          ${safe.company ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Company</td><td style="padding: 8px; border: 1px solid #ddd;">${safe.company}</td></tr>` : ''}
-          ${safe.service ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Service</td><td style="padding: 8px; border: 1px solid #ddd;">${safe.service}</td></tr>` : ''}
-          ${safe.location ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Location</td><td style="padding: 8px; border: 1px solid #ddd;">${safe.location}</td></tr>` : ''}
-          ${safe.timeline ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Timeline</td><td style="padding: 8px; border: 1px solid #ddd;">${safe.timeline}</td></tr>` : ''}
-          ${safe.budget ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Budget</td><td style="padding: 8px; border: 1px solid #ddd;">${safe.budget}</td></tr>` : ''}
+          <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Name</td><td style="padding: 8px; border: 1px solid #ddd;">${firstName} ${lastName}</td></tr>
+          <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Email</td><td style="padding: 8px; border: 1px solid #ddd;"><a href="mailto:${email}">${email}</a></td></tr>
+          <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Phone</td><td style="padding: 8px; border: 1px solid #ddd;"><a href="tel:${phone}">${phone}</a></td></tr>
+          ${company ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Company</td><td style="padding: 8px; border: 1px solid #ddd;">${company}</td></tr>` : ''}
+          ${service ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Service</td><td style="padding: 8px; border: 1px solid #ddd;">${service}</td></tr>` : ''}
+          ${location ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Location</td><td style="padding: 8px; border: 1px solid #ddd;">${location}</td></tr>` : ''}
+          ${timeline ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Timeline</td><td style="padding: 8px; border: 1px solid #ddd;">${timeline}</td></tr>` : ''}
+          ${budget ? `<tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Budget</td><td style="padding: 8px; border: 1px solid #ddd;">${budget}</td></tr>` : ''}
         </table>
         <h3>Project Details:</h3>
-        <p style="white-space: pre-wrap; background: #f5f5f5; padding: 16px; border-radius: 8px;">${safe.message}</p>
+        <p style="white-space: pre-wrap; background: #f5f5f5; padding: 16px; border-radius: 8px;">${message}</p>
         <hr />
         <p style="color: #888; font-size: 12px;">Submitted from aksteelservices.com</p>
       </div>
-    `;
+    `
 
     const emailText = [
       'New Quote Request from AK Steel Services Website',
@@ -91,49 +60,49 @@ Deno.serve(async (req) => {
       budget ? `Budget: ${budget}` : null,
       '',
       'Project Details:',
-      String(message),
+      message,
       '',
       'Submitted from aksteelservices.com',
-    ]
-      .filter(Boolean)
-      .join('\n');
+    ].filter(Boolean).join('\n')
 
-    const subject = `New Quote Request from ${firstName} ${lastName}`;
+    const messageId = crypto.randomUUID()
+    const runId =
+      req.headers.get('x-lovable-run-id') ||
+      req.headers.get('x-sb-request-id') ||
+      req.headers.get('sb-request-id') ||
+      req.headers.get('x-request-id') ||
+      messageId
 
-    const resendResponse = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${resendApiKey}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
+    const { error } = await supabase.rpc('enqueue_email', {
+      queue_name: 'transactional_emails',
+      payload: {
+        run_id: runId,
+        message_id: messageId,
+        to: 'info@aksteelservices.com',
         from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
-        to: ['info@aksteelservices.com'],
-        reply_to: String(email),
-        subject,
+        sender_domain: 'notify.aksteelservices.com',
+        subject: `New Quote Request from ${firstName} ${lastName}`,
         html: emailHtml,
         text: emailText,
-      }),
-    });
+        purpose: 'transactional',
+        label: 'quote-notification',
+        queued_at: new Date().toISOString(),
+      },
+    })
 
-    const resendBody = await resendResponse.text();
-    if (!resendResponse.ok) {
-      throw new Error(`Email send failed (${resendResponse.status}): ${resendBody}`);
+    if (error) {
+      console.error('Failed to enqueue email:', error)
+      throw new Error('Failed to queue email notification')
     }
 
     return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-    });
+    })
   } catch (error) {
-    console.error('send-quote-email error:', error);
-    return new Response(
-      JSON.stringify({
-        error: error instanceof Error ? error.message : 'Unknown error',
-      }),
-      {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      }
-    );
+    console.error('Error:', error)
+    return new Response(JSON.stringify({ error: error instanceof Error ? error.message : 'Unknown error' }), {
+      status: 500,
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+    })
   }
-});
+})
