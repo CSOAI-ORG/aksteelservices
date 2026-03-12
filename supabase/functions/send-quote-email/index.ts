@@ -104,6 +104,7 @@ Deno.serve(async (req) => {
 
     await sendLovableEmail(
       {
+        run_id: crypto.randomUUID(),
         to: 'info@aksteelservices.com',
         from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
         sender_domain: 'notify.aksteelservices.com',
