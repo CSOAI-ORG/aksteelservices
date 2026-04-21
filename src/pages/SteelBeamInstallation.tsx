@@ -343,8 +343,20 @@ const SteelBeamInstallation = () => {
         </div>
       </section>
 
-      {/* Quote Form Section */}
-      <section className="py-20">
+      {/* Commercial Steel Showcase */}
+      <CommercialShowcase
+        heading="Heavy-Duty Steel Beam Solutions"
+        subheading="Beyond residential RSJs — we install large-span universal beams, columns and frameworks for commercial projects across Kent & London."
+      />
+
+      {/* AEO FAQs */}
+      <AEOFaqSection
+        faqs={beamFaqs}
+        heading="Steel Beam Installation — Quick Answers"
+        eyebrow="Beam Install FAQs"
+        intro="The most common questions homeowners and builders ask before booking a steel beam installation."
+      />
+
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
