@@ -100,7 +100,7 @@ const SteelBeamInstallation = () => {
       <SEOHead
         title="Steel Beam Installation | Supply & Fit Steel Beams | Kent & London"
         description="Professional steel beam installation services. Universal beams, RSJ, columns, and channels. Supply and install across Kent & London. Call 01474 550531."
-        schemaData={createServiceSchema("Steel Beam Installation", "Professional steel beam supply and installation. Universal beams, RSJ, PFC channels, and columns fitted by certified steel erectors.")}
+        schemaData={combineSchemas(createServiceSchema("Steel Beam Installation", "Professional steel beam supply and installation. Universal beams, RSJ, PFC channels, and columns fitted by certified steel erectors."), createFAQSchema(beamFaqs))}
       />
       <Header />
       
