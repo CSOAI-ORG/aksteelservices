@@ -23,8 +23,17 @@ import TrustBar from "@/components/TrustBar";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SEOHead from "@/components/SEOHead";
+import CommercialShowcase from "@/components/CommercialShowcase";
+import AEOFaqSection from "@/components/AEOFaqSection";
 import { REAL_PHOTOS } from "@/assets/real-photos";
-import { createServiceSchema } from "@/lib/schema";
+import { createServiceSchema, createFAQSchema, combineSchemas } from "@/lib/schema";
+
+const beamFaqs = [
+  { q: "What's the difference between an RSJ and a UB?", a: "RSJ (Rolled Steel Joist) refers to traditional tapered-flange beams often used in older properties, while UB (Universal Beam) is the modern parallel-flange equivalent. We supply both — most new installs use UB to current British standards." },
+  { q: "How long does a typical steel beam install take?", a: "A standard single-beam installation (e.g. removing a load-bearing wall) usually takes 1–2 days from arrival on site. Larger multi-beam frames take 3–5 days depending on access and crane requirements." },
+  { q: "Do I need building regulations approval?", a: "Yes. Any structural beam installation requires Building Control sign-off. We work to your structural engineer's calculations and provide the install certificates needed for completion." },
+  { q: "Can you supply beams only without installation?", a: "Absolutely. We offer supply-only RSJ and UB beams cut to size with mill certificates, or full supply-and-install across Kent and London." },
+];
 
 const beamTypes = [
   {
