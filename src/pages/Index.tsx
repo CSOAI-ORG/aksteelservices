@@ -242,6 +242,158 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Commercial Steel Showcase */}
+      <section className="py-16 md:py-24 bg-secondary text-secondary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${REAL_PHOTOS.craneConstruction1.src})` }}
+          />
+        </div>
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-accent text-accent-foreground">Commercial & Industrial</Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Heavy-Duty <span className="text-accent">Commercial Steelwork</span>
+            </h2>
+            <p className="text-lg text-secondary-foreground/80 max-w-2xl mx-auto">
+              From warehouse mezzanines to industrial frameworks — we deliver large-scale steel projects on time and to spec across Kent, London & the South East.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              { icon: <Factory className="h-7 w-7" />, title: "Industrial Frameworks", desc: "Full structural steel frames for factories & plants" },
+              { icon: <Warehouse className="h-7 w-7" />, title: "Warehouse Mezzanines", desc: "Double your usable floor space with mezzanine flooring" },
+              { icon: <Layers className="h-7 w-7" />, title: "Steel Platforms", desc: "Access platforms, walkways & equipment supports" },
+              { icon: <HardHat className="h-7 w-7" />, title: "Site Installation", desc: "Onsite welding, crane lifting & turnkey installation" },
+            ].map((item, i) => (
+              <div key={i} className="bg-secondary-foreground/5 backdrop-blur-sm border border-secondary-foreground/10 rounded-xl p-6 hover:bg-secondary-foreground/10 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center text-accent mb-4">
+                  {item.icon}
+                </div>
+                <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                <p className="text-sm text-secondary-foreground/70 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-4 mb-10">
+            {[
+              { icon: <CheckCircle />, label: "BS EN 1090 Certified" },
+              { icon: <CheckCircle />, label: "CHAS & CSCS Approved" },
+              { icon: <CheckCircle />, label: "Full Public Liability £10M" },
+            ].map((b, i) => (
+              <div key={i} className="flex items-center gap-3 justify-center md:justify-start text-sm">
+                <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                <span className="font-medium">{b.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button variant="hero" size="lg" asChild>
+              <Link to="/commercial-steel-services">
+                Explore Commercial Services <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* AEO/SEO — Work We've Done & Areas We Cover */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <Badge variant="secondary" className="mb-4">
+              <Sparkles className="h-3 w-3 mr-1 inline" /> Work We've Completed
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Steel Services We've <span className="text-primary">Delivered Across Kent & London</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Hundreds of completed projects — here's the work we specialise in and the areas we cover most often.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            {[
+              {
+                title: "Steel Beams & RSJ Installation",
+                items: ["RSJ beams Kent & London", "Steel beam installation", "Load-bearing wall removal", "Universal beam supply & fit"],
+                link: "/steel-beam-installation",
+              },
+              {
+                title: "Loft Conversions & Extensions",
+                items: ["Loft conversion steel beams", "House extension steelwork", "Rear & wrap-around extensions", "Steel building extensions Kent"],
+                link: "/loft-conversion-steel-beams",
+              },
+              {
+                title: "Commercial & Structural",
+                items: ["Structural steel London", "Steel frame buildings Kent", "Mezzanine floor installation", "Industrial steel platforms"],
+                link: "/structural-steel-london",
+              },
+              {
+                title: "Onsite Fabrication & Welding",
+                items: ["Onsite steel fabrication", "Mobile welding services", "Emergency steel repair", "Architectural metalwork London"],
+                link: "/welding-services",
+              },
+              {
+                title: "Specialist Services",
+                items: ["Steel staircase installation", "Crane hire services", "3D modelling & CAD design", "Free site surveys"],
+                link: "/three-d-modeling-services",
+              },
+              {
+                title: "Local Areas We Serve",
+                items: ["Gravesend, Dartford & Medway", "Bromley, Bexley & Greenwich", "Central & South London", "Surrey & Essex borders"],
+                link: "/areas-we-serve",
+              },
+            ].map((cat, i) => (
+              <Card key={i} className="hover:shadow-lg transition-all duration-300 hover:border-primary/30 border-2">
+                <CardHeader>
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                    {cat.title}
+                  </CardTitle>
+                  <ul className="space-y-2 mt-3">
+                    {cat.items.map((item, j) => (
+                      <li key={j} className="text-sm text-muted-foreground flex items-start gap-2">
+                        <ArrowRight className="h-3 w-3 text-accent mt-1 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link to={cat.link} className="text-sm font-semibold text-primary hover:text-accent inline-flex items-center gap-1 mt-4 transition-colors">
+                    Learn more <ArrowRight className="h-3 w-3" />
+                  </Link>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+
+          {/* AEO Quick Answers */}
+          <div className="mt-16 max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Badge variant="secondary" className="mb-3">Quick Answers</Badge>
+              <h3 className="text-2xl md:text-3xl font-bold">Common Questions About Our Work</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {[
+                { q: "Do you work on residential and commercial projects?", a: "Yes — we handle everything from single RSJ beams in family homes to full industrial frameworks for warehouses and factories." },
+                { q: "Which areas do you cover?", a: "We're based in Gravesend, Kent and cover all of Kent, London, Essex, Surrey and the wider South East." },
+                { q: "Are your steel works certified?", a: "All structural work is BS EN 1090 and UKCA certified, with CHAS-approved health & safety standards." },
+                { q: "How quickly can you start a project?", a: "Most domestic jobs start within 2–3 weeks of survey. Emergency repairs are available 24/7." },
+              ].map((faq, i) => (
+                <div key={i} className="bg-muted/40 rounded-xl p-5 border border-border/50">
+                  <h4 className="font-bold text-base mb-2 text-foreground">{faq.q}</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Mid-page CTA */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <MidPageCTA serviceName="Steel Fabrication" />
