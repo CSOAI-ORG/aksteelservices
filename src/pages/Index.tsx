@@ -17,7 +17,7 @@ import MidPageCTA from "@/components/MidPageCTA";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, ArrowRight, MapPin, Home, Building, ClipboardList, Search, Wrench } from "lucide-react";
+import { CheckCircle, ArrowRight, MapPin, Home, Building, ClipboardList, Search, Wrench, Factory, Warehouse, HardHat, Layers, Sparkles } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import { Link } from "react-router-dom";
 
