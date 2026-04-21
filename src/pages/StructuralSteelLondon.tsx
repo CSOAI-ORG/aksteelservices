@@ -14,7 +14,16 @@ import { CheckCircle, Phone, Building, Home, Factory } from "lucide-react";
 import { REAL_PHOTOS } from "@/assets/real-photos";
 import LazyImage from "@/components/LazyImage";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { createServiceSchema } from "@/lib/schema";
+import CommercialShowcase from "@/components/CommercialShowcase";
+import AEOFaqSection from "@/components/AEOFaqSection";
+import { createServiceSchema, createFAQSchema, combineSchemas } from "@/lib/schema";
+
+const londonFaqs = [
+  { q: "Do you cover all London boroughs?", a: "Yes — we deliver structural steel across every London borough from Westminster and Camden to Greenwich, Bromley and beyond, with hiab vehicles equipped for restricted urban access." },
+  { q: "Can you work within London's noise and access restrictions?", a: "Absolutely. We schedule deliveries within permitted hours (typically 7am–5pm), navigate red routes, and have experience with congestion and ULEZ-compliant vehicles." },
+  { q: "Do you handle heritage and listed building steelwork?", a: "Yes. Many of our London projects are in conservation areas or involve listed buildings — we work to architect and conservation officer specifications, including traditional RSJ profiles where required." },
+  { q: "How quickly can you start a London project?", a: "Survey within 5–7 working days, fabrication usually 2–3 weeks from sign-off. Emergency structural works can be on site within 24 hours." },
+];
 
 const StructuralSteelLondon = () => {
   const projects = [
@@ -49,7 +58,7 @@ const StructuralSteelLondon = () => {
       <SEOHead
         title="Structural Steel Contractor London - All Boroughs | AK Steel Services"
         description="Professional structural steel contractor serving all London boroughs. Residential extensions, commercial buildings, heritage restorations. London building regulations compliance & planning support."
-        schemaData={createServiceSchema("Structural Steel Contractor London", "Professional structural steel contractor serving all London boroughs. Residential extensions, commercial buildings, heritage restorations.", ["London", "Westminster", "Camden", "Islington", "South East England"])}
+        schemaData={combineSchemas(createServiceSchema("Structural Steel Contractor London", "Professional structural steel contractor serving all London boroughs. Residential extensions, commercial buildings, heritage restorations.", ["London", "Westminster", "Camden", "Islington", "South East England"]), createFAQSchema(londonFaqs))}
         keywords="structural steel London, London steel contractor, steel frame construction London, residential steel extension London, commercial steel construction"
       />
       <Header />
@@ -264,6 +273,21 @@ const StructuralSteelLondon = () => {
           </div>
         </div>
       </section>
+
+      {/* Commercial Steel Showcase */}
+      <CommercialShowcase
+        heading="London Commercial Steelwork"
+        subheading="Beyond extensions — we deliver full commercial frameworks, mezzanines and industrial platforms across every London borough."
+      />
+
+      {/* AEO FAQs */}
+      <AEOFaqSection
+        faqs={londonFaqs}
+        heading="Structural Steel in London — Quick Answers"
+        eyebrow="London FAQs"
+        intro="What London architects, contractors and homeowners ask us most often."
+        variant="muted"
+      />
 
       {/* Quote Form */}
       <section className="py-20 bg-muted/30">

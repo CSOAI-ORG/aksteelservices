@@ -5,6 +5,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
+import CommercialShowcase from "@/components/CommercialShowcase";
+import AEOFaqSection from "@/components/AEOFaqSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -240,6 +242,21 @@ const LoftConversionSteelBeams = () => {
           </div>
         </div>
       </section>
+
+      {/* Commercial Steel Showcase */}
+      <CommercialShowcase
+        heading="More Than Loft Conversions"
+        subheading="We also handle full commercial steelwork — warehouse mezzanines, industrial frames and large-span installs across the South East."
+      />
+
+      {/* AEO FAQs */}
+      <AEOFaqSection
+        faqs={faqs}
+        heading="Loft Conversion Steel Beams — Quick Answers"
+        eyebrow="Loft FAQs"
+        intro="Plain-English answers to the most common loft conversion steel beam questions."
+        variant="muted"
+      />
 
       {/* Quote Form */}
       <section id="get-quote" className="py-20 bg-muted/50">

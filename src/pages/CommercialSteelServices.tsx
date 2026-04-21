@@ -5,12 +5,21 @@ import SEOHead from "@/components/SEOHead";
 import MidPageCTA from "@/components/MidPageCTA";
 import QuickQuoteForm from "@/components/QuickQuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CommercialShowcase from "@/components/CommercialShowcase";
+import AEOFaqSection from "@/components/AEOFaqSection";
 import { Building, ArrowRight, CheckCircle, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { createServiceSchema } from "@/lib/schema";
+import { createServiceSchema, createFAQSchema, combineSchemas } from "@/lib/schema";
+
+const commercialFaqs = [
+  { q: "Do you work with main contractors and project managers?", a: "Yes — we regularly act as the steelwork sub-contractor on commercial builds, working to programme with main contractors, QSs and architects across Kent and London." },
+  { q: "Are your fabrications BS EN 1090 certified?", a: "All structural fabrications are produced under BS EN 1090 with full CE/UKCA marking and traceable mill certificates supplied with every delivery." },
+  { q: "Can you handle large industrial frameworks?", a: "Absolutely — from 50t warehouse portal frames to multi-storey industrial structures. We manage 3D modelling, fabrication, transport and site install." },
+  { q: "Do you offer 24/7 emergency commercial repairs?", a: "Yes. Structural failures, vehicle impact damage and urgent welding repairs — our emergency team is on call 24/7 across the South East." },
+];
 
 const services = [
   {
@@ -51,7 +60,7 @@ const CommercialSteelServices = () => {
       <SEOHead
         title="Commercial & Industrial Steel Services | AK Steel Kent & London"
         description="Steel frameworks, mezzanine floors, industrial platforms & structural steel for commercial projects. BS EN 1090 certified. Serving Kent & London."
-        schemaData={createServiceSchema("Commercial & Industrial Steel Services", "Steel frameworks, mezzanine floors, industrial platforms and structural steel for commercial projects. BS EN 1090 certified.")}
+        schemaData={combineSchemas(createServiceSchema("Commercial & Industrial Steel Services", "Steel frameworks, mezzanine floors, industrial platforms and structural steel for commercial projects. BS EN 1090 certified."), createFAQSchema(commercialFaqs))}
       />
       <StickyCallBar />
       <Header />
@@ -125,6 +134,22 @@ const CommercialSteelServices = () => {
           </div>
         </div>
       </section>
+
+      {/* Commercial Steel Showcase */}
+      <CommercialShowcase
+        heading="The Full Commercial Steel Stack"
+        subheading="Frameworks, mezzanines, platforms and onsite installation — one team handles your whole project from drawing to handover."
+        ctaLink="/contact"
+        ctaLabel="Discuss Your Project"
+      />
+
+      {/* AEO FAQs */}
+      <AEOFaqSection
+        faqs={commercialFaqs}
+        heading="Commercial Steelwork — Quick Answers"
+        eyebrow="Contractor FAQs"
+        intro="What main contractors, project managers and facility owners need to know before working with us."
+      />
 
       {/* Quote */}
       <section className="py-16 bg-muted/50">

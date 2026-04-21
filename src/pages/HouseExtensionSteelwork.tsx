@@ -5,12 +5,22 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
+import CommercialShowcase from "@/components/CommercialShowcase";
+import AEOFaqSection from "@/components/AEOFaqSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, ArrowRight, Home, Building2, Maximize, PoundSterling } from "lucide-react";
 import { Link } from "react-router-dom";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createFAQSchema, combineSchemas } from "@/lib/schema";
+
+const extensionFaqs = [
+  { q: "How big a beam do I need for a rear extension?", a: "It depends on the span and load above. For a typical 4–5m rear extension supporting a single storey, a 203x102 UB is common. Always work to your structural engineer's calculations — we'll fabricate exactly to spec." },
+  { q: "Can I open up bi-fold doors with a steel beam?", a: "Yes. We regularly install steel lintels and goalpost frames for 3m, 4m and 5m bi-fold openings — including the padstones and bearing plates." },
+  { q: "How long does extension steelwork take to install?", a: "Most single-storey rear extension steel packages are installed in 1–2 days. Wrap-around or double-storey jobs typically take 3–5 days." },
+  { q: "Do you supply only or do you fit too?", a: "Both. Builders often ask us for supply-only beams cut to size; homeowners usually want full supply-and-install with crane hire arranged." },
+];
 
 const HouseExtensionSteelwork = () => {
   const schemaData = {
@@ -66,7 +76,7 @@ const HouseExtensionSteelwork = () => {
         title="House Extension Steelwork Kent & London | Steel Beams for Extensions"
         description="Expert house extension steelwork across Kent & London. Steel beams for rear extensions, side returns, bi-fold doors. Building reg compliant. Call 01474 550531."
         keywords="house extension steelwork, steel beams extension, rear extension steel, side return steelwork, extension steel Kent, extension steel London"
-        schemaData={schemaData}
+        schemaData={combineSchemas(schemaData, createFAQSchema(extensionFaqs))}
       />
       <Header />
       <Breadcrumbs />
@@ -277,6 +287,20 @@ const HouseExtensionSteelwork = () => {
           </div>
         </div>
       </section>
+
+      {/* Commercial Steel Showcase */}
+      <CommercialShowcase
+        heading="Beyond Home Extensions"
+        subheading="We also deliver large commercial steelwork — frameworks, mezzanines and industrial platforms across Kent, London & the South East."
+      />
+
+      {/* AEO FAQs */}
+      <AEOFaqSection
+        faqs={extensionFaqs}
+        heading="House Extension Steelwork — Quick Answers"
+        eyebrow="Extension FAQs"
+        intro="The questions homeowners and builders ask us most often about extension steelwork."
+      />
 
       {/* Quote Form */}
       <section id="get-quote" className="py-20 bg-muted/50">
