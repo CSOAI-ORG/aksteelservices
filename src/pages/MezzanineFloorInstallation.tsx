@@ -5,12 +5,22 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import QuoteForm from "@/components/QuoteForm";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import LazyImage from "@/components/LazyImage";
+import CommercialShowcase from "@/components/CommercialShowcase";
+import AEOFaqSection from "@/components/AEOFaqSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CheckCircle, Phone, ArrowRight, Building, Warehouse, Users, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import { REAL_PHOTOS } from "@/assets/real-photos";
+import { createFAQSchema, combineSchemas } from "@/lib/schema";
+
+const mezzanineFaqs = [
+  { q: "Do I need planning permission for a mezzanine floor?", a: "Most mezzanines under 200m² in industrial premises don't require full planning, but Building Regulations approval is needed. We help with all documentation as part of the install." },
+  { q: "How much weight can a mezzanine hold?", a: "Our mezzanines are designed from 3.5kN/m² (light office/storage) up to 7.5kN/m² (heavy pallet storage). Load capacity is engineered to your specific use case." },
+  { q: "How long does mezzanine installation take?", a: "Typical 100–300m² industrial mezzanines are installed in 1–2 weeks from delivery, with minimal disruption to your operations. Larger jobs scale accordingly." },
+  { q: "Can a mezzanine be removed later?", a: "Yes — our bolted steel mezzanines are fully demountable. Useful if you lease your premises or want to reconfigure later." },
+];
 
 const MezzanineFloorInstallation = () => {
   const schemaData = {
@@ -77,7 +87,7 @@ const MezzanineFloorInstallation = () => {
         title="Mezzanine Floor Installation Kent & London | Industrial Mezzanines"
         description="Professional mezzanine floor installation across Kent & London. Warehouse, office, and retail mezzanines. Free site survey. Call 01474 550531 for a quote."
         keywords="mezzanine floor installation, industrial mezzanine Kent, warehouse mezzanine London, office mezzanine, mezzanine floor design"
-        schemaData={schemaData}
+        schemaData={combineSchemas(schemaData, createFAQSchema(mezzanineFaqs))}
       />
       <Header />
       <Breadcrumbs />
@@ -269,6 +279,20 @@ const MezzanineFloorInstallation = () => {
           </div>
         </div>
       </section>
+
+      {/* Commercial Steel Showcase */}
+      <CommercialShowcase
+        heading="Full-Service Commercial Steelwork"
+        subheading="Mezzanines are just one part of what we do — we also build industrial frameworks, access platforms and onsite welded structures."
+      />
+
+      {/* AEO FAQs */}
+      <AEOFaqSection
+        faqs={mezzanineFaqs}
+        heading="Mezzanine Floors — Quick Answers"
+        eyebrow="Mezzanine FAQs"
+        intro="Common questions facility managers and business owners ask before installing a mezzanine."
+      />
 
       {/* Quote Form */}
       <section id="get-quote" className="py-20 bg-background">
