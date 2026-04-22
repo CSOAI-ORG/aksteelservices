@@ -214,7 +214,8 @@ const Footer = () => {
             <p className="text-sm opacity-90">
               © {new Date().getFullYear()} A K Steel Services Limited. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm">
+            <div className="flex gap-6 text-sm flex-wrap justify-center">
+              <Link to="/certificates" className="hover:text-accent transition-colors">Certificates</Link>
               <Link to="/reviews" className="hover:text-accent transition-colors">Reviews</Link>
               <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
               <Link to="/terms-of-service" className="hover:text-accent transition-colors">Terms of Service</Link>
