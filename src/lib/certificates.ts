@@ -29,8 +29,27 @@ export const certificates = [
 ] as const;
 
 export const certificationHighlights = [
-  "BS EN 1090 factory production control certification",
-  "UKCA-ready structural steel compliance",
-  "Execution class capability up to EXC 2",
-  "Verified fabrication standards for commercial and residential steelwork",
+  {
+    title: "Independently Audited",
+    description: "Our welding procedures, materials traceability and quality control are audited by SCCS — an SCCS-approved certification body.",
+  },
+  {
+    title: "Building Control Ready",
+    description: "BS EN 1090 + UKCA marking is a legal requirement for structural steel in the UK. Our steel is signed off without delays.",
+  },
+  {
+    title: "Execution Class EXC 2",
+    description: "Suitable for residential extensions, loft conversions, mezzanines, commercial frames and most structural applications.",
+  },
+  {
+    title: "Full Traceability",
+    description: "Every beam comes with mill certificates and a Declaration of Performance (DoP) — required by structural engineers and building control.",
+  },
+] as const;
+
+export const certificationStats = [
+  { value: "BS EN 1090", label: "Certified Standard" },
+  { value: "EXC 2", label: "Execution Class" },
+  { value: "UKCA", label: "Marked & Compliant" },
+  { value: "2029", label: "Valid Until" },
 ] as const;
