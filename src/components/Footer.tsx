@@ -179,21 +179,32 @@ const Footer = () => {
 
         {/* Certification Logos */}
         <div className="border-t border-secondary-hover mt-12 pt-8">
+          <p className="text-center text-sm opacity-80 mb-4">
+            Click a logo to view our <Link to="/certificates" className="text-accent hover:underline font-medium">certifications</Link>
+          </p>
           <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
-            <div className="bg-white rounded-lg p-3">
-              <img 
-                src="/images/bs-en-1090-logo.jpg" 
-                alt="BS EN 1090 certified — SCCS and UKAS Product Certification" 
+            <Link
+              to="/certificates"
+              className="bg-white rounded-lg p-3 hover:shadow-lg transition-shadow"
+              aria-label="View BS EN 1090 certificate"
+            >
+              <img
+                src="/images/bs-en-1090-logo.jpg"
+                alt="BS EN 1090 certified — SCCS and UKAS Product Certification"
                 className="h-12 md:h-16 w-auto"
               />
-            </div>
-            <div className="bg-white rounded-lg p-3">
-              <img 
-                src="/images/ukca-logo.png" 
-                alt="UKCA — UK Conformity Assessed certification" 
+            </Link>
+            <Link
+              to="/certificates"
+              className="bg-white rounded-lg p-3 hover:shadow-lg transition-shadow"
+              aria-label="View UKCA certificate"
+            >
+              <img
+                src="/images/ukca-logo.png"
+                alt="UKCA — UK Conformity Assessed certification"
                 className="h-12 md:h-16 w-auto"
               />
-            </div>
+            </Link>
           </div>
         </div>
 
