@@ -139,9 +139,9 @@ Deno.serve(async (req) => {
 
     const recipients = ['info@aksteelservices.com', 'nicholastempleman@gmail.com'];
 
-    const primarySend = await sendViaResend({
+    const send = await sendViaResend({
       apiKey: resendApiKey,
-      from: 'AK Steel Services <noreply@notify.aksteelservices.com>',
+      from: 'AK Steel Services <onboarding@resend.dev>',
       to: recipients,
       replyTo: String(email),
       subject,
@@ -149,30 +149,11 @@ Deno.serve(async (req) => {
       text: emailText,
     });
 
-    if (primarySend.ok) {
-      return new Response(JSON.stringify({ success: true }), {
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      });
+    if (!send.ok) {
+      throw new Error(`Email send failed (${send.status}): ${send.bodyText}`);
     }
 
-    // Fallback: onboarding@resend.dev can only send to the account owner's email
-    const fallbackSend = await sendViaResend({
-      apiKey: resendApiKey,
-      from: 'AK Steel Services <onboarding@resend.dev>',
-      to: 'nicholastempleman@gmail.com',
-      replyTo: String(email),
-      subject: `[FALLBACK] ${subject}`,
-      html: emailHtml,
-      text: emailText,
-    });
-
-    if (!fallbackSend.ok) {
-      throw new Error(
-        `Email send failed. Primary (${primarySend.status}): ${primarySend.bodyText} | Fallback (${fallbackSend.status}): ${fallbackSend.bodyText}`
-      );
-    }
-
-    return new Response(JSON.stringify({ success: true, fallback: true }), {
+    return new Response(JSON.stringify({ success: true }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     });
   } catch (error) {
