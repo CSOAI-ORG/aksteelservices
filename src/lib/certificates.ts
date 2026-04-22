@@ -26,6 +26,18 @@ export const certificates = [
     previewImage: "/images/certificates/ak-steel-fpc-certificate-preview.jpg",
     verifyUrl: "https://www.steelcertification.co.uk",
   },
+  {
+    title: "Factory Production Control Certificate Copy",
+    issuer: "Steel Construction Certification Scheme Ltd",
+    reference: "2273 – CPR – 4527",
+    standard: "BS EN 1090-1:2009+A1:2011",
+    issuedOn: "29 January 2026",
+    expiresOn: "29 January 2029",
+    scope: "Uploaded copy of the current AK Steel Services Limited Factory Production Control certificate.",
+    pdfUrl: "/certificates/ak-steel-fpc-certificate-2029-copy.pdf",
+    previewImage: "/images/certificates/ak-steel-fpc-certificate-copy-preview.jpg",
+    verifyUrl: "https://www.steelcertification.co.uk",
+  },
 ] as const;
 
 export const certificationHighlights = [
