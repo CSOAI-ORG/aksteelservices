@@ -184,7 +184,7 @@ const Footer = () => {
         {/* Certification Logos */}
         <div className="border-t border-secondary-hover mt-12 pt-8">
           <p className="text-center text-sm opacity-80 mb-4">
-            Click a logo to view our <Link to="/certificates" className="text-accent hover:underline font-medium">certifications</Link>
+            <Link to="/certificates" className="text-accent hover:underline font-medium">Click here to view our certifications page</Link>
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
             <Link
