@@ -9,8 +9,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
-  Download,
-  ExternalLink,
   ShieldCheck,
   CheckCircle,
   Award,
@@ -31,13 +29,11 @@ import {
 import { Link } from "react-router-dom";
 
 const Certificates = () => {
-  const primaryCert = certificates[0];
-
   return (
     <div className="min-h-screen pb-16 md:pb-0">
       <SEOHead
         title="Certifications & Accreditations | AK Steel Services"
-        description="View AK Steel Services accreditations including BS EN 1090 Factory Production Control and UKCA. Download our latest certificates."
+        description="View AK Steel Services accreditations including BS EN 1090 Factory Production Control and UKCA marking."
         keywords="AK Steel certificates, BS EN 1090, UKCA, factory production control, steel fabrication accreditation"
       />
       <Header />
@@ -49,7 +45,7 @@ const Certificates = () => {
             Certified <span className="text-accent">Steel Fabrication</span> You Can Trust
           </>
         }
-        description="BS EN 1090 + UKCA certified — the legal standard for structural steel in the UK. Download our current certificates below."
+        description="BS EN 1090 + UKCA certified — the legal standard for structural steel in the UK. View our current certificates below."
         variant="gradient"
       />
 
@@ -79,16 +75,12 @@ const Certificates = () => {
           </p>
           <div className="flex flex-wrap justify-center items-center gap-6">
             {accreditationLogos.map((logo) => (
-              <a
+              <div
                 key={logo.name}
-                href={primaryCert?.pdfUrl ?? "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-background rounded-lg p-4 shadow-sm border border-border/50 hover:shadow-md hover:border-primary/40 transition-all"
-                aria-label={`Open ${logo.name} certificate`}
+                className="bg-background rounded-lg p-4 shadow-sm border border-border/50"
               >
                 <img src={logo.image} alt={logo.alt} className="h-14 md:h-20 w-auto" />
-              </a>
+              </div>
             ))}
           </div>
         </div>
@@ -106,7 +98,7 @@ const Certificates = () => {
               Current <span className="text-primary">Certificates</span>
             </h2>
             <p className="text-muted-foreground">
-              Click any certificate to view or download the full PDF.
+              View our current accreditations below.
             </p>
           </div>
 
@@ -167,18 +159,6 @@ const Certificates = () => {
                     </div>
                   </div>
 
-                  <div className="flex flex-wrap gap-2 pt-1">
-                    <Button asChild variant="hero" size="sm">
-                      <a href={cert.pdfUrl} target="_blank" rel="noopener noreferrer">
-                        <Download className="h-4 w-4 mr-2" /> Download PDF
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline" size="sm">
-                      <a href={cert.verifyUrl} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" /> Verify Online
-                      </a>
-                    </Button>
-                  </div>
                 </CardContent>
               </Card>
             ))}
