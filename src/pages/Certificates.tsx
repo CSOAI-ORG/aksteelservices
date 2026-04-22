@@ -116,12 +116,7 @@ const Certificates = () => {
                 key={cert.title}
                 className="overflow-hidden hover:shadow-xl transition-shadow border-2 hover:border-primary/30"
               >
-                <a
-                  href={cert.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block bg-muted relative group"
-                >
+                <div className="block bg-muted relative">
                   <img
                     src={cert.previewImage}
                     alt={`${cert.title} preview`}
@@ -130,12 +125,7 @@ const Certificates = () => {
                   <div className="absolute top-3 right-3 bg-accent text-accent-foreground text-xs font-bold px-3 py-1 rounded-full shadow-md">
                     Valid until {cert.expiresOn.split(" ").slice(-1)[0]}
                   </div>
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors flex items-center justify-center">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-background text-foreground px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      Click to view PDF
-                    </span>
-                  </div>
-                </a>
+                </div>
                 <CardHeader>
                   <div className="flex items-center gap-2 mb-2">
                     <ShieldCheck className="h-5 w-5 text-primary" />
