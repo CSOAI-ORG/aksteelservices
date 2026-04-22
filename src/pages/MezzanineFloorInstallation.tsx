@@ -115,7 +115,7 @@ const MezzanineFloorInstallation = () => {
                     Call 01474 550531
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold" asChild>
                   <Link to="/contact">Free Site Survey</Link>
                 </Button>
               </div>
