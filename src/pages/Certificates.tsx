@@ -266,7 +266,7 @@ const Certificates = () => {
             ready, insurance approved.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button asChild variant="hero" size="lg" className="bg-white text-primary hover:bg-white/90">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold">
               <Link to="/contact">Get Your Free Quote</Link>
             </Button>
             <Button
