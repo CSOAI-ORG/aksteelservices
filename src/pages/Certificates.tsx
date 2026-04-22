@@ -197,14 +197,14 @@ const Certificates = () => {
       </section>
 
       {/* Missing documents notice */}
-      <section className="py-12 border-y border-amber-500/30 bg-amber-50 dark:bg-amber-950/20">
+      <section className="py-12 border-y border-accent/30 bg-accent/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <div className="flex flex-col md:flex-row gap-6 items-start">
-            <div className="bg-amber-500/15 rounded-full p-3 flex-shrink-0">
-              <AlertTriangle className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+            <div className="bg-accent/15 rounded-full p-3 flex-shrink-0">
+              <AlertTriangle className="h-6 w-6 text-accent" />
             </div>
             <div className="flex-1">
-              <Badge variant="secondary" className="mb-3 bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30">
+              <Badge variant="secondary" className="mb-3 bg-accent/15 text-accent border-accent/30">
                 Awaiting Additional Documents
               </Badge>
               <h2 className="text-xl md:text-2xl font-bold mb-3">
@@ -216,11 +216,11 @@ const Certificates = () => {
               </p>
               <ul className="space-y-2 mb-6 text-sm">
                 <li className="flex items-start gap-2">
-                  <FileCheck className="h-4 w-4 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
+                  <FileCheck className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                   <span><strong>AK Steel Welding Certificate</strong> — issued specifically to AK Steel Services Limited (PDF)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <FileCheck className="h-4 w-4 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
+                  <FileCheck className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" />
                   <span><strong>Additional accreditation</strong> — e.g. CHAS, ISO 9001, or Public Liability Insurance (PDF)</span>
                 </li>
               </ul>
