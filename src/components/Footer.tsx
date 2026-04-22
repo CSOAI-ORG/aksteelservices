@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import OpenClosedBadge from "@/components/OpenClosedBadge";
 import QuickQuoteForm from "@/components/QuickQuoteForm";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const serviceAreas = [
     "Gravesend", "Canterbury", "Maidstone", "Dartford", "Medway",
     "London", "Bromley", "Surrey", "Essex", "Sussex", "Kent"
