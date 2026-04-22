@@ -183,10 +183,10 @@ const Footer = () => {
 
         {/* Certification Logos */}
         <div className="border-t border-secondary-hover mt-12 pt-8">
-          <p className="text-center text-sm opacity-80 mb-4">
-            <Link to="/certificates" className="text-accent hover:underline font-medium">Click here to view our certifications page</Link>
+          <p className="text-center text-xs uppercase tracking-wider opacity-70 mb-4 font-semibold">
+            Fully Accredited & Independently Audited
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-4 mb-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 mb-4">
             <Link
               to="/certificates"
               className="bg-white rounded-lg p-3 hover:shadow-lg transition-shadow"
@@ -210,15 +210,20 @@ const Footer = () => {
               />
             </Link>
           </div>
+          <p className="text-center text-sm opacity-80 mb-8">
+            <Link to="/certificates" className="text-accent hover:underline font-medium">
+              View our certifications →
+            </Link>
+          </p>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-secondary-hover pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm opacity-90">
+            <p className="text-sm opacity-90 text-center md:text-left">
               © {new Date().getFullYear()} A K Steel Services Limited. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm flex-wrap justify-center">
+            <div className="flex gap-x-6 gap-y-2 text-sm flex-wrap justify-center">
               <Link to="/certificates" className="hover:text-accent transition-colors">Certificates</Link>
               <Link to="/reviews" className="hover:text-accent transition-colors">Reviews</Link>
               <Link to="/privacy-policy" className="hover:text-accent transition-colors">Privacy Policy</Link>
