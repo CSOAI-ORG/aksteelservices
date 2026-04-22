@@ -1,11 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import OpenClosedBadge from "@/components/OpenClosedBadge";
 import QuickQuoteForm from "@/components/QuickQuoteForm";
 
 const Footer = () => {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
   const serviceAreas = [
     "Gravesend", "Canterbury", "Maidstone", "Dartford", "Medway",
     "London", "Bromley", "Surrey", "Essex", "Sussex", "Kent"
@@ -43,18 +45,20 @@ const Footer = () => {
 
   return (
     <footer className="bg-secondary text-secondary-foreground">
-      {/* Mini Quote Form Banner */}
-      <div className="bg-secondary-hover border-b border-border/20">
-        <div className="container mx-auto px-4 py-10">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-accent mb-2">Get a Quick Quote</h3>
-              <p className="text-secondary-foreground/80 text-sm">Fill in below and we'll get back to you within 2 hours</p>
+      {/* Mini Quote Form Banner — hidden on home page */}
+      {!isHome && (
+        <div className="bg-secondary-hover border-b border-border/20">
+          <div className="container mx-auto px-4 py-10">
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-2xl font-bold text-accent mb-2">Get a Quick Quote</h3>
+                <p className="text-secondary-foreground/80 text-sm">Fill in below and we'll get back to you within 2 hours</p>
+              </div>
+              <QuickQuoteForm variant="footer" />
             </div>
-            <QuickQuoteForm variant="footer" />
           </div>
         </div>
-      </div>
+      )}
 
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
