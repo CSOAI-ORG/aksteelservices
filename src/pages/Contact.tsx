@@ -31,6 +31,7 @@ import { useToast } from "@/hooks/use-toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BrandLogo from "@/components/BrandLogo";
 import { supabase } from "@/integrations/supabase/client";
+import { sendQuoteNotification } from "@/lib/sendQuoteNotification";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -289,11 +290,22 @@ const Contact = () => {
                   
                   if (error) throw error;
 
-                  const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
-                    body: { firstName, lastName, email, phone, company, service: serviceVal, location, timeline: timelineVal, budget: budgetVal, message },
+                  const notify = await sendQuoteNotification({
+                    firstName,
+                    lastName,
+                    email,
+                    phone,
+                    company: company || undefined,
+                    service: serviceVal || undefined,
+                    location: location || undefined,
+                    timeline: timelineVal || undefined,
+                    budget: budgetVal || undefined,
+                    message,
                   });
 
-                  if (emailError) throw emailError;
+                  if (!notify.ok) {
+                    console.warn('Quote email notification failed', notify.errors);
+                  }
                   
                   toast({
                     title: "Quote Request Sent!",
