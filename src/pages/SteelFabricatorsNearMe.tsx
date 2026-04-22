@@ -106,7 +106,7 @@ const SteelFabricatorsNearMe = () => {
                     Call 01474 550531
                   </a>
                 </Button>
-                <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+                <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold" asChild>
                   <Link to="/contact">Get Free Quote</Link>
                 </Button>
               </div>
@@ -260,7 +260,7 @@ const SteelFabricatorsNearMe = () => {
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white/20" asChild>
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold" asChild>
                 <a href="tel:01474550531">Call to Arrange Visit</a>
               </Button>
             </div>

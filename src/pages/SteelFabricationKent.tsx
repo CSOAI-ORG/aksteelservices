@@ -63,7 +63,7 @@ const SteelFabricationKent = () => {
               <Button variant="hero" size="lg">
                 Get Free Quote
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary" asChild>
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold" asChild>
                 <a href="tel:01474550531" className="flex items-center gap-2">
                   <Phone className="h-5 w-5" />
                   Call 01474 550531

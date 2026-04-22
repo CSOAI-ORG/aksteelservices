@@ -79,7 +79,7 @@ const EmergencySteelRepair = () => {
               <Button variant="secondary" size="lg" className="bg-white text-accent hover:bg-white/90">
                 Call Emergency Line
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-accent" asChild>
+              <Button size="lg" className="bg-white text-accent hover:bg-white/90 font-semibold" asChild>
                 <a href="tel:01474550531" className="flex items-center gap-2">
                   <Phone className="h-5 w-5" />
                   01474 550531

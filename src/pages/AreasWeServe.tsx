@@ -86,7 +86,7 @@ const AreasWeServe = () => {
                   Find Your Area
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10" asChild>
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90 font-semibold" asChild>
                 <a href="tel:01474550531">
                   <Phone className="h-5 w-5 mr-2" />
                   Call: 01474 550531
