@@ -18,6 +18,9 @@ import {
   FileCheck,
   Building2,
   Phone,
+  AlertTriangle,
+  Mail,
+  Upload,
 } from "lucide-react";
 import {
   certificates,
