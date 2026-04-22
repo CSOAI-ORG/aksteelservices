@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+
 import { Phone, ShieldCheck, Star } from "lucide-react";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import QuickQuoteForm from "@/components/QuickQuoteForm";
@@ -73,9 +73,6 @@ const NewHeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           {/* Left content */}
           <div className="space-y-6 text-secondary-foreground max-w-xl">
-            <Badge className="bg-accent/90 text-accent-foreground w-fit font-semibold text-xs tracking-wide px-3 py-1">
-              🔥 37 Quotes Requested This Week
-            </Badge>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] font-extrabold leading-[1.1] tracking-tight">
               Steel Fabrication &amp; Structural Steel in{" "}
