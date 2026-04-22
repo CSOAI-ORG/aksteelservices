@@ -196,6 +196,60 @@ const Certificates = () => {
         </div>
       </section>
 
+      {/* Missing documents notice */}
+      <section className="py-12 border-y border-amber-500/30 bg-amber-50 dark:bg-amber-950/20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <div className="flex flex-col md:flex-row gap-6 items-start">
+            <div className="bg-amber-500/15 rounded-full p-3 flex-shrink-0">
+              <AlertTriangle className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div className="flex-1">
+              <Badge variant="secondary" className="mb-3 bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30">
+                Awaiting Additional Documents
+              </Badge>
+              <h2 className="text-xl md:text-2xl font-bold mb-3">
+                We're Updating This Page With More Certificates
+              </h2>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                The certificate above is current and verified. We're also working on publishing the
+                following AK Steel Services Limited documents:
+              </p>
+              <ul className="space-y-2 mb-6 text-sm">
+                <li className="flex items-start gap-2">
+                  <FileCheck className="h-4 w-4 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
+                  <span><strong>AK Steel Welding Certificate</strong> — issued specifically to AK Steel Services Limited (PDF)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <FileCheck className="h-4 w-4 text-amber-600 dark:text-amber-400 mt-0.5 flex-shrink-0" />
+                  <span><strong>Additional accreditation</strong> — e.g. CHAS, ISO 9001, or Public Liability Insurance (PDF)</span>
+                </li>
+              </ul>
+              <p className="text-sm text-muted-foreground mb-5">
+                Need a copy now, or are you a team member with the original PDFs to upload? Get in
+                touch and we'll send or publish them right away.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <Button asChild variant="hero" size="sm">
+                  <Link to="/contact">
+                    <Upload className="h-4 w-4 mr-2" /> Submit / Request Documents
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <a href="mailto:info@aksteelservices.com?subject=Certificates%20-%20AK%20Steel%20Services">
+                    <Mail className="h-4 w-4 mr-2" /> Email Documents
+                  </a>
+                </Button>
+                <Button asChild variant="outline" size="sm">
+                  <a href="tel:+447777034269">
+                    <Phone className="h-4 w-4 mr-2" /> Call 07777 034269
+                  </a>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Highlights — what this means for you */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
