@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Phone, ArrowRight, CheckCircle } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { sendQuoteNotification } from "@/lib/sendQuoteNotification";
 import { useToast } from "@/hooks/use-toast";
 
 interface QuickQuoteFormProps {
@@ -35,19 +36,17 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
 
       if (error) throw error;
 
-      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
-        body: {
-          firstName: name.split(" ")[0] || name,
-          lastName: name.split(" ").slice(1).join(" ") || "-",
-          email: "quick-quote@placeholder.com",
-          phone,
-          message: service || "Quick quote request",
-          service: service || "General Enquiry",
-        },
+      const notify = await sendQuoteNotification({
+        firstName: name.split(" ")[0] || name,
+        lastName: name.split(" ").slice(1).join(" ") || "-",
+        email: "quick-quote@placeholder.com",
+        phone,
+        message: service || "Quick quote request",
+        service: service || "General Enquiry",
       });
 
-      if (emailError) {
-        console.warn("Quick quote email notification failed", emailError);
+      if (!notify.ok) {
+        console.warn("Quick quote email notification failed", notify.errors);
       }
 
       setSubmitted(true);
