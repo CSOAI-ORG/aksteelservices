@@ -181,7 +181,7 @@ const Certificates = () => {
                 We're Updating This Page With More Certificates
               </h2>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                The certificate above is current and verified. We're also working on publishing the
+                The certificates above are current and verified. We're also working on publishing the
                 following AK Steel Services Limited documents:
               </p>
               <ul className="space-y-2 mb-6 text-sm">
