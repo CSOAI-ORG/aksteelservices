@@ -72,7 +72,12 @@ const Index = () => {
       <section className="py-8 md:py-10 bg-muted/40 border-y border-border/50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
-            <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.15em]">Accredited & Certified:</p>
+            <Link
+              to="/certificates"
+              className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.15em] hover:text-primary transition-colors"
+            >
+              Accredited & Certified:
+            </Link>
             <Link
               to="/certificates"
               className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50 hover:border-primary/40 hover:shadow-md transition-all"
