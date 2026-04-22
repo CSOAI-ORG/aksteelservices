@@ -100,12 +100,13 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
 
       if (error) throw error;
 
-      // Send email notification
       const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
         body: { firstName, lastName, email, phone, service, location, message: description },
       });
 
-      if (emailError) throw emailError;
+      if (emailError) {
+        console.warn('Quote email notification failed', emailError);
+      }
 
       toast({
         title: 'Quote Request Sent!',
@@ -269,7 +270,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
 
           <div className="space-y-3">
             <Label>Preferred Contact Method</Label>
-            <RadioGroup defaultValue="phone" className="flex flex-wrap gap-6">
+            <RadioGroup name="contact_method" defaultValue="phone" className="flex flex-wrap gap-6">
               <div className="flex items-center space-x-2">
                 <RadioGroupItem value="phone" id="contact-phone" />
                 <Label htmlFor="contact-phone">Phone Call</Label>
@@ -287,7 +288,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
 
           <div className="space-y-2">
             <Label htmlFor="timeline">Project Timeline</Label>
-            <Select>
+            <Select name="timeline">
               <SelectTrigger>
                 <SelectValue placeholder="When do you need this completed?" />
               </SelectTrigger>

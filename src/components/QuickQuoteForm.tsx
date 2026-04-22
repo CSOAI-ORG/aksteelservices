@@ -35,7 +35,6 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
 
       if (error) throw error;
 
-      // Send email notification
       const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
         body: {
           firstName: name.split(" ")[0] || name,
@@ -47,7 +46,9 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
         },
       });
 
-      if (emailError) throw emailError;
+      if (emailError) {
+        console.warn("Quick quote email notification failed", emailError);
+      }
 
       setSubmitted(true);
     } catch {
@@ -80,6 +81,7 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
       )}
       <div className={isHero ? "flex flex-col sm:flex-row gap-2" : "flex flex-col gap-2"}>
         <Input
+          name="name"
           placeholder="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -87,6 +89,7 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
           className={`${isFooter ? "bg-secondary-hover border-border text-secondary-foreground placeholder:text-muted-foreground" : "bg-background"}`}
         />
         <Input
+          name="phone"
           placeholder="Phone Number"
           type="tel"
           value={phone}
@@ -95,6 +98,7 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
           className={`${isFooter ? "bg-secondary-hover border-border text-secondary-foreground placeholder:text-muted-foreground" : "bg-background"}`}
         />
         <Input
+          name="service_summary"
           placeholder="What do you need? (optional)"
           value={service}
           onChange={(e) => setService(e.target.value)}
@@ -103,6 +107,7 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
       </div>
       {isHero && (
         <Input
+          name="service_summary"
           placeholder="What do you need? (e.g. RSJ beam, extension steelwork)"
           value={service}
           onChange={(e) => setService(e.target.value)}

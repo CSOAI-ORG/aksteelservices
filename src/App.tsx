@@ -30,6 +30,7 @@ import ServiceCalculatorPage from "./pages/ServiceCalculator";
 import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
 import Reviews from "./pages/Reviews";
+import Certificates from "./pages/Certificates";
 import ScrollToTop from "./components/ScrollToTop";
 import HowItWorks from "./pages/HowItWorks";
 import FreeSiteSurvey from "./pages/FreeSiteSurvey";
@@ -63,6 +64,7 @@ const App = () => (
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/certificates" element={<Certificates />} />
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/free-site-survey" element={<FreeSiteSurvey />} />
