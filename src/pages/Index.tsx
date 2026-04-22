@@ -73,20 +73,28 @@ const Index = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8">
             <p className="text-xs font-semibold text-muted-foreground uppercase tracking-[0.15em]">Accredited & Certified:</p>
-            <div className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50">
-              <img 
-                src="/images/bs-en-1090-logo.jpg" 
-                alt="BS EN 1090 certified — SCCS and UKAS Product Certification" 
+            <Link
+              to="/certificates"
+              className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50 hover:border-primary/40 hover:shadow-md transition-all"
+              aria-label="View our BS EN 1090 certificate"
+            >
+              <img
+                src="/images/bs-en-1090-logo.jpg"
+                alt="BS EN 1090 certified — SCCS and UKAS Product Certification"
                 className="h-12 md:h-16 w-auto"
               />
-            </div>
-            <div className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50">
-              <img 
-                src="/images/ukca-logo.png" 
-                alt="UKCA — UK Conformity Assessed certification" 
+            </Link>
+            <Link
+              to="/certificates"
+              className="bg-background rounded-lg p-3 md:p-4 shadow-sm border border-border/50 hover:border-primary/40 hover:shadow-md transition-all"
+              aria-label="View our UKCA certificate"
+            >
+              <img
+                src="/images/ukca-logo.png"
+                alt="UKCA — UK Conformity Assessed certification"
                 className="h-12 md:h-16 w-auto"
               />
-            </div>
+            </Link>
           </div>
         </div>
       </section>
