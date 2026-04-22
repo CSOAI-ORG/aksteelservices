@@ -11,6 +11,7 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Upload, X, File } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import { sendQuoteNotification } from "@/lib/sendQuoteNotification";
 
 const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
   const { toast } = useToast();
@@ -100,12 +101,18 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
 
       if (error) throw error;
 
-      const { error: emailError } = await supabase.functions.invoke('send-quote-email', {
-        body: { firstName, lastName, email, phone, service, location, message: description },
+      const notify = await sendQuoteNotification({
+        firstName,
+        lastName,
+        email,
+        phone,
+        service: service || undefined,
+        location: location || undefined,
+        message: description,
       });
 
-      if (emailError) {
-        console.warn('Quote email notification failed', emailError);
+      if (!notify.ok) {
+        console.warn('Quote email notification failed', notify.errors);
       }
 
       toast({
