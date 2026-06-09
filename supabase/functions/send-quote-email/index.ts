@@ -137,7 +137,7 @@ Deno.serve(async (req) => {
 
     const subject = `New Quote Request from ${firstName} ${lastName}`;
 
-    const recipients = ['info@aksteelservices.com', 'nicholastempleman@gmail.com'];
+    const recipients = ['info@aksteelservices.com'];
 
     const send = await sendViaResend({
       apiKey: resendApiKey,
