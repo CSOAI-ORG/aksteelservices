@@ -30,8 +30,11 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 import { useToast } from "@/hooks/use-toast";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import BrandLogo from "@/components/BrandLogo";
-import { supabase } from "@/integrations/supabase/client";
-import { sendQuoteNotification } from "@/lib/sendQuoteNotification";
+
+const encode = (data: Record<string, string>) =>
+  Object.keys(data)
+    .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
+    .join("&");
 
 const Contact = () => {
   const { toast } = useToast();
@@ -275,38 +278,27 @@ const Contact = () => {
                 }
                 
                 try {
-                  const { error } = await supabase.from('contact_submissions').insert({
-                    first_name: firstName,
-                    last_name: lastName,
-                    email,
-                    phone,
-                    company: company || null,
-                    service: serviceVal || null,
-                    location: location || null,
-                    timeline: timelineVal || null,
-                    budget: budgetVal || null,
-                    message,
-                  });
-                  
-                  if (error) throw error;
-
-                  const notify = await sendQuoteNotification({
-                    firstName,
-                    lastName,
-                    email,
-                    phone,
-                    company: company || undefined,
-                    service: serviceVal || undefined,
-                    location: location || undefined,
-                    timeline: timelineVal || undefined,
-                    budget: budgetVal || undefined,
-                    message,
+                  const res = await fetch("/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: encode({
+                      "form-name": "quote",
+                      firstName,
+                      lastName,
+                      name: firstName + " " + lastName,
+                      email,
+                      phone,
+                      company: company || "",
+                      service: serviceVal || "",
+                      location: location || "",
+                      timeline: timelineVal || "",
+                      budget: budgetVal || "",
+                      message,
+                    }),
                   });
 
-                  if (!notify.ok) {
-                    console.warn('Quote email notification failed', notify.errors);
-                  }
-                  
+                  if (!res.ok) throw new Error("Network response was not ok");
+
                   toast({
                     title: "Quote Request Sent!",
                     description: "Thank you! We'll get back to you within 24 hours.",
