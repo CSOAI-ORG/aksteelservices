@@ -10,8 +10,11 @@ import { useToast } from "@/hooks/use-toast";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Upload, X, File } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { sendQuoteNotification } from "@/lib/sendQuoteNotification";
+
+const encode = (data: Record<string, string>) =>
+  Object.keys(data)
+    .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
+    .join("&");
 
 const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
   const { toast } = useToast();
@@ -82,38 +85,23 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
       trackFormSubmission('quote_request');
       trackQuoteRequest(service || 'general');
 
-      // Split name into first/last
-      const nameParts = name.trim().split(' ');
-      const firstName = nameParts[0] || '';
-      const lastName = nameParts.slice(1).join(' ') || '';
-
-      // Save to database
-      const { error } = await supabase.from('contact_submissions').insert({
-        first_name: firstName,
-        last_name: lastName,
-        email,
-        phone,
-        service: service || null,
-        location: location || null,
-        message: description,
-        preferred_contact: (formData.get('contact_method') as string) || 'phone',
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "quote",
+          name: name || "",
+          phone: phone || "",
+          email: email || "",
+          service: service || "",
+          location: location || "",
+          description: description || "",
+          contact_method: (formData.get('contact_method') as string) || 'phone',
+          timeline: (formData.get('timeline') as string) || "",
+        }),
       });
 
-      if (error) throw error;
-
-      const notify = await sendQuoteNotification({
-        firstName,
-        lastName,
-        email,
-        phone,
-        service: service || undefined,
-        location: location || undefined,
-        message: description,
-      });
-
-      if (!notify.ok) {
-        console.warn('Quote email notification failed', notify.errors);
-      }
+      if (!res.ok) throw new Error("Network response was not ok");
 
       toast({
         title: 'Quote Request Sent!',
