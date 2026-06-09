@@ -2,9 +2,12 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Phone, ArrowRight, CheckCircle } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
-import { sendQuoteNotification } from "@/lib/sendQuoteNotification";
 import { useToast } from "@/hooks/use-toast";
+
+const encode = (data: Record<string, string>) =>
+  Object.keys(data)
+    .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
+    .join("&");
 
 interface QuickQuoteFormProps {
   variant?: "hero" | "banner" | "footer";
@@ -25,29 +28,19 @@ const QuickQuoteForm = ({ variant = "hero", className = "" }: QuickQuoteFormProp
 
     setLoading(true);
     try {
-      const { error } = await supabase.from("contact_submissions").insert({
-        first_name: name.split(" ")[0] || name,
-        last_name: name.split(" ").slice(1).join(" ") || "-",
-        phone,
-        email: "quick-quote@placeholder.com",
-        message: service || "Quick quote request",
-        service: service || "General Enquiry",
+      const res = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "quote",
+          name,
+          phone,
+          service_summary: service || "",
+          message: service || "Quick quote request",
+        }),
       });
 
-      if (error) throw error;
-
-      const notify = await sendQuoteNotification({
-        firstName: name.split(" ")[0] || name,
-        lastName: name.split(" ").slice(1).join(" ") || "-",
-        email: "quick-quote@placeholder.com",
-        phone,
-        message: service || "Quick quote request",
-        service: service || "General Enquiry",
-      });
-
-      if (!notify.ok) {
-        console.warn("Quick quote email notification failed", notify.errors);
-      }
+      if (!res.ok) throw new Error("Network response was not ok");
 
       setSubmitted(true);
     } catch {
