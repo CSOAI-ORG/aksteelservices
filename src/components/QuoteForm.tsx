@@ -11,10 +11,12 @@ import { useAnalytics } from "@/hooks/useAnalytics";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Upload, X, File } from "lucide-react";
 
-const encode = (data: Record<string, string>) =>
-  Object.keys(data)
-    .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
-    .join("&");
+const buildQuoteFormData = (data: Record<string, string>, files: File[]) => {
+  const body = new FormData();
+  Object.entries(data).forEach(([name, value]) => body.append(name, value));
+  files.forEach((file, index) => body.append(`attachment_${index + 1}`, file, file.name));
+  return body;
+};
 
 const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
   const { toast } = useToast();
@@ -28,13 +30,13 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
     const validFiles = files.filter(file => {
-      const maxSize = 10 * 1024 * 1024; // 10MB
+      const maxSize = 7_000_000; // Reserve room below Netlify's 8MB request limit.
       const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
       
       if (file.size > maxSize) {
         toast({
           title: "File too large",
-          description: `${file.name} is larger than 10MB. Please choose a smaller file.`,
+          description: `${file.name} exceeds the 7MB attachment budget. Please choose a smaller file or email it to info@aksteelservices.com.`,
           variant: "destructive",
         });
         return false;
@@ -61,6 +63,15 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
       return;
     }
     
+    if ([...uploadedFiles, ...validFiles].reduce((total, file) => total + file.size, 0) > 7_000_000) {
+      toast({
+        title: "Attachments too large",
+        description: "Please keep all attachments under 7MB in total, or email larger drawings to info@aksteelservices.com.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setUploadedFiles(prev => [...prev, ...validFiles]);
   };
 
@@ -87,8 +98,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
 
       const res = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
+        body: buildQuoteFormData({
           "form-name": "quote",
           name: name || "",
           phone: phone || "",
@@ -98,7 +108,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
           description: description || "",
           contact_method: (formData.get('contact_method') as string) || 'phone',
           timeline: (formData.get('timeline') as string) || "",
-        }),
+        }, uploadedFiles),
       });
 
       if (!res.ok) throw new Error("Network response was not ok");
@@ -131,7 +141,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
         </CardDescription>
       </CardHeader>
       <CardContent className="relative">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form encType="multipart/form-data" onSubmit={handleSubmit} className="space-y-6">
           {isLoading && (
             <div className="absolute inset-0 bg-background/50 flex items-center justify-center z-10">
               <div className="space-y-3">
@@ -211,7 +221,7 @@ const QuoteForm = ({ title = "Get Your Free Quote", compact = false }) => {
           <div className="space-y-3">
             <Label>Upload Files (Optional)</Label>
             <p className="text-sm text-muted-foreground">
-              Attach photos, drawings, or documents related to your project (Max 5 files, 10MB each)
+              Attach photos, drawings, or documents related to your project (Max 5 files, 7MB total)
             </p>
             
             <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-6 text-center">
