@@ -24,17 +24,6 @@ const About = () => {
     "Federation of Master Builders (FMB) Member"
   ];
 
-  const milestones = [
-    { year: "Early", event: "AK Steel Services founded in Kent" },
-    { year: "2000", event: "Expanded operations to London market" },
-    { year: "2005", event: "Introduced 3D CAD modeling services" },
-    { year: "2010", event: "Completed 500th major project" },
-    { year: "2015", event: "Achieved ISO 9001:2015 certification" },
-    { year: "2020", event: "Launched emergency steel repair service" },
-    { year: "Recent", event: "Celebrating years of excellence" },
-    { year: "2024", event: "Delivering steel fabrication excellence" }
-  ];
-
   return (
     <div className="min-h-screen pb-16 md:pb-0">
       <SEOHead
@@ -48,7 +37,7 @@ const About = () => {
       <InnerPageHero
         badge="Experienced Team"
         title={<>About <span className="text-accent">AK Steel Services</span></>}
-        description="With many years experience, we've been the trusted name in steel fabrication across Kent, London, and the South East. Our commitment to excellence, innovation, and customer satisfaction has made us industry leaders."
+        description="With many years experience, we've been the trusted name in steel fabrication across Kent, London, and the South East. Our commitment to excellence, innovation, and customer sa[...]"
         variant="gradient"
       />
 
@@ -148,34 +137,6 @@ const About = () => {
                 <span className="font-medium text-sm">{cert}</span>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline */}
-      <section className="py-16 md:py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <Badge variant="secondary" className="mb-4">Our Journey</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Years of <span className="text-primary">Growth & Innovation</span>
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <div className="space-y-6">
-              {milestones.map((milestone, index) => (
-                <div key={index} className="flex gap-5 items-center group">
-                  <div className="bg-primary text-primary-foreground rounded-full w-11 h-11 flex items-center justify-center font-bold flex-shrink-0 text-sm group-hover:scale-110 transition-transform">
-                    {milestone.year.slice(-2)}
-                  </div>
-                  <div className="flex-1 py-2">
-                    <div className="font-bold">{milestone.year}</div>
-                    <div className="text-muted-foreground text-sm">{milestone.event}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
