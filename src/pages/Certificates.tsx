@@ -216,8 +216,8 @@ const Certificates = () => {
               size="lg"
               className="bg-white text-primary hover:bg-white/90 font-semibold"
             >
-              <a href="tel:+447777034269">
-                <Phone className="h-4 w-4 mr-2" /> Call 07777 034269
+              <a href="tel:01474550531">
+                <Phone className="h-4 w-4 mr-2" /> Call 01474 550531
               </a>
             </Button>
           </div>
