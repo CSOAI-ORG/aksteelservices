@@ -98,9 +98,9 @@ const Header = () => {
 
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" className="hidden md:flex font-semibold text-xs" asChild>
-              <a href="tel:01474550531" className="flex items-center gap-1.5">
+              <a href="tel:1474550531" className="flex items-center gap-1.5">
                 <Phone className="h-3.5 w-3.5" />
-                01474 550531
+                1474550531
               </a>
             </Button>
             <Button variant="hero" size="sm" className="hidden sm:flex text-xs" asChild>
@@ -164,8 +164,8 @@ const Header = () => {
               
               <div className="flex flex-col gap-2 pt-3 border-t border-border">
                 <Button variant="hero" size="sm" asChild>
-                  <a href="tel:01474550531" className="flex items-center gap-2">
-                    <Phone className="h-4 w-4" /> Call 01474 550531
+                  <a href="tel:1474550531" className="flex items-center gap-2">
+                    <Phone className="h-4 w-4" /> Call 1474550531
                   </a>
                 </Button>
                 <Button variant="outline" size="sm" asChild>
