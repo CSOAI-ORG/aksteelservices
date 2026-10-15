@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"><title>Netlify Form Detection</title></head>
 <body>
   <!-- Hidden form so Netlify registers the "quote" form at build time. Do not delete. -->
-  <form name="quote" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <form enctype="multipart/form-data" name="quote" data-netlify="true" netlify-honeypot="bot-field" hidden>
     <input type="hidden" name="form-name" value="quote" />
     <input type="text" name="bot-field" />
     <input type="text" name="name" />
@@ -20,6 +20,11 @@
     <input type="text" name="service_summary" />
     <textarea name="message"></textarea>
     <textarea name="description"></textarea>
+    <input type="file" name="attachment_1" />
+    <input type="file" name="attachment_2" />
+    <input type="file" name="attachment_3" />
+    <input type="file" name="attachment_4" />
+    <input type="file" name="attachment_5" />
   </form>
 </body>
 </html>
