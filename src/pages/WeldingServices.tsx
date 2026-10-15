@@ -20,22 +20,12 @@ const WeldingServices = () => {
     {
       name: "MIG Welding",
       description: "Metal Inert Gas welding for general fabrication work",
-      applications: ["Steel fabrication", "Automotive repairs", "General metalwork"]
-    },
-    {
-      name: "TIG Welding", 
-      description: "Tungsten Inert Gas welding for precision applications",
-      applications: ["Stainless steel", "Aluminum", "Precision work"]
+      applications: ["Steel fabrication", "Mild steel repairs", "General metalwork"]
     },
     {
       name: "ARC Welding",
       description: "Manual Metal Arc welding for heavy-duty structural work",
       applications: ["Structural steel", "Heavy fabrication", "Outdoor work"]
-    },
-    {
-      name: "Gas Welding",
-      description: "Oxy-acetylene welding for specialized applications",
-      applications: ["Repair work", "Cast iron", "Brazing"]
     }
   ];
 
@@ -46,10 +36,10 @@ const WeldingServices = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="Professional Welding Services | MIG, TIG, ARC Welding | Kent & London"
-        description="Expert welding services across Kent & London. MIG, TIG, ARC welding. Certified welders, 24/7 emergency service, mobile welding units. Call 01474 550531"
-        keywords="welding services, MIG welding, TIG welding, ARC welding, Kent welding, London welding, emergency welding, mobile welding"
-        schemaData={createServiceSchema("Professional Welding Services", "Expert MIG, TIG, ARC welding services across Kent & London. Certified welders, 24/7 emergency service, mobile welding units.")}
+        title="Professional Welding Services | MIG, ARC Welding | Kent & London"
+        description="Expert welding services across Kent & London. MIG and ARC welding. Certified welders, 24/7 emergency service, mobile welding units. Call 01474 550531"
+        keywords="welding services, MIG welding, ARC welding, Kent welding, London welding, emergency welding, mobile welding"
+        schemaData={createServiceSchema("Professional Welding Services", "Expert MIG and ARC welding services across Kent & London. Certified welders, 24/7 emergency service, mobile welding units.")}
       />
       <Header />
       <Breadcrumbs />
@@ -170,7 +160,7 @@ const WeldingServices = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {weldingTypes.map((type, index) => (
               <Card key={index} className="h-full">
                 <CardHeader>
